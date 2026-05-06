@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;  /* align horizontal */
+    align-items: center;      /* align vertical */
+    height: 100vh;
+    background-image: url("../images/history-hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: "Special Elite", system-ui;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section {
+    flex-grow: 1;
+    width: 30%;
+    background-color: burlywood;
+    margin: 10px;
+    border: solid rgb(80, 50, 20) 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+main section p {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+main section img {
+    display: block;
+    margin: 5px auto;
+}
+
+a {
+    color: rgb(50, 30, 10);
+}
