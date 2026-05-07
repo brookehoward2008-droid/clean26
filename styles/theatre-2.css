@@ -1,54 +1,22 @@
-body {
-    main {
-        background-image: url('../images/sherwoodforrest.jpg');
-        background-size: cover;
-    }
-}
-
-header {
-    background-color: #1d1e3f;
-    color: rgb(124, 128, 163);
-    padding: 20px;
-    text-align: left;
-}
-
-header img {
-    display: block;
-    margin: 0;
-}
-
-nav {
-    background-color: bisque;
-    margin: 0;
-    padding: 10px 0;
-    text-align: left;
-}
-
-nav p {
-    margin: 0;
-    padding-left: 20px;
-}
-
-main {
-    background-color: darkolivegreen;
-
-}
-
-list {
-    color: sienna;
-}
-
-footer {
-    background-color: #1d1e3f;
-    color: rgb(124, 128, 163);
-    padding: 10px;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    padding: 20px;
 }
 
-footer a {
-    color: #f5c542;
+.hero-content h1 {
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
 }
 
-footer a:hover {
-    color: #ffffff;
+.hero-content p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0;
 }
