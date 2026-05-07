@@ -1,110 +1,65 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
 body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    font-family: Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #73c75abb;
     background-image: url('../images/sherwoodforrest.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
-}
 
-header {
-    background-color: #1d1e3f;
-    color: rgb(124, 128, 163);
-    padding: 20px;
-    text-align: left;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-}
+    header {
+        background-color: blueviolet;
+        padding: 10px;
+        text-align: center;
+    }
 
-header img {
-    display: block;
-    margin: 0;
-    max-width: 200px;
-}
+    nav {
+        background-color: green;
+        padding: 10px;
+        color: white;
+    }
 
-nav {
-    background-color: bisque;
-    margin: 0;
-    padding: 10px 0;
-    text-align: left;
-}
+    main {
+        background-image: url("s");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 40px;
+        min-height: 60vh;
+    }
 
-nav p {
-    margin: 0;
-    padding-left: 20px;
-    font-weight: bold;
-}
+    main h1,
+    main h2 {
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
 
-main {
-    background-color: rgba(202, 205, 223, 0.95);
-    padding: 40px;
-    margin: 40px auto;
-    max-width: 900px;
-    box-shadow: 0 8px 32px rgba(61, 46, 46, 0.4);
-    position: relative;
-    z-index: 10;
-}
+    main p {
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-main h1 {
-    color: #eeece6;
-    margin-bottom: 15px;
-    font-size: 3em;
-    line-height: 1.3;
-}
+    ul {
+        background-color: black;
+        color: white;
+        padding: 20px 40px;
+        list-style-position: inside;
+    }
 
-main h2 {
-    color: #1d1e3f;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
+    li {
+        color: white;
+        margin: 6px 0;
+    }
 
-main p {
-    color: #163549;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
+    footer {
+        background-color: saddlebrown;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
 
-ul {
-    margin-left: 20px;
-    line-height: 1.8;
-}
-
-li {
-    color: #9de5cd;
-    margin-bottom: 12px;
-}
-
-footer {
-    background-color: #1d1e3f;
-    color: rgb(124, 128, 163);
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    z-index: 20;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #f5c542;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #7cbfdf;
-    text-decoration: darkgrey
-}
+    footer a {
+        color: lightgoldenrodyellow;
+    }

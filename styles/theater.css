@@ -1,60 +1,65 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, serif;
-}
-
-header {
-    background-color: blueviolet;
-    padding: 10px;
-    text-align: center;
-}
-
-nav {
-    background-color: green;
-    padding: 10px;
-    color: white;
-}
-
-main {
-    background-image: url("s");
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #73c75abb;
+    background-image: url('../images/sherwoodforrest.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 40px;
-    min-height: 60vh;
-}
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 
-main h1, main h2 {
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-}
+    header {
+        background-color: blueviolet;
+        padding: 10px;
+        text-align: center;
+    }
 
-main p {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    font-size: 18px;
-    line-height: 1.6;
-}
+    nav {
+        background-color: green;
+        padding: 10px;
+        color: white;
+    }
 
-ul {
-    background-color: black;
-    color: white;
-    padding: 20px 40px;
-    list-style-position: inside;
-}
+    main {
+        background-image: url("s");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 40px;
+        min-height: 60vh;
+    }
 
-li {
-    color: white;
-    margin: 6px 0;
-}
+    main h1,
+    main h2 {
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
 
-footer {
-    background-color: saddlebrown;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    main p {
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-footer a {
-    color: lightgoldenrodyellow;
-}
+    ul {
+        background-color: black;
+        color: white;
+        padding: 20px 40px;
+        list-style-position: inside;
+    }
+
+    li {
+        color: white;
+        margin: 6px 0;
+    }
+
+    footer {
+        background-color: saddlebrown;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: lightgoldenrodyellow;
+    }
