@@ -50,20 +50,20 @@ nav p {
 }
 
 main {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(52, 56, 88, 0.95);
     padding: 40px;
     margin: 40px auto;
     max-width: 900px;
     border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(61, 46, 46, 0.4);
     position: relative;
     z-index: 10;
 }
 
 main h1 {
-    color: #1d1e3f;
+    color: #ad8c30;
     margin-bottom: 15px;
-    font-size: 2em;
+    font-size: 3em;
     line-height: 1.3;
 }
 
