@@ -1,0 +1,40 @@
+header {
+    background-color: #1d1e3f;
+    color: rgb(124, 128, 163);
+    padding: 20px;
+    text-align: left;
+}
+header img {
+    display: block;
+    margin: 0;
+}
+nav  {
+    background-color: bisque;
+    margin: 0;
+    padding: 10px 0;
+    text-align: left;
+}
+nav p {
+    margin: 0;
+    padding-left: 20px;
+}
+main {
+  background-color: darkolivegreen;
+  
+}
+list {
+    color: sienna;
+}
+
+footer {
+    background-color: #1d1e3f;
+    color: rgb(124, 128, 163);
+    padding: 10px;
+    text-align: center;
+}
+footer a {
+    color: #f5c542;
+}
+footer a:hover {
+    color: #ffffff;
+}
