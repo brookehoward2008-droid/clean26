@@ -1,5 +1,4 @@
-body 
-{
+body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #73c75abb;
     background-image: url('../images/sherwoodforrest.jpg');
@@ -8,7 +7,6 @@ body
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
-    {
 
     header {
         background-color: blueviolet;
