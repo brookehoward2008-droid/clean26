@@ -1,8 +1,8 @@
 body {
-    background-image: url('../images/sherwoodforrest.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    main {
+        background-image: url('../images/sherwoodforrest.jpg');
+        background-size: cover;
+    }
 }
 
 header {
@@ -11,24 +11,29 @@ header {
     padding: 20px;
     text-align: left;
 }
+
 header img {
     display: block;
     margin: 0;
 }
-nav  {
+
+nav {
     background-color: bisque;
     margin: 0;
     padding: 10px 0;
     text-align: left;
 }
+
 nav p {
     margin: 0;
     padding-left: 20px;
 }
+
 main {
-  background-color: darkolivegreen;
-  
+    background-color: darkolivegreen;
+
 }
+
 list {
     color: sienna;
 }
@@ -39,9 +44,11 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
 footer a {
     color: #f5c542;
 }
+
 footer a:hover {
     color: #ffffff;
 }
