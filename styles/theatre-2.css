@@ -50,18 +50,17 @@ nav p {
 }
 
 main {
-    background-color: rgba(52, 56, 88, 0.95);
+    background-color: rgba(202, 205, 223, 0.95);
     padding: 40px;
     margin: 40px auto;
     max-width: 900px;
-    border-radius: 8px;
     box-shadow: 0 8px 32px rgba(61, 46, 46, 0.4);
     position: relative;
     z-index: 10;
 }
 
 main h1 {
-    color: #ad8c30;
+    color: #eeece6;
     margin-bottom: 15px;
     font-size: 3em;
     line-height: 1.3;
@@ -86,7 +85,7 @@ ul {
 }
 
 li {
-    color: #333;
+    color: #9de5cd;
     margin-bottom: 12px;
 }
 
@@ -106,6 +105,6 @@ footer a {
 }
 
 footer a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+    color: #7cbfdf;
+    text-decoration: darkgrey
 }
