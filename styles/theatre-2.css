@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 header {
@@ -24,13 +25,15 @@ header {
     color: rgb(124, 128, 163);
     padding: 20px;
     text-align: left;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 20;
 }
 
 header img {
     display: block;
     margin: 0;
+    max-width: 200px;
 }
 
 nav {
@@ -38,21 +41,21 @@ nav {
     margin: 0;
     padding: 10px 0;
     text-align: left;
-    position: relative;
-    z-index: 20;
 }
 
 nav p {
     margin: 0;
     padding-left: 20px;
+    font-weight: bold;
 }
 
 main {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 40px;
-    margin: 40px;
+    margin: 40px auto;
+    max-width: 900px;
     border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 10;
 }
@@ -61,12 +64,14 @@ main h1 {
     color: #1d1e3f;
     margin-bottom: 15px;
     font-size: 2em;
+    line-height: 1.3;
 }
 
 main h2 {
     color: #1d1e3f;
     margin-top: 30px;
     margin-bottom: 15px;
+    font-size: 1.5em;
 }
 
 main p {
@@ -76,13 +81,13 @@ main p {
 }
 
 ul {
-    color: sienna;
     margin-left: 20px;
     line-height: 1.8;
 }
 
 li {
-    margin-bottom: 8px;
+    color: #333;
+    margin-bottom: 12px;
 }
 
 footer {
