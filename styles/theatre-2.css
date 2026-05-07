@@ -1,3 +1,10 @@
+body {
+    background-image: url('../images/sherwoodforrest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 header {
     background-color: #1d1e3f;
     color: rgb(124, 128, 163);
