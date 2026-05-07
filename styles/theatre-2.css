@@ -1,23 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.hero-section {
     background-image: url('../images/sherwoodforrest.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
-    /* full viewport height */
-    width: 100%;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -25,6 +24,8 @@ header {
     color: rgb(124, 128, 163);
     padding: 20px;
     text-align: left;
+    position: relative;
+    z-index: 20;
 }
 
 header img {
@@ -37,6 +38,8 @@ nav {
     margin: 0;
     padding: 10px 0;
     text-align: left;
+    position: relative;
+    z-index: 20;
 }
 
 nav p {
@@ -45,25 +48,59 @@ nav p {
 }
 
 main {
-    background-color: darkolivegreen;
-
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    margin: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
 }
 
-list {
+main h1 {
+    color: #1d1e3f;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+main h2 {
+    color: #1d1e3f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+main p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul {
     color: sienna;
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+li {
+    margin-bottom: 8px;
 }
 
 footer {
     background-color: #1d1e3f;
     color: rgb(124, 128, 163);
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 20;
+    margin-top: 40px;
 }
 
 footer a {
     color: #f5c542;
+    text-decoration: none;
 }
 
 footer a:hover {
     color: #ffffff;
+    text-decoration: underline;
 }
