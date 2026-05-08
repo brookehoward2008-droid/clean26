@@ -1,46 +1,10 @@
 @charset "utf-8";
 /* CSS document */
 
-body {
-	background-color: darkslategray;
-}
-
 .stew-content {
-	background-color: gray;
-	width: 700px;
-	padding: 20px;
-	margin: auto;
-}
-
-h1 {
-	color: navajowhite;
-	font-size: 50px;
-}
-
-h2, h3 {
-	color: antiquewhite;
-	font-size: 24px;
-}
-
-p {
-	color: floralwhite;
-	line-height: 1.25;
-	font-size: 22px;
-}
-
-li {
-	color: floralwhite;
-	font-size: 26px;
-	padding: 5px;
-}
-
-i {
-	color: cornsilk;
-	font-size: 20px;
-}
-
-.stew-img-float {
-	float: left;
-	margin-right: 5px;
-	width: 150px;
+    background-color: darkblue;
+    width: 700px;
+    padding: 10px;
+    margin: auto;
+    color: white;  
 }
