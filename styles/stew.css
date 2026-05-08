@@ -2,45 +2,127 @@
 /* CSS document */
 
 body {
-	background-color: darkslategray;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #faf7f1;
+    color: #1a1a1a;
+    margin: 0px;
+    padding: 0px;
 }
 
 .stew-content {
-	background-color: gray;
-	width: 700px;
-	padding: 20px;
-	margin: auto;
+    background-color: darkblue;
+    width: 700px;
+    padding: 20px;
+    margin: auto;
+    color: white;
 }
 
 h1 {
-	color: navajowhite;
-	font-size: 50px;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: crimson;
+    margin: 20px 0px 15px;
+    line-height: 1.4;
 }
 
-h2, h3 {
-	color: antiquewhite;
-	font-size: 24px;
+h2 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #d4af37;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #d4af37;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    border-top: 1px solid #888;
+    padding-top: 15px;
+}
+
+h4 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    margin-top: 18px;
+    margin-bottom: 10px;
 }
 
 p {
-	color: floralwhite;
-	line-height: 1.25;
-	font-size: 22px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
-li {
-	color: floralwhite;
-	font-size: 26px;
-	padding: 5px;
+ul {
+    font-family: Georgia, serif;
+    list-style: disc;
+    padding-left: 40px;
+    margin: 15px 0px 20px;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+}
+
+ul li {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    padding: 10px 0px;
+    line-height: 24px;
+}
+
+ol {
+    font-family: Georgia, serif;
+    list-style: decimal;
+    padding-left: 40px;
+    margin: 20px 0px;
+}
+
+ol li {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 22px;
+    padding-left: 12px;
+    line-height: 26px;
+}
+
+ol li strong {
+    color: #d4af37;
+    font-weight: 600;
 }
 
 i {
-	color: cornsilk;
-	font-size: 20px;
+    color: darkgoldenrod;
+    font-size: 16px;
 }
 
-.stew-img-float {
-	float: left;
-	margin-right: 5px;
-	width: 150px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0px;
+}
+
+footer {
+    font-family: Georgia, serif;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    clear: both;
+    font-size: 14px;
+    font-weight: 400;
 }
