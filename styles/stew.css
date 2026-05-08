@@ -1,10 +1,10 @@
 @charset "UTF-8";
-/* Stew Recipe external stylesheet
+
 
 
 body {
-	font-family: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
-	background-color: #faf7f1;
+	font-family: "franklin-gothic", "EB Garamond", Garamond, "Times New Roman", serif;
+	background-color: #d69a21;
 	color: #1a1a1a;
 	max-width: 760px;
 	margin: 4em auto;
