@@ -1,0 +1,49 @@
+MATCH INSTRUCTOR EXACTLY
+========================
+
+The CSS needed these changes:
+
+1. Body background: darker gray (#e8e6e1) for contrast
+2. Container: smaller max-width (750px) + centered
+3. Container padding: more generous (50px 60px)
+4. Container: subtle shadow for definition
+5. Better spacing throughout
+6. Proper line heights for readability
+
+===================================================================
+
+TO FIX:
+======
+
+1. Download: stew.css_MATCH_INSTRUCTOR.css
+
+2. Replace: C:\Users\toddl\OneDrive\Documents\GitHub\clean26\styles\stew.css
+
+3. In PowerShell:
+
+cd C:\Users\toddl\OneDrive\Documents\GitHub\clean26
+
+git add styles/stew.css
+
+git commit -m "Match instructor example exactly"
+
+git push origin main
+
+4. Wait 30-60 seconds
+
+5. Hard refresh: https://brookehoward2008-droid.github.io/clean26/pages/stew-recipe.html
+
+Press Ctrl+F5
+
+===================================================================
+
+WHAT WILL CHANGE:
+=================
+
+- Body background will be darker (creates contrast)
+- Content box will be narrower and more defined
+- Better padding around content
+- Subtle shadow around the box
+- Matches instructor's centered card layout exactly
+
+===================================================================

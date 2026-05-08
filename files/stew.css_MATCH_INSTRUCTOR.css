@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS document - Stew Recipe */
+
+body {
+	font-family: Georgia, "Times New Roman", serif;
+	background-color: #e8e6e1;
+	color: #333333;
+	margin: 0px;
+	padding: 40px 20px;
+}
+
+.stew-content {
+	background-color: #f5f3f0;
+	max-width: 750px;
+	padding: 50px 60px;
+	margin: 0px auto;
+	color: #333333;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+	font-family: Georgia, serif;
+	font-size: 38px;
+	font-weight: 400;
+	color: #8B6914;
+	margin: 0px 0px 25px;
+	line-height: 1.3;
+	text-align: left;
+}
+
+h2 {
+	font-family: Georgia, serif;
+	font-size: 28px;
+	font-weight: 400;
+	color: #8B6914;
+	margin: 45px 0px 18px;
+	line-height: 1.3;
+	text-align: left;
+}
+
+h3 {
+	font-family: Georgia, serif;
+	font-size: 20px;
+	font-weight: 400;
+	color: #8B6914;
+	font-style: italic;
+	margin: 35px 0px 12px;
+	line-height: 1.3;
+	text-align: left;
+}
+
+h4 {
+	font-family: Georgia, serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #8B6914;
+	font-style: italic;
+	margin: 20px 0px 12px;
+	text-align: left;
+}
+
+p {
+	font-family: Georgia, serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
+	margin-bottom: 18px;
+	text-align: left;
+	color: #333333;
+}
+
+ul {
+	font-family: Georgia, serif;
+	list-style: disc;
+	padding-left: 25px;
+	margin: 18px 0px 22px;
+}
+
+ul li {
+	font-size: 16px;
+	font-weight: 400;
+	color: #333333;
+	padding: 6px 0px;
+	line-height: 26px;
+	margin-bottom: 4px;
+}
+
+ol {
+	font-family: Georgia, serif;
+	list-style: decimal;
+	padding-left: 25px;
+	margin: 22px 0px;
+}
+
+ol li {
+	font-size: 16px;
+	font-weight: 400;
+	color: #333333;
+	margin-bottom: 20px;
+	padding-left: 6px;
+	line-height: 28px;
+}
+
+ol li strong {
+	color: #8B6914;
+	font-weight: 600;
+}
+
+i {
+	color: #8B6914;
+	font-style: italic;
+	font-size: 16px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 28px 0px;
+	border-radius: 2px;
+}
+
+footer {
+	font-family: Georgia, serif;
+	background-color: transparent;
+	color: #333333;
+	text-align: center;
+	padding: 30px 20px;
+	margin-top: 40px;
+	clear: both;
+	font-size: 13px;
+	font-weight: 400;
+}
