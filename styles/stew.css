@@ -10,7 +10,7 @@ body {
 }
 
 .stew-content {
-	background-color: #f5f3f0;
+	background-color: #a5834f;
 	max-width: 750px;
 	padding: 50px 60px;
 	margin: 0px auto;
@@ -122,12 +122,13 @@ img {
 
 footer {
 	font-family: Georgia, serif;
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.1);
 	color: #333333;
-	text-align: center;
+	text-align: auto;
 	padding: 30px 20px;
 	margin-top: 40px;
 	clear: both;
 	font-size: 13px;
 	font-weight: 400;
+	color: rgb(54, 32, 3);
 }
