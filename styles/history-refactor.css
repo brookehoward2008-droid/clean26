@@ -8,8 +8,10 @@ body {
 
 .hero {
     display: flex;
-    justify-content: center;  /* align horizontal */
-    align-items: center;      /* align vertical */
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
     height: 100vh;
     background-image: url("../images/history-hero-bg.jpg");
     background-size: cover;
@@ -33,7 +35,7 @@ main {
 main section {
     flex-grow: 1;
     width: 30%;
-    background-color: burlywood;
+    background-color: rgba(22, 104, 151, 0.514);
     margin: 10px;
     border: solid rgb(80, 50, 20) 2px;
     border-radius: 5px;
