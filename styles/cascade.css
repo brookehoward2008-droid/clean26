@@ -1,113 +1,124 @@
-@charset "UTF-8";
+  @charset "utf-8";
+  /* CSS Document */
 
-body {
-    background-image: url(../images/cascade_mountains-bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0px;
-    padding: 0px;
-    color: #344e5f;
+  body{
+          background-image:url("../images/cascade_mountains-bg.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          margin: 0px;
+          padding:0px;
+          color: #344e5f;
+
+  }
+  header,section,aside,article,footer,figure{
+          display: block;
+  }
+  header{
+          background-color:#86E2F9;
+          color:#69879F;
+          padding-top:2px;
+  }
+  header h1{
+          margin-left: 15px;
+          font-size:52px;
+          color: #00AAF5
+
+  }
+  header h2{
+          margin-left: 15px;
+          font-size:20px;
+          padding-bottom: 25px;
+          color: #31654C
+  }
+  nav ul{
+          text-align: center;
+          list-style: none;
+          background-color:#375978;
+          margin-bottom: 15px;
+  }
+  nav li{
+          display: inline-block;
+  }
+  nav a{
+          padding: 9px;
+          display: block;
+          width:100px;
+          align-items: stretch;
+          text-decoration: none;
+          background-color:#61758D;
+          color:#84A6C0;   
+  }
+  nav a:hover{
+          background-color: #438A68;
+  }  
+  footer{
+          color: white;
+          padding:9px;
+          background-color: rgba(68,165,181,0.8);
+          clear: both;
+  } 
+  footer p{
+          font-size: 10px;
+  }
+  .container{
+      width: 960px;
+      background-color: rgba(255,255,255,0.7);
+      margin:auto;}
+  .content{
+      padding:10px;
+      width:550px;
+      float: left;
+      margin: auto;
+      
+       }
+  .sidebar{
+      float:right;
+      width:370px;
+      padding-right: 5px;
+      align-content: flex-end;
+      background-color:#438A68
+      color:#44A5BB;
+      }
+  .sidebar a{
+      color: #867777;
+      font-size: 18px;
+      font width: auto
+      }
+  .figure {
+      margin:0px;
+    }
+  figcaption{
+      font-size: 10px;
+  }
+  .image-right {
+      float:right;
+        }
+
+  .image-left {
+      float:right;
+      margin-right:7px;
+  }  
+  h1,h2,h3{
+  font-family: "Boldonse", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  color:#133551;
+      font-size: 28px
 }
 
-header, section, aside, article, footer, figure {
-    display: block;
+           }
+p{
+  font-family: "National Park Medium";
+  font-weight: 100;
+  font-style: normal;
+     text-align-last:left;
+    font-size: 18px;
+    color: #09325E
 }
 
-header {
-    background-color: white;
-    color: #44a5bd;
-    padding-top: 25px;
-}
-
-header h1 {
-    margin-left: 15px;
-    font-size: 30px;
-}
-
-header h2 {
-    margin-left: 15px;
-    font-size: 20px;
-}
-
-.sub-nav ul {
-    text-align: center;
-    list-style: none;
-    background-color: #44a5b5;
-    margin-bottom: 15px;
-}
-
-.sub-nav li {
-    display: inline-block;
-}
-
-.sub-nav a {
-    padding: 9px;
-    display: block;
-    width: 100px;
-    text-decoration: none;
-    background-color: #44a5b5;
-    color: white;
-}
-
-.sub-nav a:hover {
-    background-color: #344e5f;
-}
-
-footer {
-    color: white;
-    padding: 9px;
-    background-color: rgba(68, 165, 181, 0.8);
-    clear: both;
-}
-
-footer p {
-    font-size: 10px;
-}
-
-.container {
-    width: 960px;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin: auto;
-}
-.content {
-    padding: 10px;
-    width: 630px;
-    float: left;
-}
-.sidebar {
-    float: right;
-    width: 300px;
-    padding: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #44a5b5;
     
-}
-.sidebar a {
-    color: #44a5b5;
-}
-
-figure {
-    margin: 0px;
-}
-figcaption {
-    font-size: 10px;
-}
-
-.image-right {
-    float: right;
-    margin: 7px;
-}
-.image-left {
-    float: left;
-    margin-right: 7px;
-}
-
-h1,h2,h3, figcaption {
-    font-family: "Chelsea Market", system-ui;
-}
-
-p, li {
-    font-family: "Roboto Slab", serif;
-    font-weight: 360;
+    
+ 
+ 
 }
