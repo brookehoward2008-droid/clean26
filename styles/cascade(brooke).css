@@ -80,13 +80,15 @@ footer p{
     margin: 0px;
   }
 figcaption{
-    font-size 10px;
+    font-size: 10px;
 }
 .image-right {
     float:right;
     
 }
     
+.image-left {
+    float:left;
+    margin-right:7px;
+}  
     
-    
-}
