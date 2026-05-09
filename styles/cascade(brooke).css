@@ -2,6 +2,74 @@
 /* CSS Document */
 
 body{
-    background-image: url(../images/cascade_mountains-bg.jpg);
-    background-repeat: no-repeat;
+        background-image:url("../images/cascade_mountains-bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0px;
+        padding:0px;
+        color: #344e5f;
+    
 }
+header,section,aside,article,footer,figure{
+        display: block;
+}
+header{
+        background-color:#86E2F9;
+        color: #44a5bd;
+        padding-top:25px;
+}
+header h1{
+        margin-left: 15px;
+        font-size: 30px;
+
+}
+header h2{
+        margin-left: 15px;
+        font-size:20px;
+}
+nav ul{
+        text-align: center;
+        list-style: none;
+        background-color:#375978;
+        margin-bottom: 15px;
+}
+nav li{
+        display: inline-block;
+}
+nav a{
+        padding: 9px;
+        display: block;
+        width:100;
+        text-decoration: none;
+        background-color: #617784;
+        color:aliceblue;    
+}
+nav a:hover{
+        background-color: darkgray;
+}  
+footer{
+        color: white;
+        padding:9px;
+        background-color: rgba(68,165,181,0.8);
+        clear: both;
+} 
+footer p{
+        font-size: 10px;
+}
+.container{
+    width: 960px;
+    background-color: rgba(255,255,255,0.7);
+    margin:auto;
+}
+.content{
+    padding:10px;
+    width: 630px;
+    float: left;
+ }
+.sidebar{
+    float: left;
+    width:300px;
+    background-color: rgba(255,255,255,0.40);
+    color:#44A5BB;
+    }
