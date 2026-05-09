@@ -73,3 +73,20 @@ footer p{
     background-color: rgba(255,255,255,0.40);
     color:#44A5BB;
     }
+.sidebar a{
+    color: #867777;
+}
+.figure {
+    margin: 0px;
+  }
+figcaption{
+    font-size 10px;
+}
+.image-right {
+    float:right;
+    
+}
+    
+    
+    
+}
