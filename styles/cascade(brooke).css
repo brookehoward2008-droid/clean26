@@ -91,4 +91,16 @@ figcaption{
     float:left;
     margin-right:7px;
 }  
-    
+h1,h2,h3{
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+  p{
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:300;
+  font-style: normal;
+ }
+      
