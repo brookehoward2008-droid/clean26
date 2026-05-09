@@ -3,7 +3,7 @@
 
 body {
 	background-color: #285680;
-	font-family: "helvetica", sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .stew-content {
@@ -24,6 +24,6 @@ footer {
 	color: white;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	clear: both;
+
 	padding-left: 5px;
 }
