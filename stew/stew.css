@@ -2,9 +2,9 @@
 /* CSS Document */
 
 body {
-	background-color: goldenrod;
+	background-color: #285680;
+	font-family: "Roboto", sans-serif;
 }
-
 
 .stew-content {
 	background-color: #cccccc;
@@ -16,14 +16,13 @@ body {
 h1,
 h2,
 h3 {
-	color: darkblue;
+	color: #805E28;
 }
 
 footer {
-	background-color: red;
+	background-color: #805E28;
 	color: white;
-	padding-bottom: 7px;
 	padding-top: 7px;
+	padding-bottom: 7px;
 	clear: both;
 	padding-left: 5px;
-}
