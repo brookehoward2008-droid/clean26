@@ -8,6 +8,7 @@ body {
 
 .stew-content {
 	background-color: #d4ceb0;
+	font-size: 18px;
 	width: 700px;
 	padding: 10px;
 	margin: auto;
@@ -18,11 +19,14 @@ h2,
 h3 {
 	color: #5e3b04;
 }
-
+p {
+	font-size: 8px;
+}
 footer {
 	background-color: #805E28;
 	color: white;
-	padding-top: 7px;
-	padding-bottom: 7px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	clear: both;
+	padding-left: 5px;
 }
