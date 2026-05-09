@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+body {
+    background-image: url(../images/cascade_mountains-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    color: #344e5f;
+}
+
+header, section, aside, article, footer, figure {
+    display: block;
+}
+
+header {
+    background-color: white;
+    color: #44a5bd;
+    padding-top: 25px;
+}
+
+header h1 {
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+header h2 {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.sub-nav ul {
+    text-align: center;
+    list-style: none;
+    background-color: #44a5b5;
+    margin-bottom: 15px;
+}
+
+.sub-nav li {
+    display: inline-block;
+}
+
+.sub-nav a {
+    padding: 9px;
+    display: block;
+    width: 100px;
+    text-decoration: none;
+    background-color: #44a5b5;
+    color: white;
+}
+
+.sub-nav a:hover {
+    background-color: #344e5f;
+}
+
+footer {
+    color: white;
+    padding: 9px;
+    background-color: rgba(68, 165, 181, 0.8);
+    clear: both;
+}
+
+footer p {
+    font-size: 10px;
+}
+
+.container {
+    width: 960px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+}
+.content {
+    padding: 10px;
+    width: 630px;
+    float: left;
+}
+.sidebar {
+    float: right;
+    width: 300px;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #44a5b5;
+    
+}
+.sidebar a {
+    color: #44a5b5;
+}
+
+figure {
+    margin: 0px;
+}
+figcaption {
+    font-size: 10px;
+}
+
+.image-right {
+    float: right;
+    margin: 7px;
+}
+.image-left {
+    float: left;
+    margin-right: 7px;
+}
+
+h1,h2,h3, figcaption {
+    font-family: "Chelsea Market", system-ui;
+}
+
+p, li {
+    font-family: "Roboto Slab", serif;
+    font-weight: 360;
+}
