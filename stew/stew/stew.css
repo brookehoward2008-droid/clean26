@@ -42,7 +42,7 @@ body {
 	body {
 		padding: 10px;
 	}
-
+	
 	.stew-content {
 		margin: 20px auto;
 		padding: 25px 20px;
@@ -106,8 +106,7 @@ p {
 	margin: 0px 0px 16px;
 }
 
-ul,
-ol {
+ul, ol {
 	padding-left: 20px;
 	margin: 0px 0px 16px;
 }
@@ -124,8 +123,7 @@ strong {
 	color: var(--primary-color);
 }
 
-i,
-em {
+i, em {
 	font-style: italic;
 	color: #666666;
 }
@@ -379,7 +377,7 @@ button:active {
 		font-size: 12pt;
 		line-height: 1.4;
 	}
-
+	
 	.stew-content {
 		box-shadow: none;
 		border: 1px solid #ccc;
@@ -387,37 +385,33 @@ button:active {
 		margin: 0;
 		padding: 20px;
 	}
-
-	h1,
-	h2,
-	h3,
-	h4 {
+	
+	h1, h2, h3, h4 {
 		color: black;
 		page-break-after: avoid;
 	}
-
+	
 	.image-container {
 		display: none;
 	}
-
+	
 	.image-container img {
 		max-width: 50%;
 	}
-
-	ul,
-	ol {
+	
+	ul, ol {
 		page-break-inside: avoid;
 	}
-
+	
 	li {
 		page-break-inside: avoid;
 		margin-bottom: 8pt;
 	}
-
+	
 	button {
 		display: none;
 	}
-
+	
 	footer {
 		position: fixed;
 		bottom: 0;
