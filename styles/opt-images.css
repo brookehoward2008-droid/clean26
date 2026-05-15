@@ -1,4 +1,5 @@
-body {
+Here's your CSS with the fix applied. I kept everything else exactly as you had it and only updated the aside-related styles.
+ cssbody {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,11 +33,25 @@ section img {
 
 aside {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    padding: 16px;
 }
 
 aside img {
-    width: 30%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Tablet: drop to 3 columns */
+@media (max-width: 900px) {
+    aside {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 footer {
