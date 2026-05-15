@@ -1,14 +1,60 @@
+css@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=DM+Sans:wght@400;500;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Inter Helvetica, Arial, sans-serif;
-    background-color: #000000;
+    font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    background-color: #011055b6;
     color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5em 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-variation-settings: "SOFT" 30, "opsz" 100;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-style: italic;
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 1.2em 0;
+    max-width: 65ch;
 }
 
 a {
     color: #ffffff;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease;
+}
+
+a:hover {
+    border-bottom-color: #ffffff;
 }
 
 header,
@@ -22,7 +68,7 @@ footer {
 section {
     box-sizing: border-box;
     border: 2px solid #ffffff;
-    padding: 7px;
+    padding: 20px;
     margin-bottom: 8px;
 }
 
@@ -56,4 +102,6 @@ aside img {
 footer {
     margin-top: 20px;
     padding: 10px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
