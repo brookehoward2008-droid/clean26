@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #1b3a2a;
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+}
+
+header,
+main,
+aside,
+footer {
+  width: 80%;
+  margin: auto;
+}
+
+section {
+  box-sizing: border-box;
+  border: 2px solid #ffffff;
+  padding: 7px;
+  margin-bottom: 8px;
+}
+
+section img {
+  height: auto;
+}
+
+aside {
+  margin-top: 20px;
+}
+
+aside img {
+  width: 30%;
+  height: auto;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 10px 0;
+}
