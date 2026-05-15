@@ -1,10 +1,9 @@
-Here's your CSS with the fix applied. I kept everything else exactly as you had it and only updated the aside-related styles.
- cssbody {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
-    background-color: #1bf0de;
+    background-color: #3e35b9;
     color: #ffffff;
 }
 
