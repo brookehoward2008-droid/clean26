@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+:root {
+    --blue: #11467D;
+    --green: #4C7335;
+    --dark-green: #074817;
+    --white: #ffffff;
+}
+
+body,
+header,
+main,
+footer,
+section,
+article,
+aside {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* ── Grid containers ── */
+main,
+header,
+nav ul,
+footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* ── Grid column spans ── */
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item7 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.hero-orcas,
+.item8,
+.item9 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+/* ── Header ── */
+header {
+    background-color: var(--white);
+    align-items: center;
+}
+
+header p {
+    color: var(--blue);
+    text-align: center;
+    padding: 12px 8px;
+    margin: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+header a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* ── Hero ── */
+.hero-orcas {
+    background-image: url(../images/sj-034.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--white);
+    text-transform: uppercase;
+    text-shadow: var(--dark-green) 3px 3px 6px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0;
+}
+
+/* ── Navigation ── */
+nav ul {
+    background-color: var(--green);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 100%;
+    padding: 22px 8px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.15s;
+}
+
+nav ul li:hover {
+    background-color: var(--dark-green);
+}
+
+/* ── Main sections (image cells) ── */
+main section {
+    background-image: url(../images/sj-034.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    border: solid white 1px;
+}
+
+.item1 { background-image: url(../images/sj-015.jpg); }
+.item3 { background-image: url(../images/sj-025.jpg); }
+.item5 { background-image: url(../images/sj-068.jpg); }
+.item7 { background-image: url(../images/sj-022.jpg); }
+
+/* ── Text + small-image cells ── */
+.item2,
+.item4,
+.item6 {
+    background-image: none;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    text-align: left;
+}
+
+.island-text {
+    padding: 30px 28px 20px;
+    flex: 1;
+}
+
+.island-text h2 {
+    color: var(--dark-green);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+}
+
+.island-text p {
+    color: var(--blue);
+    line-height: 1.7;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.pic2,
+.pic4,
+.pic6 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.pic2 { background-image: url(../images/sj-031.jpg); }
+.pic4 { background-image: url(../images/sj-039.jpg); }
+.pic6 { background-image: url(../images/sj-011.jpg); }
+
+/* ── Footer ── */
+footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+}
+
+.item8 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    padding: 18px 8px 6px;
+}
+
+.item9 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    padding: 4px 8px 14px;
+}
