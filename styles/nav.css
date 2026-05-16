@@ -1,24 +1,32 @@
-header nav.pure-g {
+.kiwi {
     background-color: rgba(59, 58, 66, 0.973);
-    padding: 0.5em 0;
+    padding: 0.5em;
 }
 
-header nav.pure-g a {
-    display: inline-block;
-    text-align: center;
+.kiwi ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kiwi li {
+    list-style: none;
+    margin: 5px;
+}
+
+.kiwi a {
     text-decoration: none;
     color: rgb(233, 229, 225);
-    padding: 10px 0;
-    border-right: 1px solid rgba(245, 248, 248, 0.3);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
     font-family: "Revalia", sans-serif;
     transition: background 0.3s;
 }
 
-header nav.pure-g a:last-child {
-    border-right: none;
-}
-
-header nav.pure-g a:hover {
+.kiwi a:hover {
     color: rgb(187, 53, 240);
     background-color: rgb(169, 255, 233);
 }
