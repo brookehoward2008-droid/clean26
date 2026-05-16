@@ -1,24 +1,29 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fluid Dimensions</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
-      integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNWH"
-      crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Revalia&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="../styles/nav.css" />
-    <link rel="stylesheet" href="../styles/fluid.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNWH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&amp;family=Revalia&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/fluid.css">
   </head>
   <body>
-    <div id="nav-placeholder"></div>
+    <nav class="kiwi"><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="history-refactor.html">History</a></li>
+        <li><a href="theatre.html">Theater Bill</a></li>
+        <li><a href="theatre-2.html">Village Theatre</a></li>
+        <li><a href="stew-recipe.html">Stew Recipe</a></li>
+        <li><a href="cascade.html">Cascade Mountains</a></li>
+        <li><a href="opt-images.html">Optimized Images</a></li>
+        <li><a href="fluid.html">Fluid Dimensions</a></li>
+        <li><a href="media-queries.html">Media Queries</a></li>
+        <li><a href="orcas.html">Orcas Island</a></li>
+        <li><a href="sanjuan.html">San Juan Island</a></li>
+        <li><a href="lopez.html">Lopez Island</a></li>
+      </ul></nav>
     <script src="../scripts/nav.js"></script>
 
     <main>
@@ -28,9 +33,7 @@
                   </section>
         <section class="pure-u-1-2 hero-image">
           <figure>
-            <img
-              src="../images/bruce-lee.jpg"
-              alt="Bruce Lee" />
+            <img src="../images/bruce-lee.jpg" alt="Bruce Lee">
             <figcaption>
               Notice that the stiffest tree is most easily cracked, while the
               bamboo or willow survives by bending with the wind.
@@ -49,32 +52,24 @@
             given point size. Typographic measurements using this unit are
             frequently expressed in decimal notation (e.g., 0.7 em) or as
             fractions of 100 or 1000 (e.g. 70/100 em or 700/1000 em). The name
-            &ldquo;em&rdquo; was originally a reference to the width of the
-            capital &ldquo;M&rdquo; in the typeface and size being used, which
+            “em” was originally a reference to the width of the
+            capital “M” in the typeface and size being used, which
             was often the same as the point size.
           </p>
-          <a
-            href="http://en.wikipedia.org/wiki/Em_%28typography%29"
-            target="_blank"
-            >Learn more</a
-          >
+          <a href="http://en.wikipedia.org/wiki/Em_%28typography%29" target="_blank">Learn more</a>
         </section>
 
         <section class="pure-u-1-5 rem">
           <h3>REM</h3>
           <p>
             CSS3 introduces a few new units, including the rem unit, which
-            stands for &ldquo;root em&rdquo;. The em unit is relative to the
+            stands for “root em”. The em unit is relative to the
             font-size of the parent, which causes the compounding issue. The rem
-            unit is relative to the root&mdash;or the html&mdash;element. That
+            unit is relative to the root—or the html—element. That
             means that we can define a single font size on the html element and
             define all rem units to be a percentage of that.
           </p>
-          <a
-            href="http://snook.ca/archives/html_and_css/font-size-with-rem"
-            target="_blank"
-            >Learn more</a
-          >
+          <a href="http://snook.ca/archives/html_and_css/font-size-with-rem" target="_blank">Learn more</a>
         </section>
 
         <section class="pure-u-1-5 percent">
@@ -84,17 +79,13 @@
             properties can take percentage values, often to define sizes in
             terms of parent objects. Percentages are formed by a number
             immediately followed by the percentage sign %. Just as is the case
-            with all other units in CSS, there isn&rsquo;t a space between the
-            &lsquo;%&rsquo; and the number. Many length properties use
+            with all other units in CSS, there isn’t a space between the
+            ‘%’ and the number. Many length properties use
             percentages, such as width, margin and padding. Percentages can also
             be seen in font-size, where the size of the text is directly related
             to the size of its parent.
           </p>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"
-            target="_blank"
-            >Learn more</a
-          >
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" target="_blank">Learn more</a>
         </section>
 
         <section class="pure-u-1-5 box">
@@ -105,43 +96,40 @@
             possible to use this property to emulate the behavior of browsers
             that do not correctly support the CSS box model specification.
           </p>
-          <br /><b>Values:</b>
+          <br><b>Values:</b>
           <ul>
             <li>content-box</li>
             <li>padding-box</li>
             <li>border-box</li>
           </ul>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"
-            target="_blank"
-            >Learn more</a
-          >
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank">Learn more</a>
         </section>
 
         <section class="pure-u-1-5 vw">
           <h3>VW</h3>
           <p>
             Often times, there are certain elements within our design that
-            we&rsquo;d like to ensure can fit into the viewport in their
+            we’d like to ensure can fit into the viewport in their
             entirety. With vw/vh, we can size elements to be relative to the
             size of the viewport. The vw/vh units are interesting in that 1 unit
             reflects 1/100th the width of the viewport. To make an element the
-            full width of the viewport, for example, you&rsquo;d set it to
+            full width of the viewport, for example, you’d set it to
             width:100vw.
           </p>
-          <a
-            href="http://snook.ca/archives/html_and_css/vm-vh-units"
-            target="_blank"
-            >Learn more</a
-          >
+          <a href="http://snook.ca/archives/html_and_css/vm-vh-units" target="_blank">Learn more</a>
         </section>
       </article>
     </main>
 
     <footer>
       <p>
-        Brooke Howard &mdash; EVCC Spring 2026 &mdash; Graph 130 &mdash; For
+        Brooke Howard — EVCC Spring 2026 — Graph 130 — For
         Educational Purposes
+      </p>
+    </footer>
+  
+
+</body></html>
       </p>
     </footer>
   </body>
