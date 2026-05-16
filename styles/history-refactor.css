@@ -35,11 +35,22 @@ main {
 main section {
     flex-grow: 1;
     width: 30%;
-    background-color: rgba(22, 104, 151, 0.514);
     margin: 10px;
     border: solid rgb(80, 50, 20) 2px;
     border-radius: 5px;
     padding: 5px;
+}
+
+main section:nth-child(3n+1) {
+    background-color: rgba(0, 160, 190, 0.82);
+}
+
+main section:nth-child(3n+2) {
+    background-color: rgba(175, 0, 140, 0.82);
+}
+
+main section:nth-child(3n) {
+    background-color: rgba(70, 0, 195, 0.82);
 }
 
 main section p {
@@ -55,5 +66,6 @@ main section img {
 }
 
 a {
-    color: rgb(50, 30, 10);
+    color: #fff;
+    font-weight: bold;
 }
