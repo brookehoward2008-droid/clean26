@@ -1,0 +1,6 @@
+interface:
+  display_name: "Clean26"
+  short_description: "Repo-specific patterns and workflows for clean26"
+  default_prompt: "Use the clean26 repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
