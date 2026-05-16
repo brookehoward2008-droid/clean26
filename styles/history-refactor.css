@@ -33,13 +33,12 @@ main {
 }
 
 main section {
-    flex-grow: 0;
-    width: calc(33.33% - 22px);
+    flex-grow: 1;
+    width: 30%;
     margin: 10px;
     border: solid rgb(80, 50, 20) 2px;
     border-radius: 5px;
     padding: 5px;
-    overflow: hidden;
 }
 
 main section:nth-child(3n+1) {
@@ -54,19 +53,24 @@ main section:nth-child(3n) {
     background-color: rgba(70, 0, 195, 0.82);
 }
 
-main section p {
+main section p,
+main section h3,
+main section ul,
+main section li {
     font-family: "Roboto", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 10px;
     color: white;
+}
+
+main section p {
+    margin-bottom: 10px;
 }
 
 main section img {
     display: block;
     width: 100%;
-    height: 140px;
-    object-fit: cover;
+    height: auto;
     margin: 5px auto;
 }
 
