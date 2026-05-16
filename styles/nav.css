@@ -1,9 +1,9 @@
-.site-nav {
+.kiwi {
     background-color: rgba(59, 58, 66, 0.973);
-    padding: 0.5em 1em;
+    padding: 0.5em;
 }
 
-.site-nav ul {
+.kiwi ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -11,23 +11,21 @@
     padding: 0;
 }
 
-.site-nav li {
+.kiwi li {
     list-style: none;
-    margin: 4px;
+    margin: 5px;
 }
 
-.site-nav a {
-    display: inline-block;
+.kiwi a {
     text-decoration: none;
     color: rgb(233, 229, 225);
-    padding: 8px 14px;
-    border: 1px solid rgb(245, 248, 248);
+    padding: 10px;
+    margin: 5px;
     border-radius: 4px;
-    font-family: "Revalia", sans-serif;
     transition: background 0.3s;
 }
 
-.site-nav a:hover {
+.kiwi a:hover {
     color: rgb(187, 53, 240);
     background-color: rgb(169, 255, 233);
 }

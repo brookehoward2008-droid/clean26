@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/sherwood.css">
 </head>
 <body>
+    <div id="nav-placeholder"></div>
 
     <h1>A Brief History of the Internet</h1>
 
@@ -60,5 +61,12 @@
     <p>Released in 2014. We are currently in version HTML5, and many people don't see a sixth one coming any time soon, if ever.</p>
     <img src="../images/11-html5.png" alt="HTML5 logo">
 
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
 </body>
 </html>
