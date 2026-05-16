@@ -119,7 +119,7 @@ nav ul li a:hover {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 440px 360px 440px;
+    grid-template-rows: 440px 400px 440px;
     gap: 2px;
     background: var(--border);
 }
@@ -222,12 +222,14 @@ main {
 .pic2,
 .pic4,
 .pic6 {
-    height: 168px;
+    height: 210px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     flex-shrink: 0;
 }
+
+.pic4 { background-position: top center; }
 
 .pic2 { background-image: url(../images/sj-031.jpg); }
 .pic4 { background-image: url(../images/sj-039.jpg); }
