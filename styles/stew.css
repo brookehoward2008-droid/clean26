@@ -1,34 +1,35 @@
 @charset "UTF-8";
-/* CSS Document */
 
 body {
-	background-color: #232a53a4;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #232a53a4;
+    font-family: "Lora", Georgia, serif;
 }
 
 .stew-content {
-	background-color: #d4ceb0;
-	font-size: 18px;
-	width: 700px;
-	padding: 10px;
-	margin: auto;
+    background-color: #d4ceb0;
+    font-size: 18px;
+    width: 700px;
+    padding: 10px;
+    margin: auto;
 }
 
-h1,
-h2,
-h3 {
-	color: #5e3b04;
+h1, h2, h3 {
+    color: #5e3b04;
+    font-family: "Playfair Display", Georgia, serif;
 }
 
 p {
-	font-size: 8px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+i {
+    color: rgba(92, 38, 7, 0.733);
 }
 
 footer {
-	background-color: #805E28;
-	color: white;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	clear: both;
-	padding-left: 5px;
+    background-color: #805E28;
+    color: white;
+    padding: 20px 20px 20px 5px;
+    clear: both;
 }
