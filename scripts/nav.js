@@ -19,7 +19,6 @@
     { href: 'pages/fluid.html',            label: 'Fluid Dimensions' },
     { href: 'pages/media-queries.html',    label: 'Media Queries' },
     { href: 'pages/orcas.html',            label: 'Orcas Island' },
-    { href: '#',                           label: 'Contact' },
   ];
 
   const items = links
