@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../styles/fluid.css" />
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <header>
       <nav class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
@@ -169,5 +170,12 @@
         Educational Purposes
       </p>
     </footer>
+    <script>
+      fetch('../nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>

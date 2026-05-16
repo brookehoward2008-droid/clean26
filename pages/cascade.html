@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Boldonse&family=Cutive+Mono&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
       </head>
   <body>
+      <div id="nav-placeholder"></div>
       <article class="container">
           <header>
             <h1> The Cascade Mountain Range</h1>  
@@ -97,5 +98,12 @@
       Brooke Howard 2026 Everett Community College Graph 130 web coding project.</p>
       </footer>
   </article><!--closes container-->
+    <script>
+      fetch('../nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
   </html>

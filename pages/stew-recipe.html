@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../styles/stew.css" />
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <div class="stew-content">
       <h1 style="color: rgb(59, 97, 91); font-size: 30px">
         How To Make the Best Beef Stew from Scratch
@@ -229,5 +230,12 @@
         <p>Brooke Howard - EVCC 2026 - Educational Purposes</p>
       </footer>
     </div>
+    <script>
+      fetch('../nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <title>Graph 130 - Brooke Howard</title>
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <h1>Brooke Howard</h1>
     <h2>EVCC Graph130</h2>
 
@@ -23,5 +24,12 @@
     <h3>What is your favorite color?</h3>
     <p style="color: #39705F;">I like the color of turquoise grey.</p>
 
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>

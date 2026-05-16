@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="opt-images_files/opt-images.css" />
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <header>
       <h1>Optimizing Images</h1>
       <p><a href="../index.html">return to home</a></p>
@@ -123,5 +124,12 @@
     <footer>
       <p>Brooke Howard • Graph 130 • Spring 2026 • For Educational Purposes</p>
     </footer>
+    <script>
+      fetch('../nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>
