@@ -97,7 +97,7 @@
 
   .image-left {
       float: left;
-      margin-left: 2px;
+      margin-left: 0;
   }  
   h1,h2,h3{
   font-family: "Boldonse", system-ui;
