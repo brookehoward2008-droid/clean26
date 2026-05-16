@@ -11,9 +11,17 @@ footer {
 
 body {
     font-size: 16px;
+    font-family: 'Teko', sans-serif;
     background-color: black;
     color: white;
     padding: 100px;
+}
+
+h1, h2, h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 nav ul {
