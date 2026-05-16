@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fluid Dimensions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNWH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/fluid.css">
+</head>
+<body>
+
+    <header>
+        <nav class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="../index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="history.html" class="pure-menu-link">History</a></li>
+                <li class="pure-menu-item"><a href="theatre.html" class="pure-menu-link">Theatre</a></li>
+                <li class="pure-menu-item"><a href="stew-recipe.html" class="pure-menu-link">Stew Recipe</a></li>
+                <li class="pure-menu-item"><a href="opt-images.html" class="pure-menu-link">Optimizing Images</a></li>
+                <li class="pure-menu-item"><a href="fluid.html" class="pure-menu-link">Fluid Dimensions</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <article>
+            <section class="hero">
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <h1>Web Design</h1>
+                        <p>Notice that the stiffest tree is most easily cracked, while the bamboo or willow survives by bending with the wind.</p>
+                    </div>
+                    <img src="../images/bruce-lee.jpg" alt="Bruce Lee" class="pure-u-1-2">
+                </div>
+            </section>
+        </article>
+
+        <article class="pure-g">
+
+            <section class="pure-u-1-5 em">
+                <h3>EM</h3>
+                <p>An em is a unit in the field of typography, equal to the currently specified point size. For example, one em in a 16-point typeface is 16 points. Therefore, this unit is the same for all typefaces at a given point size. Typographic measurements using this unit are frequently expressed in decimal notation (e.g., 0.7 em) or as fractions of 100 or 1000 (e.g. 70/100 em or 700/1000 em). The name "em" was originally a reference to the width of the capital "M" in the typeface and size being used, which was often the same as the point size.</p>
+                <a href="http://en.wikipedia.org/wiki/Em_%28typography%29" target="_blank">Learn more</a>
+            </section>
+
+            <section class="pure-u-1-5 rem">
+                <h3>REM</h3>
+                <p>CSS3 introduces a few new units, including the rem unit, which stands for "root em". The em unit is relative to the font-size of the parent, which causes the compounding issue. The rem unit is relative to the root—or the html—element. That means that we can define a single font size on the html element and define all rem units to be a percentage of that.</p>
+                <a href="http://snook.ca/archives/html_and_css/font-size-with-rem" target="_blank">Learn more</a>
+            </section>
+
+            <section class="pure-u-1-5 percent">
+                <h3>Percentage</h3>
+                <p>The percentage CSS data types represent a percentage value. Many CSS properties can take percentage values, often to define sizes in terms of parent objects. Percentages are formed by a number immediately followed by the percentage sign %. Many length properties use percentages, such as width, margin and padding. Percentages can also be seen in font-size, where the size of the text is directly related to the size of its parent.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" target="_blank">Learn more</a>
+            </section>
+
+            <section class="pure-u-1-5 box">
+                <h3>Box Sizing</h3>
+                <p>The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.</p>
+                <br><b>Values:</b>
+                <ul>
+                    <li>content-box</li>
+                    <li>padding-box</li>
+                    <li>border-box</li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank">Learn more</a>
+            </section>
+
+            <section class="pure-u-1-5 vw">
+                <h3>VW</h3>
+                <p>Often times, there are certain elements within our design that we'd like to ensure can fit into the viewport in their entirety. With vw/vh, we can size elements to be relative to the size of the viewport. The vw/vh units are interesting in that 1 unit reflects 1/100th the width of the viewport. To make an element the full width of the viewport, for example, you'd set it to width:100vw.</p>
+                <a href="http://snook.ca/archives/html_and_css/vm-vh-units" target="_blank">Learn more</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+
+</body>
+</html>
