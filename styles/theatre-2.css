@@ -52,7 +52,7 @@ main ul {
     align-self: flex-end;
 }
 
-li {
+main li {
     color: white;
     margin: 6px 0;
 }
