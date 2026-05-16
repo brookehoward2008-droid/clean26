@@ -77,13 +77,12 @@
       width:370px;
       padding-right: 5px;
       align-content: flex-end;
-      background-color:#438A68
-      color:#44A5BB;
+      background-color: #438A68;
+      color: #44A5BB;
       }
   .sidebar a{
       color: #867777;
       font-size: 18px;
-      font width: auto
       }
   .figure {
       margin:0px;
@@ -107,7 +106,6 @@
       font-size: 28px
 }
 
-           }
 p{
   font-family: "Lora", serif;
   font-weight: 400;
