@@ -32,18 +32,18 @@ section {
 
 /* Individual classes for section background images */
 .em {
-    background-image: url(../images/water01.jpg);
+    background-image: url(../images/fluid02.jpg);
     border: 1em solid darkorange;
     font-size: 1.2em;
 }
 
 .rem {
-    background-image: url(../images/water02.jpg);
+    background-image: url(../images/fluid03.jpg);
     border: 0.5rem dotted darkred;
 }
 
 .percent {
-    background-image: url(../images/water03.jpg);
+    background-image: url(../images/fluid04.jpg);
 }
 
 .percent p {
@@ -51,19 +51,19 @@ section {
 }
 
 .box {
-    background-image: url(../images/water04.jpg);
+    background-image: url(../images/fluid05.jpg);
     box-sizing: border-box;
     border: 3px solid dodgerblue;
 }
 
 .vw {
-    background-image: url(../images/water05.jpg);
+    background-image: url(../images/fluid06.jpg);
     border: 1vw dashed white;
     font-size: 1vw;
 }
 
 .hero {
-    background-image: url(../images/water01.jpg);
+    background-image: url(../images/fluid01.jpg);
     border-top-right-radius: 2em;
     padding: 5px;
     margin-bottom: 10px;
