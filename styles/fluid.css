@@ -10,13 +10,13 @@ footer {
 }
 
 body {
-    font-size: 1.8em;
+    font-size: 16px;
     font-family: "Revalia", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: rgba(59, 58, 66, 0.973);
     color: rgb(233, 229, 225);
-    padding: 100px;
+    padding: 20px;
 }
 
 h1,
@@ -24,7 +24,7 @@ h2,
 h3 {
     font-family: "Bungee Spice", sans-serif;
     font-weight: 400;
-    font-size: 3.0em;
+    font-size: 2.5em;
 }
 
 section {
@@ -75,7 +75,6 @@ section {
 
 .hero p {
     width: 50%;
-    font-size: 1.0em;
 }
 
 .hero img {
