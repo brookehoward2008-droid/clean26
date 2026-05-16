@@ -4,26 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>San Juan Island</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="../styles/nav.css" rel="stylesheet" type="text/css" />
-    <link href="../styles/sanjuan.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/islands.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+
+  <body class="page-sanjuan">
     <div id="nav-placeholder"></div>
     <script src="../scripts/nav.js"></script>
 
     <header>
       <div class="header-bar">
-        <a href="../index.html">Home</a>
-        <span class="logo">San Juan Islands</span>
-        <span>Explore</span>
+        <a href="../index.html">Go to Home</a>
+        <span class="logo">
+          <img src="../images/SJIVB-1.png" alt="San Juan Islands Visitors Bureau" />
+        </span>
+        <span class="explore">Explore</span>
       </div>
       <div class="hero-sanjuan">
+        <button class="hero-arrow left">&#8249;</button>
         <div class="hero-text">
           <h1>San Juan Island</h1>
           <p class="hero-sub">Washington State</p>
         </div>
+        <button class="hero-arrow right">&#8250;</button>
       </div>
     </header>
+
+    <div class="season-row">
+      <p class="season-label">Summer</p>
+      <div class="season-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="article-preview-row">
+      <article class="preview-item">
+        <span class="preview-category">Whale Watching</span>
+        <h3>Lime Kiln Point State Park</h3>
+        <time class="preview-date">05/15/26</time>
+      </article>
+      <article class="preview-item">
+        <span class="preview-category">Cycling</span>
+        <h3>West Side Road Scenic Byway</h3>
+        <time class="preview-date">05/10/26</time>
+      </article>
+      <article class="preview-item">
+        <span class="preview-category">Dining</span>
+        <h3>Friday Harbor Food &amp; Crab</h3>
+        <time class="preview-date">05/07/26</time>
+      </article>
+      <article class="preview-item">
+        <span class="preview-category">Lodging</span>
+        <h3>Harbor Views &amp; Lavender Inns</h3>
+        <time class="preview-date">05/01/26</time>
+      </article>
+    </div>
 
     <nav class="island-nav">
       <ul>
@@ -34,18 +74,28 @@
     </nav>
 
     <main>
-      <section class="item1"></section>
+      <section class="item1">
+        <div class="play-overlay">
+          <div class="play-btn">&#x276F;</div>
+          <p class="play-label">Explore San Juan</p>
+        </div>
+      </section>
 
       <section class="item2">
         <div class="island-text">
           <span class="label">Activities</span>
+          <span class="label-line"></span>
           <h2>Sea &amp; Shore</h2>
           <p>
             Whale watching at Lime Kiln Point, kayaking past rocky headlands,
-            and the lively waterfront of Friday Harbor make San Juan Island the
+            and the lively waterfront of Friday Harbor make this island the
             heart of the archipelago.
           </p>
-          <a href="#" class="read-more">Read More</a>
+          <div class="item-links">
+            <a href="#">Read more</a>
+            <a href="#">Go to tag</a>
+            <a href="#">Share</a>
+          </div>
         </div>
         <div class="pic2"></div>
       </section>
@@ -55,13 +105,18 @@
       <section class="item4">
         <div class="island-text">
           <span class="label">Lodging</span>
+          <span class="label-line"></span>
           <h2>Harbor Views</h2>
           <p>
             Friday Harbor House perches above the marina, while scattered
-            B&amp;Bs and waterfront inns offer a quieter stay among the island's
-            lavender fields and forests.
+            B&amp;Bs and waterfront inns offer a quieter stay among lavender
+            fields and forests.
           </p>
-          <a href="#" class="read-more">Read More</a>
+          <div class="item-links">
+            <a href="#">Read more</a>
+            <a href="#">Go to tag</a>
+            <a href="#">Share</a>
+          </div>
         </div>
         <div class="pic4"></div>
       </section>
@@ -71,13 +126,18 @@
       <section class="item6">
         <div class="island-text">
           <span class="label">Dining</span>
+          <span class="label-line"></span>
           <h2>Fresh &amp; Local</h2>
           <p>
             Dungeness crab, local oysters, and island-grown lavender flavors
-            define the Friday Harbor restaurant scene — all within steps of the
+            define the Friday Harbor restaurant scene — all steps from the
             ferry landing.
           </p>
-          <a href="#" class="read-more">Read More</a>
+          <div class="item-links">
+            <a href="#">Read more</a>
+            <a href="#">Go to tag</a>
+            <a href="#">Share</a>
+          </div>
         </div>
         <div class="pic6"></div>
       </section>
