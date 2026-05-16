@@ -7,6 +7,7 @@
     <link href="../styles/theatre-2.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <header>
       <a href="../index.html">
         <img
@@ -14,9 +15,6 @@
           width="200"
           alt="Village Theatre logo" />
       </a>
-      <nav>
-        <p>Link1 Link2 Link3</p>
-      </nav>
     </header>
 
     <main>
@@ -60,5 +58,12 @@
         >
       </p>
     </footer>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>

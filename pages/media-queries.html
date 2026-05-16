@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="../styles/mq-1201-1500.css" />
   </head>
   <body>
+    <div id="nav-placeholder"></div>
     <header>
       <h1>Media Queries</h1>
       <p><a href="../index.html">return to home</a></p>
@@ -110,5 +111,12 @@
         Purposes
       </p>
     </footer>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
   </body>
 </html>

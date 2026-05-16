@@ -6,6 +6,7 @@
     <title>Sherwood: The Adventures of Robin Hood — Everett KIDSTAGE</title>
 </head>
 <body>
+    <div id="nav-placeholder"></div>
     <h1>Ken Ludwig's SHERWOOD: THE ADVENTURES OF ROBIN HOOD</h1>
     <p>Originally developed and produced at The Old Globe, Barry Edelstein, Artistic Director, Timothy J.</p>
     <h2>An Everett KIDSTAGE TeenSelect Production</h2>
@@ -20,5 +21,12 @@
     </ul>
 
     <p><em>Ken Ludwig's Sherwood: The Adventures of Robin Hood</em> is presented by arrangement with Concord Theatricals on behalf of Samuel French, Inc. <a href="https://www.concordtheatricals.com">www.concordtheatricals.com</a></p>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
 </body>
 </html>
