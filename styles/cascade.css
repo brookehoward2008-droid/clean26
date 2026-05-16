@@ -47,32 +47,6 @@
         font-family: "National Park", sans-serif;
     }
 
-    nav ul {
-        text-align: center;
-        list-style: none;
-        background-color: #375978;
-        margin-bottom: 15px;
-        padding: 0;
-    }
-
-    nav li {
-        display: inline-block;
-    }
-
-    nav a {
-        padding: 9px;
-        display: block;
-        width: 100px;
-        text-decoration: none;
-        background-color: #61758D;
-        color: #84A6C0;
-        font-family: "National Park", sans-serif;
-    }
-
-    nav a:hover {
-        background-color: #438A68;
-    }
-
     .container {
         width: 960px;
         background-color: rgba(255, 255, 255, 0.7);

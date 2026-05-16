@@ -27,22 +27,6 @@ h3 {
     font-size: 3.0em;
 }
 
-nav a {
-    display: inline-block;
-    text-align: left;
-    color: rgba(3, 58, 109, 0.027);
-    text-decoration: none;
-    border: 1px solid rgb(245, 248, 248);
-    padding: 9px 14px;
-    text-shadow: #eff8be 1px 1px 2px;
-    font-size: 1.2em;
-}
-
-nav a:hover {
-    color: rgb(187, 53, 240);
-    background-color: rgb(169, 255, 233);
-}
-
 section {
     background-position: center;
     background-size: cover;
