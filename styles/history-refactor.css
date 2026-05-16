@@ -16,7 +16,7 @@ body {
     background-image: url("../images/history-hero-bg.jpg");
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%);
+    filter: invert(0.2) saturate(4) hue-rotate(180deg) contrast(1.4);
 }
 
 h1 {
