@@ -229,10 +229,8 @@ main {
     flex-shrink: 0;
 }
 
-.pic4 { background-position: top center; }
-
 .pic2 { background-image: url(../images/sj-031.jpg); }
-.pic4 { background-image: url(../images/sj-039.jpg); }
+.pic4 { background-image: url(../images/sj-044.jpg); }
 .pic6 { background-image: url(../images/sj-011.jpg); }
 
 /* ── Footer ── */
