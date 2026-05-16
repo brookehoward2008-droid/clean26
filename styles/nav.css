@@ -1,33 +1,24 @@
-.site-nav {
+header nav.pure-g {
     background-color: rgba(59, 58, 66, 0.973);
-    padding: 0.5em 1em;
+    padding: 0.5em 0;
 }
 
-.site-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.site-nav li {
-    list-style: none;
-    margin: 4px;
-}
-
-.site-nav a {
+header nav.pure-g a {
     display: inline-block;
+    text-align: center;
     text-decoration: none;
     color: rgb(233, 229, 225);
-    padding: 8px 14px;
-    border: 1px solid rgb(245, 248, 248);
-    border-radius: 4px;
+    padding: 10px 0;
+    border-right: 1px solid rgba(245, 248, 248, 0.3);
     font-family: "Revalia", sans-serif;
     transition: background 0.3s;
 }
 
-.site-nav a:hover {
+header nav.pure-g a:last-child {
+    border-right: none;
+}
+
+header nav.pure-g a:hover {
     color: rgb(187, 53, 240);
     background-color: rgb(169, 255, 233);
 }
