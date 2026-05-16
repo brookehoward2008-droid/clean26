@@ -89,13 +89,13 @@ h1 {
     font-weight: 400;
 }
 
-/* ── Navigation ── */
-nav {
+/* ── Island sub-nav ── */
+nav.island-nav {
     background: var(--white);
     border-bottom: 1px solid var(--border);
 }
 
-nav ul {
+nav.island-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
@@ -103,7 +103,7 @@ nav ul {
     margin: 0;
 }
 
-nav ul li a {
+nav.island-nav ul li a {
     display: block;
     padding: 16px 36px;
     color: var(--mid-gray);
@@ -115,7 +115,8 @@ nav ul li a {
     transition: color 0.15s;
 }
 
-nav ul li a:hover {
+nav.island-nav ul li a:hover,
+nav.island-nav ul li a.active {
     color: var(--charcoal);
 }
 
@@ -123,7 +124,7 @@ nav ul li a:hover {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 440px 360px 440px;
+    grid-template-rows: 440px 400px 440px;
     gap: 2px;
     background: var(--border);
 }
@@ -161,7 +162,7 @@ main {
     background-image: url(../images/sj-022.jpg);
 }
 
-/* subtle dark overlay on image cells */
+/* subtle overlay on image cells */
 .item1::after,
 .item3::after,
 .item5::after,
@@ -233,7 +234,7 @@ main {
 .pic2,
 .pic4,
 .pic6 {
-    height: 168px;
+    height: 210px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -274,4 +275,27 @@ footer {
     letter-spacing: 0.22em;
     font-size: 0.6rem;
     font-weight: 300;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item1,
+    .item7 {
+        grid-column: 1;
+        height: 260px;
+    }
+
+    .item3,
+    .item5 {
+        height: 240px;
+    }
+
+    .item6 {
+        grid-column: 1;
+    }
 }
