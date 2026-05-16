@@ -8,31 +8,24 @@ body {
     font-size: 16px;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 100px;
 }
 
-/* Hero article */
-article.hero {
-    margin-bottom: 10px;
-    border-top-right-radius: 2em;
-    overflow: hidden;
+nav a {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 5px;
 }
 
-article.hero section {
-    background-image: url(../images/fluid01.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px;
+nav a:hover {
+    color: black;
+    background-color: white;
 }
 
-article.hero img {
-    width: 100%;
-    display: block;
-}
-
-/* Five-column content sections */
-article.stormy section {
+section {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,15 +45,15 @@ article.stormy section {
     border: 0.5rem dotted darkred;
 }
 
-.percentage {
+.percent {
     background-image: url(../images/fluid04.jpg);
 }
 
-.percentage p {
+.percent p {
     width: 75%;
 }
 
-.box-sizing {
+.box {
     background-image: url(../images/fluid05.jpg);
     box-sizing: border-box;
     border: 3px solid dodgerblue;
@@ -70,4 +63,18 @@ article.stormy section {
     background-image: url(../images/fluid06.jpg);
     border: 1vw dashed white;
     font-size: 1vw;
+}
+
+.hero {
+    background-image: url(../images/fluid01.jpg);
+    border-top-right-radius: 2em;
+    padding: 5px;
+}
+
+.hero p {
+    width: 50%;
+}
+
+.hero img {
+    width: 100%;
 }
