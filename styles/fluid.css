@@ -59,7 +59,7 @@ section {
 
 .rem {
     background-image: url(../images/fluid03.jpg);
-    border: 0.5rem dotted darkred;
+    border: 0.5rem dotted rgb(241, 207, 14);
 }
 
 .percent {
