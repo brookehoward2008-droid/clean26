@@ -21,10 +21,22 @@ nav {
     color: white;
 }
 
-main {
+main, footer {
     color: white;
-    padding: 40px;
-    min-height: 60vh;
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+article {
+    width: 60%;
+    padding: 10px;
+}
+
+article p {
+    border-bottom: solid 1px white;
+    padding-bottom: 10px;
 }
 
 main h1,
@@ -39,11 +51,10 @@ main p {
     line-height: 1.6;
 }
 
-ul {
-    background-color: black;
-    color: white;
-    padding: 20px 40px;
-    list-style-position: inside;
+main ul {
+    width: 40%;
+    padding: 10px;
+    align-self: flex-end;
 }
 
 li {
