@@ -245,6 +245,13 @@ main {
 .pic4 { background-image: url(../images/sj-047.jpg); }
 .pic6 { background-image: url(../images/sj-011.jpg); }
 
+/* ── Color enhancement on all photos ── */
+.hero-orcas,
+.item1, .item3, .item5, .item7,
+.pic2, .pic4, .pic6 {
+    filter: saturate(1.28) contrast(1.08);
+}
+
 /* ── Footer ── */
 footer {
     background: var(--charcoal);

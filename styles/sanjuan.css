@@ -238,8 +238,18 @@ main {
 }
 
 .pic2 { background-image: url(../images/sj-006.jpg); }
-.pic4 { background-image: url(../images/sj-029.jpg); }
+.pic4 {
+    background-image: url(../images/sj-029.jpg);
+    background-position: center 22%;
+}
 .pic6 { background-image: url(../images/sj-043.jpg); }
+
+/* ── Color enhancement on all photos ── */
+.hero-sanjuan,
+.item1, .item3, .item5, .item7,
+.pic2, .pic4, .pic6 {
+    filter: saturate(1.28) contrast(1.08);
+}
 
 /* ── Footer ── */
 footer {
