@@ -31,27 +31,6 @@
           padding-bottom: 25px;
           color: #31654C
   }
-  nav ul{
-          text-align: center;
-          list-style: none;
-          background-color:#375978;
-          margin-bottom: 15px;
-  }
-  nav li{
-          display: inline-block;
-  }
-  nav a{
-          padding: 9px;
-          display: block;
-          width:100px;
-          align-items: stretch;
-          text-decoration: none;
-          background-color:#61758D;
-          color:#84A6C0;   
-  }
-  nav a:hover{
-          background-color: #438A68;
-  }  
   footer{
           color: white;
           padding:9px;
