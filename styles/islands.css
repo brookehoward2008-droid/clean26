@@ -47,7 +47,7 @@ main section {
     grid-column-start: 2;
     grid-column-end: 4;
 }
-.item9, .hero-orcas {
+.item9, .hero-orcas, .hero-sanjuan, .hero-lopez {
     grid-column-start: 1;
     grid-column-end: 4;
 }
@@ -65,12 +65,18 @@ header a, header p, nav a, label {
     color:var(--blue);
     text-decoration: none;
 }
-.hero-orcas, main section {
+.hero-orcas, .hero-sanjuan, .hero-lopez, main section {
     background-image: url(../images/sj-034.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 200px;
+}
+.hero-sanjuan {
+    background-image: url(../images/sj-003.jpg);
+}
+.hero-lopez {
+    background-image: url(../images/sj-051.jpg);
 }
 h1 {
     color: var(--white);
