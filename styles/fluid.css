@@ -11,8 +11,9 @@ footer {
 
 body {
     font-size: 16px;
+    font-family: 'Teko', sans-serif;
     background-color: black;
-    color: white;
+    color: rgb(91, 92, 90);
     padding: 100px;
 }
 
@@ -32,8 +33,17 @@ nav li {
 nav a {
     display: list-item;
     text-align: center;
-    color: white;
+    color: rgba(3, 58, 109, 0.027);
     text-decoration: none;
+    border: 1px solid rgb(6, 38, 44);
+    padding: 9px 14px;
+    text-shadow: #eff8be 1px 1px 2px;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: rgb(187, 53, 240);
+    background-color: rgb(169, 255, 233);
     border: 1px solid white;
     padding: 9px 14px;
 }
@@ -53,12 +63,16 @@ section {
 
 .em {
     background-image: url(../images/fluid02.jpg);
+    border: 1em solid #dcf743;
+    font-size: 1.5em;
     border: 1em solid rgb(182, 45, 152);
     font-size: 1.2em;
 }
 
 .rem {
     background-image: url(../images/fluid03.jpg);
+    border: 0.5rem dotted rgb(81, 243, 16);
+    font-size: large;
     border: 0.5rem dotted rgb(241, 207, 14);
 }
 
@@ -68,18 +82,21 @@ section {
 
 .percent p {
     width: 75%;
+    font-size: 1.5em;
 }
 
 .box {
     background-image: url(../images/fluid05.jpg);
     box-sizing: border-box;
+    border: 3px solid rgb(222, 61, 236);
+    font-size: 1.5em;
     border: 3px solid rgb(11, 128, 89);
 }
 
 .vw {
     background-image: url(../images/fluid06.jpg);
-    border: 1vw dashed white;
-    font-size: 1vw;
+    border: 1vw dashed rgb(252, 8, 8);
+    font-size: 1.5em;
 }
 
 .hero {
@@ -93,8 +110,5 @@ section {
 }
 
 .hero img {
-
-
     width: 100%;
-    opacity: 0.90;
 }
