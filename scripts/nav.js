@@ -6,10 +6,9 @@
 
   // Detect depth so paths resolve correctly from any subfolder.
   const inPages = window.location.pathname.includes('/pages/');
-  const base = inPages ? '../' : '';
 
   const links = [
-    { href: 'index.html',                 label: 'Home' },
+    { href: 'index.html',                  label: 'Home' },
     { href: 'pages/history-refactor.html', label: 'History' },
     { href: 'pages/theatre.html',          label: 'Theater Bill' },
     { href: 'pages/theatre-2.html',        label: 'Village Theatre' },
@@ -23,8 +22,13 @@
 
   const items = links
     .map(function (l) {
-      // Strip "pages/" prefix when building href from inside /pages/
-      const href = inPages ? base + l.href.replace(/^pages\//, '') : base + l.href;
+      let href;
+      if (inPages) {
+        // Sibling pages drop the "pages/" prefix; root files get "../"
+        href = l.href.startsWith('pages/') ? l.href.slice(6) : '../' + l.href;
+      } else {
+        href = l.href;
+      }
       return '<li><a href="' + href + '">' + l.label + '</a></li>';
     })
     .join('\n        ');
