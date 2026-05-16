@@ -109,12 +109,12 @@
 
            }
 p{
-  font-family: "National Park Medium";
-  font-weight: 100;
+  font-family: "Lora", serif;
+  font-weight: 400;
   font-style: normal;
-     text-align-last:left;
-    font-size: 18px;
-    color: #09325E
+  text-align: left;
+  font-size: 18px;
+  color: #09325E;
 }
 
     
