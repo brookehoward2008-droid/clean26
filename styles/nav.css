@@ -1,6 +1,8 @@
 .kiwi {
     background-color: rgba(59, 58, 66, 0.973);
     padding: 0.5em;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
 }
 
 .kiwi ul {
