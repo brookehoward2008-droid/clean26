@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600;700&display=swap');
 
 :root {
-    --cream: #f0f0eb;
+    --cream: #f2f0e8;
     --charcoal: #1c1c1c;
     --mid-gray: #6e6e6e;
-    --border: #dddcd6;
+    --border: #dad7cb;
     --white: #ffffff;
+    --accent: #5a6b3d;
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after {
@@ -40,7 +42,7 @@ body {
     text-decoration: none;
 }
 
-.logo { font-weight: 700; }
+.logo { font-weight: 700; color: var(--accent); }
 
 /* ── Hero ── */
 .hero-lopez {
@@ -88,7 +90,7 @@ h1 {
 /* ── Island sub-nav ── */
 nav.island-nav {
     background: var(--white);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 3px solid var(--accent);
 }
 
 nav.island-nav ul {
@@ -113,7 +115,7 @@ nav.island-nav ul li a {
 
 nav.island-nav ul li a:hover,
 nav.island-nav ul li a.active {
-    color: var(--charcoal);
+    color: var(--accent);
 }
 
 /* ── Main grid ── */
@@ -121,8 +123,8 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 440px 400px 440px;
-    gap: 2px;
-    background: var(--border);
+    gap: 3px;
+    background: var(--accent);
 }
 
 /* image cells */
@@ -167,7 +169,8 @@ main {
 .item2,
 .item4,
 .item6 {
-    background: var(--cream);
+    background-color: var(--cream);
+    background-image: var(--noise);
     display: flex;
     flex-direction: column;
 }
@@ -177,6 +180,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    border-left: 3px solid var(--accent);
 }
 
 .label {
@@ -184,7 +188,7 @@ main {
     font-size: 0.62rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--mid-gray);
+    color: var(--accent);
     margin-bottom: 14px;
     font-weight: 600;
 }
@@ -213,12 +217,15 @@ main {
     font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--charcoal);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid currentColor;
+    border-bottom: 1px solid var(--accent);
     padding-bottom: 2px;
+    transition: opacity 0.15s;
 }
+
+.read-more:hover { opacity: 0.65; }
 
 .pic2,
 .pic4,
@@ -237,6 +244,7 @@ main {
 /* ── Footer ── */
 footer {
     background: var(--charcoal);
+    border-top: 4px solid var(--accent);
     text-align: center;
     padding: 46px 20px;
 }
