@@ -10,12 +10,12 @@ footer {
 }
 
 body {
-    font-size: 14px;
+    font-size: 1.8em;
     font-family: "Revalia", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: rgba(59, 58, 66, 0.973);
-    color: rgb(235, 135, 4);
+    color: rgb(233, 229, 225);
     padding: 100px;
 }
 
@@ -24,7 +24,7 @@ h2,
 h3 {
     font-family: "Bungee Spice", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-size: 3.0em;
 }
 
 nav a {
@@ -54,13 +54,13 @@ section {
 .em {
     background-image: url(../images/fluid02.jpg);
     border: 1em solid #f00366;
-    font-size: 1.5em;
+
 }
 
 .rem {
     background-image: url(../images/fluid03.jpg);
     border: 0.5rem dotted rgb(81, 243, 16);
-    font-size: large;
+
 }
 
 .percent {
@@ -69,20 +69,18 @@ section {
 
 .percent p {
     width: 75%;
-    font-size: 1.5em;
+
 }
 
 .box {
     background-image: url(../images/fluid05.jpg);
     box-sizing: border-box;
     border: 3px solid rgb(222, 61, 236);
-    font-size: 1.5em;
 }
 
 .vw {
     background-image: url(../images/fluid06.jpg);
     border: 1vw dashed rgb(252, 8, 8);
-    font-size: 1.5em;
 }
 
 .hero {
@@ -93,6 +91,7 @@ section {
 
 .hero p {
     width: 50%;
+    font-size: 2.0em;
 }
 
 .hero img {
