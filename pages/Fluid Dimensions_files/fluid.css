@@ -1,63 +1,55 @@
+body,
+main,
+article,
+section,
+header,
+footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-size: 16px;
+    font-family: 'Teko', sans-serif;
     background-color: black;
-    color: white;
+    color: rgb(91, 92, 90);
+    padding: 100px;
 }
 
-section a {
-    color: white;
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #375978;
 }
 
-.kaos section {
-    padding: 5px;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+nav li {
+    display: list-item;
 }
 
-.em {
-    background-image: url(../images/fluid01.jpg);
+nav a {
+    display: list-item;
+    text-align: center;
+    color: rgba(3, 58, 109, 0.027);
+    text-decoration: none;
+    border: 1px solid rgb(6, 38, 44);
+    padding: 9px 14px;
+    text-shadow: #6c0b80 1px 1px 2px;
     font-size: 1.5em;
-    line-height: 1.5em;
-    border: solid white .5em;
-}
-
-.rem {
-    background-image: url(../images/fluid02.jpg);
-    font-size: 1.5rem;
-    border: dotted orangered;
-}
-
-.percent {
-    background-image: url(../images/fluid03.jpg);
-}
-
-.percent p {
-    width: 75%;
-}
-
-.box {
-    background-image: url(../images/fluid04.jpg);
-}
-
-.vw {
-    background-image: url(../images/fluid05.jpg);
-    border: dashed blue 1vw;
-}
-
-.hero p {
-    width: 20vw;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
 }
 
 nav a:hover {
-    color: black;
+    color: rgb(218, 203, 1);
+    background-color: rgb(169, 255, 233);
+    border: 1px solid rgb(102, 102, 102);
+    padding: 9px 14px;
+}
+
+nav a:hover {
+    color: rgba(180, 131, 131, 0.473);
     background-color: white;
 }
 
@@ -71,13 +63,17 @@ section {
 
 .em {
     background-image: url(../images/fluid02.jpg);
-    border: 1em solid rgb(241, 22, 124);
+    border: 1em solid #dcf743;
+    font-size: 1.5em;
+    border: 1em solid rgb(182, 45, 152);
     font-size: 1.2em;
 }
 
 .rem {
     background-image: url(../images/fluid03.jpg);
-    border: 0.5rem dotted darkred;
+    border: 0.5rem dotted rgb(81, 243, 16);
+    font-size: large;
+    border: 0.5rem dotted rgb(241, 207, 14);
 }
 
 .percent {
@@ -86,18 +82,21 @@ section {
 
 .percent p {
     width: 75%;
+    font-size: 1.5em;
 }
 
 .box {
     background-image: url(../images/fluid05.jpg);
     box-sizing: border-box;
-    border: 3px solid dodgerblue;
+    border: 3px solid rgb(222, 61, 236);
+    font-size: 1.5em;
+    border: 3px solid rgb(11, 128, 89);
 }
 
 .vw {
     background-image: url(../images/fluid06.jpg);
-    border: 1vw dashed white;
-    font-size: 1vw;
+    border: 1vw dashed rgb(252, 8, 8);
+    font-size: 1.5em;
 }
 
 .hero {
