@@ -86,11 +86,12 @@
           <h3>REM</h3>
           <p>
             CSS3 introduces a few new units, including the rem unit, which
-            stands for "root em". The em unit is relative to the font-size of
-            the parent, which causes the compounding issue. The rem unit is
-            relative to the root—or the html—element. That means that we can
-            define a single font size on the html element and define all rem
-            units to be a percentage of that.
+            stands for "root em". If this hasn't put you to sleep yet, then
+            let's look at how rem works. The em unit is relative to the
+            font-size of the parent, which causes the compounding issue. The
+            rem unit is relative to the root—or the html—element. That means
+            that we can define a single font size on the html element and
+            define all rem units to be a percentage of that.
           </p>
           <a
             href="http://snook.ca/archives/html_and_css/font-size-with-rem"
@@ -128,9 +129,20 @@
           </p>
           <br /><b>Values:</b>
           <ul>
-            <li>content-box</li>
-            <li>padding-box</li>
-            <li>border-box</li>
+            <li>
+              <b>content-box:</b> This is the default style as specified by the
+              CSS standard. The width and height properties are measured
+              including only the content, but not the padding, border or margin.
+            </li>
+            <li>
+              <b>padding-box:</b> The width and height properties include the
+              padding size, and do not include the border or margin.
+            </li>
+            <li>
+              <b>border-box:</b> The width and height properties include the
+              padding and border, but not the margin. This is the box model used
+              by Internet Explorer when the document is in Quirks mode.
+            </li>
           </ul>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"
@@ -143,8 +155,14 @@
           <h3>VW</h3>
           <p>
             Often times, there are certain elements within our design that we'd
-            like to ensure can fit into the viewport in their entirety. With
-            vw/vh, we can size elements to be relative to the size of the
+            like to ensure can fit into the viewport in their entirety. Normally,
+            we'd have to use JavaScript to do this. Check the size of the
+            viewport and then resize any elements on the page accordingly. If the
+            user resizes the browser then the script runs again to resize the
+            elements on the page.
+          </p>
+          <p>
+            With vw/vh, we can size elements to be relative to the size of the
             viewport. The vw/vh units are interesting in that 1 unit reflects
             1/100th the width of the viewport. To make an element the full width
             of the viewport, for example, you'd set it to width:100vw.
