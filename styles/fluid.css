@@ -10,47 +10,37 @@ footer {
 }
 
 body {
-    font-size: 16px;
-    font-family: 'Teko', sans-serif;
-    background-color: black;
-    color: rgb(245, 242, 240);
+    font-size: 14px;
+    font-family: "Revalia", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(59, 58, 66, 0.973);
+    color: rgb(235, 135, 4);
     padding: 100px;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #375978;
-}
-
-nav li {
-    display: list-item;
+h1,
+h2,
+h3 {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 nav a {
-    display: list-item;
-    text-align: center;
-    color: rgb(209, 55, 16);
+    display: inline-block;
+    text-align: left;
+    color: rgba(3, 58, 109, 0.027);
     text-decoration: none;
-    border: 2px solid rgb(35, 78, 104);
+    border: 1px solid rgb(245, 248, 248);
     padding: 9px 14px;
-    text-shadow: #6c0b80 1px 1px 2px;
-    font-size: 1.5em;
+    text-shadow: #eff8be 1px 1px 2px;
+    font-size: 1.2em;
 }
 
 nav a:hover {
-    color: rgb(250, 234, 5);
+    color: rgb(187, 53, 240);
     background-color: rgb(169, 255, 233);
-    border: 1px solid rgb(102, 102, 102);
-    padding: 9px 14px;
-}
-
-nav a:hover {
-    color: rgba(12, 235, 60, 0.473);
-    background-color: rgb(197, 95, 48);
 }
 
 section {
@@ -63,16 +53,14 @@ section {
 
 .em {
     background-image: url(../images/fluid02.jpg);
-    border: 1em solid #dcf743;
+    border: 1em solid #f00366;
     font-size: 1.5em;
-    border: 1em solid rgb(182, 45, 152);
-    font-size: 1.2em;
 }
 
 .rem {
     background-image: url(../images/fluid03.jpg);
-
-    border: 0.5rem dotted rgb(21, 155, 233);
+    border: 0.5rem dotted rgb(81, 243, 16);
+    font-size: large;
 }
 
 .percent {
@@ -89,12 +77,11 @@ section {
     box-sizing: border-box;
     border: 3px solid rgb(222, 61, 236);
     font-size: 1.5em;
-    border: 3px solid rgb(11, 128, 89);
 }
 
 .vw {
     background-image: url(../images/fluid06.jpg);
-    border: 1vw dashed rgb(32, 110, 253);
+    border: 1vw dashed rgb(252, 8, 8);
     font-size: 1.5em;
 }
 
@@ -110,4 +97,5 @@ section {
 
 .hero img {
     width: 100%;
+    opacity: 0.95;
 }
