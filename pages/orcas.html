@@ -1,112 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orcas Island</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="../styles/nav.css" rel="stylesheet" type="text/css" />
-    <link href="../styles/islands.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body class="page-orcas">
+    <link href="../styles/islands.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
     <div id="nav-placeholder"></div>
-    <script src="../scripts/nav.js"></script>
-
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                const toggleButton = document.getElementsByClassName('toggle-button')[0];
+                const navbarLinks = document.getElementsByClassName('kiwi')[0];
+                if (toggleButton && navbarLinks) {
+                    toggleButton.addEventListener('click', () => {
+                        navbarLinks.classList.toggle('active');
+                    });
+                }
+            });
+    </script>
     <header>
-      <div class="header-bar">
-        <a href="../index.html">Go to Home</a>
-        <span class="logo">
-          <img class="logo1" src="../images/SJIVB-1.png" alt="San Juan Islands Visitors Bureau" />
-        </span>
-        <span class="explore">Explore</span>
-      </div>
-      <div class="hero-orcas">
-        <button class="hero-arrow left">&#8249;</button>
-        <div class="hero-text">
-          <h1>Orcas Island</h1>
-          <p class="hero-sub">Washington State</p>
+        <a href="../index.html">go to home</a>
+        <img src="../images/SJIVB-1.png" alt="San Juan Islands Visitors Bureau" class="logo1">
+        <div class="search">
+            <form>
+                <label for="search-input">search our site</label>
+                <input id="search-input" type="search">
+                <button type="submit">search</button>
+            </form>
         </div>
-        <button class="hero-arrow right">&#8250;</button>
-      </div>
+        <div class="hero-orcas">
+            <h1>ORCAS ISLAND</h1>
+        </div>
     </header>
-
-    <nav class="island-nav">
-      <ul>
-        <li><a href="orcas.html" class="active">Orcas Island</a></li>
-        <li><a href="sanjuan.html">San Juan Island</a></li>
-        <li><a href="lopez.html">Lopez Island</a></li>
-      </ul>
+    <nav class="island">
+        <ul>
+            <li><a href="orcas.html">ORCAS ISLAND</a></li>
+            <li><a href="sanjuan.html">SAN JUAN ISLAND</a></li>
+            <li><a href="lopez.html">LOPEZ ISLAND</a></li>
+        </ul>
     </nav>
-
     <main>
-      <section class="item1"></section>
-
-      <section class="item2">
-        <div class="island-text">
-          <span class="label">Activities</span>
-          <span class="label-line"></span>
-          <h2>Wild &amp; Open</h2>
-          <p>
-            Whale and wildlife tours, kayaking, hiking, and shoreline views
-            make Orcas Island feel quiet, natural, and completely open.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic2"></div>
-      </section>
-
-      <section class="item3"></section>
-
-      <section class="item4">
-        <div class="island-text">
-          <span class="label">Lodging</span>
-          <span class="label-line"></span>
-          <h2>Rest Well</h2>
-          <p>
-            Stay near the water, tucked into the trees, or close to the
-            heart of Eastsound. From B&amp;Bs to waterfront resorts.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic4"></div>
-      </section>
-
-      <section class="item5"></section>
-
-      <section class="item6">
-        <div class="island-text">
-          <span class="label">Dining</span>
-          <span class="label-line"></span>
-          <h2>Local Flavors</h2>
-          <p>
-            Small cafes, farm-to-table restaurants, and island bakeries give
-            every meal a slower, more personal island feeling.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic6"></div>
-      </section>
-
-      <section class="item7"></section>
+        <section class="item1"></section>
+        <section class="item2">
+            <div class="island-text">
+                <h2>ACTIVITIES</h2>
+                <p>Whale and wildlife tours, kayaking, hiking, and shoreline views make Orcas Island feel quiet, natural, and completely open.</p>
+            </div>
+            <div class="pic2"></div>
+        </section>
+        <section class="item3"></section>
+        <section class="item4">
+            <div class="island-text">
+                <h2>LODGING</h2>
+                <p>Stay near the water, tucked into the trees, or close to the heart of Eastsound. From B&Bs to waterfront resorts.</p>
+            </div>
+            <div class="pic4"></div>
+        </section>
+        <section class="item5"></section>
+        <section class="item6">
+            <div class="island-text">
+                <h2>DINING</h2>
+                <p>Small cafes, farm-to-table restaurants, and island bakeries give every meal a slower, more personal island feeling.</p>
+            </div>
+            <div class="pic6"></div>
+        </section>
+        <section class="item7"></section>
     </main>
-
     <footer>
-      <p class="item8">Orcas Expeditions</p>
-      <p class="item9">Authentic Washington</p>
+        <p class="item8">Orcas Expeditions</p>
+        <p class="item9">Washington State Tourism</p>
     </footer>
-  </body>
+</body>
 </html>
