@@ -341,7 +341,7 @@ main section {
 /* small photos inside text cells */
 .pic2, .pic4, .pic6 {
     height: 185px;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
     flex-shrink: 0;
