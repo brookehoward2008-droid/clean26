@@ -10,21 +10,16 @@
     <link rel="stylesheet" href="../styles/fluid.css">
   </head>
   <body>
-    <nav class="kiwi"><ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="history-refactor.html">History</a></li>
-        <li><a href="theatre.html">Theater Bill</a></li>
-        <li><a href="theatre-2.html">Village Theatre</a></li>
-        <li><a href="stew-recipe.html">Stew Recipe</a></li>
-        <li><a href="cascade.html">Cascade Mountains</a></li>
-        <li><a href="opt-images.html">Optimized Images</a></li>
-        <li><a href="fluid.html">Fluid Dimensions</a></li>
-        <li><a href="media-queries.html">Media Queries</a></li>
-        <li><a href="orcas.html">Orcas Island</a></li>
-        <li><a href="sanjuan.html">San Juan Island</a></li>
-        <li><a href="lopez.html">Lopez Island</a></li>
-      </ul></nav>
-    <script src="../scripts/nav.js"></script>
+    <header>
+      <div id="nav-placeholder"></div>
+      <script>
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+          });
+      </script>
+    </header>
 
     <main>
       <article class="pure-g">
@@ -125,11 +120,6 @@
       <p>
         Brooke Howard — EVCC Spring 2026 — Graph 130 — For
         Educational Purposes
-      </p>
-    </footer>
-  
-
-</body></html>
       </p>
     </footer>
   </body>
