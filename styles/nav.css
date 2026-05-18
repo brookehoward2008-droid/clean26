@@ -31,37 +31,3 @@
     color: rgb(187, 53, 240);
     background-color: rgb(169, 255, 233);
 }
-
-.toggle-button {
-    display: none;
-    background: none;
-    border: none;
-    color: rgb(233, 229, 225);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* Mobile responsive: show toggle button and hide nav by default */
-@media (max-width: 768px) {
-    .toggle-button {
-        display: block;
-    }
-
-    .kiwi {
-        display: none;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-        background-color: rgba(59, 58, 66, 0.973);
-    }
-
-    .kiwi ul {
-        flex-direction: column;
-    }
-
-    .kiwi.active {
-        display: block;
-    }
-}
