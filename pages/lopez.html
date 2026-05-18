@@ -1,147 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lopez Island</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="../styles/nav.css" rel="stylesheet" type="text/css" />
-    <link href="../styles/islands.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body class="page-lopez">
+    <link href="../styles/islands.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="page-lopez">
     <div id="nav-placeholder"></div>
-    <script src="../scripts/nav.js"></script>
-
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                const toggleButton = document.getElementsByClassName('toggle-button')[0];
+                const navbarLinks = document.getElementsByClassName('kiwi')[0];
+                if (toggleButton && navbarLinks) {
+                    toggleButton.addEventListener('click', () => {
+                        navbarLinks.classList.toggle('active');
+                    });
+                }
+            });
+    </script>
     <header>
-      <div class="header-bar">
-        <a href="../index.html">Go to Home</a>
-        <span class="logo">
-          <img class="logo1" src="../images/SJIVB-1.png" alt="San Juan Islands Visitors Bureau" />
-        </span>
-        <span class="explore">Explore</span>
-      </div>
-      <div class="hero-lopez">
-        <button class="hero-arrow left">&#8249;</button>
-        <div class="hero-text">
-          <h1>Lopez Island</h1>
-          <p class="hero-sub">Washington State</p>
+        <a href="../index.html">go to home</a>
+        <img src="../images/SJIVB-1.png" alt="San Juan Islands Visitors Bureau" class="logo1">
+        <div class="search">
+            <form>
+                <label for="search-input">search our site</label>
+                <input id="search-input" type="search">
+                <button type="submit">search</button>
+            </form>
         </div>
-        <button class="hero-arrow right">&#8250;</button>
-      </div>
+        <div class="hero-lopez">
+            <h1>LOPEZ ISLAND</h1>
+        </div>
     </header>
-
-    <div class="season-row">
-      <p class="season-label">Summer</p>
-      <div class="season-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-
-    <div class="article-preview-row">
-      <article class="preview-item">
-        <span class="preview-category">Cycling</span>
-        <h3>Flat Roads &amp; Farm Views</h3>
-        <time class="preview-date">05/15/26</time>
-      </article>
-      <article class="preview-item">
-        <span class="preview-category">Beaches</span>
-        <h3>Agate Beach &amp; Shark Reef</h3>
-        <time class="preview-date">05/10/26</time>
-      </article>
-      <article class="preview-item">
-        <span class="preview-category">Dining</span>
-        <h3>The Bay Cafe &amp; Local Farms</h3>
-        <time class="preview-date">05/07/26</time>
-      </article>
-      <article class="preview-item">
-        <span class="preview-category">Lodging</span>
-        <h3>Quiet Inns &amp; Farm Stays</h3>
-        <time class="preview-date">05/01/26</time>
-      </article>
-    </div>
-
-    <nav class="island-nav">
-      <ul>
-        <li><a href="orcas.html">Orcas Island</a></li>
-        <li><a href="sanjuan.html">San Juan Island</a></li>
-        <li><a href="lopez.html" class="active">Lopez Island</a></li>
-      </ul>
+    <nav class="island">
+        <ul>
+            <li><a href="orcas.html">ORCAS ISLAND</a></li>
+            <li><a href="sanjuan.html">SAN JUAN ISLAND</a></li>
+            <li><a href="lopez.html">LOPEZ ISLAND</a></li>
+        </ul>
     </nav>
-
     <main>
-      <section class="item1"></section>
-
-      <section class="item2">
-        <div class="island-text">
-          <span class="label">Activities</span>
-          <span class="label-line"></span>
-          <h2>Quiet &amp; Slow</h2>
-          <p>
-            Lopez is the gentlest of the islands — flat cycling roads,
-            friendly locals, tidal pools, and long views across the Salish
-            Sea make it feel like a different world.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic2"></div>
-      </section>
-
-      <section class="item3"></section>
-
-      <section class="item4">
-        <div class="island-text">
-          <span class="label">Lodging</span>
-          <span class="label-line"></span>
-          <h2>Simple &amp; Real</h2>
-          <p>
-            From cozy farm stays to waterfront cottages, Lopez lodging keeps
-            things unhurried and close to the land and sea.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic4"></div>
-      </section>
-
-      <section class="item5"></section>
-
-      <section class="item6">
-        <div class="island-text">
-          <span class="label">Dining</span>
-          <span class="label-line"></span>
-          <h2>Farm to Table</h2>
-          <p>
-            The Bay Cafe and local farm stands bring fresh produce, seafood,
-            and handmade everything to a community that still knows where its
-            food comes from.
-          </p>
-          <div class="item-links">
-            <a href="#">Read more</a>
-            <a href="#">Go to tag</a>
-            <a href="#">Share</a>
-          </div>
-        </div>
-        <div class="pic6"></div>
-      </section>
-
-      <section class="item7"></section>
+        <section class="item1"></section>
+        <section class="item2">
+            <div class="island-text">
+                <h2>ACTIVITIES</h2>
+                <p>Lopez is the gentlest of the islands — flat cycling roads, friendly locals, tidal pools, and long views across the Salish Sea make it feel like a different world.</p>
+            </div>
+            <div class="pic2"></div>
+        </section>
+        <section class="item3"></section>
+        <section class="item4">
+            <div class="island-text">
+                <h2>LODGING</h2>
+                <p>From cozy farm stays to waterfront cottages, Lopez lodging keeps things unhurried and close to the land and sea.</p>
+            </div>
+            <div class="pic4"></div>
+        </section>
+        <section class="item5"></section>
+        <section class="item6">
+            <div class="island-text">
+                <h2>DINING</h2>
+                <p>The Bay Cafe and local farm stands bring fresh produce, seafood, and handmade everything to a community that still knows where its food comes from.</p>
+            </div>
+            <div class="pic6"></div>
+        </section>
+        <section class="item7"></section>
     </main>
-
     <footer>
-      <p class="item8">San Juan Expeditions</p>
-      <p class="item9">Authentic Washington</p>
+        <p class="item8">Lopez Expeditions</p>
+        <p class="item9">Washington State Tourism</p>
     </footer>
-  </body>
+</body>
 </html>
