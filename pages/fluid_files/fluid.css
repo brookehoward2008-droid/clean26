@@ -1,0 +1,99 @@
+body,
+main,
+article,
+section,
+header,
+footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    padding: 100px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #375978;
+}
+
+nav li {
+    display: list-item;
+}
+
+nav a {
+    display: list-item;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 9px 14px;
+}
+
+nav a:hover {
+    color: rgba(180, 131, 131, 0.473);
+    background-color: white;
+}
+
+section {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 5px;
+}
+
+.em {
+    background-image: url(../../images/fluid02.jpg);
+    border: 1em solid rgb(182, 45, 152);
+    font-size: 1.2em;
+}
+
+.rem {
+    background-image: url(../../images/fluid03.jpg);
+    border: 0.5rem dotted darkred;
+}
+
+.percent {
+    background-image: url(../../images/fluid04.jpg);
+}
+
+.percent p {
+    width: 75%;
+}
+
+.box {
+    background-image: url(../../images/fluid05.jpg);
+    box-sizing: border-box;
+    border: 3px solid rgb(11, 128, 89);
+}
+
+.vw {
+    background-image: url(../../images/fluid06.jpg);
+    border: 1vw dashed white;
+    font-size: 1vw;
+}
+
+.hero {
+    background-image: url(../../images/fluid01.jpg);
+    border-top-right-radius: 2em;
+    padding: 5px;
+}
+
+.hero p {
+    width: 50%;
+}
+
+.hero img {
+    width: 100%;
+    opacity: 0.90
+
+}

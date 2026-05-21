@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-image: url("../images/cascade_mountains-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body.olympic-page {
+  background-image: url("../images/olympic-mountains.jpg");
+}
+
+.container {
+  width: 960px;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.content {
+  float: left;
+  width: 62%;
+  padding: 1.2em 0;
+}
+
+.sidebar {
+  float: right;
+  width: 34%;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.88);
+}
+
+footer {
+  clear: both;
+}

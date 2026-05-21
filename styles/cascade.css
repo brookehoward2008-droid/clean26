@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=National+Park:wght@200..800&display=swap");
+
+/* CSS Document */
+
+body {
+  background-image: url("../images/cascade_mountains-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #344e5f;
+  font-family: "National Park", sans-serif;
+}
+
+header,
+section,
+aside,
+article,
+footer,
+figure {
+  display: block;
+}
+
+header {
+  background-color: #86e2f9;
+  color: #69879f;
+  padding-top: 2px;
+}
+
+header h1 {
+  margin-left: 15px;
+  font-size: 52px;
+  color: #00aaf5;
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+}
+
+header h2 {
+  margin-left: 15px;
+  font-size: 20px;
+  padding-bottom: 25px;
+  color: #31654c;
+  font-family: "National Park", sans-serif;
+}
+
+.container {
+  width: 960px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: auto;
+}
+
+.content {
+  padding: 10px;
+  width: 550px;
+  float: left;
+  margin: auto;
+}
+
+.sidebar {
+  float: right;
+  width: 370px;
+  padding-right: 5px;
+  background-color: #438a68;
+  color: #44a5bb;
+}
+
+.sidebar a {
+  color: #867777;
+  font-size: 18px;
+  font-family: "National Park", sans-serif;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 10px;
+  font-family: "National Park", sans-serif;
+}
+
+.image-right {
+  float: right;
+  margin-left: 7px;
+}
+
+.image-left {
+  float: left;
+  margin-right: 7px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #2b969f;
+  font-size: 28px;
+}
+
+p {
+  font-family: "National Park", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  font-size: 18px;
+  color: #09325e;
+}

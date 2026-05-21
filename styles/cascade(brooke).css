@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+body {
+  background-image: url("../images/cascade_mountains-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #344e5f;
+  font-family: "Lora", serif;
+}
+
+header,
+section,
+aside,
+article,
+footer,
+figure {
+  display: block;
+}
+
+header {
+  background-color: #86e2f9;
+  color: #69879f;
+  padding-top: 2px;
+}
+
+header h1 {
+  margin-left: 15px;
+  font-size: 52px;
+  color: #00aaf5;
+}
+
+header h2 {
+  margin-left: 15px;
+  font-size: 20px;
+  padding-bottom: 25px;
+  color: #31654c;
+}
+
+header nav ul {
+  text-align: center;
+  list-style: none;
+  background-color: #375978;
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+}
+
+header nav a {
+  padding: 9px;
+  display: block;
+  width: 100px;
+  text-decoration: none;
+  background-color: #61758d;
+  color: #84a6c0;
+}
+
+header nav a:hover {
+  background-color: #438a68;
+}
+
+footer {
+  color: white;
+  padding: 9px;
+  background-color: rgba(68, 165, 181, 0.8);
+  clear: both;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+.container {
+  width: 960px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: auto;
+  overflow: hidden;
+}
+
+.content {
+  padding: 10px;
+  width: 550px;
+  float: left;
+}
+
+.sidebar {
+  float: right;
+  width: 355px;
+  padding: 5px 10px;
+  background-color: rgba(67, 138, 104, 0.75);
+  color: #d4eee2;
+  box-sizing: border-box;
+}
+
+.sidebar h3 {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.sidebar p {
+  color: #d4eee2;
+  font-size: 16px;
+}
+
+.sidebar a {
+  color: #f0d875;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 10px;
+  color: #555;
+}
+
+.image-right {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+.image-left {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  margin-left: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #133551;
+  font-size: 28px;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #2c2c2c;
+}
+
+.content p,
+.sidebar p {
+  font-family: Arial, Helvetica, sans-serif;
+}

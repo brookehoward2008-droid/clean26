@@ -1,0 +1,27 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: rgb(1, 40, 40);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  flex-grow: 2;
+  width: 30%;
+  background-color: rgb(188, 255, 255);
+  margin: 10px;
+  border: solid rgb(6, 122, 122) 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.tim {
+  background-color: rgb(207, 178, 240);
+}

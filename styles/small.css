@@ -1,0 +1,172 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: darkcyan;
+  background-color: #d9d9d9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+section,
+footer,
+aside,
+article,
+figure {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+header {
+  color: #44a5b5;
+  padding: .5em 0 .4em 0;
+}
+
+.content {
+  width: 100%;
+  float: none;
+  padding: 1em 0;
+}
+
+nav ul {
+  list-style: none;
+  background-color: #44a5b5;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+nav li {
+  display: block;
+}
+
+nav a,
+nav a:link,
+nav a:visited {
+  display: block;
+  width: 100%;
+  padding: .7em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #44a5b5;
+  color: white;
+  border-bottom: 1px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+nav a:hover {
+  background-color: #344e5f;
+  color: white;
+}
+
+figure {
+  margin: 0;
+  padding: 1em;
+}
+
+figcaption {
+  font-size: .7em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol,
+dl {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "National Park", Arial, sans-serif;
+  padding: 0 .45em;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 1.7em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: .85em;
+  line-height: 1.3;
+  padding-top: .2em;
+}
+
+h3 {
+  font-size: 1.2em;
+  line-height: 1.3;
+  padding-top: 1em;
+  padding-bottom: .4em;
+}
+
+h4,
+p {
+  padding: 0 1em;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+footer {
+  padding: 1.5em;
+  background-color: #55a5b5;
+  color: white;
+  clear: both;
+  margin-top: 10px;
+}
+
+footer p {
+  font-size: .8em;
+  padding: 0;
+}
+
+.image-left,
+.image-right {
+  width: 100%;
+  float: none;
+  padding: 1em;
+}
+
+.sidebar {
+  float: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #44a5b5;
+  padding: .8em;
+}
+
+.sidebar a {
+  color: #44a5b5;
+}

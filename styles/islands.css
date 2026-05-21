@@ -1,0 +1,512 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600;700&display=swap");
+
+/* === VARIABLES (professor's naming) === */
+:root {
+  --green: #074817;
+  --white: #ffffff;
+  --blue: #2b5ea7;
+  --cream: #f0ede8;
+  --border: #d8d6d0;
+  --gray: #6e6e6e;
+}
+
+/* === RESET === */
+body,
+header,
+main,
+footer,
+section,
+article,
+nav,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--cream);
+}
+
+/* === HEADER (grid: 3 columns) === */
+header {
+  background-color: var(--white);
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+/* header-bar row spans all 3 columns */
+.header-bar {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 28px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+header a,
+header p,
+nav a,
+.label {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* logo image */
+.logo1 {
+  height: 100px;
+  width: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* === HERO (spans all 3 columns) === */
+.hero-orcas,
+.hero-sanjuan,
+.hero-lopez {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-orcas {
+  background-image: url(../images/sj-034.jpg);
+}
+.hero-sanjuan {
+  background-image: url(../images/sj-003.jpg);
+}
+.hero-lopez {
+  background-image: url(../images/sj-001.jpg);
+}
+
+/* hero text */
+.hero-text {
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  color: var(--white);
+  text-transform: uppercase;
+  text-shadow: var(--green) 3px 3px 3px;
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.32em;
+}
+
+/* hero arrows */
+.hero-arrow {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 16px 22px;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.hero-arrow:hover {
+  opacity: 1;
+}
+.hero-arrow.left {
+  left: 0;
+}
+.hero-arrow.right {
+  right: 0;
+}
+
+/* === SEASON ROW === */
+.season-row {
+  text-align: center;
+  padding: 20px 20px 10px;
+  background-color: var(--cream);
+}
+
+.season-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.season-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--border);
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: var(--green);
+}
+
+/* === ARTICLE PREVIEW ROW (4-column grid) === */
+.article-preview-row {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1px;
+  background-color: var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 18px 0;
+}
+
+.preview-item {
+  background-color: var(--cream);
+  padding: 18px 16px 20px;
+}
+
+.preview-category {
+  display: block;
+  font-size: 0.54rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.preview-item h3 {
+  font-size: 0.88rem;
+  font-weight: 200;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.preview-date {
+  display: block;
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  color: var(--gray);
+  font-weight: 300;
+}
+
+/* === ISLAND NAV === */
+.island-nav {
+  background-color: var(--white);
+}
+
+.island-nav ul {
+  background-color: var(--white);
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.island-nav ul li {
+  list-style-type: none;
+  text-align: center;
+  flex: 1;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.island-nav ul li:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.island-nav ul li a {
+  color: var(--blue);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  display: block;
+  padding: 14px 36px;
+}
+
+.island-nav ul li:hover a,
+.island-nav ul li a.active {
+  color: var(--white);
+}
+
+.island-nav ul li a.active {
+  background-color: var(--green);
+}
+
+/* === MAIN GRID (3 columns) === */
+main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+/* all sections share background image defaults */
+main section {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+/* item1: left 2/3 */
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* item7: right 2/3 */
+.item7 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+/* text cells — no background photo */
+.item2,
+.item4,
+.item6 {
+  background-image: none;
+  background-color: var(--white);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === TEXT CELL CONTENT === */
+.island-text {
+  padding: 30px 28px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.label-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--border);
+  margin-bottom: 16px;
+}
+
+.island-text h2 {
+  font-size: 1.3rem;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.island-text p {
+  font-size: 0.76rem;
+  color: var(--gray);
+  line-height: 1.9;
+  font-weight: 300;
+  flex: 1;
+}
+
+/* "Read more | Go to tag | Share" */
+.item-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.item-links a {
+  font-size: 0.54rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.item-links a:hover {
+  color: var(--green);
+}
+
+/* small photos inside text cells */
+.pic2,
+.pic4,
+.pic6 {
+  height: 185px;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 5px;
+  background-color: var(--green);
+  text-align: center;
+}
+
+.item8 {
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.64rem;
+  font-weight: 600;
+  padding: 18px 0 6px;
+}
+
+.item9 {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.56rem;
+  font-weight: 300;
+  padding-bottom: 18px;
+}
+
+/* ===================================================
+   ISLAND-SPECIFIC IMAGES  (scoped by body class)
+   =================================================== */
+
+/* --- Orcas Island --- */
+.page-orcas .item1 {
+  background-image: url(../images/sj-015.jpg);
+}
+.page-orcas .item3 {
+  background-image: url(../images/sj-025.jpg);
+}
+.page-orcas .item5 {
+  background-image: url(../images/sj-068.jpg);
+}
+.page-orcas .item7 {
+  background-image: url(../images/sj-022.jpg);
+}
+.page-orcas .pic2 {
+  background-image: url(../images/sj-031.jpg);
+}
+.page-orcas .pic4 {
+  background-image: url(../images/sj-039.jpg);
+}
+.page-orcas .pic6 {
+  background-image: url(../images/sj-011.jpg);
+}
+
+/* --- San Juan Island --- */
+.page-sanjuan .item1 {
+  background-image: url(../images/sj-008.jpg);
+}
+.page-sanjuan .item3 {
+  background-image: url(../images/sj-013.jpg);
+}
+.page-sanjuan .item5 {
+  background-image: url(../images/sj-018.jpg);
+}
+.page-sanjuan .item7 {
+  background-image: url(../images/sj-023.jpg);
+}
+.page-sanjuan .pic2 {
+  background-image: url(../images/sj-006.jpg);
+}
+.page-sanjuan .pic4 {
+  background-image: url(../images/sj-029.jpg);
+}
+.page-sanjuan .pic6 {
+  background-image: url(../images/sj-043.jpg);
+}
+
+/* --- Lopez Island --- */
+.page-lopez .item1 {
+  background-image: url(../images/sj-004.jpg);
+}
+.page-lopez .item3 {
+  background-image: url(../images/sj-007.jpg);
+}
+.page-lopez .item5 {
+  background-image: url(../images/sj-012.jpg);
+}
+.page-lopez .item7 {
+  background-image: url(../images/sj-016.jpg);
+}
+.page-lopez .pic2 {
+  background-image: url(../images/sj-019.jpg);
+}
+.page-lopez .pic4 {
+  background-image: url(../images/sj-033.jpg);
+}
+.page-lopez .pic6 {
+  background-image: url(../images/sj-045.jpg);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .article-preview-row {
+    grid-template-columns: auto auto;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template-columns: auto;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 280px;
+  }
+  .item7 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 280px;
+  }
+  .item3,
+  .item5 {
+    height: 240px;
+  }
+  .article-preview-row {
+    grid-template-columns: auto;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}

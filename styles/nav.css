@@ -1,0 +1,33 @@
+.kiwi {
+  background-color: rgba(59, 58, 66, 0.973);
+  padding: 0.5em;
+  font-family: "Raleway", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.kiwi ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kiwi li {
+  list-style: none;
+  margin: 5px;
+}
+
+.kiwi a {
+  text-decoration: none;
+  color: rgb(233, 229, 225);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.kiwi a:hover {
+  color: rgb(77, 107, 204);
+  background-color: rgb(169, 255, 233);
+}
