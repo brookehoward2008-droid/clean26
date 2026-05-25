@@ -10,7 +10,7 @@
   const links = [
     { href: 'index.html', label: 'Home' },
     { href: 'pages/history-refactor.html', label: 'History' },
-    { href: 'pages/theatre.html', label: 'Theater Bill' },
+    { href: 'pages/theater.html', label: 'Theater Bill' },
     { href: 'pages/theatre-2.html', label: 'Village Theatre' },
     { href: 'pages/stew-recipe.html', label: 'Stew Recipe' },
     { href: 'pages/cascade.html', label: 'Cascade Mountains' },

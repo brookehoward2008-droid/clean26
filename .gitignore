@@ -1,0 +1,6 @@
+.DS_Store
+.vs/
+*_files/
+*.suo
+*.wsuo
+Thumbs.db
