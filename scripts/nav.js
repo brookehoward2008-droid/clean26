@@ -14,6 +14,7 @@
     { href: 'pages/theatre-2.html', label: 'Village Theatre' },
     { href: 'pages/stew-recipe.html', label: 'Stew Recipe' },
     { href: 'pages/cascade.html', label: 'Cascade Mountains' },
+    { href: 'pages/mobile-cascade.html', label: 'Cascade: Mobile Responsive' },
     { href: 'pages/olympic.html', label: 'Olympic Mountains' },
     { href: 'pages/opt-images.html', label: 'Optimized Images' },
     { href: 'pages/fluid.html', label: 'Fluid Dimensions' },
