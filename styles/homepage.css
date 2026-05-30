@@ -8,7 +8,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/*create flex container for header, main and footer elements*/
 header,
 main,
 footer {
@@ -18,7 +17,6 @@ footer {
     justify-content: space-between;
 }
 
-/*create even space in header and footer navs*/
 nav {
     display: flex;
     justify-content: space-evenly;
@@ -26,7 +24,7 @@ nav {
 }
 
 nav a {
-    border-left: solid black 1px;
+    border-left: solid 1px black;
     justify-content: center;
     align-content: center;
     padding-left: 15px;
@@ -36,7 +34,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: lightgray;
+    background-color: #39705f;
+    color: white;
 }
 
 aside {
@@ -51,7 +50,7 @@ aside p {
     width: 80%;
     height: auto;
     filter: grayscale(100%);
-    transition: 1s;
+    transition: .35s;
     box-shadow: 2px 2px 10px black;
 }
 
@@ -74,7 +73,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: black solid 2px;
+    border: solid 2px black;
     transition: 1s;
 }
 
@@ -89,15 +88,16 @@ article {
 
 .project p {
     color: white;
-    text-shadow: 8px 8px 20px black;
+    text-shadow: 0px 0px 20px black;
     font-size: 25px;
 }
 
-.project a {
-    padding: 100px 200px;
+project a {
+    padding: 200px;
     text-decoration: none;
 }
 
+/* images for tiles */
 #history {
     background-image: url('../images/history-hero-bg.jpg');
 }
