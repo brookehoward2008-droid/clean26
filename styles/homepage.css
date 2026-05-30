@@ -96,6 +96,7 @@ project a {
 }
 
 #history        { background-image: url('../images/history-hero-bg.jpg'); }
+#history-plain  { background-image: url('../images/1-ike.jpg'); }
 #theater        { background-image: url('../images/sherwoodforrest.jpg'); }
 #theater2       { background-image: url('../images/villagetheatre.jpg'); }
 #stew-recipe    { background-image: url('../images/hero.jpg'); }
