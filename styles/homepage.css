@@ -83,7 +83,7 @@ article {
 }
 
 .project:hover {
-    filter: none;
+    filter: hue-rotate(90deg);
 }
 
 .project p {
