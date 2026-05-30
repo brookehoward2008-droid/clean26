@@ -1,62 +1,150 @@
-/* Replace your current .project a, .project p, and hover text rules with this */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
-.project a {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
+body {
+    background-color: #f5f5f5;
+}
+
+header,
+main,
+footer {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    width: 85%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+nav a {
+    border-left: solid 1px black;
+    justify-content: center;
+    align-content: center;
+    padding-left: 15px;
     text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+nav a:hover {
+    background-color: #39705f;
+    color: white;
+}
+
+aside {
+    width: 20%;
+}
+
+aside p {
+    margin: 20px 20px 20px 0px;
+}
+
+.faze {
+    width: 80%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: .35s;
+    box-shadow: 2px 2px 10px black;
+}
+
+.faze:hover {
+    filter: none;
+}
+
+article {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    filter: grayscale(100%);
+    background-size: cover;
+    min-width: 300px;
+    min-height: 300px;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    transition: 1s;
+}
+
+.project:first-child {
+    width: 99.9%;
+    background-position: center;
+}
+
+.project:hover {
+    filter: none;
 }
 
 .project p {
-    width: 100%;
-    margin: 0;
-    padding: 16px 20px 16px 24px;
-    color: #ffffff;
-    background: rgba(19, 26, 34, 0.92);
-    border-top: 1px solid rgba(16, 214, 181, 0.7);
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(1.45rem, 2vw, 1.9rem);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: 0.01em;
-    text-align: left;
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        padding 0.3s ease,
-        transform 0.3s ease;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    font-size: 25px;
 }
 
-/* editorial accent line */
-.project p::before {
-    content: "";
-    display: inline-block;
-    width: 42px;
-    height: 2px;
-    margin-right: 12px;
-    margin-bottom: 0.32em;
-    vertical-align: middle;
-    background: #10d6b5;
-    box-shadow: 0 0 10px rgba(16, 214, 181, 0.35);
+project a {
+    padding: 200px;
+    text-decoration: none;
 }
 
-/* hover */
-.project:hover p,
-.project:focus-within p {
-    background: rgba(19, 26, 34, 0.96);
-    border-top-color: #ffffff;
-    transform: translateX(4px);
+#history {
+    background-image: url('../images/history-hero-bg.jpg');
 }
 
-/* optional: make the first/full-width tile feel more featured */
-.project:first-child p {
-    font-size: clamp(1.7rem, 2.6vw, 2.3rem);
-    padding: 18px 24px 18px 28px;
+#history-plain {
+    background-image: url('../images/1-ike.jpg');
 }
 
-.project:first-child p::before {
-    width: 56px;
+#theater2 {
+    background-image: url('../images/villagetheatre.jpg');
+}
+
+#stew-recipe {
+    background-image: url('../images/hero.jpg');
+}
+
+#cascades {
+    background-image: url('../images/cascade_mountains-bg.jpg');
+}
+
+#mobile-cascade {
+    background-image: url('../images/page1.jpg');
+}
+
+#olympic {
+    background-image: url('../images/olympic-mountains.jpg');
+}
+
+#images {
+    background-image: url('../images/colors01.jpg');
+}
+
+#fluid {
+    background-image: url('../images/fluid01.jpg');
+}
+
+#media-queries {
+    background-image: url('../images/page1.jpg');
+}
+
+#orcas {
+    background-image: url('../images/sj-001.jpg');
+}
+
+#sanjuan {
+    background-image: url('../images/SJIVB-1.png');
+}
+
+#lopez {
+    background-image: url('../images/sj-010.jpg');
 }
