@@ -1,150 +1,40 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+/* styles/homepage.css */
+
+.favorite-color {
+    color: #39705f;
 }
 
-body {
-    background-color: #f5f5f5;
+.project a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
 }
 
-header,
-main,
+.project a:hover,
+.project a:focus {
+    text-decoration: underline;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 1rem;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    color: #000000;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 footer {
-    display: flex;
-    width: 85%;
-    margin: 20px auto;
-    justify-content: space-between;
+    padding: 2rem;
+    text-align: center;
 }
 
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-}
-
-nav a {
-    border-left: solid 1px black;
-    justify-content: center;
-    align-content: center;
-    padding-left: 15px;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
-
-nav a:hover {
-    background-color: #39705f;
-    color: white;
-}
-
-aside {
-    width: 20%;
-}
-
-aside p {
-    margin: 20px 20px 20px 0px;
-}
-
-.faze {
-    width: 80%;
-    height: auto;
-    filter: grayscale(100%);
-    transition: .35s;
-    box-shadow: 2px 2px 10px black;
-}
-
-.faze:hover {
-    filter: none;
-}
-
-article {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.project {
-    filter: grayscale(100%);
-    background-size: cover;
-    min-width: 300px;
-    min-height: 300px;
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px rgb(0, 0, 0);
-    transition: 1s;
-}
-
-.project:first-child {
-    width: 99.9%;
-    background-position: center;
-}
-
-.project:hover {
-    filter: hue-rotate(90deg) saturate(1000%) brightness(1.5);
-}
-
-.project p {
-    color: white;
-    text-shadow: 0px 0px 20px black;
-    font-size: 25px;
-}
-
-project a {
-    padding: 200px;
-    text-decoration: none;
-}
-
-#history {
-    background-image: url('../images/history-hero-bg.jpg');
-}
-
-#history-plain {
-    background-image: url('../images/1-ike.jpg');
-}
-
-#theater2 {
-    background-image: url('../images/sherwoodforrest.jpg');
-}
-
-#stew-recipe {
-    background-image: url('../images/hero.jpg');
-}
-
-#cascades {
-    background-image: url('../images/cascade_mountains-bg.jpg');
-}
-
-#mobile-cascade {
-    background-image: url('../images/page1.jpg');
-}
-
-#olympic {
-    background-image: url('../images/olympic-mountains.jpg');
-}
-
-#images {
-    background-image: url('../images/colors01.jpg');
-}
-
-#fluid {
-    background-image: url('../images/fluid01.jpg');
-}
-
-#media-queries {
-    background-image: url('../images/page1.jpg');
-}
-
-#orcas {
-    background-image: url('../images/sj-001.jpg');
-}
-
-#sanjuan {
-    background-image: url('../images/sj-005.jpg');
-}
-
-#lopez {
-    background-image: url('../images/sj-010.jpg');
+footer p {
+    margin: 0;
 }
