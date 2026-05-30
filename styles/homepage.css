@@ -1,3 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/*create flex container for header, main and footer elements*/
+header,
+main,
+footer {
+    display: flex;
+    width: 85%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+
+/*create even space in header and footer navs*/
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+nav a {
+    border-left: solid black 1px;
+    justify-content: center;
+    align-content: center;
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+nav a:hover {
+    background-color: lightgray;
+}
+
+aside {
+    width: 20%;
+}
+
+aside p {
+    margin: 20px 20px 20px 0px;
+}
+
+.faze {
+    width: 80%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: 1s;
+    box-shadow: 2px 2px 10px black;
 }
 
 .faze:hover {
@@ -19,7 +74,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px black;
+    border: black solid 2px;
     transition: 1s;
 }
 
@@ -34,12 +89,12 @@ article {
 
 .project p {
     color: white;
-    text-shadow: 0px 0px 20px black;
+    text-shadow: 8px 8px 20px black;
     font-size: 25px;
 }
 
-project a {
-    padding: 200px;
+.project a {
+    padding: 100px 200px;
     text-decoration: none;
 }
 
