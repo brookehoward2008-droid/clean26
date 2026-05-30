@@ -1,80 +1,21 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #f5f5f5;
-}
-
-header,
-main,
-footer {
-    display: flex;
-    width: 85%;
-    margin: 20px auto;
-    justify-content: space-between;
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-}
-
-nav a {
-    border-left: solid 1px black;
-    justify-content: center;
-    align-content: center;
-    padding-left: 15px;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
-
-nav a:hover {
-    background-color: #39705f;
-    color: white;
-}
-
-aside {
-    width: 20%;
-}
-
-aside p {
-    margin: 20px 20px 20px 0px;
-}
-
-.faze {
-    width: 80%;
-    height: auto;
-    filter: grayscale(100%);
-    transition: .35s;
-    box-shadow: 2px 2px 10px black;
-}
-
-.faze:hover {
-    filter: none;
-}
-
-article {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
+/* Keep your existing grid widths, backgrounds, and layout.
+   Replace your current .project, .project::before, .project a, .project p, and hover rules with this. */
 
 .project {
-    filter: grayscale(100%);
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    width: 33.3%;
     min-width: 300px;
     min-height: 300px;
-    width: 33.3%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px black;
-    transition: 1s;
+    background-size: cover;
+    background-position: center;
+    border: 1.5px solid #10d6b5;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    filter: grayscale(100%) brightness(0.82);
 }
 
 .project:first-child {
@@ -82,69 +23,175 @@ article {
     background-position: center;
 }
 
-.project:hover {
-    filter: none;
+.project::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(12, 18, 24, 0.45), rgba(12, 18, 24, 0.08)),
+        linear-gradient(to bottom right, rgba(16, 214, 181, 0.08), rgba(144, 228, 253, 0.03));
+    pointer-events: none;
+    transition: opacity 0.35s ease;
 }
 
-.project p {
-    color: white;
-    text-shadow: 0px 0px 20px black;
-    font-size: 25px;
+.project::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 214, 181, 0.14);
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
 }
 
-project a {
-    padding: 200px;
+.project a {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
     text-decoration: none;
 }
 
-#history {
-    background-image: url('../images/history-hero-bg.jpg');
+.project p {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -78px;
+    z-index: 3;
+    margin: 0;
+    padding: 14px 16px;
+    background: rgba(19, 26, 34, 0.94);
+    border: 1px solid rgba(16, 214, 181, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    color: #ffffff;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    transition:
+        transform 0.5s ease,
+        bottom 0.5s ease,
+        opacity 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+    opacity: 0;
 }
 
-#history-plain {
-    background-image: url('../images/1-ike.jpg');
+/* small accent line */
+.project p::before {
+    content: "";
+    display: inline-block;
+    width: 38px;
+    height: 2px;
+    margin-right: 10px;
+    margin-bottom: 0.28em;
+    vertical-align: middle;
+    background: #10d6b5;
 }
 
-#theater2 {
-    background-image: url('../images/villagetheatre.jpg');
+.project:hover,
+.project:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+    filter: grayscale(0%) brightness(1);
 }
 
-#stew-recipe {
-    background-image: url('../images/hero.jpg');
+.project:hover::before,
+.project:focus-within::before {
+    opacity: 0.7;
 }
 
-#cascades {
-    background-image: url('../images/cascade_mountains-bg.jpg');
+.project:hover::after,
+.project:focus-within::after {
+    opacity: 1;
 }
 
-#mobile-cascade {
-    background-image: url('../images/page1.jpg');
+/* Bedimcode-style reveal, adapted to stay inside your tile */
+.project:hover p,
+.project:focus-within p {
+    bottom: 14px;
+    opacity: 1;
+    border-color: #ffffff;
+    background: rgba(19, 26, 34, 0.97);
 }
 
-#olympic {
-    background-image: url('../images/olympic-mountains.jpg');
+/* featured first tile */
+.project:first-child p {
+    font-size: clamp(1.55rem, 2.4vw, 2.1rem);
 }
 
-#images {
-    background-image: url('../images/colors01.jpg');
+/* mobile */
+@media (max-width: 1100px) {
+    .project {
+        width: 50%;
+        min-width: 260px;
+        min-height: 250px;
+    }
+
+    .project:first-child {
+        width: 100%;
+    }
+
+    .project p {
+        bottom: -72px;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
 }
 
-#fluid {
-    background-image: url('../images/fluid01.jpg');
+@media (max-width: 760px) {
+
+    .project,
+    .project:first-child {
+        width: 100%;
+        min-width: 100%;
+        min-height: 220px;
+    }
+
+    .project p {
+        left: 12px;
+        right: 12px;
+        bottom: -68px;
+        padding: 12px 14px;
+        font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+    }
+
+    .project:hover p,
+    .project:focus-within p {
+        bottom: 12px;
+    }
 }
 
-#media-queries {
-    background-image: url('../images/page1.jpg');
+@media (max-width: 540px) {
+
+    .project,
+    .project:first-child {
+        min-height: 190px;
+    }
+
+    .project p {
+        font-size: 1.1rem;
+    }
 }
 
-#orcas {
-    background-image: url('../images/sj-001.jpg');
-}
+@media (hover: none) {
 
-#sanjuan {
-    background-image: url('../images/SJIVB-1.png');
-}
+    .project:hover,
+    .project:focus-within {
+        transform: none;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+        filter: grayscale(100%) brightness(0.82);
+    }
 
-#lopez {
-    background-image: url('../images/sj-010.jpg');
-}
+    .project:hover::after,
+    .project:focus-within::after {
+        opacity: 0;
+    }
+
+    .project:hover p,
+    .project:focus-within p {
+        bottom: -78px;
+        opacity: 0;
+        border-color: rgba(16, 214, 181, 0.5);
+    }
