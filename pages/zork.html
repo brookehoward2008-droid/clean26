@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZORK — Great Underground Empire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #33ff66;
+      --green-dim: #1a8033;
+      --green-faint: #0d3319;
+      --bg: #050d08;
+      --amber: #ffaa00;
+      --scan-speed: 8s;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--green);
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      font-size: 15px;
+      overflow: hidden;
+    }
+
+    /* CRT scanlines overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.18) 2px,
+        rgba(0,0,0,0.18) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* CRT flicker */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+      z-index: 99;
+      animation: flicker var(--scan-speed) ease-in-out infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.97; }
+      52% { opacity: 0.94; }
+      54% { opacity: 0.97; }
+    }
+
+    #terminal {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 28px;
+    }
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--green-dim);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    #header h1 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      color: var(--green);
+      text-transform: uppercase;
+      text-shadow: 0 0 12px var(--green);
+    }
+
+    #status {
+      font-size: 0.75rem;
+      color: var(--green-dim);
+      letter-spacing: 0.15em;
+    }
+
+    #output {
+      flex: 1;
+      overflow-y: auto;
+      line-height: 1.65;
+      padding-right: 8px;
+      scroll-behavior: smooth;
+    }
+
+    #output::-webkit-scrollbar { width: 4px; }
+    #output::-webkit-scrollbar-track { background: transparent; }
+    #output::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 2px; }
+
+    .line {
+      margin-bottom: 2px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .line.room {
+      color: var(--green);
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--green);
+      margin-top: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .line.desc { color: #aaffcc; }
+    .line.cmd  { color: var(--amber); }
+    .line.err  { color: #ff5566; }
+    .line.sys  {
+      color: var(--green-dim);
+      font-style: italic;
+      font-size: 0.85em;
+    }
+    .line.win {
+      color: var(--amber);
+      text-shadow: 0 0 16px var(--amber);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .line.item { color: #88ffbb; }
+
+    #input-row {
+      display: flex;
+      align-items: center;
+      margin-top: 14px;
+      border-top: 1px solid var(--green-dim);
+      padding-top: 12px;
+      flex-shrink: 0;
+      gap: 8px;
+    }
+
+    #prompt-label {
+      color: var(--green);
+      text-shadow: 0 0 6px var(--green);
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
+
+    #cmd-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--amber);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 15px;
+      caret-color: var(--green);
+      letter-spacing: 0.05em;
+    }
+
+    #cmd-input::placeholder { color: var(--green-faint); }
+
+    .blink {
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+<div id="terminal">
+  <div id="header">
+    <h1>ZORK</h1>
+    <span id="status">SCORE: <span id="score-val">0</span> &nbsp;|&nbsp; MOVES: <span id="moves-val">0</span> &nbsp;|&nbsp; INVENTORY: <span id="inv-count">0</span></span>
+  </div>
+  <div id="output"></div>
+  <div id="input-row">
+    <span id="prompt-label">&gt;</span>
+    <input id="cmd-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="type a command…" autofocus/>
+  </div>
+</div>
+
+<script>
+// ─── WORLD ─────────────────────────────────────────────────────────────────
+const ROOMS = {
+  clearing: {
+    name: "West of House",
+    desc: "You are standing in an open field west of a white house, with a boarded front door. A path leads around to the north and south.",
+    exits: { north: "north_of_house", south: "south_of_house", east: null, west: "forest" },
+    items: ["leaflet"],
+    visited: false,
+    eastBlocked: "The front door is boarded shut."
+  },
+  north_of_house: {
+    name: "North of House",
+    desc: "You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.",
+    exits: { north: "forest_path", south: null, east: "behind_house", west: "clearing" },
+    items: [],
+    visited: false,
+    southBlocked: "There's nothing but the house wall."
+  },
+  south_of_house: {
+    name: "South of House",
+    desc: "You are facing the south side of a white house. There is no door here. A path leads west around the house and east through a wooded area.",
+    exits: { north: "clearing", south: null, east: "behind_house", west: "clearing" },
+    items: [],
+    visited: false,
+    southBlocked: "The forest is too dense to pass here."
+  },
+  behind_house: {
+    name: "Behind House",
+    desc: "You are behind the white house. In one corner of the house there is a small window which is slightly open. A path leads to the east into the woods.",
+    exits: { north: "north_of_house", south: "south_of_house", east: "forest_path", west: null },
+    items: [],
+    visited: false,
+    westBlocked: "You can't go that way.",
+    hasWindow: true
+  },
+  kitchen: {
+    name: "Kitchen",
+    desc: "You are in the kitchen of the white house. A table seems to have been used recently for food preparation. To the west is a small window. A staircase leads up.",
+    exits: { up: "attic", down: null, west: "behind_house_window", east: null },
+    items: ["knife", "bag"],
+    visited: false,
+    downBlocked: "There's only a solid floor below.",
+    eastBlocked: "The pantry door is stuck fast.",
+    indoor: true
+  },
+  attic: {
+    name: "Attic",
+    desc: "This is the attic. The only light comes through gaps in the roof. A broken rope hangs from a beam. There is a heavy trapdoor leading down.",
+    exits: { down: "kitchen" },
+    items: ["rope"],
+    visited: false,
+    indoor: true
+  },
+  forest: {
+    name: "Forest",
+    desc: "This is a forest, with trees in all directions. To the east, there appears to be sunlight.",
+    exits: { east: "clearing", north: "forest_path", south: "forest" },
+    items: ["lantern"],
+    visited: false
+  },
+  forest_path: {
+    name: "Forest Path",
+    desc: "This is a path winding through the forest. The trees are tall and dense.",
+    exits: { south: "north_of_house", north: "clearing", east: "forest", west: "forest" },
+    items: [],
+    visited: false
+  },
+  cellar: {
+    name: "Cellar",
+    desc: "You are in a damp, dark cellar. Cobwebs hang from the low ceiling. A wooden staircase leads up. Passages lead north and east.",
+    exits: { up: "kitchen", north: "treasure_room", east: "troll_room" },
+    items: ["torch"],
+    visited: false,
+    indoor: true,
+    dark: true
+  },
+  troll_room: {
+    name: "Troll Room",
+    desc: "You are in a small room. A large, ugly troll blocks the passage to the east, axe in hand. He regards you with hungry eyes.",
+    exits: { west: "cellar", east: "treasure_room" },
+    items: [],
+    visited: false,
+    indoor: true,
+    hasTroll: true
+  },
+  treasure_room: {
+    name: "Treasure Room",
+    desc: "You have entered a magnificent chamber. Ancient gold coins are piled in the corners. A carved stone altar stands in the center, and a glowing trophy sits upon it.",
+    exits: { west: "troll_room", south: "cellar" },
+    items: ["trophy", "coins"],
+    visited: false,
+    indoor: true
+  }
+};
+
+const ITEMS = {
+  leaflet: { name: "leaflet", desc: "A small leaflet.", detail: 'The leaflet reads: "ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortal man. No warranties express or implied."', takeable: true, weight: 1 },
+  lantern: { name: "brass lantern", desc: "A battered brass lantern, unlit.", detail: "The lantern is old and dented, but appears functional. It's currently unlit.", takeable: true, weight: 2, light: false },
+  knife: { name: "kitchen knife", desc: "A sharp kitchen knife.", detail: "A well-used but very sharp kitchen knife.", takeable: true, weight: 1, weapon: true },
+  bag: { name: "brown bag", desc: "A small brown bag.", detail: "Inside the bag you find a few dried biscuits. Not very appetizing.", takeable: true, weight: 2 },
+  rope: { name: "coiled rope", desc: "A length of coiled rope.", detail: "About thirty feet of strong rope, coiled neatly.", takeable: true, weight: 3 },
+  torch: { name: "torch", desc: "A blazing torch.", detail: "A wooden torch, already lit and burning steadily.", takeable: true, weight: 1, light: true },
+  trophy: { name: "golden trophy", desc: "A gleaming golden trophy.", detail: "The trophy reads: CHAMPION OF THE UNDERGROUND EMPIRE. This must be worth a fortune.", takeable: true, weight: 4, treasure: true, points: 100 },
+  coins: { name: "gold coins", desc: "A pile of ancient gold coins.", detail: "Hundreds of ancient gold coins, still shining after centuries underground.", takeable: true, weight: 5, treasure: true, points: 50 }
+};
+
+// ─── STATE ──────────────────────────────────────────────────────────────────
+const state = {
+  room: "clearing",
+  inventory: [],
+  score: 0,
+  moves: 0,
+  trollAlive: true,
+  lampLit: false,
+  won: false,
+  dead: false,
+  windowOpen: true
+};
+
+// ─── OUTPUT ─────────────────────────────────────────────────────────────────
+const output = document.getElementById("output");
+const scoreEl = document.getElementById("score-val");
+const movesEl = document.getElementById("moves-val");
+const invEl   = document.getElementById("inv-count");
+
+function print(text, cls = "desc") {
+  const div = document.createElement("div");
+  div.className = "line " + cls;
+  div.textContent = text;
+  output.appendChild(div);
+  output.scrollTop = output.scrollHeight;
+}
+
+function printBlank() { print("", "desc"); }
+
+function updateStatus() {
+  scoreEl.textContent = state.score;
+  movesEl.textContent = state.moves;
+  invEl.textContent   = state.inventory.length;
+}
+
+// ─── ROOM DISPLAY ───────────────────────────────────────────────────────────
+function isDark() {
+  const room = ROOMS[state.room];
+  if (!room.dark && !room.indoor) return false;
+  if (room.dark || room.indoor) {
+    const hasLight = state.inventory.some(id => {
+      const item = ITEMS[id];
+      return item && item.light;
+    }) || state.lampLit;
+    return !hasLight && (room.dark || false);
+  }
+  return false;
+}
+
+function describeRoom(force) {
+  const room = ROOMS[state.room];
+  if (isDark()) {
+    print("Darkness", "room");
+    print("It is pitch black. You are likely to be eaten by a grue.", "desc");
+    return;
+  }
+  if (!room.visited || force) {
+    print(room.name, "room");
+    print(room.desc, "desc");
+    room.visited = true;
+  } else {
+    print(room.name, "room");
+  }
+  if (room.items.length > 0) {
+    room.items.forEach(id => {
+      const item = ITEMS[id];
+      if (item) print("There is a " + item.name + " here.", "item");
+    });
+  }
+  if (room.hasTroll && state.trollAlive) {
+    print("A menacing troll blocks the eastern passage, clutching a nasty axe.", "err");
+  }
+}
+
+// ─── PARSER ─────────────────────────────────────────────────────────────────
+function normalize(input) {
+  return input.trim().toLowerCase().replace(/[^a-z0-9 ]/g, "");
+}
+
+function findItem(word, inRoom) {
+  const pool = inRoom ? ROOMS[state.room].items : state.inventory;
+  return pool.find(id => {
+    const item = ITEMS[id];
+    return item && (id.includes(word) || item.name.toLowerCase().includes(word));
+  });
+}
+
+function go(dir) {
+  const room = ROOMS[state.room];
+  const aliases = { n:"north", s:"south", e:"east", w:"west", u:"up", d:"down" };
+  dir = aliases[dir] || dir;
+  const blocked = room[dir + "Blocked"];
+  if (blocked) { print(blocked, "err"); return; }
+  const dest = room.exits[dir];
+  if (!dest) { print("You can't go that way.", "err"); return; }
+
+  // troll blocks east from troll_room
+  if (state.room === "troll_room" && dir === "east" && state.trollAlive) {
+    print("The troll will not let you pass. He swings his axe menacingly.", "err");
+    return;
+  }
+
+  // window entry
+  if (dest === "behind_house_window") {
+    if (state.windowOpen) {
+      state.room = "kitchen";
+      print("You squeeze through the small window into the kitchen.", "desc");
+      describeRoom(true);
+      return;
+    } else {
+      print("The window is closed.", "err");
+      return;
+    }
+  }
+
+  state.room = dest;
+  state.moves++;
+  updateStatus();
+  describeRoom(false);
+}
+
+function doTake(word) {
+  if (!word) { print("Take what?", "err"); return; }
+  const id = findItem(word, true);
+  if (!id) { print("There's no " + word + " here.", "err"); return; }
+  const item = ITEMS[id];
+  if (!item.takeable) { print("You can't take that.", "err"); return; }
+  ROOMS[state.room].items = ROOMS[state.room].items.filter(i => i !== id);
+  state.inventory.push(id);
+  if (item.points) { state.score += item.points; }
+  print("Taken.", "desc");
+  updateStatus();
+}
+
+function doDrop(word) {
+  if (!word) { print("Drop what?", "err"); return; }
+  const id = findItem(word, false);
+  if (!id) { print("You're not carrying a " + word + ".", "err"); return; }
+  state.inventory = state.inventory.filter(i => i !== id);
+  ROOMS[state.room].items.push(id);
+  print("Dropped.", "desc");
+  updateStatus();
+}
+
+function doExamine(word) {
+  if (!word) { print("Examine what?", "err"); return; }
+  let id = findItem(word, false) || findItem(word, true);
+  if (id) { print(ITEMS[id].detail, "desc"); return; }
+  if (["window","small window"].some(w => word.includes(w))) {
+    print("A small window on the north side of the house. It is " + (state.windowOpen ? "slightly open." : "closed."), "desc");
+    return;
+  }
+  if (word.includes("troll") && ROOMS[state.room].hasTroll && state.trollAlive) {
+    print("A hideous troll, about seven feet tall, covered in warts. He smells terrible.", "desc");
+    return;
+  }
+  print("You see nothing special about the " + word + ".", "desc");
+}
+
+function doInventory() {
+  if (state.inventory.length === 0) { print("You are empty-handed.", "desc"); return; }
+  print("You are carrying:", "desc");
+  state.inventory.forEach(id => print("  " + ITEMS[id].name, "item"));
+}
+
+function doLight(word) {
+  if (!word || word.includes("lantern") || word.includes("lamp")) {
+    const id = findItem("lantern", false);
+    if (!id) { print("You don't have a lantern.", "err"); return; }
+    state.lampLit = true;
+    ITEMS["lantern"].light = true;
+    ITEMS["lantern"].desc = "A battered brass lantern, blazing with light.";
+    print("The lantern flares to life, filling the area with warm light.", "desc");
+  } else {
+    print("You can't light that.", "err");
+  }
+}
+
+function doKill(word) {
+  const room = ROOMS[state.room];
+  if (!room.hasTroll || !state.trollAlive) { print("There's nothing to attack here.", "err"); return; }
+  const hasWeapon = state.inventory.some(id => ITEMS[id] && ITEMS[id].weapon);
+  if (!hasWeapon) {
+    print("You try to fight the troll barehanded. He laughs and cuffs you on the ear. You'd better find a weapon.", "err");
+    return;
+  }
+  state.trollAlive = false;
+  state.score += 25;
+  print("You slash at the troll with the knife! He lets out a horrible shriek and crumples to the ground, dead.", "desc");
+  print("The eastern passage is now clear.", "sys");
+  updateStatus();
+}
+
+function doOpen(word) {
+  if (word.includes("window")) {
+    if (state.room === "behind_house" || state.room === "north_of_house") {
+      state.windowOpen = true;
+      print("The window is already slightly open.", "desc");
+    } else {
+      print("There's no window here.", "err");
+    }
+  } else if (word.includes("trapdoor") || word.includes("trap") || word.includes("door")) {
+    if (state.room === "kitchen") {
+      print("The trapdoor opens, revealing a dark staircase leading down.", "desc");
+      ROOMS["kitchen"].exits["down"] = "cellar";
+    } else {
+      print("There's no trapdoor here.", "err");
+    }
+  } else {
+    print("You can't open that.", "err");
+  }
+}
+
+function doRead(word) {
+  const id = findItem(word, false) || findItem(word, true);
+  if (!id) { print("There's nothing like that to read.", "err"); return; }
+  if (ITEMS[id].detail) { print(ITEMS[id].detail, "desc"); }
+  else { print("There's nothing written on it.", "desc"); }
+}
+
+function doLook() {
+  describeRoom(true);
+}
+
+function checkWin() {
+  const hasTrophy = state.inventory.includes("trophy");
+  const hasCoins  = state.inventory.includes("coins");
+  if (hasTrophy && hasCoins) {
+    state.won = true;
+    printBlank();
+    print("**** YOU HAVE WON ****", "win");
+    printBlank();
+    print("You have collected all the treasures of the Underground Empire!", "win");
+    print("Final score: " + state.score + " points in " + state.moves + " moves.", "sys");
+    print('Type "restart" to play again.', "sys");
+  }
+}
+
+// ─── COMMAND DISPATCH ───────────────────────────────────────────────────────
+function parse(raw) {
+  if (state.dead) { print("You are dead. Type 'restart' to play again.", "err"); return; }
+
+  const input = normalize(raw);
+  if (!input) return;
+
+  print("> " + raw, "cmd");
+
+  if (input === "restart") {
+    location.reload();
+    return;
+  }
+
+  if (state.won) {
+    print("The game is over. Type 'restart' to play again.", "sys");
+    return;
+  }
+
+  // dark death
+  if (isDark() && !["n","s","e","w","u","d","north","south","east","west","up","down","go","look","l","i","inventory","restart"].includes(input.split(" ")[0])) {
+    if (Math.random() < 0.3) {
+      state.dead = true;
+      print("Oh no! A grue has found you in the darkness and eaten you.", "err");
+      print("**** YOU HAVE BEEN EATEN BY A GRUE ****", "err");
+      print('Type "restart" to play again.', "sys");
+      return;
+    }
+  }
+
+  const [verb, ...rest] = input.split(" ");
+  const obj = rest.join(" ");
+
+  if (["n","s","e","w","u","d","north","south","east","west","up","down"].includes(verb)) {
+    go(verb); return;
+  }
+
+  switch(verb) {
+    case "go":     go(obj || ""); break;
+    case "look":
+    case "l":      doLook(); break;
+    case "take":
+    case "get":
+    case "pick":   doTake(obj.replace(/^up /, "")); break;
+    case "drop":
+    case "put":    doDrop(obj); break;
+    case "examine":
+    case "ex":
+    case "x":
+    case "inspect":
+    case "look at": doExamine(obj); break;
+    case "inventory":
+    case "i":      doInventory(); break;
+    case "light":
+    case "turn on":
+    case "ignite": doLight(obj); break;
+    case "kill":
+    case "attack":
+    case "fight":
+    case "stab":
+    case "slash":  doKill(obj); break;
+    case "open":   doOpen(obj); break;
+    case "read":   doRead(obj); break;
+    case "score":  print("Your score is " + state.score + " points in " + state.moves + " moves.", "sys"); break;
+    case "help":
+    case "?":
+      print("Commands: go [dir], look, take [item], drop [item], examine [item],", "sys");
+      print("          inventory, open [thing], light lantern, kill troll, read [item], score", "sys");
+      print("Directions: north/n, south/s, east/e, west/w, up/u, down/d", "sys");
+      break;
+    case "quit":
+    case "q":
+      print("Your score is " + state.score + " in " + state.moves + " moves. Thanks for playing.", "sys");
+      state.dead = true;
+      break;
+    case "wait":
+    case "z":
+      print("Time passes.", "desc");
+      state.moves++;
+      updateStatus();
+      break;
+    default:
+      const noops = ["xyzzy","plugh","plover","hello","hi","yes","no","jump","sing","dance","eat","drink","smell","listen","touch"];
+      if (noops.includes(verb)) {
+        const responses = ["A hollow voice says 'Fool!'","Nothing happens.","That was unproductive.","If that's what you want.","The wind shifts."];
+        print(responses[Math.floor(Math.random() * responses.length)], "sys");
+      } else {
+        print("I don't understand that. Try 'help' for a list of commands.", "err");
+      }
+  }
+
+  state.moves++;
+  updateStatus();
+  checkWin();
+}
+
+// ─── INPUT ──────────────────────────────────────────────────────────────────
+const input = document.getElementById("cmd-input");
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    const val = input.value;
+    input.value = "";
+    parse(val);
+  }
+});
+
+// keep focus
+document.addEventListener("click", () => input.focus());
+
+// ─── INTRO ──────────────────────────────────────────────────────────────────
+(function init() {
+  print("ZORK I: The Great Underground Empire", "room");
+  print("Copyright (c) 1981, 1982, 1983 Infocom, Inc.", "sys");
+  print("Revision 88 / Serial number 840726", "sys");
+  printBlank();
+  print("West of House", "room");
+  print("You are standing in an open field west of a white house, with a boarded front door.", "desc");
+  print("A path leads around to the north and south.", "desc");
+  printBlank();
+  print("There is a small mailbox here.", "item");
+  printBlank();
+  print('Type "help" for a list of commands.', "sys");
+  ROOMS["clearing"].visited = true;
+  updateStatus();
+})();
+</script>
+</body>
+</html>
