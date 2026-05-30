@@ -51,7 +51,7 @@ aside p {
     height: auto;
     filter: grayscale(100%);
     transition: .35s;
-    box-shadow: 2px 2px 10px rgb(21, 99, 134);
+    box-shadow: 2px 2px 10px black;
 }
 
 .faze:hover {
@@ -65,7 +65,7 @@ article {
 }
 
 .project {
-    filter: blur(200%);
+    filter: grayscale(100%);
     background-size: cover;
     min-width: 300px;
     min-height: 300px;
@@ -73,7 +73,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 3px rgb(70, 105, 158);
+    border: solid 2px rgb(0, 0, 0);
     transition: 1s;
 }
 
@@ -87,10 +87,9 @@ article {
 }
 
 .project p {
-    color: rgb(159, 243, 243);
+    color: white;
     text-shadow: 0px 0px 20px black;
     font-size: 25px;
-
 }
 
 project a {
