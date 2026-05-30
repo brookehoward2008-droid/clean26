@@ -1,40 +1,96 @@
-/* styles/homepage.css */
-
-.favorite-color {
-    color: #39705f;
 }
 
-.project a {
-    display: block;
-    padding: 1rem;
+.faze:hover {
+    filter: none;
+}
+
+article {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    filter: grayscale(100%);
+    background-size: cover;
+    min-width: 300px;
+    min-height: 300px;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    transition: 1s;
+}
+
+.project:first-child {
+    width: 99.9%;
+    background-position: center;
+}
+
+.project:hover {
+    filter: none;
+}
+
+.project p {
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    font-size: 25px;
+}
+
+project a {
+    padding: 200px;
     text-decoration: none;
-    color: inherit;
 }
 
-.project a:hover,
-.project a:focus {
-    text-decoration: underline;
+#history {
+    background-image: url('../images/history-hero-bg.jpg');
 }
 
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 1rem;
-    padding: 0.75rem 1rem;
-    background: #ffffff;
-    color: #000000;
-    z-index: 1000;
+#history-plain {
+    background-image: url('../images/1-ike.jpg');
 }
 
-.skip-link:focus {
-    top: 1rem;
+#theater2 {
+    background-image: url('../images/sherwoodforrest.jpg');
 }
 
-footer {
-    padding: 2rem;
-    text-align: center;
+#stew-recipe {
+    background-image: url('../images/hero.jpg');
 }
 
-footer p {
-    margin: 0;
+#cascades {
+    background-image: url('../images/cascade_mountains-bg.jpg');
+}
+
+#mobile-cascade {
+    background-image: url('../images/page1.jpg');
+}
+
+#olympic {
+    background-image: url('../images/olympic-mountains.jpg');
+}
+
+#images {
+    background-image: url('../images/colors01.jpg');
+}
+
+#fluid {
+    background-image: url('../images/fluid01.jpg');
+}
+
+#media-queries {
+    background-image: url('../images/page1.jpg');
+}
+
+#orcas {
+    background-image: url('../images/sj-001.jpg');
+}
+
+#sanjuan {
+    background-image: url('../images/SJIVB-1.png');
+}
+
+#lopez {
+    background-image: url('../images/sj-010.jpg');
 }
