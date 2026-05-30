@@ -1,151 +1,106 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+:root {
+    --bg: #0f1720;
+    --bg-soft: #16212d;
+    --panel: #1b2a38;
+    --panel-2: #24384a;
+    --text: #eaf4fb;
+    --text-soft: #bfd0de;
+    --heading: #f7fbff;
+    --accent: #64d9ff;
+    --accent-2: #3ec7b7;
+    --line: #355268;
+    --shadow: rgba(5, 12, 20, 0.35);
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 18% 18%, rgba(100, 217, 255, 0.12), transparent 24%),
+        radial-gradient(circle at 82% 10%, rgba(62, 199, 183, 0.10), transparent 22%),
+        linear-gradient(to bottom, #111c27, var(--bg) 45%, #13202c);
+    color: var(--text);
 }
 
-header,
-main,
-footer {
-    display: flex;
-    width: 85%;
-    margin: 20px auto;
-    justify-content: space-between;
+header {
+    border-bottom: 2px solid var(--accent-2);
 }
 
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
+header h1 {
+    color: var(--heading);
 }
 
 nav a {
-    border-left: solid 1px black;
-    justify-content: center;
-    align-content: center;
-    padding-left: 15px;
-    text-decoration: none;
-    color: black;
-    width: 100%;
+    color: var(--accent);
+    border-left: 1px solid var(--line);
 }
 
 nav a:hover {
-    background-color: #39705f;
-    color: white;
+    background-color: var(--accent-2);
+    color: var(--heading);
 }
 
 aside {
-    width: 20%;
+    background: linear-gradient(to bottom, var(--panel), var(--bg-soft));
+    color: var(--text);
+    border: 2px solid var(--line);
+    box-shadow: 0 10px 24px var(--shadow);
+}
+
+aside h3 {
+    color: var(--heading);
 }
 
 aside p {
-    margin: 20px 20px 20px 0px;
+    color: var(--text-soft);
 }
 
 .faze {
-    width: 80%;
-    height: auto;
-    filter: grayscale(100%);
-    transition: .35s;
-    box-shadow: 2px 2px 10px rgb(21, 99, 134);
-}
-
-.faze:hover {
-    filter: none;
-}
-
-article {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+    box-shadow: 0 8px 22px rgba(100, 217, 255, 0.18);
 }
 
 .project {
-    filter: blur(200%);
-    background-size: cover;
-    min-width: 300px;
-    min-height: 300px;
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 3px rgb(70, 105, 158);
-    transition: 1s;
+    border: 3px solid var(--panel-2);
+    box-shadow: 0 10px 24px var(--shadow);
 }
 
-.project:first-child {
-    width: 99.9%;
-    background-position: center;
+.project::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(8, 14, 22, 0.72), rgba(8, 14, 22, 0.18)),
+        linear-gradient(to bottom right, rgba(100, 217, 255, 0.12), rgba(62, 199, 183, 0.08));
+    pointer-events: none;
+    transition: opacity 0.35s ease;
 }
 
 .project:hover {
-    filter: hue-rotate(90deg) saturate(1000%) brightness(1.5);
+    box-shadow: 0 16px 32px rgba(5, 12, 20, 0.42);
+}
+
+.project:hover::before {
+    opacity: 0.82;
 }
 
 .project p {
-    color: rgb(159, 243, 243);
-    text-shadow: 0px 0px 20px black;
-    font-size: 25px;
-
+    color: var(--heading);
+    background: rgba(15, 23, 32, 0.55);
+    border: 1px solid rgba(100, 217, 255, 0.18);
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(0, 0, 0, 0.45);
 }
 
-project a {
-    padding: 200px;
-    text-decoration: none;
+.project:hover p {
+    color: #ffffff;
+    background: rgba(15, 23, 32, 0.68);
+    border-color: rgba(100, 217, 255, 0.32);
 }
 
-#history {
-    background-image: url('../images/history-hero-bg.jpg');
+a {
+    color: var(--accent);
 }
 
-#history-plain {
-    background-image: url('../images/1-ike.jpg');
-}
-
-#theater2 {
-    background-image: url('../images/sherwoodforrest.jpg');
-}
-
-#stew-recipe {
-    background-image: url('../images/hero.jpg');
-}
-
-#cascades {
-    background-image: url('../images/cascade_mountains-bg.jpg');
-}
-
-#mobile-cascade {
-    background-image: url('../images/page1.jpg');
-}
-
-#olympic {
-    background-image: url('../images/olympic-mountains.jpg');
-}
-
-#images {
-    background-image: url('../images/colors01.jpg');
-}
-
-#fluid {
-    background-image: url('../images/fluid01.jpg');
-}
-
-#media-queries {
-    background-image: url('../images/page1.jpg');
-}
-
-#orcas {
-    background-image: url('../images/sj-001.jpg');
-}
-
-#sanjuan {
-    background-image: url('../images/sj-005.jpg');
-}
-
-#lopez {
-    background-image: url('../images/sj-010.jpg');
+a:hover {
+    color: #ffffff;
 }
