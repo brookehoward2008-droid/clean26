@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #1c2b49;
 }
 
 header,
@@ -65,15 +65,15 @@ article {
 }
 
 .project {
-    filter: grayscale(100%);
-    background-size: cover;
-    min-width: 300px;
+    filter: contrast(200%);
+    background-size: ;
+    cover min-width: 300px;
     min-height: 300px;
     width: 33.3%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px black;
+    border: solid 3px rgb(70, 105, 158);
     transition: 1s;
 }
 
@@ -83,7 +83,7 @@ article {
 }
 
 .project:hover {
-    filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg) saturate(1000%) brightness(1.5);
 }
 
 .project p {
