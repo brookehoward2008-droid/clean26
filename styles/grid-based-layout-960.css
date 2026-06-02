@@ -27,7 +27,7 @@ header {
     text-align: left;
     padding: 4rem 1rem;
     background:
-        linear-gradient(rgba(38, 55, 47, 0.55), rgba(38, 55, 47, 0.65)),
+        linear-gradient(rgba(70, 70, 75, 0.58), rgba(70, 70, 75, 0.72)),
         url("../images/AdobeStock_85451187.jpeg") center / cover;
 }
 
