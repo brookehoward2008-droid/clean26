@@ -145,7 +145,8 @@ h2 {
 }
 
 .poem-card .card-inner {
-    min-height: 100%;
+    height: 380px;
+    overflow-y: auto;
     padding: 1.25rem;
     border: 1px solid #dccfbe;
     border-radius: 6px;
