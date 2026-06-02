@@ -20,8 +20,7 @@
     { href: 'pages/fluid.html', label: 'Fluid Dimensions' },
     { href: 'pages/media-queries.html', label: 'Media Queries' },
     { href: 'pages/orcas.html', label: 'Orcas Island' },
-    { href: 'pages/sanjuan.html', label: 'San Juan Island' },
-    { href: 'pages/lopez.html', label: 'Lopez Island' },
+{ href: 'pages/lopez.html', label: 'Lopez Island' },
     { href: 'pages/grid-based-layout.html', label: 'Grid Layout' },
   ];
 
