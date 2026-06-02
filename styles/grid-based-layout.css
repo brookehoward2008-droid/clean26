@@ -1,4 +1,5 @@
 @import url("nav.css");
+@import url("https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&display=swap");
 
 * {
     box-sizing: border-box;
@@ -6,8 +7,8 @@
 
 body {
     margin: 0;
-    color: #27302b;
-    background: #f7f2ec url("../images/background-grid-page.jpg") center top / cover fixed;
+    color: #f4eadc;
+    background: #1f2a24 url("../images/body-bg-pink-flowers.jpg") center top / cover fixed;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -17,18 +18,32 @@ body::before {
     inset: 0;
     z-index: -1;
     content: "";
-    background: rgba(247, 242, 236, 0.78);
+    background:
+        linear-gradient(180deg, rgba(25, 37, 31, 0.64), rgba(25, 37, 31, 0.88)),
+        url("../images/body-texture-cracked.jpg") center top / cover fixed,
+        rgba(25, 37, 31, 0.86);
+    background-blend-mode: normal, soft-light, normal;
+    opacity: 0.68;
 }
 
 .site-header,
 .site-footer {
     color: #fffaf4;
-    background: rgba(42, 57, 49, 0.92);
     text-align: center;
 }
 
 .site-header {
-    padding: 3rem 1rem;
+    min-height: 42vh;
+    padding: 5rem 1rem 4rem;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(38, 55, 47, 0.62), rgba(38, 55, 47, 0.72)),
+        url("../images/header-bg-liana-s.jpg") center / cover;
+}
+
+.site-footer {
+    background: rgba(42, 57, 49, 0.92);
 }
 
 .site-footer {
@@ -41,9 +56,17 @@ body::before {
     margin: 0 auto;
 }
 
+.header-content {
+    padding: 2rem;
+    background: rgba(42, 57, 49, 0.52);
+    border: 1px solid rgba(255, 250, 244, 0.24);
+    border-radius: 8px;
+}
+
 .eyebrow {
     margin: 0 0 0.5rem;
     color: #f0d9ad;
+    font-family: "Amarna", Arial, Helvetica, sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -52,9 +75,10 @@ body::before {
 
 .site-header h1 {
     margin: 0 0 0.75rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2.7rem;
+    font-family: "Amarna", Georgia, "Times New Roman", serif;
+    font-size: 3.35rem;
     font-weight: 700;
+    font-optical-sizing: auto;
 }
 
 .site-header p,
@@ -75,9 +99,20 @@ section {
 
 h2 {
     margin: 0 0 1rem;
-    color: #2a3931;
-    font-family: Georgia, "Times New Roman", serif;
+    color: #fff5e8;
+    font-family: "Amarna", Georgia, "Times New Roman", serif;
     font-size: 1.55rem;
+    font-optical-sizing: auto;
+}
+
+.section-kicker {
+    margin: 0 0 0.15rem;
+    color: #f0d9ad;
+    font-family: "Amarna", Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .grid-row {
@@ -85,18 +120,45 @@ h2 {
     margin-right: -0.5rem;
 }
 
-.song-card,
+.poem-card,
 .image-card {
     padding: 0.5rem;
 }
 
-.card-inner {
+.poem-card .card-inner {
     min-height: 100%;
-    padding: 1.1rem;
-    background: rgba(255, 250, 244, 0.94);
+    padding: 1.25rem;
     border: 1px solid #dccfbe;
     border-radius: 6px;
-    box-shadow: 0 10px 24px rgba(45, 42, 35, 0.12);
+    color: #17211b;
+    box-shadow: 0 16px 34px rgba(45, 42, 35, 0.14);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.poem-card .card-inner:hover {
+    box-shadow: 0 24px 48px rgba(45, 42, 35, 0.2);
+    transform: translateY(-4px);
+}
+
+.poem-card:nth-child(1) .card-inner {
+    background:
+        linear-gradient(rgba(248, 241, 230, 0.82), rgba(248, 241, 230, 0.86)),
+        url("../images/poem-bg-pascal-meier.jpg") center / cover;
+    border-color: #c9ad8d;
+}
+
+.poem-card:nth-child(2) .card-inner {
+    background:
+        linear-gradient(rgba(234, 240, 231, 0.84), rgba(234, 240, 231, 0.88)),
+        url("../images/poem-bg-mak.jpg") center / cover;
+    border-color: #9eb894;
+}
+
+.poem-card:nth-child(3) .card-inner {
+    background:
+        linear-gradient(rgba(248, 241, 215, 0.84), rgba(248, 241, 215, 0.88)),
+        url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
+    border-color: #cdbd70;
 }
 
 .card-inner h3 {
@@ -112,27 +174,82 @@ h2 {
     font-style: italic;
 }
 
+.translator {
+    margin-top: -0.4rem;
+    color: #6e756f;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
 .image-card {
+    position: relative;
     margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 16px 34px rgba(45, 42, 35, 0.18);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.image-card:hover {
+    box-shadow: 0 26px 54px rgba(45, 42, 35, 0.28);
+    transform: translateY(-5px);
 }
 
 .image-card img {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    border-radius: 6px 6px 0 0;
+    transform: scale(1);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    border-radius: 8px;
+}
+
+.image-card:hover img {
+    transform: scale(1.08);
+}
+
+.image-card:nth-child(1):hover img {
+    filter: sepia(0.45) saturate(1.55) hue-rotate(325deg) contrast(1.08);
+}
+
+.image-card:nth-child(2):hover img {
+    filter: saturate(1.8) hue-rotate(18deg) contrast(1.08);
+}
+
+.image-card:nth-child(3):hover img {
+    filter: saturate(1.5) hue-rotate(155deg) contrast(1.05);
+}
+
+.image-card:nth-child(4):hover img {
+    filter: saturate(1.7) hue-rotate(285deg) contrast(1.08);
 }
 
 .image-card figcaption {
-    min-height: 3.25rem;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    min-height: 3rem;
     padding: 0.7rem;
-    color: #4f5b52;
-    background: rgba(255, 250, 244, 0.95);
-    border: 1px solid #dccfbe;
-    border-top: 0;
+    color: #fffaf4;
+    background: rgba(42, 57, 49, 0.82);
     border-radius: 0 0 6px 6px;
     font-size: 0.86rem;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-card:hover figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-gallery {
+    width: min(1360px, 98vw);
+    margin-right: calc(50% - min(680px, 49vw));
+    margin-left: calc(50% - min(680px, 49vw));
 }
 
 @media (max-width: 600px) {
@@ -141,11 +258,16 @@ h2 {
     }
 
     .site-header {
+        min-height: 34vh;
         padding: 2.25rem 1rem;
     }
 
     .site-header h1 {
         font-size: 2rem;
+    }
+
+    .header-content {
+        padding: 1.2rem;
     }
 
     main {
