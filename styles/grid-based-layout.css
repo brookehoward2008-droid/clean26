@@ -87,6 +87,15 @@ body::before {
     margin: 0 auto;
 }
 
+.site-header a {
+    color: #f0d9ad;
+    text-underline-offset: 3px;
+}
+
+.site-header a:hover {
+    color: #fffaf4;
+}
+
 main {
     width: 100%;
     padding: 2rem 0;
@@ -161,9 +170,10 @@ h2 {
 
 .poem-card .card-inner {
     padding: 1.25rem;
-    border: 1px solid #dccfbe;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
-    color: #17211b;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
     box-shadow: 0 16px 34px rgba(45, 42, 35, 0.14);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -174,42 +184,33 @@ h2 {
 }
 
 .poem-card:nth-child(1) .card-inner {
-    background:
-        linear-gradient(rgba(248, 241, 230, 0.82), rgba(248, 241, 230, 0.86)),
-        url("../images/poem-bg-pascal-meier.jpg") center / cover;
-    border-color: #c9ad8d;
+    background: url("../images/poem-bg-pascal-meier.jpg") center / cover;
 }
 
 .poem-card:nth-child(2) .card-inner {
-    background:
-        linear-gradient(rgba(234, 240, 231, 0.84), rgba(234, 240, 231, 0.88)),
-        url("../images/poem-bg-mak.jpg") center / cover;
-    border-color: #9eb894;
+    background: url("../images/poem-bg-mak.jpg") center / cover;
 }
 
 .poem-card:nth-child(3) .card-inner {
-    background:
-        linear-gradient(rgba(248, 241, 215, 0.84), rgba(248, 241, 215, 0.88)),
-        url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
-    border-color: #cdbd70;
+    background: url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
 }
 
 .card-inner h3 {
     margin: 0 0 0.25rem;
-    color: #853f34;
+    color: #fff;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.2rem;
 }
 
 .byline {
     margin-top: 0;
-    color: #5e665f;
+    color: rgba(255, 255, 255, 0.85);
     font-style: italic;
 }
 
 .translator {
     margin-top: -0.4rem;
-    color: #6e756f;
+    color: rgba(255, 255, 255, 0.75);
     font-size: 0.9rem;
     font-style: italic;
 }
