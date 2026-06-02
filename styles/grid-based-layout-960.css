@@ -18,8 +18,8 @@ body::before {
     inset: 0;
     z-index: -1;
     content: "";
-    background: rgba(10, 10, 20, 0.45);
-    opacity: 1;
+    background: url("../images/body-texture-cracked.jpg") center / cover;
+    opacity: 0.18;
 }
 
 header {
