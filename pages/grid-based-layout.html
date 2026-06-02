@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers in the Grid</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="../styles/grid-based-layout.css">
+    <script src="../scripts/nav.js" defer></script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <header class="site-header pure-g">
+        <div class="pure-u-1 header-content">
+            <p class="eyebrow">Grid Based Layout</p>
+            <h1>Flowers in the Grid</h1>
+            <p>
+                A responsive Pure.css layout pairing three songs with four Unsplash flower images.
+                The grid moves from stacked mobile sections into balanced desktop columns.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section class="lyrics-section" aria-labelledby="lyrics-heading">
+            <h2 id="lyrics-heading">Song Selections</h2>
+            <div class="pure-g grid-row">
+                <article class="song-card pure-u-1 pure-u-md-1-3">
+                    <div class="card-inner">
+                        <h3>Flowers On The Wall</h3>
+                        <p class="byline">The Statler Brothers</p>
+                        <p>
+                            This song has a playful, offbeat mood. It fits the flower images because it turns a quiet room
+                            into a visual scene full of pattern, repetition, and private imagination.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="song-card pure-u-1 pure-u-md-1-3">
+                    <div class="card-inner">
+                        <h3>Imagine</h3>
+                        <p class="byline">John Lennon</p>
+                        <p>
+                            This selection adds a softer reflective layer. The open flower fields support the idea of space,
+                            calm, and a wider view beyond the edges of one person.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="song-card pure-u-1 pure-u-md-1-3">
+                    <div class="card-inner">
+                        <h3>Fade Into You</h3>
+                        <p class="byline">Mazzy Star</p>
+                        <p>
+                            This song brings a dreamy visual tone. The blurred flowers and soft color shifts connect to the
+                            feeling of memory, distance, and atmosphere.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="image-section" aria-labelledby="image-heading">
+            <h2 id="image-heading">Unsplash Image Grid</h2>
+            <div class="pure-g grid-row">
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/jacalyn-beales-unsplash.jpg" alt="Wildflowers near a soft coastal landscape">
+                    <figcaption>Photo by Jacalyn Beales on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/jayson-hinrichsen-unsplash.jpg" alt="Dense orange and white flowers in a field">
+                    <figcaption>Photo by Jayson Hinrichsen on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/nataliya-melnychuk-unsplash.jpg" alt="White boots filled with flowers in grass">
+                    <figcaption>Photo by Nataliya Melnychuk on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/squids-unsplash.jpg" alt="Blurred red and yellow flowers in green grass">
+                    <figcaption>Photo by Squids on Unsplash</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer pure-g">
+        <div class="pure-u-1">
+            <p>EvCC | Spring 2026 | Brooke</p>
+        </div>
+    </footer>
+</body>
+</html>
