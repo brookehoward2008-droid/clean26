@@ -185,20 +185,20 @@ h2 {
 
 .poem-card:nth-child(1) .card-inner {
     background:
-        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
-        url("../images/poem-bg-pascal-meier.jpg") center / cover;
+        linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
+        url("../images/jayson-hinrichsen-unsplash.jpg") 0% center / 300% auto;
 }
 
 .poem-card:nth-child(2) .card-inner {
     background:
-        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
-        url("../images/poem-bg-mak.jpg") center / cover;
+        linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
+        url("../images/jayson-hinrichsen-unsplash.jpg") 50% center / 300% auto;
 }
 
 .poem-card:nth-child(3) .card-inner {
     background:
-        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
-        url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
+        linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
+        url("../images/jayson-hinrichsen-unsplash.jpg") 100% center / 300% auto;
 }
 
 .card-inner h3 {
