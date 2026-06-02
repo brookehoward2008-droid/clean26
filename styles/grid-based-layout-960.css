@@ -24,7 +24,7 @@ body::before {
 
 header {
     color: #fffaf4;
-    text-align: center;
+    text-align: left;
     padding: 4rem 1rem;
     background:
         linear-gradient(rgba(38, 55, 47, 0.55), rgba(38, 55, 47, 0.65)),
