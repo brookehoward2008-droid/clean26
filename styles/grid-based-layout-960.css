@@ -73,6 +73,16 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
+.section-label h2 {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 250, 244, 0.42), rgba(255, 250, 244, 0.18));
+    border: 1px solid rgba(255, 250, 244, 0.56);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 14px 30px rgba(20, 22, 18, 0.16);
+    backdrop-filter: blur(16px) saturate(1.25);
+}
+
 .section-kicker {
     margin: 0 0 0.15rem;
     color: #f0d9ad;
@@ -90,6 +100,26 @@ h2 {
 .poem-card {
     color: #1a1a1a;
     padding: 1rem 0;
+}
+
+.poem-glass {
+    position: relative;
+    overflow: hidden;
+    margin: 0 4px;
+    padding: 1.1rem;
+    background: linear-gradient(135deg, rgba(255, 250, 244, 0.58), rgba(255, 250, 244, 0.28));
+    border: 1px solid rgba(255, 250, 244, 0.78);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 18px 38px rgba(20, 22, 18, 0.24);
+    backdrop-filter: blur(18px) saturate(1.3);
+}
+
+.poem-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.03) 42%, rgba(255, 255, 255, 0));
 }
 
 .poem-card h3 {
