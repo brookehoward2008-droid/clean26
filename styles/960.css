@@ -46,3 +46,17 @@
     display: table;
     clear: both;
 }
+
+@media (max-width: 960px) {
+    .container_12 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    [class*="grid_"] {
+        width: 100%;
+        margin: 0;
+        float: none;
+        display: block;
+    }
+}
