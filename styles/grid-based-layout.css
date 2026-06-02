@@ -109,6 +109,15 @@ h2 {
     padding: 0 1.5%;
 }
 
+.intro-section h1 {
+    margin: 0 0 0.5rem;
+    color: #fff5e8;
+    font-family: "Amarna", Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-optical-sizing: auto;
+}
+
 .intro-section p {
     color: #e8dfd0;
     font-size: 1rem;
