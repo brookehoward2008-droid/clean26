@@ -184,15 +184,21 @@ h2 {
 }
 
 .poem-card:nth-child(1) .card-inner {
-    background: url("../images/poem-bg-pascal-meier.jpg") center / cover;
+    background:
+        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
+        url("../images/poem-bg-pascal-meier.jpg") center / cover;
 }
 
 .poem-card:nth-child(2) .card-inner {
-    background: url("../images/poem-bg-mak.jpg") center / cover;
+    background:
+        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
+        url("../images/poem-bg-mak.jpg") center / cover;
 }
 
 .poem-card:nth-child(3) .card-inner {
-    background: url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
+    background:
+        linear-gradient(rgba(15, 25, 20, 0.52), rgba(15, 25, 20, 0.52)),
+        url("../images/poem-bg-benigno-hoyuela.jpg") center / cover;
 }
 
 .card-inner h3 {
