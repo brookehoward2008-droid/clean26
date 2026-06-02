@@ -169,6 +169,9 @@ h2 {
 }
 
 .poem-card .card-inner {
+    position: relative;
+    overflow: hidden;
+    height: 520px;
     padding: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
@@ -178,27 +181,40 @@ h2 {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.poem-card .card-inner::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    z-index: 0;
+    filter: blur(10px);
+}
+
+.poem-card .card-inner > * {
+    position: relative;
+    z-index: 1;
+}
+
 .poem-card .card-inner:hover {
     box-shadow: 0 24px 48px rgba(45, 42, 35, 0.2);
     transform: translateY(-4px);
 }
 
-.poem-card:nth-child(1) .card-inner {
+.poem-card:nth-child(1) .card-inner::before {
     background:
         linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
-        url("../images/jayson-hinrichsen-unsplash.jpg") 0% center / 300% auto;
+        url("../images/nataliya-melnychuk-unsplash.jpg") 0% center / 300% auto;
 }
 
-.poem-card:nth-child(2) .card-inner {
+.poem-card:nth-child(2) .card-inner::before {
     background:
         linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
-        url("../images/jayson-hinrichsen-unsplash.jpg") 50% center / 300% auto;
+        url("../images/nataliya-melnychuk-unsplash.jpg") 50% center / 300% auto;
 }
 
-.poem-card:nth-child(3) .card-inner {
+.poem-card:nth-child(3) .card-inner::before {
     background:
         linear-gradient(rgba(15, 25, 20, 0.48), rgba(15, 25, 20, 0.48)),
-        url("../images/jayson-hinrichsen-unsplash.jpg") 100% center / 300% auto;
+        url("../images/nataliya-melnychuk-unsplash.jpg") 100% center / 300% auto;
 }
 
 .card-inner h3 {
