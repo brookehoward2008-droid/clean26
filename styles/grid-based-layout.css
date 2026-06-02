@@ -105,6 +105,25 @@ h2 {
     font-optical-sizing: auto;
 }
 
+.intro-section {
+    max-width: 760px;
+}
+
+.intro-section p {
+    color: #e8dfd0;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.intro-section a {
+    color: #f0d9ad;
+    text-underline-offset: 3px;
+}
+
+.intro-section a:hover {
+    color: #fffaf4;
+}
+
 .section-kicker {
     margin: 0 0 0.15rem;
     color: #f0d9ad;
