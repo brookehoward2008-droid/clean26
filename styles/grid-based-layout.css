@@ -88,7 +88,8 @@ body::before {
 }
 
 main {
-    width: min(1160px, 94%);
+    width: 96%;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 2rem 0;
 }
@@ -267,9 +268,7 @@ h2 {
 }
 
 .feature-gallery {
-    width: min(1360px, 98vw);
-    margin-right: calc(50% - min(680px, 49vw));
-    margin-left: calc(50% - min(680px, 49vw));
+    width: 100%;
 }
 
 @media (max-width: 600px) {
