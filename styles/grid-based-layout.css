@@ -105,6 +105,12 @@ section {
     margin-bottom: 2rem;
 }
 
+.poetry-section {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 h2 {
     margin: 0 0 1rem;
     color: #fff5e8;
@@ -160,12 +166,22 @@ h2 {
     margin: 0;
 }
 
+.poetry-section .grid-row {
+    align-items: flex-start;
+}
+
 .poem-card,
 .image-card {
     padding: 0.5rem;
 }
 
+.poem-card {
+    display: flex;
+}
+
 .poem-card .card-inner {
+    min-height: 100%;
+    width: 100%;
     padding: 1.25rem;
     color: #fff;
 }
@@ -175,6 +191,10 @@ h2 {
     color: #fff;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.2rem;
+}
+
+.poem-card p {
+    max-width: 32rem;
 }
 
 .byline {
