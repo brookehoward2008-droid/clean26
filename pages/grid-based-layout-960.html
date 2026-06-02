@@ -14,17 +14,39 @@
     <header>
         <div class="container_12">
             <div class="grid_12 alpha omega">
-                <h1>Grid Based Layout</h1>
-                <p>The 960 Grid System was created by Nathan Smith in 2008. It is based on a fixed 960 pixel wide container divided into 12 or 16 equal columns. The number 960 was chosen because it divides evenly into many combinations, making it easy to create balanced layouts. Unlike fluid or responsive grids, the 960 system stays at a fixed width — it was designed for the era when most desktop monitors were 1024 pixels wide. Designers use classes like <code>grid_4</code> or <code>grid_3</code> to place content into columns, and the math always adds up to 12. This page uses the 960 grid to lay out three columns of poetry and four columns of images.</p>
+                <h1>Grid Based Layout — 960 Grid System</h1>
+                <p>The 960 Grid System was created by Nathan Smith in 2008. It is based on a fixed 960 pixel wide container divided into 12 or 16 equal columns. The number 960 was chosen because it divides evenly into many combinations, making it easy to create balanced layouts. Unlike fluid or responsive grids, the 960 system stays at a fixed width — it was designed for the era when most desktop monitors were 1024 pixels wide. Designers use classes like <code>grid_4</code> or <code>grid_3</code> to place content into columns, and the math always adds up to 12.</p>
+                <p><strong>Grid setup:</strong> The image gallery uses four <code>grid_3</code> columns — each column is 220px wide (3 units × 80px = 240px, minus 20px margins = 220px). The poetry section uses three <code>grid_4</code> columns — each is 300px wide (4 units × 80px = 320px, minus 20px = 300px). Both rows total 960px across the container.</p>
             </div>
         </div>
     </header>
 
     <main>
 
+        <div class="container_12 image-row">
+            <figure class="grid_3 alpha image-card">
+                <img src="../images/jacalyn-beales-unsplash.jpg" alt="Wildflowers near a soft coastal landscape">
+                <figcaption>Photo by Jacalyn Beales on Unsplash</figcaption>
+            </figure>
+
+            <figure class="grid_3 image-card">
+                <img src="../images/jayson-hinrichsen-unsplash.jpg" alt="Dense orange and white flowers in a field">
+                <figcaption>Photo by Jayson Hinrichsen on Unsplash</figcaption>
+            </figure>
+
+            <figure class="grid_3 image-card">
+                <img src="../images/nataliya-melnychuk-unsplash.jpg" alt="Red poppies and wildflowers in a field">
+                <figcaption>Photo by Nataliya Melnychuk on Unsplash</figcaption>
+            </figure>
+
+            <figure class="grid_3 omega image-card">
+                <img src="../images/squids-unsplash.jpg" alt="Blurred red and yellow flowers in green grass">
+                <figcaption>Photo by Squids on Unsplash</figcaption>
+            </figure>
+        </div>
+
         <div class="container_12">
             <div class="grid_12 alpha omega section-label">
-                <p class="section-kicker">Field notes</p>
                 <h2>Poetry Selections</h2>
             </div>
         </div>
@@ -112,35 +134,6 @@
                     And then my heart with pleasure fills,<br>
                     And dances with the Daffodils.</p>
             </article>
-        </div>
-
-        <div class="container_12">
-            <div class="grid_12 alpha omega section-label">
-                <p class="section-kicker">Gallery windows</p>
-                <h2>Unsplash Image Grid</h2>
-            </div>
-        </div>
-
-        <div class="container_12 image-row">
-            <figure class="grid_3 alpha image-card">
-                <img src="../images/jacalyn-beales-unsplash.jpg" alt="Wildflowers near a soft coastal landscape">
-                <figcaption>Photo by Jacalyn Beales on Unsplash</figcaption>
-            </figure>
-
-            <figure class="grid_3 image-card">
-                <img src="../images/jayson-hinrichsen-unsplash.jpg" alt="Dense orange and white flowers in a field">
-                <figcaption>Photo by Jayson Hinrichsen on Unsplash</figcaption>
-            </figure>
-
-            <figure class="grid_3 image-card">
-                <img src="../images/nataliya-melnychuk-unsplash.jpg" alt="Red poppies and wildflowers in a field">
-                <figcaption>Photo by Nataliya Melnychuk on Unsplash</figcaption>
-            </figure>
-
-            <figure class="grid_3 omega image-card">
-                <img src="../images/squids-unsplash.jpg" alt="Blurred red and yellow flowers in green grass">
-                <figcaption>Photo by Squids on Unsplash</figcaption>
-            </figure>
         </div>
 
     </main>

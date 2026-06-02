@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows into the Wild</title>
+    <title>Grid Based Layout — Pure.css</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="../styles/grid-based-layout.css">
@@ -14,17 +14,41 @@
 
     <header class="site-header pure-g">
         <div class="pure-u-1 header-content">
-            <h1>Grid Based Layout</h1>
+            <h1>Grid Based Layout — Pure.css</h1>
             <p>Graphic and web-designers work in the dimension that can be broken down to the rectangle, be it a page or a screen. This determines the shape of the grid as well. The lines within the grid are customized. Creators can build the grid themselves or rely on ready grid systems, while designers can use the same grid system throughout the whole piece of design, or create a new grid for each page to express their ideas.<a href="https://www.eleken.co/blog-posts/grid-layout-design-history-tips-and-best-examples" target="_blank"> eleken.co</a></p>
+            <p><strong>Grid setup:</strong> This page uses the Pure.css responsive fluid grid. The image gallery uses four equal columns — each column is <code>pure-u-md-1-4</code> (25% of the row width). The poetry section uses three equal columns — each is <code>pure-u-md-1-3</code> (33.3% of the row width). On smaller screens the images collapse to two columns (<code>pure-u-sm-1-2</code>, 50% each), and both sections stack to a single full-width column on mobile.</p>
         </div>
     </header>
 
     <main>
 
+        <section class="image-section feature-gallery">
+            <div class="pure-g grid-row">
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/jacalyn-beales-unsplash.jpg" alt="Wildflowers near a soft coastal landscape">
+                    <figcaption>Photo by Jacalyn Beales on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/jayson-hinrichsen-unsplash.jpg" alt="Dense orange and white flowers in a field">
+                    <figcaption>Photo by Jayson Hinrichsen on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/nataliya-melnychuk-unsplash.jpg" alt="White boots filled with flowers in grass">
+                    <figcaption>Photo by Nataliya Melnychuk on Unsplash</figcaption>
+                </figure>
+
+                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+                    <img src="../images/squids-unsplash.jpg" alt="Blurred red and yellow flowers in green grass">
+                    <figcaption>Photo by Squids on Unsplash</figcaption>
+                </figure>
+            </div>
+        </section>
+
         <section class="poetry-section" aria-labelledby="poetry-heading">
             <div class="pure-g">
                 <div class="pure-u-1 section-header">
-                    <p class="section-kicker">Field notes</p>
                     <h2 id="poetry-heading">Poetry Selections</h2>
                 </div>
             </div>
@@ -117,36 +141,6 @@
                             And dances with the Daffodils.</p>
                     </div>
                 </article>
-            </div>
-        </section>
-
-        <section class="image-section feature-gallery" aria-labelledby="image-heading">
-            <div class="pure-g">
-                <div class="pure-u-1 section-header">
-                    <p class="section-kicker">Gallery windows</p>
-                    <h2 id="image-heading">Unsplash Image Grid</h2>
-                </div>
-            </div>
-            <div class="pure-g grid-row">
-                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
-                    <img src="../images/jacalyn-beales-unsplash.jpg" alt="Wildflowers near a soft coastal landscape">
-                    <figcaption>Photo by Jacalyn Beales on Unsplash</figcaption>
-                </figure>
-
-                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
-                    <img src="../images/jayson-hinrichsen-unsplash.jpg" alt="Dense orange and white flowers in a field">
-                    <figcaption>Photo by Jayson Hinrichsen on Unsplash</figcaption>
-                </figure>
-
-                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
-                    <img src="../images/nataliya-melnychuk-unsplash.jpg" alt="White boots filled with flowers in grass">
-                    <figcaption>Photo by Nataliya Melnychuk on Unsplash</figcaption>
-                </figure>
-
-                <figure class="image-card pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
-                    <img src="../images/squids-unsplash.jpg" alt="Blurred red and yellow flowers in green grass">
-                    <figcaption>Photo by Squids on Unsplash</figcaption>
-                </figure>
             </div>
         </section>
     </main>
