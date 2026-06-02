@@ -22,6 +22,7 @@
     { href: 'pages/orcas.html', label: 'Orcas Island' },
 { href: 'pages/lopez.html', label: 'Lopez Island' },
     { href: 'pages/grid-based-layout.html', label: 'Grid Layout' },
+    { href: 'pages/grid-based-layout-960.html', label: 'Grid Layout — 960' },
   ];
 
   const items = links
