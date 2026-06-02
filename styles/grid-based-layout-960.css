@@ -8,18 +8,9 @@
 body {
     margin: 0;
     color: #f4eadc;
-    background: #1a1a2e url("../images/liana-s-nbZuByNqj_0-unsplash.jpg") center center / cover fixed;
+    background: url("../images/body-bg-wildflower.jpg") center / cover fixed;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-}
-
-body::before {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    content: "";
-    background: url("../images/AdobeStock_85451187.jpeg") center / cover;
-    opacity: 0.22;
 }
 
 header {
