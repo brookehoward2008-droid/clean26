@@ -88,9 +88,7 @@ body::before {
 }
 
 main {
-    width: 96%;
-    max-width: 1600px;
-    margin: 0 auto;
+    width: 100%;
     padding: 2rem 0;
 }
 
@@ -108,6 +106,7 @@ h2 {
 
 .intro-section {
     max-width: 760px;
+    padding: 0 1.5%;
 }
 
 .intro-section p {
@@ -125,6 +124,13 @@ h2 {
     color: #fffaf4;
 }
 
+.poetry-section > .section-kicker,
+.poetry-section > h2,
+.image-section > .section-kicker,
+.image-section > h2 {
+    padding-left: 1.5%;
+}
+
 .section-kicker {
     margin: 0 0 0.15rem;
     color: #f0d9ad;
@@ -136,8 +142,7 @@ h2 {
 }
 
 .grid-row {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin: 0;
 }
 
 .poem-card,
@@ -290,7 +295,7 @@ h2 {
     }
 
     main {
-        width: 92%;
+        width: 100%;
         padding: 1.5rem 0;
     }
 }
