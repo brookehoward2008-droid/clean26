@@ -142,11 +142,8 @@ h2 {
     color: #fffaf4;
 }
 
-.poetry-section > .section-kicker,
-.poetry-section > h2,
-.image-section > .section-kicker,
-.image-section > h2 {
-    padding-left: 1.5%;
+.section-header {
+    padding: 0 0.5rem;
 }
 
 .section-kicker {
