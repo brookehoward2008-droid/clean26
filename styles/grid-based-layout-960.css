@@ -8,7 +8,7 @@
 body {
     margin: 0;
     color: #f4eadc;
-    background: #1f2a24 url("../images/body-bg-pink-flowers.jpg") center top / cover fixed;
+    background: #1a1a2e url("../images/liana-s-nbZuByNqj_0-unsplash.jpg") center center / cover fixed;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -18,12 +18,8 @@ body::before {
     inset: 0;
     z-index: -1;
     content: "";
-    background:
-        linear-gradient(180deg, rgba(25, 37, 31, 0.64), rgba(25, 37, 31, 0.88)),
-        url("../images/body-texture-cracked.jpg") center top / cover fixed,
-        rgba(25, 37, 31, 0.86);
-    background-blend-mode: normal, soft-light, normal;
-    opacity: 0.68;
+    background: rgba(10, 10, 20, 0.45);
+    opacity: 1;
 }
 
 header {
