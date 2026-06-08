@@ -1,4 +1,4 @@
-// Load nav.css dynamically so pages don't need a separate <link> tag.
+// Inject nav.css before loading the nav component
 (function () {
   const inPages = window.location.pathname.includes('/pages/');
   const link = document.createElement('link');
