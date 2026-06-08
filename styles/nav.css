@@ -3,6 +3,7 @@
   padding: 0.5em;
   font-family: "Raleway", system-ui, sans-serif;
   font-size: 16px;
+  position: relative;
 }
 
 .kiwi ul {
@@ -30,4 +31,56 @@
 .kiwi a:hover {
   color: rgb(77, 107, 204);
   background-color: rgb(169, 255, 233);
+}
+
+/* Hamburger toggle button — hidden on desktop */
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: 2px solid rgb(233, 229, 225);
+  border-radius: 4px;
+  padding: 6px 8px;
+  gap: 4px;
+}
+
+.toggle-button span {
+  display: block;
+  height: 3px;
+  width: 22px;
+  background-color: rgb(233, 229, 225);
+  border-radius: 2px;
+}
+
+/* Mobile: show button, hide/show nav links */
+@media screen and (max-width: 768px) {
+  .toggle-button {
+    display: flex;
+    position: absolute;
+    top: 0.6em;
+    right: 0.6em;
+  }
+
+  .kiwi ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 2.5em;
+  }
+
+  .kiwi.active ul {
+    display: flex;
+  }
+
+  .kiwi li {
+    width: 100%;
+    margin: 2px 0;
+  }
+
+  .kiwi a {
+    display: block;
+    text-align: center;
+  }
 }
