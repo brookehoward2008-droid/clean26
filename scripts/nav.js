@@ -19,6 +19,7 @@ fetch('nav.html')
     if (toggleButton && navbarLinks) {
       toggleButton.addEventListener('click', () => {
         navbarLinks.classList.toggle('active');
+        toggleButton.classList.toggle('active');
       });
     }
   });
