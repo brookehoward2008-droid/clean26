@@ -55,7 +55,7 @@ body {
   background-color: rgb(169, 255, 233);
 }
 
-.toggle-button {
+.navbar .toggle-button {
   position: absolute;
   top: 10px;
   right: 16px;
@@ -64,6 +64,7 @@ body {
   justify-content: space-between;
   width: 30px;
   height: 21px;
+  text-decoration: none;
 }
 
 .toggle-button .bar {
@@ -80,7 +81,7 @@ body {
     align-items: flex-start;
   }
 
-  .toggle-button {
+  .navbar .toggle-button {
     display: flex;
   }
 
