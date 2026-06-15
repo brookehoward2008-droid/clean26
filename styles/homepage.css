@@ -180,21 +180,21 @@ article {
     margin: 0;
 }
 
-#history        { background-image: url('../images/history-hero-bg.jpg'); filter: invert(0.2) saturate(4) hue-rotate(180deg) contrast(1.4); }
-#history:hover  { filter: invert(0.2) saturate(4) hue-rotate(180deg) contrast(1.4); }
-#history-plain  { background-image: url('../images/1-ike.jpg'); }
-#theater2       { background-image: url('../images/sherwoodforrest.jpg'); }
-#stew-recipe    { background-image: url('../images/hero.jpg'); }
-#cascades       { background-image: url('../images/cascade_mountains-bg.jpg'); }
-#mobile-cascade { background-image: url('../images/page1.jpg'); }
-#olympic        { background-image: url('../images/olympic-mountains.jpg'); }
-#images         { background-image: url('../images/colors01.jpg'); }
-#fluid          { background-image: url('../images/fluid01.jpg'); }
-#media-queries  { background-image: url('../images/page1.jpg'); }
-#orcas          { background-image: url('../images/sj-001.jpg'); }
-#sanjuan        { background-image: url('../images/SJIVB-1.png'); }
-#lopez          { background-image: url('../images/sj-010.jpg'); }
-#grid-layout    { background-image: url('../images/nataliya-melnychuk-unsplash.jpg'); }
-#grid-layout-960 { background-image: url('../images/background-grid-#spaceman-magazine { background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); }
-#theory-of-sight { background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); }
-
+#spaceman-magazine { background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); }
+#theory-of-sight   { background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); }
+#history           { background-image: url('../images/history-hero-bg.jpg'); filter: invert(0.2) saturate(4) hue-rotate(180deg) contrast(1.4); }
+#history:hover     { filter: invert(0.2) saturate(4) hue-rotate(180deg) contrast(1.4); }
+#history-plain     { background-image: url('../images/1-ike.jpg'); }
+#theater2          { background-image: url('../images/sherwoodforrest.jpg'); }
+#stew-recipe       { background-image: url('../images/hero.jpg'); }
+#cascades          { background-image: url('../images/cascade_mountains-bg.jpg'); }
+#mobile-cascade    { background-image: url('../images/page1.jpg'); }
+#olympic           { background-image: url('../images/olympic-mountains.jpg'); }
+#images            { background-image: url('../images/colors01.jpg'); }
+#fluid             { background-image: url('../images/fluid01.jpg'); }
+#media-queries     { background-image: url('../images/page1.jpg'); }
+#orcas             { background-image: url('../images/sj-001.jpg'); }
+#sanjuan           { background-image: url('../images/SJIVB-1.png'); }
+#lopez             { background-image: url('../images/sj-010.jpg'); }
+#grid-layout       { background-image: url('../images/nataliya-melnychuk-unsplash.jpg'); }
+#grid-layout-960   { background-image: url('../images/jayson-hinrichsen-unsplash.jpg'); }
