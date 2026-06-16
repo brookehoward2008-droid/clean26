@@ -126,17 +126,17 @@ aside p[style*="color"] {
 article {
     width: 75%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(170px, 16vw);
     gap: 10px;
 }
 
 .project {
     filter: grayscale(100%);
     background-color: var(--portfolio-ink);
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    aspect-ratio: 1 / 1;
     min-width: 0;
     min-height: 0;
     display: flex;
@@ -148,16 +148,11 @@ article {
     overflow: hidden;
 }
 
-.project.featured,
-.project:first-child {
-    aspect-ratio: 1 / 1;
-}
-
 .project::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(31, 39, 50, 0.04) 0%, rgba(31, 39, 50, 0.58) 100%);
+    background: linear-gradient(180deg, rgba(31, 39, 50, 0.08) 0%, rgba(31, 39, 50, 0.68) 100%);
     transition: opacity 0.3s ease;
     z-index: 1;
 }
@@ -171,7 +166,7 @@ article {
 
 .project:hover::before,
 .project:focus-within::before {
-    opacity: 0.32;
+    opacity: 0.35;
 }
 
 .project a {
@@ -203,20 +198,57 @@ article {
     color: var(--portfolio-magenta);
 }
 
-#spaceman-magazine { background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: center; }
-#theory-of-sight   { background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: center; }
-#history           { background-image: url('../images/history-hero-bg.jpg'); }
-#history-plain     { background-image: url('../images/1-ike.jpg'); }
-#theater2          { background-image: url('../images/sherwoodforrest.jpg'); }
-#stew-recipe       { background-image: url('../images/hero.jpg'); }
-#cascades          { background-image: url('../images/cascade_mountains-bg.jpg'); }
-#mobile-cascade    { background-image: url('../images/page1.jpg'); }
-#olympic           { background-image: url('../images/olympic-mountains.jpg'); }
-#images            { background-image: url('../images/colors01.jpg'); }
-#fluid             { background-image: url('../images/fluid01.jpg'); }
-#media-queries     { background-image: url('../images/page1.jpg'); }
-#orcas             { background-image: url('../images/sj-001.jpg'); background-position: center; }
-#sanjuan           { background-image: url('../images/SJIVB-1.png'); }
-#lopez             { background-image: url('../images/sj-010.jpg'); }
-#grid-layout       { background-image: url('../images/nataliya-melnychuk-unsplash.jpg'); }
-#grid-layout-960   { background-image: url('../images/jayson-hinrichsen-unsplash.jpg'); }
+#spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 36%; }
+#theory-of-sight   { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: 52% 24%; }
+#history           { grid-column: span 2; background-image: url('../images/history-hero-bg.jpg'); background-position: center; }
+#history-plain     { grid-column: span 2; background-image: url('../images/1-ike.jpg'); background-position: center 22%; }
+#theater2          { grid-column: span 2; background-image: url('../images/sherwoodforrest.jpg'); background-position: center; }
+#stew-recipe       { grid-column: span 2; background-image: url('../images/hero.jpg'); background-position: center; }
+#cascades          { grid-column: span 2; background-image: url('../images/cascade_mountains-bg.jpg'); background-position: center; }
+#mobile-cascade    { grid-column: span 2; background-image: url('../images/page1.jpg'); background-position: center; }
+#olympic           { grid-column: span 2; background-image: url('../images/olympic-mountains.jpg'); background-position: center; }
+#images            { grid-column: span 2; background-image: url('../images/colors01.jpg'); background-position: center; }
+#fluid             { grid-column: span 2; background-image: url('../images/fluid01.jpg'); background-position: center; }
+#media-queries     { grid-column: span 2; background-image: url('../images/page1.jpg'); background-position: center; }
+#orcas             { grid-column: span 2; background-image: url('../images/sj-001.jpg'); background-position: center 38%; }
+#sanjuan           { grid-column: span 2; background-image: url('../images/SJIVB-1.png'); background-position: center; }
+#lopez             { grid-column: span 2; background-image: url('../images/sj-010.jpg'); background-position: center; }
+#grid-layout       { grid-column: span 2; background-image: url('../images/nataliya-melnychuk-unsplash.jpg'); background-position: center; }
+#grid-layout-960   { grid-column: span 2; background-image: url('../images/jayson-hinrichsen-unsplash.jpg'); background-position: center; }
+
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside,
+    article {
+        width: 100%;
+    }
+
+    article {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: minmax(180px, 34vw);
+    }
+
+    .project,
+    #spaceman-magazine,
+    #theory-of-sight,
+    #history,
+    #history-plain,
+    #theater2,
+    #stew-recipe,
+    #cascades,
+    #mobile-cascade,
+    #olympic,
+    #images,
+    #fluid,
+    #media-queries,
+    #orcas,
+    #sanjuan,
+    #lopez,
+    #grid-layout,
+    #grid-layout-960 {
+        grid-column: span 1;
+    }
+}
