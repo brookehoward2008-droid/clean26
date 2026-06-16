@@ -80,10 +80,11 @@ nav a p {
     margin: 0;
 }
 
-nav a:hover {
-    background-color: var(--portfolio-teal);
-    border-color: var(--portfolio-teal);
-    color: var(--portfolio-ink);
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--portfolio-magenta);
+    border-color: var(--portfolio-magenta);
+    color: var(--portfolio-paper);
 }
 
 main {
@@ -161,13 +162,15 @@ article {
     z-index: 1;
 }
 
-.project:hover {
+.project:hover,
+.project:focus-within {
     filter: none;
     transform: translateY(-4px);
-    border-color: var(--portfolio-teal);
+    border-color: var(--portfolio-magenta);
 }
 
-.project:hover::before {
+.project:hover::before,
+.project:focus-within::before {
     opacity: 0.35;
 }
 
@@ -192,6 +195,12 @@ article {
     letter-spacing: 0.02em;
     text-align: center;
     margin: 0;
+    transition: color 0.3s ease;
+}
+
+.project:hover p,
+.project:focus-within p {
+    color: var(--portfolio-magenta);
 }
 
 #spaceman-magazine { background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: center; }
