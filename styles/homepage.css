@@ -125,9 +125,9 @@ aside p[style*="color"] {
 
 article {
     width: 75%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
 }
 
 .project {
@@ -136,9 +136,9 @@ article {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    min-width: 250px;
-    min-height: 280px;
-    flex: 1 1 calc(33.333% - 8px);
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    min-height: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,16 +148,16 @@ article {
     overflow: hidden;
 }
 
+.project.featured,
 .project:first-child {
-    flex: 1 1 100%;
-    min-height: 320px;
+    aspect-ratio: 1 / 1;
 }
 
 .project::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(31, 39, 50, 0.05) 0%, rgba(31, 39, 50, 0.62) 100%);
+    background: linear-gradient(180deg, rgba(31, 39, 50, 0.04) 0%, rgba(31, 39, 50, 0.58) 100%);
     transition: opacity 0.3s ease;
     z-index: 1;
 }
@@ -171,12 +171,12 @@ article {
 
 .project:hover::before,
 .project:focus-within::before {
-    opacity: 0.35;
+    opacity: 0.32;
 }
 
 .project a {
     text-decoration: none;
-    padding: 60px 40px;
+    padding: 40px 28px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -188,9 +188,9 @@ article {
 
 .project p {
     color: white;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
     font-family: "Fraunces", Georgia, serif;
-    font-size: 1.6rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
     font-weight: 700;
     letter-spacing: 0.02em;
     text-align: center;
