@@ -192,12 +192,13 @@ article {
     letter-spacing: 0.02em;
     text-align: center;
     margin: 0;
-    transition: color 0.3s ease;
+    transition: text-shadow 0.3s ease;
 }
 
 .project:hover p,
 .project:focus-within p {
-    color: var(--portfolio-magenta);
+    color: white;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
 #spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 36%; }
@@ -238,23 +239,7 @@ article {
     }
 
     .project,
-    #spaceman-magazine,
-    #theory-of-sight,
-    #history,
-    #history-plain,
-    #theater2,
-    #stew-recipe,
-    #cascades,
-    #mobile-cascade,
-    #olympic,
-    #images,
-    #fluid,
-    #media-queries,
-    #orcas,
-    #sanjuan,
-    #lopez,
-    #grid-layout,
-    #grid-layout-960 {
+    .project.featured {
         grid-column: span 1;
     }
 }
