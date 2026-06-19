@@ -1,67 +1,34 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Graph 130 Navigation | Brooke Howard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles/nav.css" />
-  </head>
-  <body class="nav-assignment-page">
-    <nav class="navbar">
-      <div class="page-title">
-        <p>Graph 130</p>
-      </div>
-      <a href="#" class="toggle-button" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="burger-layer top-bun"></span>
-        <span class="burger-layer lettuce"></span>
-        <span class="burger-layer tomato"></span>
-        <span class="burger-layer cheese"></span>
-        <span class="burger-layer meat"></span>
-        <span class="burger-layer bottom-bun"></span>
-      </a>
-      <div class="hamish">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="history-refactor.html">History</a></li>
-          <li><a href="theatre-2.html">Village Theatre</a></li>
-          <li><a href="stew-recipe.html">Stew Recipe</a></li>
-          <li><a href="cascade.html">Cascade Mountains</a></li>
-          <li><a href="mobile-cascade.html">Cascade: Mobile Responsive</a></li>
-          <li><a href="olympic.html">Olympic Mountains</a></li>
-          <li><a href="opt-images.html">Optimized Images</a></li>
-          <li><a href="fluid.html">Fluid Dimensions</a></li>
-          <li><a href="media-queries.html">Media Queries</a></li>
-          <li><a href="orcas.html">Orcas Island</a></li>
-          <li><a href="sanjuan.html">San Juan Island</a></li>
-          <li><a href="lopez.html">Lopez Island</a></li>
-          <li><a href="grid-based-layout.html">Grid Layout</a></li>
-          <li><a href="grid-based-layout-960.html">Grid Layout — 960</a></li>
-          <li><a href="https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/final/index.html">Spaceman Magazine</a></li>
-          <li><a href="https://brookehoward2008-droid.github.io/theory-of-sigh/">Theory of Sight</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <main class="nav-assignment-notes">
-      <h1>Responsive Navigation</h1>
-      <img src="../images/page1.jpg" alt="Cascade landscape used in Brooke Howard's Graph 130 responsive design work" />
-    </main>
-
-    <script>
-      const toggleButton = document.getElementsByClassName('toggle-button')[0];
-      const navbarLinks = document.getElementsByClassName('hamish')[0];
-
-      if (toggleButton && navbarLinks) {
-        toggleButton.addEventListener('click', event => {
-          event.preventDefault();
-          navbarLinks.classList.toggle('active');
-          toggleButton.classList.toggle('active');
-          toggleButton.setAttribute('aria-expanded', navbarLinks.classList.contains('active'));
-        });
-      }
-    </script>
-  </body>
-</html>
+<nav class="navbar">
+  <div class="page-title">
+    <p>Graph 130</p>
+  </div>
+  <a href="#" class="toggle-button" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="burger-layer top-bun"></span>
+    <span class="burger-layer lettuce"></span>
+    <span class="burger-layer tomato"></span>
+    <span class="burger-layer cheese"></span>
+    <span class="burger-layer meat"></span>
+    <span class="burger-layer bottom-bun"></span>
+  </a>
+  <div class="I_am_not_Amish">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="history-refactor.html">History</a></li>
+      <li><a href="theatre-2.html">Village Theatre</a></li>
+      <li><a href="stew-recipe.html">Stew Recipe</a></li>
+      <li><a href="cascade.html">Cascade Mountains</a></li>
+      <li><a href="mobile-cascade.html">Cascade: Mobile Responsive</a></li>
+      <li><a href="olympic.html">Olympic Mountains</a></li>
+      <li><a href="opt-images.html">Optimized Images</a></li>
+      <li><a href="fluid.html">Fluid Dimensions</a></li>
+      <li><a href="media-queries.html">Media Queries</a></li>
+      <li><a href="orcas.html">Orcas Island</a></li>
+      <li><a href="sanjuan.html">San Juan Island</a></li>
+      <li><a href="lopez.html">Lopez Island</a></li>
+      <li><a href="grid-based-layout.html">Grid Layout</a></li>
+      <li><a href="grid-based-layout-960.html">Grid Layout — 960</a></li>
+      <li><a href="https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/final/index.html">Spaceman Magazine</a></li>
+      <li><a href="https://brookehoward2008-droid.github.io/theory-of-sigh/">Theory of Sight</a></li>
+    </ul>
+  </div>
+</nav>
