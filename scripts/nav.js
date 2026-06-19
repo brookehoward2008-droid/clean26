@@ -36,7 +36,7 @@
       navPlaceholder.innerHTML = data;
 
       const toggleButton = document.getElementsByClassName('toggle-button')[0];
-      const navbarLinks = document.getElementsByClassName('hamish')[0];
+      const navbarLinks = document.getElementsByClassName('I_am_not_Amish')[0];
 
       if (toggleButton && navbarLinks) {
         toggleButton.setAttribute('aria-expanded', 'false');
