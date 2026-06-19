@@ -35,14 +35,14 @@ body {
   margin: 10px 16px;
 }
 
-.I_am_not_Amish {
+.i-am-not-amish {
   background-color: #323b49;
   padding: 0.4em 0.5em;
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
 }
 
-.I_am_not_Amish ul {
+.i-am-not-amish ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -50,14 +50,14 @@ body {
   padding: 0;
 }
 
-.I_am_not_Amish li {
+.i-am-not-amish li {
   list-style: none;
   margin: 4px;
 }
 
-.I_am_not_Amish a,
-.I_am_not_Amish a:link,
-.I_am_not_Amish a:visited {
+.i-am-not-amish a,
+.i-am-not-amish a:link,
+.i-am-not-amish a:visited {
   text-decoration: none;
   color: #cdd2d4;
   padding: 7px 14px;
@@ -70,8 +70,8 @@ body {
   background-color: transparent;
 }
 
-.I_am_not_Amish a:hover,
-.I_am_not_Amish a:focus-visible {
+.i-am-not-amish a:hover,
+.i-am-not-amish a:focus-visible {
   background-color: var(--robin-egg);
   border-color: var(--robin-egg);
   color: #323b49;
@@ -195,41 +195,50 @@ body {
     display: flex;
   }
 
-  .I_am_not_Amish {
+  .i-am-not-amish {
     display: block;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
     width: 100%;
     background-color: rgba(158, 223, 215, 0.95);
+    background-image:
+      radial-gradient(circle at 14px 14px, rgba(216, 155, 69, 0.28) 0 7px, transparent 8px),
+      radial-gradient(circle at 38px 32px, rgba(255, 216, 77, 0.22) 0 6px, transparent 7px),
+      radial-gradient(circle at 62px 18px, rgba(217, 65, 53, 0.2) 0 5px, transparent 6px);
+    background-size: 74px 54px;
+    background-position: center;
   }
 
-  .I_am_not_Amish.active {
+  .i-am-not-amish.active {
     max-height: 1200px;
   }
 
-  .I_am_not_Amish ul {
+  .i-am-not-amish ul {
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: 8px;
+    padding: 10px;
+    background: rgba(158, 223, 215, 0.76);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
 
-  .I_am_not_Amish ul li {
+  .i-am-not-amish ul li {
     text-align: center;
     margin: 3px 8px;
   }
 
-  .I_am_not_Amish ul li a {
+  .i-am-not-amish ul li a {
     padding: 11px 16px;
     color: #26323f;
     border-color: rgba(50, 59, 73, 0.32);
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.55);
     font-weight: 700;
   }
 
-  .I_am_not_Amish ul li a:hover,
-  .I_am_not_Amish ul li a:focus-visible {
+  .i-am-not-amish ul li a:hover,
+  .i-am-not-amish ul li a:focus-visible {
     background-color: #323b49;
     color: var(--robin-egg);
   }
