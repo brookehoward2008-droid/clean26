@@ -63,13 +63,13 @@ body {
   background-color: transparent;
 }
 
-.kiwi a:hover {
+.kiwi a:hover,
+.kiwi a:focus-visible {
   background-color: #10d6b5;
   border-color: #10d6b5;
   color: #323b49;
 }
 
-/* Hamburger toggle button */
 .navbar .toggle-button {
   position: absolute;
   top: 10px;
@@ -90,7 +90,6 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Bars animate into an X when active */
 .navbar .toggle-button.active .bar:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -104,7 +103,27 @@ body {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Begin mobile styles */
+.nav-assignment-page {
+  min-height: 100vh;
+  background: #323b49;
+  color: #cdd2d4;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+}
+
+.nav-assignment-notes {
+  width: min(90vw, 900px);
+  margin: 48px auto;
+  padding: 32px;
+  border: 1px solid rgba(16, 214, 181, 0.35);
+  background: rgba(31, 39, 50, 0.7);
+}
+
+.nav-assignment-notes h1 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #10d6b5;
+  margin-top: 0;
+}
+
 @media screen and (max-width: 800px) {
   .navbar {
     flex-direction: column;
@@ -124,7 +143,7 @@ body {
   }
 
   .kiwi.active {
-    max-height: 600px;
+    max-height: 1200px;
   }
 
   .kiwi ul {
