@@ -15,11 +15,14 @@
         <p>Graph 130</p>
       </div>
       <a href="#" class="toggle-button" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="bar top-bun"></span>
-        <span class="bar filling"></span>
-        <span class="bar bottom-bun"></span>
+        <span class="burger-layer top-bun"></span>
+        <span class="burger-layer lettuce"></span>
+        <span class="burger-layer tomato"></span>
+        <span class="burger-layer cheese"></span>
+        <span class="burger-layer meat"></span>
+        <span class="burger-layer bottom-bun"></span>
       </a>
-      <div class="kiwi">
+      <div class="hamish">
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="history-refactor.html">History</a></li>
@@ -49,7 +52,7 @@
 
     <script>
       const toggleButton = document.getElementsByClassName('toggle-button')[0];
-      const navbarLinks = document.getElementsByClassName('kiwi')[0];
+      const navbarLinks = document.getElementsByClassName('hamish')[0];
 
       if (toggleButton && navbarLinks) {
         toggleButton.addEventListener('click', event => {
