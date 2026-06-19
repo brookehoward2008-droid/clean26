@@ -1,4 +1,3 @@
-// Inject nav.css and homepage fonts before loading the nav component
 (function () {
   const inPages = window.location.pathname.includes('/pages/');
 
@@ -22,21 +21,32 @@
   link.rel = 'stylesheet';
   link.href = inPages ? '../styles/nav.css' : 'styles/nav.css';
   document.head.appendChild(link);
+
+  const navPath = inPages ? 'nav.html' : 'pages/nav.html';
+
+  fetch(navPath)
+    .then(response => response.text())
+    .then(data => {
+      const navPlaceholder = document.getElementById('nav-placeholder');
+
+      if (!navPlaceholder) {
+        return;
+      }
+
+      navPlaceholder.innerHTML = data;
+
+      const toggleButton = document.getElementsByClassName('toggle-button')[0];
+      const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+      if (toggleButton && navbarLinks) {
+        toggleButton.setAttribute('aria-expanded', 'false');
+
+        toggleButton.addEventListener('click', event => {
+          event.preventDefault();
+          navbarLinks.classList.toggle('active');
+          toggleButton.classList.toggle('active');
+          toggleButton.setAttribute('aria-expanded', navbarLinks.classList.contains('active'));
+        });
+      }
+    });
 })();
-
-fetch('nav.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('nav-placeholder').innerHTML = data;
-
-    // Wait until nav.html is loaded, THEN attach toggle behavior
-    const toggleButton = document.getElementsByClassName('toggle-button')[0];
-    const navbarLinks = document.getElementsByClassName('kiwi')[0];
-
-    if (toggleButton && navbarLinks) {
-      toggleButton.addEventListener('click', () => {
-        navbarLinks.classList.toggle('active');
-        toggleButton.classList.toggle('active');
-      });
-    }
-  });
