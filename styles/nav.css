@@ -35,14 +35,14 @@ body {
   margin: 10px 16px;
 }
 
-.kiwi {
+.I_am_not_Amish {
   background-color: #323b49;
   padding: 0.4em 0.5em;
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
 }
 
-.kiwi ul {
+.I_am_not_Amish ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -50,14 +50,14 @@ body {
   padding: 0;
 }
 
-.kiwi li {
+.I_am_not_Amish li {
   list-style: none;
   margin: 4px;
 }
 
-.kiwi a,
-.kiwi a:link,
-.kiwi a:visited {
+.I_am_not_Amish a,
+.I_am_not_Amish a:link,
+.I_am_not_Amish a:visited {
   text-decoration: none;
   color: #cdd2d4;
   padding: 7px 14px;
@@ -70,8 +70,8 @@ body {
   background-color: transparent;
 }
 
-.kiwi a:hover,
-.kiwi a:focus-visible {
+.I_am_not_Amish a:hover,
+.I_am_not_Amish a:focus-visible {
   background-color: var(--robin-egg);
   border-color: var(--robin-egg);
   color: #323b49;
@@ -85,10 +85,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  width: 48px;
-  height: 38px;
-  padding: 7px 8px;
+  gap: 2px;
+  width: 54px;
+  height: 44px;
+  padding: 6px 8px;
   text-decoration: none;
   background: var(--robin-egg-soft);
   border: 1px solid rgba(158, 223, 215, 0.7);
@@ -96,38 +96,65 @@ body {
   box-shadow: 0 0 16px rgba(158, 223, 215, 0.18);
 }
 
-.toggle-button .bar {
+.burger-layer {
   display: block;
-  width: 28px;
-  background-color: var(--robin-egg);
+  width: 34px;
   border-radius: 999px;
   transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
 }
 
-.toggle-button .top-bun,
-.toggle-button .bottom-bun {
-  height: 6px;
+.top-bun {
+  height: 7px;
+  background: #d89b45;
+  border-radius: 999px 999px 5px 5px;
 }
 
-.toggle-button .filling {
-  width: 22px;
-  height: 3px;
-  background-color: #f6f0d8;
+.lettuce {
+  height: 4px;
+  width: 30px;
+  background: #58b957;
+}
+
+.tomato {
+  height: 4px;
+  width: 31px;
+  background: #d94135;
+}
+
+.cheese {
+  height: 4px;
+  width: 32px;
+  background: #ffd84d;
+}
+
+.meat {
+  height: 5px;
+  width: 32px;
+  background: #6b3e2e;
+}
+
+.bottom-bun {
+  height: 6px;
+  background: #c78436;
+  border-radius: 5px 5px 999px 999px;
 }
 
 .navbar .toggle-button.active .top-bun {
+  transform: translateY(10px) rotate(45deg);
   height: 4px;
-  transform: translateY(7px) rotate(45deg);
 }
 
-.navbar .toggle-button.active .filling {
+.navbar .toggle-button.active .lettuce,
+.navbar .toggle-button.active .tomato,
+.navbar .toggle-button.active .cheese,
+.navbar .toggle-button.active .meat {
   opacity: 0;
   transform: scaleX(0);
 }
 
 .navbar .toggle-button.active .bottom-bun {
+  transform: translateY(-10px) rotate(-45deg);
   height: 4px;
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-assignment-page {
@@ -168,7 +195,7 @@ body {
     display: flex;
   }
 
-  .kiwi {
+  .I_am_not_Amish {
     display: block;
     max-height: 0;
     overflow: hidden;
@@ -177,23 +204,23 @@ body {
     background-color: rgba(158, 223, 215, 0.95);
   }
 
-  .kiwi.active {
+  .I_am_not_Amish.active {
     max-height: 1200px;
   }
 
-  .kiwi ul {
+  .I_am_not_Amish ul {
     display: flex;
     width: 100%;
     flex-direction: column;
     padding: 8px;
   }
 
-  .kiwi ul li {
+  .I_am_not_Amish ul li {
     text-align: center;
     margin: 3px 8px;
   }
 
-  .kiwi ul li a {
+  .I_am_not_Amish ul li a {
     padding: 11px 16px;
     color: #26323f;
     border-color: rgba(50, 59, 73, 0.32);
@@ -201,8 +228,8 @@ body {
     font-weight: 700;
   }
 
-  .kiwi ul li a:hover,
-  .kiwi ul li a:focus-visible {
+  .I_am_not_Amish ul li a:hover,
+  .I_am_not_Amish ul li a:focus-visible {
     background-color: #323b49;
     color: var(--robin-egg);
   }
