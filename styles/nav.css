@@ -3,9 +3,8 @@
 }
 
 :root {
-  --robin-egg: #9edfd7;
-  --robin-egg-dark: #57bdb3;
-  --robin-egg-soft: rgba(158, 223, 215, 0.18);
+  --steel-text: #c7d3df;
+  --steel-soft: rgba(199, 211, 223, 0.16);
   --portfolio-ink: #323b49;
 }
 
@@ -19,11 +18,11 @@ body {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(50, 59, 73, 0.75);
+  background-color: rgba(50, 59, 73, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #cdd2d4;
-  border-bottom: 1px solid rgba(158, 223, 215, 0.32);
+  border-bottom: 1px solid rgba(199, 211, 223, 0.3);
 }
 
 .page-title p {
@@ -31,7 +30,7 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--robin-egg);
+  color: var(--steel-text);
   margin: 10px 16px;
 }
 
@@ -72,8 +71,8 @@ body {
 
 .i-am-not-amish a:hover,
 .i-am-not-amish a:focus-visible {
-  background-color: var(--robin-egg);
-  border-color: var(--robin-egg);
+  background-color: var(--steel-text);
+  border-color: var(--steel-text);
   color: #323b49;
 }
 
@@ -90,10 +89,10 @@ body {
   height: 44px;
   padding: 6px 8px;
   text-decoration: none;
-  background: var(--robin-egg-soft);
-  border: 1px solid rgba(158, 223, 215, 0.7);
+  background: var(--steel-soft);
+  border: 1px solid rgba(199, 211, 223, 0.65);
   border-radius: 999px;
-  box-shadow: 0 0 16px rgba(158, 223, 215, 0.18);
+  box-shadow: 0 0 16px rgba(199, 211, 223, 0.14);
 }
 
 .burger-layer {
@@ -168,20 +167,20 @@ body {
   width: min(90vw, 900px);
   margin: 48px auto;
   padding: 32px;
-  border: 1px solid rgba(158, 223, 215, 0.35);
+  border: 1px solid rgba(199, 211, 223, 0.32);
   background: rgba(31, 39, 50, 0.7);
 }
 
 .nav-assignment-notes h1 {
   font-family: "Fraunces", Georgia, serif;
-  color: var(--robin-egg);
+  color: var(--steel-text);
   margin-top: 0;
 }
 
 .nav-assignment-notes img {
   width: 100%;
   display: block;
-  border: 1px solid rgba(158, 223, 215, 0.45);
+  border: 1px solid rgba(199, 211, 223, 0.45);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -198,49 +197,52 @@ body {
   .i-am-not-amish {
     display: block;
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    transition: max-height 0.45s ease, opacity 0.3s ease;
     width: 100%;
-    background-color: rgba(158, 223, 215, 0.95);
-    background-image:
-      radial-gradient(circle at 14px 14px, rgba(216, 155, 69, 0.28) 0 7px, transparent 8px),
-      radial-gradient(circle at 38px 32px, rgba(255, 216, 77, 0.22) 0 6px, transparent 7px),
-      radial-gradient(circle at 62px 18px, rgba(217, 65, 53, 0.2) 0 5px, transparent 6px);
-    background-size: 74px 54px;
+    background-color: #1e242b;
+    background-image: linear-gradient(rgba(20, 25, 30, 0.58), rgba(20, 25, 30, 0.72)), url("../images/120643-hamburger-picture-hd.jpg");
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
 
   .i-am-not-amish.active {
     max-height: 1200px;
+    opacity: 1;
   }
 
   .i-am-not-amish ul {
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: 10px;
-    background: rgba(158, 223, 215, 0.76);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    padding: 12px;
+    background: rgba(26, 31, 38, 0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
   .i-am-not-amish ul li {
     text-align: center;
-    margin: 3px 8px;
+    margin: 4px 8px;
   }
 
   .i-am-not-amish ul li a {
-    padding: 11px 16px;
-    color: #26323f;
-    border-color: rgba(50, 59, 73, 0.32);
-    background: rgba(255, 255, 255, 0.55);
+    padding: 12px 16px;
+    color: #c7d3df;
+    border-color: rgba(199, 211, 223, 0.42);
+    background: rgba(38, 45, 54, 0.68);
     font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
   }
 
   .i-am-not-amish ul li a:hover,
   .i-am-not-amish ul li a:focus-visible {
-    background-color: #323b49;
-    color: var(--robin-egg);
+    background-color: rgba(199, 211, 223, 0.88);
+    color: #26323f;
+    text-shadow: none;
   }
 
   nav a {
