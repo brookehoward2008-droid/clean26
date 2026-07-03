@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Typography | Brooke Chauntel</title>
+  <meta name="description" content="Typography resume project for Brooke Chauntel, created for school portfolio and graphic design presentation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,0..100;1,9..144,400..900,0..100&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #18212b;
+      --slate: #2f3b49;
+      --paper: #f4f1e8;
+      --muted: #c8c9c4;
+      --teal: #39705f;
+      --gold: #c9a66b;
+      --rose: #d01886;
+      --line: rgba(244, 241, 232, 0.22);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(57,112,95,.28), transparent 34%), var(--slate);
+      color: var(--paper);
+      font-family: "DM Sans", Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .page-wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      padding: 36px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    nav a,
+    .button {
+      border: 1px solid var(--line);
+      padding: 9px 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
+      font-weight: 800;
+      transition: background-color .25s ease, border-color .25s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    .button:hover,
+    .button:focus-visible {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+
+    main {
+      padding: clamp(36px, 6vw, 76px) 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, 1.1fr);
+      gap: clamp(28px, 5vw, 62px);
+      align-items: start;
+    }
+
+    .eyebrow,
+    .label {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", Georgia, serif;
+      line-height: .98;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(3.6rem, 8vw, 8rem);
+      max-width: 8ch;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2.2rem, 4vw, 4.6rem);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      color: var(--paper);
+    }
+
+    p { color: var(--muted); }
+
+    .deck {
+      max-width: 46rem;
+      margin: 0 0 24px;
+      font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button.primary {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .resume-sheet {
+      background: #f7f2e7;
+      color: #24313d;
+      min-height: 720px;
+      padding: clamp(28px, 4vw, 48px);
+      box-shadow: 0 28px 80px rgba(0,0,0,.36);
+      border: 1px solid rgba(0,0,0,.12);
+    }
+
+    .resume-sheet h2 {
+      color: #24313d;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      letter-spacing: -0.055em;
+      margin-bottom: 6px;
+    }
+
+    .resume-sheet .role {
+      margin: 0 0 26px;
+      color: #39705f;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+    }
+
+    .resume-section + .resume-section { margin-top: 22px; }
+
+    .resume-section h3 {
+      color: #39705f;
+      font-family: "DM Sans", Helvetica, Arial, sans-serif;
+      font-size: .78rem;
+      line-height: 1.2;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .resume-section p,
+    .resume-section li {
+      color: #34404a;
+      font-size: .9rem;
+      line-height: 1.48;
+    }
+
+    .resume-section ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .job-title {
+      color: #1f2b35;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .job-meta {
+      margin: 0 0 7px;
+      color: #6d716b;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+    }
+
+    .process-card {
+      border: 1px solid var(--line);
+      padding: 22px;
+      background: rgba(24, 33, 43, .46);
+    }
+
+    .process-card p { margin-bottom: 0; }
+
+    footer {
+      padding: 28px 0 46px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 850px) {
+      header,
+      .hero,
+      .resume-grid,
+      .process {
+        display: block;
+      }
+
+      nav { justify-content: flex-start; margin-top: 18px; }
+      .resume-sheet { margin-top: 34px; }
+      .process-card { margin-top: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <header>
+      <a class="brand" href="../index.html">Brooke Howard</a>
+      <nav aria-label="Project navigation">
+        <a href="../index.html">Home</a>
+        <a href="nav.html">Course nav</a>
+        <a href="https://drive.google.com/file/d/1Zn0tKhxJXxQLngIrr2JSuCad-F6PRu0q/view?usp=drivesdk">Print package</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Typography project / Resume system</p>
+          <h1 id="page-title">Resume as typographic hierarchy.</h1>
+          <p class="deck">This resume piece belongs with my school portfolio because it connects typography, information hierarchy, layout rhythm, and professional presentation. The original source was rebuilt into a clean 300 PPI print package for PDF, Affinity, and portfolio review.</p>
+          <div class="actions">
+            <a class="button primary" href="https://drive.google.com/file/d/1Zn0tKhxJXxQLngIrr2JSuCad-F6PRu0q/view?usp=drivesdk">Open print package</a>
+            <a class="button" href="../index.html#work">Back to work grid</a>
+          </div>
+        </div>
+
+        <article class="resume-sheet" aria-label="Resume text preview">
+          <h2>Brooke Chauntel</h2>
+          <p class="role">Graphic Designer</p>
+          <div class="resume-grid">
+            <div>
+              <section class="resume-section">
+                <h3>Objective</h3>
+                <p>Designer with 7 years of freelance experience across branding, production, and AI-integrated creative work. Currently at EVCC with a 4.0 GPA. Looking for work where structure and imagination are equally valued.</p>
+              </section>
+
+              <section class="resume-section">
+                <h3>Experience</h3>
+                <p class="job-title">Founder & Creative Director</p>
+                <p class="job-meta">BaBBled LLC / 2024 to Present</p>
+                <p>Built and manage an independent design practice offering brand identity, print, and digital work.</p>
+
+                <p class="job-title">Production Graphic Designer</p>
+                <p class="job-meta">Morris Magnets / 2+ years</p>
+                <p>Prepared production-ready files in a deadline-driven manufacturing environment, supporting artwork from design through print and fabrication.</p>
+
+                <p class="job-title">Technical Bug Report Writer</p>
+                <p class="job-meta">Xbox 360 Platform / Contract</p>
+                <p>Documented bugs with structured replication steps and clearer communication between testing and development teams.</p>
+              </section>
+            </div>
+
+            <div>
+              <section class="resume-section">
+                <h3>Design systems</h3>
+                <ul>
+                  <li>Brand identity architecture</li>
+                  <li>Typography-driven hierarchy</li>
+                  <li>Grid-based composition</li>
+                  <li>Strategy and concept development</li>
+                </ul>
+              </section>
+
+              <section class="resume-section">
+                <h3>Production tools</h3>
+                <ul>
+                  <li>Adobe Illustrator</li>
+                  <li>Adobe InDesign</li>
+                  <li>Adobe Photoshop</li>
+                  <li>Laser cut acrylic graphics workflow</li>
+                </ul>
+              </section>
+
+              <section class="resume-section">
+                <h3>Education</h3>
+                <p>Everett Community College / Graphic & Web Design / President's Club / 4.0 GPA</p>
+              </section>
+
+              <section class="resume-section">
+                <h3>Contact</h3>
+                <p>206-779-7841<br>Babbledllc@gmail.com<br>www.babbledbrooke.com</p>
+              </section>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="process" aria-label="Project notes">
+        <article class="process-card">
+          <p class="label">Typography</p>
+          <h3>Hierarchy</h3>
+          <p>The page organizes name, role, work history, skills, and contact information into clear visual priority.</p>
+        </article>
+        <article class="process-card">
+          <p class="label">Production</p>
+          <h3>Print source</h3>
+          <p>The source package uses the original 2550 by 3300 pixel file, sized for 8.5 by 11 inches at 300 PPI.</p>
+        </article>
+        <article class="process-card">
+          <p class="label">Portfolio</p>
+          <h3>School context</h3>
+          <p>This page keeps the work connected to the class portfolio without changing the rest of the Graph 130 archive.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Brooke Howard / Graph 130 portfolio archive / Resume typography project</p>
+    </footer>
+  </div>
+</body>
+</html>
