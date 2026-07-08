@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume Typography | Brooke Chauntel</title>
-  <meta name="description" content="Typography resume project for Brooke Chauntel, created for school portfolio and graphic design presentation." />
+  <title>Resume Typography | Brooke C. Howard</title>
+  <meta name="description" content="Real typography resume for Brooke C. Howard, Graphic Designer, Web Designer, and Technical Communicator." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,0..100;1,9..144,400..900,0..100&display=swap" rel="stylesheet">
@@ -22,6 +22,8 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       background: radial-gradient(circle at top left, rgba(57,112,95,.28), transparent 34%), var(--slate);
@@ -33,7 +35,7 @@
     a { color: inherit; }
 
     .page-wrap {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -87,13 +89,14 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(280px, 1.1fr);
+      grid-template-columns: minmax(0, .82fr) minmax(330px, 1.18fr);
       gap: clamp(28px, 5vw, 62px);
       align-items: start;
     }
 
     .eyebrow,
-    .label {
+    .label,
+    .resume-section h3 {
       margin: 0 0 12px;
       color: var(--gold);
       font-weight: 800;
@@ -130,7 +133,7 @@
     p { color: var(--muted); }
 
     .deck {
-      max-width: 46rem;
+      max-width: 48rem;
       margin: 0 0 24px;
       font-size: clamp(1.05rem, 1.6vw, 1.28rem);
     }
@@ -150,32 +153,51 @@
     .resume-sheet {
       background: #f7f2e7;
       color: #24313d;
-      min-height: 720px;
       padding: clamp(28px, 4vw, 48px);
       box-shadow: 0 28px 80px rgba(0,0,0,.36);
       border: 1px solid rgba(0,0,0,.12);
     }
 
+    .resume-masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid rgba(36,49,61,.18);
+      margin-bottom: 24px;
+    }
+
     .resume-sheet h2 {
       color: #24313d;
-      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-size: clamp(2.45rem, 4vw, 4.4rem);
       letter-spacing: -0.055em;
-      margin-bottom: 6px;
+      margin: 0 0 6px;
     }
 
     .resume-sheet .role {
-      margin: 0 0 26px;
+      margin: 0;
       color: #39705f;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-size: .78rem;
     }
 
+    .contact-list {
+      margin: 6px 0 0;
+      padding: 0;
+      list-style: none;
+      text-align: right;
+      color: #44515d;
+      font-size: .86rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
     .resume-grid {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 30px;
     }
 
     .resume-section + .resume-section { margin-top: 22px; }
@@ -183,10 +205,7 @@
     .resume-section h3 {
       color: #39705f;
       font-family: "DM Sans", Helvetica, Arial, sans-serif;
-      font-size: .78rem;
       line-height: 1.2;
-      letter-spacing: .16em;
-      text-transform: uppercase;
       margin-bottom: 8px;
     }
 
@@ -202,9 +221,14 @@
       padding-left: 18px;
     }
 
+    .resume-section .tight-list {
+      columns: 2;
+      column-gap: 22px;
+    }
+
     .job-title {
       color: #1f2b35;
-      font-weight: 800;
+      font-weight: 900;
       margin: 0;
     }
 
@@ -212,8 +236,10 @@
       margin: 0 0 7px;
       color: #6d716b;
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 800;
     }
+
+    .job-block + .job-block { margin-top: 16px; }
 
     .process {
       display: grid;
@@ -237,16 +263,19 @@
       font-size: .9rem;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       header,
       .hero,
       .resume-grid,
+      .resume-masthead,
       .process {
         display: block;
       }
 
       nav { justify-content: flex-start; margin-top: 18px; }
       .resume-sheet { margin-top: 34px; }
+      .contact-list { text-align: left; margin-top: 14px; }
+      .resume-section .tight-list { columns: 1; }
       .process-card { margin-top: 14px; }
     }
   </style>
@@ -265,70 +294,129 @@
     <main>
       <section class="hero" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">Typography project / Resume system</p>
-          <h1 id="page-title">Resume as typographic hierarchy.</h1>
-          <p class="deck">This resume piece belongs with my school portfolio because it connects typography, information hierarchy, layout rhythm, and professional presentation. The original source was rebuilt into a clean 300 PPI print package for PDF, Affinity, and portfolio review.</p>
+          <p class="eyebrow">Typography project / Real resume</p>
+          <h1 id="page-title">Resume as typographic evidence.</h1>
+          <p class="deck">This page presents my real resume as a typography system: name, role, work history, skills, education, honors, and references organized through hierarchy, spacing, contrast, and readable structure.</p>
+          <p class="deck">The purpose is not decoration. The layout shows how professional information can be made clear, scannable, and still human.</p>
           <div class="actions">
             <a class="button primary" href="https://drive.google.com/file/d/1Zn0tKhxJXxQLngIrr2JSuCad-F6PRu0q/view?usp=drivesdk">Open print package</a>
             <a class="button" href="../index.html#work">Back to work grid</a>
           </div>
         </div>
 
-        <article class="resume-sheet" aria-label="Resume text preview">
-          <h2>Brooke Chauntel</h2>
-          <p class="role">Graphic Designer</p>
+        <article class="resume-sheet" aria-label="Brooke C. Howard resume text preview">
+          <div class="resume-masthead">
+            <div>
+              <h2>Brooke C. Howard</h2>
+              <p class="role">Graphic Designer + Web Designer + Technical Communicator</p>
+            </div>
+            <ul class="contact-list" aria-label="Contact information">
+              <li>Everett, WA</li>
+              <li><a href="mailto:brookehoward2008@gmail.com">brookehoward2008@gmail.com</a></li>
+              <li>GitHub: @brookehoward2008</li>
+            </ul>
+          </div>
+
           <div class="resume-grid">
             <div>
               <section class="resume-section">
-                <h3>Objective</h3>
-                <p>Designer with 7 years of freelance experience across branding, production, and AI-integrated creative work. Currently at EVCC with a 4.0 GPA. Looking for work where structure and imagination are equally valued.</p>
+                <h3>Professional Profile</h3>
+                <p>Technical writer, graphic designer, and web design student with experience creating clear documentation, visual communication systems, digital content, and customer-focused solutions. Skilled in transforming complex information into organized, accessible, and engaging content for print and digital environments.</p>
               </section>
 
               <section class="resume-section">
-                <h3>Experience</h3>
-                <p class="job-title">Founder & Creative Director</p>
-                <p class="job-meta">BaBBled LLC / 2024 to Present</p>
-                <p>Built and manage an independent design practice offering brand identity, print, and digital work.</p>
+                <h3>Relevant Experience</h3>
+                <div class="job-block">
+                  <p class="job-title">Founder / Graphic Designer</p>
+                  <p class="job-meta">BaBBled LLC / 2024 to Present</p>
+                  <p>Develops brand identity, publication layouts, digital content, and visual systems for an independent creative practice.</p>
+                </div>
 
-                <p class="job-title">Production Graphic Designer</p>
-                <p class="job-meta">Morris Magnets / 2+ years</p>
-                <p>Prepared production-ready files in a deadline-driven manufacturing environment, supporting artwork from design through print and fabrication.</p>
+                <div class="job-block">
+                  <p class="job-title">Independent Care Provider</p>
+                  <p class="job-meta">2008 to Present</p>
+                  <p>Manages long-term support work requiring communication, organization, confidentiality, reliability, and problem solving.</p>
+                </div>
 
-                <p class="job-title">Technical Bug Report Writer</p>
-                <p class="job-meta">Xbox 360 Platform / Contract</p>
-                <p>Documented bugs with structured replication steps and clearer communication between testing and development teams.</p>
+                <div class="job-block">
+                  <p class="job-title">Game Tester & Quality Assurance Contributor</p>
+                  <p class="job-meta">Microsoft / Xbox 360 Platform / 2008</p>
+                  <p>Documented software issues, communicated findings with development teams, and maintained detailed testing records.</p>
+                </div>
+
+                <div class="job-block">
+                  <p class="job-title">Production Graphic Designer & Customer Service Representative</p>
+                  <p class="job-meta">Morris Magnets / Redmond, WA / 2007 to 2008</p>
+                  <p>Created production-ready artwork, customer proofs, and specification samples while supporting manufacturing workflows and customer communication.</p>
+                </div>
+
+                <div class="job-block">
+                  <p class="job-title">Office Manager & Marketing Support</p>
+                  <p class="job-meta">Senior Resource Group / Bothell, WA / 2007</p>
+                  <p>Designed newsletters, promotional materials, and business communications while managing administrative projects.</p>
+                </div>
               </section>
             </div>
 
             <div>
               <section class="resume-section">
-                <h3>Design systems</h3>
-                <ul>
-                  <li>Brand identity architecture</li>
-                  <li>Typography-driven hierarchy</li>
-                  <li>Grid-based composition</li>
-                  <li>Strategy and concept development</li>
+                <h3>Design Skills</h3>
+                <ul class="tight-list">
+                  <li>Typography</li>
+                  <li>Layout & composition</li>
+                  <li>Publication design</li>
+                  <li>Branding & visual identity</li>
+                  <li>Print production</li>
+                  <li>Information design</li>
+                  <li>Photography</li>
+                  <li>Responsive web design</li>
+                  <li>HTML & CSS</li>
+                  <li>Content development</li>
                 </ul>
               </section>
 
               <section class="resume-section">
-                <h3>Production tools</h3>
+                <h3>Production Tools</h3>
                 <ul>
+                  <li>Adobe Photoshop</li>
                   <li>Adobe Illustrator</li>
                   <li>Adobe InDesign</li>
-                  <li>Adobe Photoshop</li>
-                  <li>Laser cut acrylic graphics workflow</li>
+                  <li>CorelDRAW</li>
+                  <li>Microsoft Office</li>
+                  <li>GitHub + VS Code</li>
                 </ul>
               </section>
 
               <section class="resume-section">
                 <h3>Education</h3>
-                <p>Everett Community College / Graphic & Web Design / President's Club / 4.0 GPA</p>
+                <p class="job-title">Everett Community College</p>
+                <p class="job-meta">Associate of Technical Arts, Graphic & Web Design / Graduation Pending 2027 / GPA: 4.0</p>
+                <p class="job-title">Capitan High School</p>
+                <p class="job-meta">High School Diploma / 1996</p>
               </section>
 
               <section class="resume-section">
-                <h3>Contact</h3>
-                <p>206-779-7841<br>Babbledllc@gmail.com<br>www.babbledbrooke.com</p>
+                <h3>Professional Development</h3>
+                <ul>
+                  <li>Coursiv Artificial Intelligence Coursework</li>
+                  <li>Coursiv Prompt Engineering Coursework</li>
+                  <li>Coursiv Digital Content Creation Coursework</li>
+                </ul>
+              </section>
+
+              <section class="resume-section">
+                <h3>Activities & Honors</h3>
+                <p>President's Club, Everett Community College. Founder of BaBBled LLC. Continuing school portfolio work in typography, publication design, photography, web design, and visual storytelling.</p>
+              </section>
+
+              <section class="resume-section">
+                <h3>Hobbies</h3>
+                <p>Photography, book layout, visual research, foraging, rockhounding, fishing, and collecting small details from the world that can become design language.</p>
+              </section>
+
+              <section class="resume-section">
+                <h3>References</h3>
+                <p>Available upon request.</p>
               </section>
             </div>
           </div>
@@ -339,23 +427,23 @@
         <article class="process-card">
           <p class="label">Typography</p>
           <h3>Hierarchy</h3>
-          <p>The page organizes name, role, work history, skills, and contact information into clear visual priority.</p>
+          <p>The resume uses strong typographic contrast to guide the reader through name, role, profile, experience, skills, and education.</p>
         </article>
         <article class="process-card">
-          <p class="label">Production</p>
-          <h3>Print source</h3>
-          <p>The source package uses the original 2550 by 3300 pixel file, sized for 8.5 by 11 inches at 300 PPI.</p>
+          <p class="label">Content</p>
+          <h3>Real record</h3>
+          <p>The page now uses real resume information instead of generic project copy, while keeping the design-course presentation intact.</p>
         </article>
         <article class="process-card">
           <p class="label">Portfolio</p>
           <h3>School context</h3>
-          <p>This page keeps the work connected to the class portfolio without changing the rest of the Graph 130 archive.</p>
+          <p>This page remains connected to the clean26 school archive and shows the resume as both a professional document and a typography study.</p>
         </article>
       </section>
     </main>
 
     <footer>
-      <p>Brooke Howard / Graph 130 portfolio archive / Resume typography project</p>
+      <p>© 2026 Brooke C. Howard. School portfolio page for typography, resume hierarchy, and graphic design presentation.</p>
     </footer>
   </div>
 </body>
