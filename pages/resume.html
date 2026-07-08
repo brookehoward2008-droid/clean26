@@ -20,6 +20,7 @@
       --sun: #ffd35c;
       --card-bg: rgba(20, 17, 14, 0.72);
       --card-line: rgba(245, 239, 223, 0.35);
+      --resume-scale: 1;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -400,17 +401,25 @@
     /* Purpose: Maximize usable desktop space while keeping the graphic resume readable. */
     @media (min-width: 900px) {
       body {
-        padding: 1.25rem 1.25rem 2.25rem;
+        padding: 1.25rem 1.5rem 4rem;
         font-size: 16px;
         line-height: 1.48;
       }
 
       main {
-        width: min(96rem, calc(100vw - 2.5rem));
+        width: min(82rem, calc((100vw - 3rem) / var(--resume-scale)));
+        zoom: var(--resume-scale);
+      }
+
+      @supports not (zoom: 1) {
+        main {
+          transform: scale(var(--resume-scale));
+          transform-origin: top center;
+        }
       }
 
       .hero {
-        padding: 1.4rem 0 1.2rem;
+        padding: .65rem 0 .9rem;
       }
 
       h1 {
@@ -418,55 +427,55 @@
       }
 
       .role-line {
-        margin-top: .75rem;
+        margin-top: .55rem;
       }
 
       .resume-block {
-        margin-top: .4rem;
-        padding: 1.25rem 1.5rem;
+        margin-top: .25rem;
+        padding: 1rem 1.35rem;
       }
 
       .resume-block h2 {
-        font-size: 2.2rem;
-        margin-bottom: .45rem;
+        font-size: 2.1rem;
+        margin-bottom: .3rem;
       }
 
       .resume-block p {
         max-width: none;
-        font-size: 1rem;
-        line-height: 1.45;
+        font-size: .96rem;
+        line-height: 1.38;
       }
 
       .cards {
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 1.4rem;
+        gap: .8rem;
+        margin-top: 1rem;
       }
 
       .card {
-        padding: 1rem 1.1rem 1.15rem;
+        padding: .8rem .9rem .95rem;
       }
 
       .card h2,
       .card h3 {
-        font-size: 1.75rem;
-        margin-bottom: .25rem;
+        font-size: 1.58rem;
+        margin-bottom: .2rem;
       }
 
       .card p,
       .card li {
-        font-size: .92rem;
-        line-height: 1.38;
+        font-size: .84rem;
+        line-height: 1.32;
       }
 
       .card ul {
-        gap: .25rem;
-        margin-top: .35rem;
+        gap: .18rem;
+        margin-top: .28rem;
       }
 
       .big {
-        font-size: 2.45rem;
-        margin: .2rem 0 .15rem;
+        font-size: 2.25rem;
+        margin: .1rem 0 .08rem;
       }
 
       .cards > .card:nth-child(1),
@@ -481,19 +490,20 @@
 
       .experience-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: .75rem 1.25rem;
+        gap: .55rem 1rem;
+        margin-top: .45rem;
       }
 
       .job {
-        padding-top: .65rem;
+        padding-top: .45rem;
       }
 
       .job-title {
-        font-size: .9rem;
+        font-size: .82rem;
       }
 
       .job-place {
-        margin: .1rem 0 .2rem;
+        margin: .05rem 0 .15rem;
       }
 
       .cards > .card:nth-child(5),
@@ -504,45 +514,51 @@
 
       .repo-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: .65rem;
+        gap: .5rem;
+        margin-top: .5rem;
       }
 
       .repo-item {
-        padding: .65rem .7rem;
+        padding: .5rem .55rem;
       }
 
       .repo-item strong {
-        font-size: .72rem;
+        font-size: .66rem;
       }
 
       .repo-item span {
-        font-size: .82rem;
-        line-height: 1.25;
+        font-size: .74rem;
+        line-height: 1.18;
       }
 
       .signature {
-        margin-top: 1.5rem;
-        padding: .75rem;
+        margin-top: .9rem;
+        padding: .4rem;
       }
 
       .signature .name {
-        font-size: 2.5rem;
+        font-size: 2.15rem;
+      }
+
+      .signature small {
+        margin-top: .4rem;
+        font-size: .76rem;
       }
 
       .colophon {
-        margin-top: .9rem;
-        padding: .8rem 1rem;
+        margin-top: .55rem;
+        padding: .55rem .85rem;
       }
 
       .colophon p {
-        font-size: .76rem;
-        line-height: 1.35;
+        font-size: .66rem;
+        line-height: 1.25;
       }
     }
 
     @media (min-width: 1250px) {
-      main {
-        width: min(104rem, calc(100vw - 3rem));
+      :root {
+        --resume-scale: 1.08;
       }
 
       .cards > .card:nth-child(1) {
@@ -561,6 +577,38 @@
       .cards > .card:nth-child(6),
       .cards > .card:nth-child(7) {
         grid-column: span 4;
+      }
+    }
+
+    @media (min-width: 1600px) and (min-height: 800px) {
+      :root {
+        --resume-scale: 1.22;
+      }
+
+      body {
+        padding-top: .85rem;
+        padding-bottom: 7rem;
+      }
+    }
+
+    @media (min-width: 1900px) and (min-height: 900px) {
+      :root {
+        --resume-scale: 1.35;
+      }
+
+      body {
+        padding-top: .75rem;
+        padding-bottom: 10rem;
+      }
+    }
+
+    @media (min-width: 2200px) and (min-height: 1000px) {
+      :root {
+        --resume-scale: 1.45;
+      }
+
+      body {
+        padding-bottom: 12rem;
       }
     }
 
