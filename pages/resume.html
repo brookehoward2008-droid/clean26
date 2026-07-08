@@ -4,77 +4,177 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Brooke C. Howard</title>
-  <meta name="description" content="Graphic design resume for Brooke C. Howard, built as a typography-focused resume layout." />
+  <meta name="description" content="Graphic design resume for Brooke C. Howard with a dark animated BaBBled Brooke matrix background and Brooke's color palette." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..900,0..100;1,9..144,500..900,0..100&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #f5efe4;
-      --sheet: #fbf7ef;
-      --ink: #202a34;
-      --text: #38434d;
-      --muted: #6f746e;
-      --accent: #3f7664;
-      --accent-dark: #24483e;
-      --gold: #b58a4a;
-      --rule: rgba(32, 42, 52, .17);
+      --charcoal: #222222;
+      --mustard: #D8A200;
+      --sky: #66AADD;
+      --off-white: #F5F1E8;
+      --crimson: #B7312C;
+      --matrix-green: #48ff8a;
+      --ink-soft: #393632;
+      --rule: rgba(34, 34, 34, .18);
+      --rule-dark: rgba(245, 241, 232, .24);
     }
 
     * { box-sizing: border-box; }
 
+    html { min-height: 100%; }
+
     body {
+      min-height: 100%;
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
+      background: #050706;
+      color: var(--charcoal);
       font-family: "DM Sans", Helvetica, Arial, sans-serif;
       line-height: 1.45;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      z-index: -4;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(102, 170, 221, .22), transparent 30%),
+        radial-gradient(circle at 82% 14%, rgba(183, 49, 44, .18), transparent 26%),
+        radial-gradient(circle at 52% 100%, rgba(216, 162, 0, .13), transparent 32%),
+        #050706;
+    }
+
+    body::after {
+      z-index: -3;
+      opacity: .42;
+      background-image:
+        linear-gradient(180deg, rgba(5, 7, 6, 0), rgba(5, 7, 6, .82)),
+        repeating-linear-gradient(90deg, rgba(72, 255, 138, .12) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(180deg, rgba(102, 170, 221, .09) 0 1px, transparent 1px 32px);
+      background-size: 100% 100%, 28px 28px, 32px 32px;
+      animation: gridDrift 18s linear infinite;
+    }
+
+    .matrix-wallpaper {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(5, 7, 6, .1), rgba(5, 7, 6, .6));
+    }
+
+    .rain-column {
+      position: absolute;
+      top: -145vh;
+      display: block;
+      width: 1.4rem;
+      min-height: 150vh;
+      color: var(--matrix-green);
+      font: 900 clamp(.72rem, 1.2vw, 1rem)/1.05 "DM Sans", monospace;
+      letter-spacing: .08em;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      opacity: .44;
+      text-shadow: 0 0 10px currentColor, 0 0 22px currentColor;
+      animation: matrixFall linear infinite;
+      filter: saturate(1.18);
+    }
+
+    .rain-column:nth-child(3n + 1) { color: var(--sky); }
+    .rain-column:nth-child(3n + 2) { color: var(--mustard); }
+    .rain-column:nth-child(3n + 3) { color: var(--crimson); }
+    .rain-column:nth-child(5n) { color: var(--matrix-green); opacity: .36; }
+
+    .rain-column:nth-child(1) { left: 3%; animation-duration: 23s; animation-delay: -6s; }
+    .rain-column:nth-child(2) { left: 9%; animation-duration: 30s; animation-delay: -17s; }
+    .rain-column:nth-child(3) { left: 15%; animation-duration: 25s; animation-delay: -10s; }
+    .rain-column:nth-child(4) { left: 21%; animation-duration: 33s; animation-delay: -21s; }
+    .rain-column:nth-child(5) { left: 28%; animation-duration: 22s; animation-delay: -13s; }
+    .rain-column:nth-child(6) { left: 35%; animation-duration: 36s; animation-delay: -27s; }
+    .rain-column:nth-child(7) { left: 42%; animation-duration: 26s; animation-delay: -4s; }
+    .rain-column:nth-child(8) { left: 49%; animation-duration: 31s; animation-delay: -19s; }
+    .rain-column:nth-child(9) { left: 56%; animation-duration: 24s; animation-delay: -14s; }
+    .rain-column:nth-child(10) { left: 63%; animation-duration: 34s; animation-delay: -28s; }
+    .rain-column:nth-child(11) { left: 70%; animation-duration: 28s; animation-delay: -8s; }
+    .rain-column:nth-child(12) { left: 77%; animation-duration: 38s; animation-delay: -24s; }
+    .rain-column:nth-child(13) { left: 84%; animation-duration: 27s; animation-delay: -16s; }
+    .rain-column:nth-child(14) { left: 90%; animation-duration: 32s; animation-delay: -11s; }
+    .rain-column:nth-child(15) { left: 96%; animation-duration: 29s; animation-delay: -22s; }
 
     main {
-      width: min(1040px, calc(100% - 32px));
-      margin: 28px auto;
+      position: relative;
+      width: min(1050px, calc(100% - 32px));
+      margin: 34px auto;
+      z-index: 1;
     }
 
     .resume-sheet {
       position: relative;
       overflow: hidden;
-      background: var(--sheet);
-      border: 1px solid rgba(32, 42, 52, .15);
-      box-shadow: 0 22px 70px rgba(32, 42, 52, .18);
+      background: var(--off-white);
+      border: 1px solid rgba(245, 241, 232, .62);
+      box-shadow: 0 24px 90px rgba(0, 0, 0, .56), 0 0 0 1px rgba(102, 170, 221, .18);
     }
 
     .resume-sheet::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
-      width: 18px;
-      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      width: 20px;
+      background: linear-gradient(180deg, var(--crimson) 0 34%, var(--mustard) 34% 66%, var(--sky) 66% 100%);
     }
 
     .resume-shell {
       display: grid;
-      grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+      grid-template-columns: minmax(260px, .74fr) minmax(0, 1.26fr);
       min-height: 100vh;
-      padding-left: 18px;
+      padding-left: 20px;
     }
 
     .identity-panel {
-      padding: clamp(30px, 4vw, 54px) clamp(24px, 3.2vw, 42px);
-      background: #ebe2d2;
-      border-right: 1px solid var(--rule);
+      position: relative;
+      padding: clamp(32px, 4vw, 56px) clamp(24px, 3.2vw, 42px);
+      background: var(--charcoal);
+      color: var(--off-white);
+      isolation: isolate;
+    }
+
+    .identity-panel::before {
+      content: "BABBLED";
+      position: absolute;
+      right: -20px;
+      bottom: 18px;
+      z-index: -1;
+      color: rgba(245, 241, 232, .045);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(5rem, 11vw, 9rem);
+      font-weight: 900;
+      line-height: .75;
+      letter-spacing: -.08em;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
 
     .content-panel {
-      padding: clamp(30px, 4vw, 54px) clamp(28px, 4vw, 58px);
+      padding: clamp(32px, 4vw, 56px) clamp(28px, 4vw, 60px);
     }
 
     .kicker {
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: .72rem;
+      display: inline-block;
+      margin: 0 0 20px;
+      padding: 7px 10px;
+      background: var(--mustard);
+      color: var(--charcoal);
+      font-size: .68rem;
       font-weight: 900;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -82,24 +182,49 @@
 
     h1 {
       margin: 0;
+      color: var(--off-white);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(3.8rem, 9vw, 7.2rem);
+      font-size: clamp(3.65rem, 8.8vw, 7.1rem);
       font-weight: 900;
       line-height: .78;
       letter-spacing: -.07em;
-      color: var(--ink);
     }
 
+    .name-accent { color: var(--sky); }
+
     .role {
-      margin: 22px 0 0;
+      margin: 24px 0 0;
       max-width: 18rem;
-      color: var(--accent-dark);
+      color: var(--off-white);
       font-size: .86rem;
       font-weight: 900;
       letter-spacing: .12em;
       line-height: 1.4;
       text-transform: uppercase;
     }
+
+    .role strong {
+      color: var(--mustard);
+      font-weight: 900;
+    }
+
+    .palette-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-top: 28px;
+    }
+
+    .swatch {
+      min-height: 34px;
+      border: 1px solid rgba(245, 241, 232, .2);
+    }
+
+    .swatch.charcoal { background: var(--charcoal); }
+    .swatch.mustard { background: var(--mustard); }
+    .swatch.sky { background: var(--sky); }
+    .swatch.off-white { background: var(--off-white); }
+    .swatch.crimson { background: var(--crimson); }
 
     .contact-list,
     .skill-list,
@@ -112,20 +237,18 @@
     .contact-list {
       margin-top: 34px;
       padding-top: 18px;
-      border-top: 2px solid var(--rule);
-      color: var(--text);
+      border-top: 2px solid var(--rule-dark);
+      color: rgba(245, 241, 232, .88);
       font-size: .9rem;
       font-weight: 700;
       line-height: 1.55;
     }
 
-    .side-section {
-      margin-top: 34px;
-    }
+    .side-section { margin-top: 34px; }
 
     h2 {
       margin: 0 0 12px;
-      color: var(--accent);
+      color: var(--crimson);
       font-size: .75rem;
       font-weight: 900;
       letter-spacing: .17em;
@@ -133,9 +256,11 @@
       text-transform: uppercase;
     }
 
+    .identity-panel h2 { color: var(--sky); }
+
     h3 {
       margin: 0;
-      color: var(--ink);
+      color: var(--charcoal);
       font-size: 1rem;
       font-weight: 900;
       line-height: 1.25;
@@ -143,11 +268,13 @@
 
     p,
     li {
-      color: var(--text);
+      color: var(--ink-soft);
       font-size: .92rem;
     }
 
     p { margin: 0; }
+
+    .identity-panel li { color: rgba(245, 241, 232, .88); }
 
     .skill-list {
       display: grid;
@@ -157,7 +284,7 @@
     .skill-list li,
     .tool-list li {
       padding-bottom: 7px;
-      border-bottom: 1px solid rgba(32, 42, 52, .12);
+      border-bottom: 1px solid rgba(245, 241, 232, .16);
       line-height: 1.3;
     }
 
@@ -168,15 +295,28 @@
     }
 
     .profile {
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--rule);
-      margin-bottom: 26px;
+      position: relative;
+      padding: 22px 22px 24px;
+      border: 2px solid var(--charcoal);
+      border-left: 12px solid var(--sky);
+      margin-bottom: 28px;
+      background: rgba(102, 170, 221, .1);
+    }
+
+    .profile::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: -10px;
+      width: 76px;
+      height: 18px;
+      background: var(--mustard);
     }
 
     .profile p {
       max-width: 60rem;
-      color: #2f3a44;
-      font-size: clamp(1.04rem, 1.5vw, 1.2rem);
+      color: #2f2f2f;
+      font-size: clamp(1.02rem, 1.45vw, 1.18rem);
       line-height: 1.55;
     }
 
@@ -187,7 +327,7 @@
 
     .job {
       display: grid;
-      grid-template-columns: minmax(148px, .38fr) minmax(0, .62fr);
+      grid-template-columns: minmax(150px, .38fr) minmax(0, .62fr);
       gap: 18px;
       padding-top: 18px;
       border-top: 1px solid var(--rule);
@@ -196,13 +336,17 @@
     .job:first-child { padding-top: 0; border-top: 0; }
 
     .job-meta {
-      color: var(--muted);
+      color: var(--charcoal);
       font-size: .78rem;
       font-weight: 900;
       letter-spacing: .08em;
       line-height: 1.35;
       text-transform: uppercase;
     }
+
+    .job:nth-child(3n + 1) .job-meta { border-left: 5px solid var(--crimson); padding-left: 10px; }
+    .job:nth-child(3n + 2) .job-meta { border-left: 5px solid var(--mustard); padding-left: 10px; }
+    .job:nth-child(3n + 3) .job-meta { border-left: 5px solid var(--sky); padding-left: 10px; }
 
     .job-description {
       margin-top: 6px;
@@ -215,24 +359,50 @@
       gap: 24px;
       margin-top: 30px;
       padding-top: 24px;
-      border-top: 2px solid var(--rule);
+      border-top: 3px solid var(--charcoal);
     }
 
     .education-item + .education-item,
-    .small-section + .small-section {
-      margin-top: 16px;
-    }
+    .small-section + .small-section { margin-top: 16px; }
 
     .small-copy {
-      color: var(--muted);
+      color: #56514b;
       font-size: .86rem;
       font-weight: 700;
       line-height: 1.45;
     }
 
+    .tag-line {
+      margin-top: 30px;
+      color: var(--mustard);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    @keyframes matrixFall {
+      from { transform: translateY(-10vh); }
+      to { transform: translateY(255vh); }
+    }
+
+    @keyframes gridDrift {
+      from { background-position: 0 0, 0 0, 0 0; }
+      to { background-position: 0 0, 0 280px, 0 320px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::after,
+      .rain-column { animation: none; }
+    }
+
     @media print {
       @page { size: letter; margin: .35in; }
       body { background: white; }
+      body::before,
+      body::after,
+      .matrix-wallpaper { display: none; }
       main { width: auto; margin: 0; }
       .resume-sheet { box-shadow: none; border: 0; }
       .resume-shell { min-height: auto; }
@@ -242,13 +412,9 @@
       main { margin: 16px auto; }
       .resume-shell,
       .job,
-      .lower-grid {
-        display: block;
-      }
-
+      .lower-grid { display: block; }
       .resume-sheet::before { width: 10px; }
       .resume-shell { padding-left: 10px; }
-      .identity-panel { border-right: 0; border-bottom: 1px solid var(--rule); }
       .content-panel { padding-top: 30px; }
       .tool-list { grid-template-columns: 1fr; }
       .job + .job { margin-top: 18px; }
@@ -258,13 +424,39 @@
   </style>
 </head>
 <body>
+  <div class="matrix-wallpaper" aria-hidden="true">
+    <span class="rain-column">BABBLED BROOKE 0101 1010 1100 0011 BABBLED BROOKE 0110 1001 0101</span>
+    <span class="rain-column">BROOKE BABBLED 1011 0010 0111 1000 BROOKE BABBLED 0100 1110 0011</span>
+    <span class="rain-column">0101 BABBLED 1100 BROOKE 0011 1010 BABBLED BROOKE 1110 0101</span>
+    <span class="rain-column">BABBLED BROOKE 1111 0001 1010 0110 BABBLED BROOKE 1001 0010</span>
+    <span class="rain-column">BROOKE 0100 BABBLED 1101 0011 BROOKE 1010 BABBLED 0111 1000</span>
+    <span class="rain-column">BABBLED BROOKE 0010 1011 0101 1110 BABBLED BROOKE 0110 1001</span>
+    <span class="rain-column">1010 BROOKE 0111 BABBLED 1100 BROOKE 0001 BABBLED 1011 0101</span>
+    <span class="rain-column">BABBLED BROOKE 0110 0011 1101 1000 BABBLED BROOKE 0101 1110</span>
+    <span class="rain-column">BROOKE BABBLED 1001 0101 0011 1110 BROOKE BABBLED 0111 0001</span>
+    <span class="rain-column">0101 1010 BABBLED BROOKE 1100 0011 BABBLED BROOKE 0110 1001</span>
+    <span class="rain-column">BABBLED 1110 BROOKE 0101 1011 BABBLED 0010 BROOKE 1100 0111</span>
+    <span class="rain-column">BROOKE BABBLED 0111 1010 0001 1100 BROOKE BABBLED 1000 0011</span>
+    <span class="rain-column">BABBLED BROOKE 0011 0101 1110 1001 BABBLED BROOKE 0110 1010</span>
+    <span class="rain-column">1011 BROOKE BABBLED 0100 1111 BROOKE BABBLED 0010 0110 1001</span>
+    <span class="rain-column">BABBLED BROOKE 1101 0010 0101 1010 BABBLED BROOKE 1110 0001</span>
+  </div>
+
   <main>
     <article class="resume-sheet" aria-label="Brooke C. Howard graphic design resume">
       <div class="resume-shell">
         <aside class="identity-panel" aria-label="Resume identity and skills">
           <p class="kicker">Graphic Design Resume</p>
-          <h1>Brooke<br>C. Howard</h1>
-          <p class="role">Graphic Designer + Web Designer + Technical Communicator</p>
+          <h1>Brooke<br><span class="name-accent">C.</span><br>Howard</h1>
+          <p class="role"><strong>Graphic Designer</strong> + Web Designer + Technical Communicator</p>
+
+          <div class="palette-strip" aria-label="Brooke Howard color palette">
+            <span class="swatch charcoal" title="Charcoal #222222"></span>
+            <span class="swatch mustard" title="Mustard #D8A200"></span>
+            <span class="swatch sky" title="Sky Blue #66AADD"></span>
+            <span class="swatch off-white" title="Off-White #F5F1E8"></span>
+            <span class="swatch crimson" title="Crimson #B7312C"></span>
+          </div>
 
           <ul class="contact-list" aria-label="Contact information">
             <li>Everett, WA</li>
@@ -299,6 +491,8 @@
               <li>GitHub + VS Code</li>
             </ul>
           </section>
+
+          <p class="tag-line">Ink that Speaks.</p>
         </aside>
 
         <section class="content-panel" aria-label="Resume content">
