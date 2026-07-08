@@ -5,32 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Brooke C. Howard" />
   <title>Resume | Brooke C. Howard</title>
-  <meta name="description" content="Responsive graphic design resume for Brooke C. Howard with animated rainbow Matrix rain, teal glow, and creative repository relevance." />
+  <meta name="description" content="Responsive graphic design resume for Brooke C. Howard with a dark BaBBled Matrix background." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..900,0..100;1,9..144,500..900,0..100&display=swap" rel="stylesheet">
   <style>
     :root {
-      --charcoal: #222222;
-      --off-white: #F5F1E8;
-      --teal: #00D6C9;
-      --turquoise: #00F5D4;
-      --cyan: #38D8FF;
-      --blue: #2E5DFF;
-      --violet: #7C2DFF;
-      --hot-pink: #FF2DAA;
-      --red: #FF254D;
-      --orange: #FF7A18;
-      --electric-yellow: #FFE45C;
-      --matrix-green: #4DFF71;
-      --grey-blue: #607D9B;
-      --deep-blue: #07111A;
-      --ink-soft: #393632;
+      --charcoal: #191c1a;
+      --black: #030504;
+      --green: #41ff76;
+      --teal: #00d6c9;
+      --deep-teal: #005f59;
+      --yellow: #ffe45c;
+      --off-white: #f5f1e8;
+      --paper: rgba(245, 241, 232, .96);
+      --ink: #222222;
+      --soft-ink: #3c3c36;
+      --muted: #62635d;
       --rule: rgba(34, 34, 34, .18);
       --rule-dark: rgba(245, 241, 232, .24);
       --page-gutter: clamp(12px, 3vw, 28px);
       --sheet-width: min(1120px, calc(100dvw - (var(--page-gutter) * 2)));
-      --panel-pad: clamp(22px, 3.15vw, 48px);
+      --panel-pad: clamp(22px, 3.15vw, 46px);
       --content-pad: clamp(22px, 3.4vw, 52px);
     }
 
@@ -45,8 +41,8 @@
     body {
       min-height: 100%;
       margin: 0;
-      background: #020202;
-      color: var(--charcoal);
+      background: var(--black);
+      color: var(--ink);
       font-family: "DM Sans", Helvetica, Arial, sans-serif;
       line-height: 1.45;
       overflow-x: hidden;
@@ -69,33 +65,21 @@
     body::before {
       z-index: -10;
       background:
-        linear-gradient(180deg, rgba(0, 0, 0, .02) 0%, rgba(0, 0, 0, .26) 48%, rgba(0, 0, 0, .94) 92%, #000 100%),
-        linear-gradient(90deg,
-          rgba(56, 216, 255, .86) 0%,
-          rgba(0, 214, 201, .78) 9%,
-          rgba(46, 93, 255, .74) 18%,
-          rgba(124, 45, 255, .70) 30%,
-          rgba(255, 45, 170, .84) 43%,
-          rgba(255, 37, 77, .86) 57%,
-          rgba(255, 122, 24, .80) 68%,
-          rgba(255, 228, 92, .88) 79%,
-          rgba(77, 255, 113, .82) 91%,
-          rgba(0, 214, 201, .70) 100%),
-        #000;
+        radial-gradient(circle at 18% 10%, rgba(0, 214, 201, .22), transparent 34%),
+        radial-gradient(circle at 84% 14%, rgba(65, 255, 118, .16), transparent 30%),
+        radial-gradient(circle at 50% 105%, rgba(0, 214, 201, .14), transparent 42%),
+        linear-gradient(180deg, #07110d 0%, #030504 58%, #000 100%);
     }
 
     body::after {
       z-index: -9;
-      opacity: .86;
+      opacity: .55;
       background-image:
-        linear-gradient(180deg, rgba(255,255,255,.10), transparent 18%, rgba(0,0,0,.72) 78%, #000 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 1px, rgba(255,255,255,.04) 1px 2px, transparent 2px 16px),
-        repeating-linear-gradient(90deg, transparent 0 34px, rgba(0,0,0,.45) 34px 44px, transparent 44px 80px),
-        repeating-linear-gradient(180deg, rgba(255,255,255,.08) 0 1px, transparent 1px 9px);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 18px;
-      background-position: 0 0, 0 0, 0 0, 0 0;
-      mix-blend-mode: screen;
-      animation: rainbowStatic 5.6s linear infinite;
+        linear-gradient(180deg, rgba(255,255,255,.05), transparent 18%, rgba(0,0,0,.84) 82%, #000 100%),
+        repeating-linear-gradient(90deg, rgba(0,214,201,.11) 0 1px, transparent 1px 36px),
+        repeating-linear-gradient(180deg, rgba(65,255,118,.08) 0 1px, transparent 1px 22px);
+      background-size: 100% 100%, 36px 36px, 22px 22px;
+      animation: gridDrift 12s linear infinite;
     }
 
     .matrix-wallpaper {
@@ -105,151 +89,85 @@
       overflow: hidden;
       pointer-events: none;
       perspective: 900px;
-      transform-style: preserve-3d;
       background:
-        radial-gradient(ellipse at 16% 0%, rgba(0, 214, 201, .36), transparent 33%),
-        radial-gradient(ellipse at 48% 3%, rgba(255, 45, 170, .34), transparent 34%),
-        radial-gradient(ellipse at 78% 0%, rgba(255, 228, 92, .30), transparent 36%),
-        radial-gradient(ellipse at 95% 0%, rgba(77, 255, 113, .32), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(0,0,0,.20) 46%, rgba(0,0,0,.96) 100%);
-      isolation: isolate;
+        linear-gradient(180deg, rgba(3,5,4,.05) 0%, rgba(3,5,4,.38) 52%, rgba(0,0,0,.92) 100%),
+        radial-gradient(ellipse at 50% 0%, rgba(0,214,201,.10), transparent 55%);
     }
 
     .matrix-wallpaper::before,
     .matrix-wallpaper::after {
       content: "";
       position: absolute;
-      inset: -18% -8%;
+      inset: -16% -8%;
       pointer-events: none;
-      transform-style: preserve-3d;
     }
 
     .matrix-wallpaper::before {
-      opacity: .88;
+      opacity: .28;
       background-image:
-        linear-gradient(90deg,
-          rgba(56, 216, 255, .85) 0 8%,
-          rgba(0, 214, 201, .86) 8% 14%,
-          rgba(46, 93, 255, .76) 14% 25%,
-          rgba(124, 45, 255, .70) 25% 36%,
-          rgba(255, 45, 170, .86) 36% 51%,
-          rgba(255, 37, 77, .86) 51% 64%,
-          rgba(255, 122, 24, .80) 64% 73%,
-          rgba(255, 228, 92, .90) 73% 84%,
-          rgba(77, 255, 113, .82) 84% 95%,
-          rgba(0, 214, 201, .72) 95% 100%),
-        repeating-linear-gradient(90deg, transparent 0 10px, rgba(0, 0, 0, .50) 10px 13px, transparent 13px 23px),
-        repeating-linear-gradient(180deg, rgba(255,255,255,.16) 0 1px, transparent 1px 7px, rgba(0,0,0,.18) 7px 11px);
-      background-size: 100% 100%, 60px 100%, 100% 26px;
-      background-position: 0 0, 0 0, 0 0;
-      filter: saturate(1.4) contrast(1.1) drop-shadow(0 0 18px rgba(0, 245, 212, .35));
-      mix-blend-mode: screen;
-      animation: curtainFall 2.9s linear infinite;
+        linear-gradient(rgba(0,214,201,.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(65,255,118,.14) 1px, transparent 1px);
+      background-size: 58px 58px;
+      transform: rotateX(64deg) rotateZ(-8deg) translateY(8vh) scale(1.4);
+      filter: drop-shadow(0 0 18px rgba(0,214,201,.28));
+      animation: planeDrift 10s linear infinite;
     }
 
     .matrix-wallpaper::after {
-      opacity: .72;
+      opacity: .38;
       background:
-        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .10) 34%, rgba(0, 0, 0, .92) 83%, #000 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 1px, transparent 1px 14px),
-        repeating-linear-gradient(180deg, transparent 0 9px, rgba(255,255,255,.13) 9px 10px, transparent 10px 28px);
-      background-size: 100% 100%, 100% 100%, 100% 34px;
-      background-position: 0 0, 0 0, 0 0;
-      transform: translateZ(120px) scale(1.05);
-      filter: blur(.28px) saturate(1.25);
-      mix-blend-mode: screen;
-      animation: foregroundCodeFall 1.7s linear infinite;
-    }
-
-    .glow-orb {
-      position: absolute;
-      width: min(48vw, 560px);
-      height: min(48vw, 560px);
-      border-radius: 999px;
-      opacity: .28;
-      mix-blend-mode: screen;
-      filter: blur(22px);
-      animation: orbitalShift 9s ease-in-out infinite alternate;
-    }
-
-    .glow-orb.one {
-      left: -8vw;
-      top: -3vh;
-      background: radial-gradient(circle, rgba(0, 214, 201, .72), transparent 64%);
-    }
-
-    .glow-orb.two {
-      right: 14vw;
-      top: 0;
-      background: radial-gradient(circle, rgba(255, 45, 170, .68), transparent 65%);
-      animation-delay: -4s;
-    }
-
-    .glow-orb.three {
-      right: -10vw;
-      top: 0;
-      background: radial-gradient(circle, rgba(77, 255, 113, .48), transparent 68%);
-      animation-delay: -7s;
+        radial-gradient(ellipse at center, transparent 28%, rgba(0,214,201,.12) 29%, transparent 31%, rgba(65,255,118,.08) 46%, transparent 47%),
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,.88) 82%, #000 100%);
+      transform: rotateX(70deg) rotateZ(18deg) translateY(17vh) scale(1.25);
+      filter: blur(.35px) drop-shadow(0 0 24px rgba(65,255,118,.18));
+      animation: depthPulse 8s ease-in-out infinite alternate;
     }
 
     .rain-column {
       position: absolute;
-      top: -160vh;
+      top: -150vh;
       left: var(--left, 50%);
-      display: block;
-      width: var(--width, 1.2rem);
-      min-height: 175vh;
-      color: var(--color, var(--teal));
-      font: 900 var(--font-size, clamp(.58rem, .9vw, .88rem))/1.02 "DM Sans", monospace;
+      width: var(--width, 1.1rem);
+      min-height: 165vh;
+      color: var(--color, var(--green));
+      font: 900 var(--font-size, clamp(.58rem, .92vw, .9rem))/1.04 "DM Sans", monospace;
       letter-spacing: .08em;
       writing-mode: vertical-rl;
       text-orientation: upright;
-      opacity: var(--opacity, .48);
-      text-shadow: 0 0 6px currentColor, 0 0 16px currentColor, 0 0 34px currentColor;
-      filter: saturate(1.32) blur(var(--blur, 0));
+      opacity: var(--opacity, .45);
+      text-shadow: 0 0 7px currentColor, 0 0 18px currentColor, 0 0 34px currentColor;
+      filter: saturate(1.15) blur(var(--blur, 0));
       transform-style: preserve-3d;
-      animation: matrixFall var(--speed, 8s) linear infinite;
-      animation-delay: var(--delay, -2s);
-      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 70%, transparent 100%);
-      mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 70%, transparent 100%);
-      mix-blend-mode: screen;
+      animation: matrixFall var(--speed, 11s) linear infinite;
+      animation-delay: var(--delay, -3s);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 5%, #000 75%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, #000 5%, #000 75%, transparent 100%);
     }
 
     .rain-column.near {
-      --font-size: clamp(.82rem, 1.15vw, 1.08rem);
-      --width: 1.5rem;
-      --opacity: .68;
+      --font-size: clamp(.8rem, 1.08vw, 1.05rem);
+      --width: 1.45rem;
+      --opacity: .64;
       --blur: 0;
-      z-index: 3;
     }
 
     .rain-column.mid {
-      --font-size: clamp(.62rem, .92vw, .88rem);
+      --font-size: clamp(.62rem, .9vw, .86rem);
       --width: 1.15rem;
-      --opacity: .46;
-      --blur: .12px;
-      z-index: 2;
+      --opacity: .43;
+      --blur: .1px;
     }
 
     .rain-column.far {
-      --font-size: clamp(.48rem, .72vw, .70rem);
+      --font-size: clamp(.48rem, .72vw, .68rem);
       --width: .9rem;
-      --opacity: .26;
+      --opacity: .22;
       --blur: .65px;
-      z-index: 1;
     }
 
-    .rain-column.teal { --color: var(--teal); }
-    .rain-column.turquoise { --color: var(--turquoise); }
-    .rain-column.cyan { --color: var(--cyan); }
-    .rain-column.blue { --color: var(--blue); }
-    .rain-column.violet { --color: var(--violet); }
-    .rain-column.pink { --color: var(--hot-pink); }
-    .rain-column.red { --color: var(--red); }
-    .rain-column.orange { --color: var(--orange); }
-    .rain-column.yellow { --color: var(--electric-yellow); }
-    .rain-column.green { --color: var(--matrix-green); }
-    .rain-column.greyblue { --color: var(--grey-blue); }
+    .green { --color: var(--green); }
+    .teal { --color: var(--teal); }
+    .yellow { --color: var(--yellow); }
 
     main {
       position: relative;
@@ -262,9 +180,9 @@
       position: relative;
       width: 100%;
       max-width: 100%;
-      background: var(--off-white);
-      border: 1px solid rgba(245, 241, 232, .64);
-      box-shadow: 0 26px 92px rgba(0, 0, 0, .64), 0 0 0 1px rgba(0, 245, 212, .22), 0 0 82px rgba(255, 45, 170, .15);
+      background: var(--paper);
+      border: 1px solid rgba(245, 241, 232, .62);
+      box-shadow: 0 26px 92px rgba(0, 0, 0, .64), 0 0 0 1px rgba(0, 214, 201, .18), 0 0 62px rgba(65, 255, 118, .10);
       overflow: clip;
     }
 
@@ -273,13 +191,12 @@
       position: absolute;
       inset: 0 auto 0 0;
       width: clamp(10px, 1.7vw, 20px);
-      background: linear-gradient(180deg, var(--hot-pink) 0 28%, var(--electric-yellow) 28% 58%, var(--teal) 58% 82%, var(--grey-blue) 82% 100%);
+      background: linear-gradient(180deg, var(--teal) 0 36%, var(--green) 36% 72%, var(--yellow) 72% 100%);
     }
 
     .resume-shell {
       display: grid;
       grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
-      min-height: auto;
       padding-left: clamp(10px, 1.7vw, 20px);
     }
 
@@ -300,7 +217,7 @@
     .identity-panel {
       position: relative;
       padding: var(--panel-pad);
-      background: var(--charcoal);
+      background: #1d211f;
       color: var(--off-white);
       isolation: isolate;
     }
@@ -328,8 +245,8 @@
       max-width: 100%;
       margin: 0 0 clamp(14px, 1.8vw, 18px);
       padding: 7px 10px;
-      background: var(--electric-yellow);
-      color: var(--charcoal);
+      background: var(--yellow);
+      color: var(--ink);
       font-size: clamp(.58rem, .9vw, .66rem);
       font-weight: 900;
       letter-spacing: clamp(.08em, 1.1vw, .18em);
@@ -372,7 +289,7 @@
       overflow-wrap: anywhere;
     }
 
-    .role strong { color: var(--electric-yellow); font-weight: 900; }
+    .role strong { color: var(--yellow); font-weight: 900; }
 
     .palette-strip {
       display: grid;
@@ -382,11 +299,11 @@
     }
 
     .swatch { min-height: clamp(24px, 3vw, 32px); border: 1px solid rgba(245, 241, 232, .2); }
-    .swatch.charcoal { background: var(--charcoal); }
-    .swatch.mustard { background: var(--electric-yellow); }
+    .swatch.charcoal { background: #1d211f; }
+    .swatch.mustard { background: var(--yellow); }
     .swatch.sky { background: var(--teal); }
-    .swatch.off-white { background: var(--grey-blue); }
-    .swatch.crimson { background: var(--hot-pink); }
+    .swatch.off-white { background: var(--off-white); }
+    .swatch.crimson { background: var(--green); }
 
     .contact-list,
     .skill-list,
@@ -406,25 +323,30 @@
 
     .contact-list a,
     .repo-card a {
-      color: var(--teal);
-      text-decoration-color: rgba(0, 214, 201, .55);
+      color: var(--deep-teal);
+      text-decoration-color: rgba(0, 95, 89, .55);
       overflow-wrap: anywhere;
       word-break: break-word;
+    }
+
+    .identity-panel .contact-list a {
+      color: var(--teal);
+      text-decoration-color: rgba(0, 214, 201, .55);
     }
 
     .contact-list a:hover,
     .contact-list a:focus-visible,
     .repo-card a:hover,
     .repo-card a:focus-visible {
-      color: var(--electric-yellow);
-      text-decoration-color: var(--electric-yellow);
+      color: var(--yellow);
+      text-decoration-color: var(--yellow);
     }
 
     .side-section { margin-top: clamp(22px, 3vw, 32px); }
 
     h2 {
       margin: 0 0 12px;
-      color: var(--hot-pink);
+      color: var(--deep-teal);
       font-size: clamp(.68rem, .9vw, .75rem);
       font-weight: 900;
       letter-spacing: clamp(.08em, .9vw, .17em);
@@ -437,7 +359,7 @@
 
     h3 {
       margin: 0;
-      color: var(--charcoal);
+      color: var(--ink);
       font-size: clamp(.91rem, 1.06vw, 1rem);
       font-weight: 900;
       line-height: 1.25;
@@ -446,7 +368,7 @@
 
     p,
     li {
-      color: var(--ink-soft);
+      color: var(--soft-ink);
       font-size: clamp(.82rem, .98vw, .91rem);
       overflow-wrap: anywhere;
       hyphens: auto;
@@ -473,10 +395,10 @@
     .profile {
       position: relative;
       padding: clamp(16px, 2vw, 20px) clamp(16px, 2.1vw, 21px) clamp(18px, 2.2vw, 22px);
-      border: 2px solid var(--charcoal);
+      border: 2px solid var(--ink);
       border-left: clamp(8px, 1.2vw, 12px) solid var(--teal);
       margin-bottom: clamp(20px, 2.6vw, 26px);
-      background: rgba(96, 125, 155, .14);
+      background: rgba(0, 214, 201, .09);
     }
 
     .profile::after {
@@ -486,7 +408,7 @@
       top: -10px;
       width: clamp(42px, 7vw, 76px);
       height: 18px;
-      background: var(--electric-yellow);
+      background: var(--yellow);
     }
 
     .profile p {
@@ -509,7 +431,7 @@
     .job:first-child { padding-top: 0; border-top: 0; }
 
     .job-meta {
-      color: var(--charcoal);
+      color: var(--ink);
       font-size: clamp(.66rem, .84vw, .76rem);
       font-weight: 900;
       letter-spacing: clamp(.04em, .65vw, .08em);
@@ -518,17 +440,16 @@
       overflow-wrap: anywhere;
     }
 
-    .job:nth-child(4n + 1) .job-meta { border-left: 5px solid var(--hot-pink); padding-left: 10px; }
-    .job:nth-child(4n + 2) .job-meta { border-left: 5px solid var(--electric-yellow); padding-left: 10px; }
-    .job:nth-child(4n + 3) .job-meta { border-left: 5px solid var(--teal); padding-left: 10px; }
-    .job:nth-child(4n + 4) .job-meta { border-left: 5px solid var(--grey-blue); padding-left: 10px; }
+    .job:nth-child(3n + 1) .job-meta { border-left: 5px solid var(--teal); padding-left: 10px; }
+    .job:nth-child(3n + 2) .job-meta { border-left: 5px solid var(--green); padding-left: 10px; }
+    .job:nth-child(3n + 3) .job-meta { border-left: 5px solid var(--yellow); padding-left: 10px; }
 
     .job-description { margin-top: 6px; line-height: 1.44; }
 
     .repo-section {
       margin-top: clamp(20px, 2.8vw, 28px);
       padding-top: clamp(18px, 2.4vw, 22px);
-      border-top: 3px solid var(--charcoal);
+      border-top: 3px solid var(--ink);
     }
 
     .repo-list {
@@ -542,14 +463,13 @@
       border-left: 5px solid var(--teal);
     }
 
-    .repo-card:nth-child(4n + 1) { border-left-color: var(--hot-pink); }
-    .repo-card:nth-child(4n + 2) { border-left-color: var(--electric-yellow); }
-    .repo-card:nth-child(4n + 3) { border-left-color: var(--teal); }
-    .repo-card:nth-child(4n + 4) { border-left-color: var(--grey-blue); }
+    .repo-card:nth-child(3n + 1) { border-left-color: var(--teal); }
+    .repo-card:nth-child(3n + 2) { border-left-color: var(--green); }
+    .repo-card:nth-child(3n + 3) { border-left-color: var(--yellow); }
 
     .repo-card strong {
       display: block;
-      color: var(--charcoal);
+      color: var(--ink);
       font-size: clamp(.76rem, .92vw, .86rem);
       line-height: 1.25;
       text-transform: uppercase;
@@ -559,7 +479,7 @@
     .repo-card span {
       display: block;
       margin-top: 3px;
-      color: #56514b;
+      color: var(--muted);
       font-size: clamp(.74rem, .86vw, .82rem);
       font-weight: 700;
       line-height: 1.35;
@@ -571,14 +491,14 @@
       gap: clamp(16px, 2.2vw, 22px);
       margin-top: clamp(20px, 2.8vw, 28px);
       padding-top: clamp(18px, 2.4vw, 22px);
-      border-top: 3px solid var(--charcoal);
+      border-top: 3px solid var(--ink);
     }
 
     .education-item + .education-item,
     .small-section + .small-section { margin-top: 16px; }
 
     .small-copy {
-      color: #56514b;
+      color: var(--muted);
       font-size: clamp(.78rem, .92vw, .86rem);
       font-weight: 700;
       line-height: 1.44;
@@ -586,7 +506,7 @@
 
     .tag-line {
       margin-top: clamp(22px, 2.8vw, 28px);
-      color: var(--electric-yellow);
+      color: var(--yellow);
       font-family: "Fraunces", Georgia, serif;
       font-size: clamp(1.12rem, 1.7vw, 1.42rem);
       font-weight: 800;
@@ -596,35 +516,29 @@
     }
 
     @keyframes matrixFall {
-      0% { transform: translate3d(0, -22vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) rotateX(var(--spin-x, 6deg)) scale(var(--scale, 1)); }
-      100% { transform: translate3d(0, 260vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) rotateX(var(--spin-x, 6deg)) scale(var(--scale, 1)); }
+      from { transform: translate3d(0, -18vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) scale(var(--scale, 1)); }
+      to { transform: translate3d(0, 250vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) scale(var(--scale, 1)); }
     }
 
-    @keyframes curtainFall {
+    @keyframes gridDrift {
       from { background-position: 0 0, 0 0, 0 0; }
-      to { background-position: 0 0, 0 0, 0 520px; }
+      to { background-position: 0 0, 0 280px, 0 220px; }
     }
 
-    @keyframes foregroundCodeFall {
-      from { background-position: 0 0, 0 0, 0 0; }
-      to { background-position: 0 0, 0 0, 0 340px; }
+    @keyframes planeDrift {
+      from { background-position: 0 0; }
+      to { background-position: 0 580px; }
     }
 
-    @keyframes rainbowStatic {
-      from { background-position: 0 0, 0 0, 0 0, 0 0; }
-      to { background-position: 0 0, 18px 0, -24px 0, 0 180px; }
-    }
-
-    @keyframes orbitalShift {
-      from { transform: translate3d(-5vw, -3vh, 0) scale(.92); }
-      to { transform: translate3d(6vw, 5vh, 0) scale(1.14); }
+    @keyframes depthPulse {
+      from { transform: rotateX(70deg) rotateZ(18deg) translateY(17vh) scale(1.16); opacity: .24; }
+      to { transform: rotateX(68deg) rotateZ(22deg) translateY(12vh) scale(1.35); opacity: .44; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       body::after,
       .matrix-wallpaper::before,
       .matrix-wallpaper::after,
-      .glow-orb,
       .rain-column { animation: none; }
     }
 
@@ -636,7 +550,7 @@
       .matrix-wallpaper { display: none; }
       main { width: auto; margin: 0; }
       .resume-sheet { box-shadow: none; border: 0; overflow: visible; }
-      .resume-shell { min-height: auto; grid-template-columns: .72fr 1.28fr; }
+      .resume-shell { grid-template-columns: .72fr 1.28fr; }
       .contact-list a,
       .repo-card a { color: inherit; }
     }
@@ -689,35 +603,31 @@
 </head>
 <body>
   <div class="matrix-wallpaper" aria-hidden="true">
-    <span class="glow-orb one"></span>
-    <span class="glow-orb two"></span>
-    <span class="glow-orb three"></span>
-
-    <span class="rain-column near cyan" style="--left:1%;--speed:7s;--delay:-2s;--depth:170px;--tilt:-22deg;--scale:1.25;">BABBLED BROOKE 0101 1010 1100 0011 BABBLED BROOKE 0110</span>
-    <span class="rain-column mid teal" style="--left:5%;--speed:9s;--delay:-4s;--depth:-50px;--tilt:18deg;--scale:.92;">BROOKE 1011 BABBLED 0010 0111 1000 BROOKE 0100</span>
-    <span class="rain-column far blue" style="--left:9%;--speed:15s;--delay:-8s;--depth:-390px;--tilt:24deg;--scale:.62;">BABBLED BROOKE 1110 0101 1010 0011 BROOKE</span>
-    <span class="rain-column mid violet" style="--left:13%;--speed:10s;--delay:-5s;--depth:-80px;--tilt:12deg;--scale:.9;">0101 BABBLED BROOKE 1100 0011 1111 0001</span>
-    <span class="rain-column far violet" style="--left:17%;--speed:18s;--delay:-12s;--depth:-460px;--tilt:-30deg;--scale:.56;">BROOKE BABBLED 0100 1110 0011 1010</span>
-    <span class="rain-column mid pink" style="--left:21%;--speed:8.8s;--delay:-4s;--depth:-150px;--tilt:18deg;--scale:.82;">BABBLED 0010 BROOKE 1011 0101 1110</span>
-    <span class="rain-column near pink" style="--left:25%;--speed:7.5s;--delay:-6s;--depth:210px;--tilt:21deg;--scale:1.3;">BROOKE BABBLED 1111 0001 1010 0110</span>
-    <span class="rain-column mid red" style="--left:29%;--speed:9.4s;--delay:-5s;--depth:-120px;--tilt:28deg;--scale:.88;">0100 BABBLED 1101 0011 BROOKE 1010</span>
-    <span class="rain-column far red" style="--left:33%;--speed:16s;--delay:-8s;--depth:-420px;--tilt:-12deg;--scale:.58;">BABBLED BROOKE 0010 1011 0101 1110</span>
-    <span class="rain-column near red" style="--left:37%;--speed:6.8s;--delay:-3s;--depth:190px;--tilt:18deg;--scale:1.22;">BROOKE 0110 BABBLED 0011 1101 1000</span>
-    <span class="rain-column mid orange" style="--left:41%;--speed:9.5s;--delay:-6s;--depth:-95px;--tilt:10deg;--scale:.88;">BABBLED BROOKE 0101 1110 1011 0101</span>
-    <span class="rain-column far orange" style="--left:45%;--speed:17s;--delay:-10s;--depth:-410px;--tilt:-19deg;--scale:.58;">1010 BROOKE 0111 BABBLED 1100 0001</span>
-    <span class="rain-column mid yellow" style="--left:49%;--speed:8.2s;--delay:-7.2s;--depth:135px;--tilt:-18deg;--scale:1.1;">BABBLED BROOKE 1001 0101 0011 1110</span>
-    <span class="rain-column near yellow" style="--left:53%;--speed:7.1s;--delay:-4s;--depth:190px;--tilt:31deg;--scale:1.18;">BROOKE BABBLED 0111 0001 0101 1010</span>
-    <span class="rain-column far yellow" style="--left:57%;--speed:18s;--delay:-11s;--depth:-460px;--tilt:-10deg;--scale:.55;">BABBLED 1110 BROOKE 0101 1011 0010</span>
-    <span class="rain-column mid green" style="--left:61%;--speed:9s;--delay:-4s;--depth:-90px;--tilt:20deg;--scale:.9;">BROOKE BABBLED 0111 1010 0001 1100</span>
-    <span class="rain-column near green" style="--left:65%;--speed:7.7s;--delay:-6s;--depth:160px;--tilt:-27deg;--scale:1.16;">BABBLED BROOKE 1000 0011 0011 0101</span>
-    <span class="rain-column far green" style="--left:69%;--speed:18.5s;--delay:-11s;--depth:-480px;--tilt:-27deg;--scale:.54;">1110 1001 BABBLED BROOKE 0110 1010</span>
-    <span class="rain-column mid teal" style="--left:73%;--speed:8.5s;--delay:-5s;--depth:-70px;--tilt:-25deg;--scale:.9;">1011 BROOKE BABBLED 0100 1111 0010</span>
-    <span class="rain-column near teal" style="--left:77%;--speed:6.9s;--delay:-4.2s;--depth:205px;--tilt:34deg;--scale:1.24;">BABBLED BROOKE 0110 1001 1101 0010</span>
-    <span class="rain-column far teal" style="--left:81%;--speed:16.5s;--delay:-7s;--depth:-360px;--tilt:-16deg;--scale:.62;">0101 1010 BABBLED BROOKE 1110 0001</span>
-    <span class="rain-column mid cyan" style="--left:85%;--speed:9.1s;--delay:-6.4s;--depth:-80px;--tilt:19deg;--scale:.9;">BROOKE 0101 BABBLED 1010 1100 0011</span>
-    <span class="rain-column far cyan" style="--left:89%;--speed:18s;--delay:-13s;--depth:-430px;--tilt:-23deg;--scale:.55;">BABBLED BROOKE 0110 1001 0101 1111</span>
-    <span class="rain-column mid greyblue" style="--left:93%;--speed:10s;--delay:-5.8s;--depth:-105px;--tilt:12deg;--scale:.88;">BROOKE BABBLED 0001 1010 0110 1001</span>
-    <span class="rain-column near teal" style="--left:97%;--speed:6.9s;--delay:-4.2s;--depth:205px;--tilt:-20deg;--scale:1.24;">BABBLED BROOKE 1101 0010 0101 1010</span>
+    <span class="rain-column near green" style="--left:2%;--speed:8s;--delay:-2s;--depth:150px;--tilt:-18deg;--scale:1.18;">BABBLED BROOKE 0101 TYPE PRINT DESIGN HTML CSS</span>
+    <span class="rain-column far teal" style="--left:6%;--speed:18s;--delay:-11s;--depth:-420px;--tilt:22deg;--scale:.58;">CSS 1010 BABBLED 0011 BROOKE DESIGN TYPE</span>
+    <span class="rain-column mid green" style="--left:10%;--speed:11s;--delay:-6s;--depth:-90px;--tilt:12deg;--scale:.88;">HTML CSS GRID PRINT TYPE 0110 BROOKE</span>
+    <span class="rain-column near teal" style="--left:14%;--speed:7.5s;--delay:-5s;--depth:180px;--tilt:-10deg;--scale:1.15;">BROOKE BABBLED DESIGN 1100 TYPE HTML</span>
+    <span class="rain-column far green" style="--left:18%;--speed:20s;--delay:-14s;--depth:-520px;--tilt:-28deg;--scale:.52;">0101 1110 CSS PRINT DESIGN BABBLED</span>
+    <span class="rain-column mid yellow" style="--left:22%;--speed:13s;--delay:-4s;--depth:-160px;--tilt:18deg;--scale:.80;">TYPE 0010 BROOKE HTML CSS GRID</span>
+    <span class="rain-column near green" style="--left:26%;--speed:7s;--delay:-6s;--depth:220px;--tilt:20deg;--scale:1.25;">BABBLED BROOKE 1111 DESIGN PRINT</span>
+    <span class="rain-column far teal" style="--left:30%;--speed:21s;--delay:-15s;--depth:-540px;--tilt:30deg;--scale:.50;">HTML 0100 CSS 1101 TYPE 0011</span>
+    <span class="rain-column mid green" style="--left:34%;--speed:10.5s;--delay:-8s;--depth:-50px;--tilt:-12deg;--scale:.94;">BABBLED CSS DESIGN PRINT BROOKE</span>
+    <span class="rain-column near teal" style="--left:38%;--speed:7.2s;--delay:-3s;--depth:190px;--tilt:18deg;--scale:1.20;">TYPE HTML CSS 1101 BABBLED</span>
+    <span class="rain-column far green" style="--left:42%;--speed:18s;--delay:-10s;--depth:-430px;--tilt:-19deg;--scale:.58;">BROOKE DESIGN 0101 1110 CSS</span>
+    <span class="rain-column mid teal" style="--left:46%;--speed:11s;--delay:-5.5s;--depth:-100px;--tilt:10deg;--scale:.88;">1010 PRINT 0111 TYPE 1100 GRID</span>
+    <span class="rain-column near green" style="--left:50%;--speed:8.2s;--delay:-7.2s;--depth:135px;--tilt:-18deg;--scale:1.10;">BABBLED BROOKE CSS HTML DESIGN</span>
+    <span class="rain-column far yellow" style="--left:54%;--speed:22s;--delay:-14s;--depth:-560px;--tilt:31deg;--scale:.48;">0101 1010 TYPE PRINT BROOKE</span>
+    <span class="rain-column mid green" style="--left:58%;--speed:12s;--delay:-6s;--depth:-70px;--tilt:-10deg;--scale:.90;">BABBLED 1110 DESIGN 0101 CSS</span>
+    <span class="rain-column near teal" style="--left:62%;--speed:7.5s;--delay:-4s;--depth:230px;--tilt:20deg;--scale:1.28;">BROOKE BABBLED PRINT TYPE HTML</span>
+    <span class="rain-column far green" style="--left:66%;--speed:19s;--delay:-11s;--depth:-480px;--tilt:-27deg;--scale:.54;">CSS 1000 DESIGN 0011 TYPE</span>
+    <span class="rain-column mid teal" style="--left:70%;--speed:10s;--delay:-3.8s;--depth:-130px;--tilt:14deg;--scale:.86;">1110 BROOKE BABBLED 0110 PRINT</span>
+    <span class="rain-column near green" style="--left:74%;--speed:6.8s;--delay:-5s;--depth:250px;--tilt:-25deg;--scale:1.34;">HTML CSS TYPE DESIGN 0100</span>
+    <span class="rain-column far teal" style="--left:78%;--speed:23s;--delay:-16s;--depth:-560px;--tilt:34deg;--scale:.48;">BABBLED BROOKE 0110 1001</span>
+    <span class="rain-column mid yellow" style="--left:82%;--speed:12s;--delay:-7s;--depth:-75px;--tilt:-16deg;--scale:.9;">0101 1010 PRINT TYPE DESIGN</span>
+    <span class="rain-column near teal" style="--left:86%;--speed:8s;--delay:-6.4s;--depth:160px;--tilt:19deg;--scale:1.16;">BROOKE HTML CSS BABBLED 0011</span>
+    <span class="rain-column far green" style="--left:90%;--speed:19s;--delay:-13s;--depth:-430px;--tilt:-23deg;--scale:.55;">BABBLED DESIGN 0101 1111 CSS</span>
+    <span class="rain-column mid teal" style="--left:94%;--speed:11s;--delay:-5.8s;--depth:-105px;--tilt:12deg;--scale:.88;">BROOKE TYPE 0001 PRINT 1001</span>
+    <span class="rain-column near green" style="--left:98%;--speed:7.2s;--delay:-4.2s;--depth:205px;--tilt:-20deg;--scale:1.24;">BABBLED BROOKE DESIGN CSS HTML</span>
   </div>
 
   <main>
@@ -736,8 +646,8 @@
             <span class="swatch charcoal" title="Charcoal"></span>
             <span class="swatch mustard" title="Yellow"></span>
             <span class="swatch sky" title="Teal"></span>
-            <span class="swatch off-white" title="Grey Blue"></span>
-            <span class="swatch crimson" title="Hot Pink"></span>
+            <span class="swatch off-white" title="Off White"></span>
+            <span class="swatch crimson" title="Green"></span>
           </div>
 
           <ul class="contact-list" aria-label="Contact information">
