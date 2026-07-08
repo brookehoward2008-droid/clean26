@@ -4,22 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Brooke C. Howard</title>
-  <meta name="description" content="Graphic design resume for Brooke C. Howard with a deep colorful animated BaBBled Brooke matrix background." />
+  <meta name="description" content="Graphic design resume for Brooke C. Howard with fast layered BaBBled Brooke matrix rain." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..900,0..100;1,9..144,500..900,0..100&display=swap" rel="stylesheet">
   <style>
     :root {
       --charcoal: #222222;
-      --mustard: #D8A200;
-      --sky: #66AADD;
       --off-white: #F5F1E8;
-      --crimson: #B7312C;
       --turquoise: #00F5D4;
       --hot-pink: #FF2DAA;
       --electric-yellow: #FFE45C;
       --grey-blue: #607D9B;
-      --deep-blue: #0B1620;
+      --deep-blue: #07111A;
       --ink-soft: #393632;
       --rule: rgba(34, 34, 34, .18);
       --rule-dark: rgba(245, 241, 232, .24);
@@ -39,6 +36,12 @@
       overflow-x: hidden;
     }
 
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+
     body::before,
     body::after {
       content: "";
@@ -48,69 +51,69 @@
     }
 
     body::before {
-      z-index: -8;
+      z-index: -9;
       background:
-        radial-gradient(circle at 18% 18%, rgba(0, 245, 212, .30), transparent 27%),
-        radial-gradient(circle at 80% 16%, rgba(255, 45, 170, .26), transparent 28%),
-        radial-gradient(circle at 52% 100%, rgba(255, 228, 92, .20), transparent 34%),
-        radial-gradient(circle at 50% 50%, rgba(96, 125, 155, .24), transparent 52%),
-        linear-gradient(135deg, #020304 0%, #07111A 44%, #020304 100%);
+        radial-gradient(circle at 18% 18%, rgba(0, 245, 212, .34), transparent 27%),
+        radial-gradient(circle at 82% 16%, rgba(255, 45, 170, .31), transparent 28%),
+        radial-gradient(circle at 52% 100%, rgba(255, 228, 92, .25), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(96, 125, 155, .30), transparent 52%),
+        linear-gradient(135deg, #020304 0%, var(--deep-blue) 44%, #020304 100%);
     }
 
     body::after {
-      z-index: -7;
-      opacity: .58;
+      z-index: -8;
+      opacity: .66;
       background-image:
         linear-gradient(180deg, rgba(3, 4, 6, 0), rgba(3, 4, 6, .86)),
-        repeating-linear-gradient(90deg, rgba(0, 245, 212, .16) 0 1px, transparent 1px 30px),
-        repeating-linear-gradient(180deg, rgba(255, 45, 170, .11) 0 1px, transparent 1px 36px),
-        radial-gradient(circle at center, rgba(96, 125, 155, .23), transparent 55%);
-      background-size: 100% 100%, 30px 30px, 36px 36px, 100% 100%;
-      animation: gridDrift 16s linear infinite;
+        repeating-linear-gradient(90deg, rgba(0, 245, 212, .19) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(180deg, rgba(255, 45, 170, .13) 0 1px, transparent 1px 34px),
+        radial-gradient(circle at center, rgba(96, 125, 155, .25), transparent 55%);
+      background-size: 100% 100%, 28px 28px, 34px 34px, 100% 100%;
+      animation: gridDrift 9s linear infinite;
     }
 
     .matrix-wallpaper {
       position: fixed;
       inset: 0;
-      z-index: -6;
+      z-index: -7;
       overflow: hidden;
       pointer-events: none;
-      perspective: 900px;
+      perspective: 850px;
       transform-style: preserve-3d;
       background:
         linear-gradient(180deg, rgba(3, 4, 6, .02), rgba(3, 4, 6, .72)),
-        radial-gradient(ellipse at 50% 45%, rgba(0, 245, 212, .10), transparent 45%);
+        radial-gradient(ellipse at 50% 45%, rgba(0, 245, 212, .13), transparent 45%);
     }
 
     .matrix-wallpaper::before,
     .matrix-wallpaper::after {
       content: "";
       position: absolute;
-      inset: -22% -12%;
+      inset: -24% -16%;
       transform-style: preserve-3d;
       pointer-events: none;
     }
 
     .matrix-wallpaper::before {
       background-image:
-        linear-gradient(rgba(0, 245, 212, .16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 45, 170, .14) 1px, transparent 1px);
-      background-size: 64px 64px;
-      transform: rotateX(64deg) rotateZ(-11deg) translateY(8vh) translateZ(-160px) scale(1.45);
-      opacity: .50;
-      filter: blur(.15px) drop-shadow(0 0 16px rgba(0, 245, 212, .55));
-      animation: planeDrift 14s linear infinite;
+        linear-gradient(rgba(0, 245, 212, .20) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 45, 170, .17) 1px, transparent 1px);
+      background-size: 56px 56px;
+      transform: rotateX(66deg) rotateZ(-12deg) translateY(8vh) translateZ(-180px) scale(1.55);
+      opacity: .58;
+      filter: blur(.15px) drop-shadow(0 0 18px rgba(0, 245, 212, .58));
+      animation: planeDrift 7s linear infinite;
     }
 
     .matrix-wallpaper::after {
-      border: 1px solid rgba(255, 228, 92, .22);
+      border: 1px solid rgba(255, 228, 92, .24);
       background:
-        radial-gradient(ellipse at 50% 42%, rgba(255, 45, 170, .16), transparent 38%),
-        radial-gradient(ellipse at 50% 50%, transparent 28%, rgba(0, 245, 212, .10) 29%, transparent 31%, rgba(96, 125, 155, .12) 44%, transparent 45%);
+        radial-gradient(ellipse at 50% 42%, rgba(255, 45, 170, .18), transparent 38%),
+        radial-gradient(ellipse at 50% 50%, transparent 28%, rgba(0, 245, 212, .12) 29%, transparent 31%, rgba(96, 125, 155, .14) 44%, transparent 45%);
       transform: rotateX(70deg) rotateZ(18deg) translateY(18vh) translateZ(-260px) scale(1.3);
-      opacity: .64;
-      filter: blur(.4px) drop-shadow(0 0 24px rgba(255, 45, 170, .55));
-      animation: dimensionPulse 9s ease-in-out infinite alternate;
+      opacity: .72;
+      filter: blur(.4px) drop-shadow(0 0 28px rgba(255, 45, 170, .58));
+      animation: dimensionPulse 5.8s ease-in-out infinite alternate;
     }
 
     .glow-orb {
@@ -118,76 +121,87 @@
       width: min(48vw, 520px);
       height: min(48vw, 520px);
       border-radius: 999px;
-      opacity: .32;
+      opacity: .35;
       mix-blend-mode: screen;
       filter: blur(18px);
-      animation: orbitalShift 18s ease-in-out infinite alternate;
+      animation: orbitalShift 10s ease-in-out infinite alternate;
     }
 
     .glow-orb.one {
       left: -8vw;
       top: 8vh;
-      background: radial-gradient(circle, rgba(0, 245, 212, .62), transparent 64%);
+      background: radial-gradient(circle, rgba(0, 245, 212, .68), transparent 64%);
     }
 
     .glow-orb.two {
       right: -10vw;
       top: 18vh;
-      background: radial-gradient(circle, rgba(255, 45, 170, .60), transparent 65%);
-      animation-delay: -7s;
+      background: radial-gradient(circle, rgba(255, 45, 170, .66), transparent 65%);
+      animation-delay: -4s;
     }
 
     .glow-orb.three {
       left: 34vw;
       bottom: -18vh;
-      background: radial-gradient(circle, rgba(255, 228, 92, .46), transparent 66%);
-      animation-delay: -12s;
+      background: radial-gradient(circle, rgba(255, 228, 92, .52), transparent 66%);
+      animation-delay: -7s;
     }
 
     .rain-column {
       position: absolute;
       top: -150vh;
+      left: var(--left, 50%);
       display: block;
-      width: 1.55rem;
-      min-height: 160vh;
-      color: var(--turquoise);
-      font: 900 clamp(.72rem, 1.1vw, 1rem)/1.05 "DM Sans", monospace;
+      width: var(--width, 1.35rem);
+      min-height: 170vh;
+      color: var(--color, var(--turquoise));
+      font: 900 var(--font-size, clamp(.72rem, 1.08vw, 1rem))/1.02 "DM Sans", monospace;
       letter-spacing: .08em;
       writing-mode: vertical-rl;
       text-orientation: upright;
       opacity: var(--opacity, .50);
-      text-shadow: 0 0 10px currentColor, 0 0 24px currentColor, 0 0 42px currentColor;
-      filter: saturate(1.24);
+      text-shadow: 0 0 8px currentColor, 0 0 20px currentColor, 0 0 44px currentColor;
+      filter: saturate(1.28) blur(var(--blur, 0));
       transform-style: preserve-3d;
-      animation: matrixFall var(--speed, 28s) linear infinite;
-      animation-delay: var(--delay, -8s);
+      animation: matrixFall var(--speed, 12s) linear infinite;
+      animation-delay: var(--delay, -3s);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 76%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 76%, transparent 100%);
     }
 
-    .rain-column:nth-child(4n + 1) { color: var(--turquoise); }
-    .rain-column:nth-child(4n + 2) { color: var(--hot-pink); }
-    .rain-column:nth-child(4n + 3) { color: var(--electric-yellow); }
-    .rain-column:nth-child(4n + 4) { color: var(--grey-blue); }
+    .rain-column.near {
+      --font-size: clamp(.92rem, 1.35vw, 1.22rem);
+      --width: 1.7rem;
+      --opacity: .74;
+      --blur: 0;
+      z-index: 3;
+    }
 
-    .rain-column:nth-child(1) { left: 2%; --speed: 21s; --delay: -6s; --depth: 90px; --tilt: -19deg; --scale: 1.18; --opacity: .62; }
-    .rain-column:nth-child(2) { left: 8%; --speed: 33s; --delay: -17s; --depth: -180px; --tilt: 14deg; --scale: .82; --opacity: .34; }
-    .rain-column:nth-child(3) { left: 14%; --speed: 25s; --delay: -10s; --depth: 20px; --tilt: -8deg; --scale: 1.02; --opacity: .48; }
-    .rain-column:nth-child(4) { left: 20%; --speed: 37s; --delay: -24s; --depth: -260px; --tilt: 22deg; --scale: .72; --opacity: .28; }
-    .rain-column:nth-child(5) { left: 27%; --speed: 23s; --delay: -13s; --depth: 150px; --tilt: -24deg; --scale: 1.25; --opacity: .58; }
-    .rain-column:nth-child(6) { left: 34%; --speed: 39s; --delay: -27s; --depth: -320px; --tilt: 18deg; --scale: .66; --opacity: .24; }
-    .rain-column:nth-child(7) { left: 41%; --speed: 26s; --delay: -4s; --depth: 70px; --tilt: 10deg; --scale: 1.08; --opacity: .48; }
-    .rain-column:nth-child(8) { left: 48%; --speed: 31s; --delay: -19s; --depth: -120px; --tilt: -15deg; --scale: .86; --opacity: .36; }
-    .rain-column:nth-child(9) { left: 55%; --speed: 24s; --delay: -14s; --depth: 130px; --tilt: 20deg; --scale: 1.22; --opacity: .60; }
-    .rain-column:nth-child(10) { left: 62%; --speed: 36s; --delay: -28s; --depth: -230px; --tilt: -17deg; --scale: .74; --opacity: .29; }
-    .rain-column:nth-child(11) { left: 69%; --speed: 27s; --delay: -8s; --depth: 40px; --tilt: 8deg; --scale: 1.0; --opacity: .44; }
-    .rain-column:nth-child(12) { left: 76%; --speed: 41s; --delay: -24s; --depth: -350px; --tilt: -21deg; --scale: .64; --opacity: .23; }
-    .rain-column:nth-child(13) { left: 83%; --speed: 28s; --delay: -16s; --depth: 110px; --tilt: -10deg; --scale: 1.14; --opacity: .52; }
-    .rain-column:nth-child(14) { left: 90%; --speed: 34s; --delay: -11s; --depth: -170px; --tilt: 16deg; --scale: .78; --opacity: .32; }
-    .rain-column:nth-child(15) { left: 96%; --speed: 29s; --delay: -22s; --depth: 80px; --tilt: -22deg; --scale: 1.18; --opacity: .56; }
+    .rain-column.mid {
+      --font-size: clamp(.72rem, 1.05vw, .96rem);
+      --width: 1.3rem;
+      --opacity: .50;
+      --blur: .1px;
+      z-index: 2;
+    }
+
+    .rain-column.far {
+      --font-size: clamp(.56rem, .84vw, .78rem);
+      --width: 1rem;
+      --opacity: .28;
+      --blur: .7px;
+      z-index: 1;
+    }
+
+    .rain-column.turquoise { --color: var(--turquoise); }
+    .rain-column.pink { --color: var(--hot-pink); }
+    .rain-column.yellow { --color: var(--electric-yellow); }
+    .rain-column.greyblue { --color: var(--grey-blue); }
 
     main {
       position: relative;
-      width: min(1050px, calc(100% - 32px));
-      margin: 34px auto;
+      width: min(960px, calc(100dvw - 44px));
+      margin: 26px auto;
       z-index: 1;
     }
 
@@ -195,8 +209,8 @@
       position: relative;
       overflow: hidden;
       background: var(--off-white);
-      border: 1px solid rgba(245, 241, 232, .62);
-      box-shadow: 0 28px 100px rgba(0, 0, 0, .62), 0 0 0 1px rgba(0, 245, 212, .22), 0 0 80px rgba(255, 45, 170, .14);
+      border: 1px solid rgba(245, 241, 232, .64);
+      box-shadow: 0 26px 92px rgba(0, 0, 0, .64), 0 0 0 1px rgba(0, 245, 212, .22), 0 0 82px rgba(255, 45, 170, .15);
     }
 
     .resume-sheet::before {
@@ -209,14 +223,14 @@
 
     .resume-shell {
       display: grid;
-      grid-template-columns: minmax(260px, .74fr) minmax(0, 1.26fr);
+      grid-template-columns: minmax(250px, .70fr) minmax(0, 1.30fr);
       min-height: 100vh;
       padding-left: 20px;
     }
 
     .identity-panel {
       position: relative;
-      padding: clamp(32px, 4vw, 56px) clamp(24px, 3.2vw, 42px);
+      padding: clamp(28px, 3.6vw, 50px) clamp(22px, 3vw, 38px);
       background: var(--charcoal);
       color: var(--off-white);
       isolation: isolate;
@@ -230,7 +244,7 @@
       z-index: -1;
       color: rgba(245, 241, 232, .045);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(5rem, 11vw, 9rem);
+      font-size: clamp(4.6rem, 10vw, 8.4rem);
       font-weight: 900;
       line-height: .75;
       letter-spacing: -.08em;
@@ -238,15 +252,15 @@
       transform: rotate(180deg);
     }
 
-    .content-panel { padding: clamp(32px, 4vw, 56px) clamp(28px, 4vw, 60px); }
+    .content-panel { padding: clamp(28px, 3.6vw, 50px) clamp(26px, 3.8vw, 54px); }
 
     .kicker {
       display: inline-block;
-      margin: 0 0 20px;
+      margin: 0 0 18px;
       padding: 7px 10px;
       background: var(--electric-yellow);
       color: var(--charcoal);
-      font-size: .68rem;
+      font-size: .66rem;
       font-weight: 900;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -256,19 +270,19 @@
       margin: 0;
       color: var(--off-white);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(3.65rem, 8.8vw, 7.1rem);
+      font-size: clamp(3.2rem, 7.4vw, 6.35rem);
       font-weight: 900;
-      line-height: .78;
+      line-height: .80;
       letter-spacing: -.07em;
     }
 
     .name-accent { color: var(--turquoise); }
 
     .role {
-      margin: 24px 0 0;
+      margin: 22px 0 0;
       max-width: 18rem;
       color: var(--off-white);
-      font-size: .86rem;
+      font-size: .84rem;
       font-weight: 900;
       letter-spacing: .12em;
       line-height: 1.4;
@@ -281,10 +295,10 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 6px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
-    .swatch { min-height: 34px; border: 1px solid rgba(245, 241, 232, .2); }
+    .swatch { min-height: 32px; border: 1px solid rgba(245, 241, 232, .2); }
     .swatch.charcoal { background: var(--charcoal); }
     .swatch.mustard { background: var(--electric-yellow); }
     .swatch.sky { background: var(--turquoise); }
@@ -296,7 +310,7 @@
     .tool-list { list-style: none; margin: 0; padding: 0; }
 
     .contact-list {
-      margin-top: 34px;
+      margin-top: 32px;
       padding-top: 18px;
       border-top: 2px solid var(--rule-dark);
       color: rgba(245, 241, 232, .88);
@@ -305,7 +319,18 @@
       line-height: 1.55;
     }
 
-    .side-section { margin-top: 34px; }
+    .contact-list a {
+      color: var(--turquoise);
+      text-decoration-color: rgba(0, 245, 212, .55);
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--electric-yellow);
+      text-decoration-color: var(--electric-yellow);
+    }
+
+    .side-section { margin-top: 32px; }
 
     h2 {
       margin: 0 0 12px;
@@ -320,7 +345,7 @@
     .identity-panel h2 { color: var(--turquoise); }
 
     h3 { margin: 0; color: var(--charcoal); font-size: 1rem; font-weight: 900; line-height: 1.25; }
-    p, li { color: var(--ink-soft); font-size: .92rem; }
+    p, li { color: var(--ink-soft); font-size: .91rem; }
     p { margin: 0; }
     .identity-panel li { color: rgba(245, 241, 232, .88); }
 
@@ -337,10 +362,10 @@
 
     .profile {
       position: relative;
-      padding: 22px 22px 24px;
+      padding: 20px 21px 22px;
       border: 2px solid var(--charcoal);
       border-left: 12px solid var(--turquoise);
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       background: rgba(96, 125, 155, .14);
     }
 
@@ -357,17 +382,17 @@
     .profile p {
       max-width: 60rem;
       color: #2f2f2f;
-      font-size: clamp(1.02rem, 1.45vw, 1.18rem);
-      line-height: 1.55;
+      font-size: clamp(1rem, 1.32vw, 1.12rem);
+      line-height: 1.54;
     }
 
-    .experience-grid { display: grid; gap: 18px; }
+    .experience-grid { display: grid; gap: 16px; }
 
     .job {
       display: grid;
-      grid-template-columns: minmax(150px, .38fr) minmax(0, .62fr);
+      grid-template-columns: minmax(140px, .36fr) minmax(0, .64fr);
       gap: 18px;
-      padding-top: 18px;
+      padding-top: 16px;
       border-top: 1px solid var(--rule);
     }
 
@@ -375,7 +400,7 @@
 
     .job-meta {
       color: var(--charcoal);
-      font-size: .78rem;
+      font-size: .76rem;
       font-weight: 900;
       letter-spacing: .08em;
       line-height: 1.35;
@@ -387,14 +412,14 @@
     .job:nth-child(4n + 3) .job-meta { border-left: 5px solid var(--turquoise); padding-left: 10px; }
     .job:nth-child(4n + 4) .job-meta { border-left: 5px solid var(--grey-blue); padding-left: 10px; }
 
-    .job-description { margin-top: 6px; line-height: 1.48; }
+    .job-description { margin-top: 6px; line-height: 1.46; }
 
     .lower-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 30px;
-      padding-top: 24px;
+      gap: 22px;
+      margin-top: 28px;
+      padding-top: 22px;
       border-top: 3px solid var(--charcoal);
     }
 
@@ -404,38 +429,38 @@
     .small-copy { color: #56514b; font-size: .86rem; font-weight: 700; line-height: 1.45; }
 
     .tag-line {
-      margin-top: 30px;
+      margin-top: 28px;
       color: var(--electric-yellow);
       font-family: "Fraunces", Georgia, serif;
-      font-size: 1.45rem;
+      font-size: 1.42rem;
       font-weight: 800;
       line-height: 1;
       letter-spacing: -.035em;
     }
 
     @keyframes matrixFall {
-      from { transform: translate3d(0, -12vh, var(--depth)) rotateY(var(--tilt)) rotateX(6deg) scale(var(--scale)); }
-      to { transform: translate3d(0, 260vh, var(--depth)) rotateY(var(--tilt)) rotateX(6deg) scale(var(--scale)); }
+      0% { transform: translate3d(0, -22vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) rotateX(var(--spin-x, 6deg)) scale(var(--scale, 1)); }
+      100% { transform: translate3d(0, 265vh, var(--depth, 0px)) rotateY(var(--tilt, 0deg)) rotateX(var(--spin-x, 6deg)) scale(var(--scale, 1)); }
     }
 
     @keyframes gridDrift {
       from { background-position: 0 0, 0 0, 0 0, 0 0; }
-      to { background-position: 0 0, 0 300px, 0 360px, 0 0; }
+      to { background-position: 0 0, 0 260px, 0 320px, 0 0; }
     }
 
     @keyframes planeDrift {
       from { background-position: 0 0; }
-      to { background-position: 0 640px; }
+      to { background-position: 0 560px; }
     }
 
     @keyframes dimensionPulse {
-      from { transform: rotateX(70deg) rotateZ(18deg) translateY(18vh) translateZ(-260px) scale(1.22); opacity: .48; }
-      to { transform: rotateX(68deg) rotateZ(25deg) translateY(12vh) translateZ(-120px) scale(1.44); opacity: .78; }
+      from { transform: rotateX(70deg) rotateZ(18deg) translateY(18vh) translateZ(-260px) scale(1.22); opacity: .50; }
+      to { transform: rotateX(68deg) rotateZ(25deg) translateY(12vh) translateZ(-110px) scale(1.46); opacity: .82; }
     }
 
     @keyframes orbitalShift {
-      from { transform: translate3d(-4vw, -2vh, 0) scale(.92); }
-      to { transform: translate3d(5vw, 4vh, 0) scale(1.12); }
+      from { transform: translate3d(-5vw, -3vh, 0) scale(.92); }
+      to { transform: translate3d(6vw, 5vh, 0) scale(1.14); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -455,10 +480,16 @@
       main { width: auto; margin: 0; }
       .resume-sheet { box-shadow: none; border: 0; }
       .resume-shell { min-height: auto; }
+      .contact-list a { color: inherit; }
     }
 
-    @media (max-width: 820px) {
-      main { margin: 16px auto; }
+    @media (max-width: 900px) {
+      main { width: min(900px, calc(100dvw - 32px)); margin: 16px auto; }
+      .resume-shell { grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr); }
+      h1 { font-size: clamp(3rem, 7vw, 5.55rem); }
+    }
+
+    @media (max-width: 760px) {
       .resume-shell,
       .job,
       .lower-grid { display: block; }
@@ -477,21 +508,32 @@
     <span class="glow-orb one"></span>
     <span class="glow-orb two"></span>
     <span class="glow-orb three"></span>
-    <span class="rain-column">BABBLED BROOKE 0101 1010 1100 0011 BABBLED BROOKE 0110 1001 0101</span>
-    <span class="rain-column">BROOKE BABBLED 1011 0010 0111 1000 BROOKE BABBLED 0100 1110 0011</span>
-    <span class="rain-column">0101 BABBLED 1100 BROOKE 0011 1010 BABBLED BROOKE 1110 0101</span>
-    <span class="rain-column">BABBLED BROOKE 1111 0001 1010 0110 BABBLED BROOKE 1001 0010</span>
-    <span class="rain-column">BROOKE 0100 BABBLED 1101 0011 BROOKE 1010 BABBLED 0111 1000</span>
-    <span class="rain-column">BABBLED BROOKE 0010 1011 0101 1110 BABBLED BROOKE 0110 1001</span>
-    <span class="rain-column">1010 BROOKE 0111 BABBLED 1100 BROOKE 0001 BABBLED 1011 0101</span>
-    <span class="rain-column">BABBLED BROOKE 0110 0011 1101 1000 BABBLED BROOKE 0101 1110</span>
-    <span class="rain-column">BROOKE BABBLED 1001 0101 0011 1110 BROOKE BABBLED 0111 0001</span>
-    <span class="rain-column">0101 1010 BABBLED BROOKE 1100 0011 BABBLED BROOKE 0110 1001</span>
-    <span class="rain-column">BABBLED 1110 BROOKE 0101 1011 BABBLED 0010 BROOKE 1100 0111</span>
-    <span class="rain-column">BROOKE BABBLED 0111 1010 0001 1100 BROOKE BABBLED 1000 0011</span>
-    <span class="rain-column">BABBLED BROOKE 0011 0101 1110 1001 BABBLED BROOKE 0110 1010</span>
-    <span class="rain-column">1011 BROOKE BABBLED 0100 1111 BROOKE BABBLED 0010 0110 1001</span>
-    <span class="rain-column">BABBLED BROOKE 1101 0010 0101 1010 BABBLED BROOKE 1110 0001</span>
+
+    <span class="rain-column near turquoise" style="--left:1%;--speed:7s;--delay:-2s;--depth:170px;--tilt:-22deg;--scale:1.25;">BABBLED BROOKE 0101 1010 1100 0011 BABBLED BROOKE 0110</span>
+    <span class="rain-column far greyblue" style="--left:5%;--speed:16s;--delay:-9s;--depth:-390px;--tilt:24deg;--scale:.62;">BROOKE 1011 BABBLED 0010 0111 1000 BROOKE 0100</span>
+    <span class="rain-column mid pink" style="--left:9%;--speed:10s;--delay:-5s;--depth:-80px;--tilt:12deg;--scale:.9;">BABBLED BROOKE 1110 0101 1010 0011 BROOKE</span>
+    <span class="rain-column near yellow" style="--left:13%;--speed:8s;--delay:-7s;--depth:120px;--tilt:-15deg;--scale:1.15;">0101 BABBLED BROOKE 1100 0011 1111 0001</span>
+    <span class="rain-column far turquoise" style="--left:17%;--speed:18s;--delay:-12s;--depth:-460px;--tilt:-30deg;--scale:.56;">BROOKE BABBLED 0100 1110 0011 1010</span>
+    <span class="rain-column mid yellow" style="--left:21%;--speed:12s;--delay:-4s;--depth:-150px;--tilt:18deg;--scale:.82;">BABBLED 0010 BROOKE 1011 0101 1110</span>
+    <span class="rain-column near pink" style="--left:25%;--speed:7.5s;--delay:-6s;--depth:210px;--tilt:21deg;--scale:1.3;">BROOKE BABBLED 1111 0001 1010 0110</span>
+    <span class="rain-column far yellow" style="--left:29%;--speed:19s;--delay:-15s;--depth:-520px;--tilt:28deg;--scale:.52;">0100 BABBLED 1101 0011 BROOKE 1010</span>
+    <span class="rain-column mid greyblue" style="--left:33%;--speed:11s;--delay:-8s;--depth:-40px;--tilt:-12deg;--scale:.94;">BABBLED BROOKE 0010 1011 0101 1110</span>
+    <span class="rain-column near turquoise" style="--left:37%;--speed:6.8s;--delay:-3s;--depth:190px;--tilt:18deg;--scale:1.22;">BROOKE 0110 BABBLED 0011 1101 1000</span>
+    <span class="rain-column far pink" style="--left:41%;--speed:17s;--delay:-10s;--depth:-410px;--tilt:-19deg;--scale:.58;">BABBLED BROOKE 0101 1110 1011 0101</span>
+    <span class="rain-column mid turquoise" style="--left:45%;--speed:9.5s;--delay:-5.5s;--depth:-95px;--tilt:10deg;--scale:.88;">1010 BROOKE 0111 BABBLED 1100 0001</span>
+    <span class="rain-column near greyblue" style="--left:49%;--speed:8.2s;--delay:-7.2s;--depth:135px;--tilt:-18deg;--scale:1.1;">BABBLED BROOKE 1001 0101 0011 1110</span>
+    <span class="rain-column far yellow" style="--left:53%;--speed:20s;--delay:-14s;--depth:-540px;--tilt:31deg;--scale:.50;">BROOKE BABBLED 0111 0001 0101 1010</span>
+    <span class="rain-column mid pink" style="--left:57%;--speed:10.5s;--delay:-6s;--depth:-60px;--tilt:-10deg;--scale:.92;">BABBLED 1110 BROOKE 0101 1011 0010</span>
+    <span class="rain-column near yellow" style="--left:61%;--speed:7.2s;--delay:-4s;--depth:220px;--tilt:20deg;--scale:1.28;">BROOKE BABBLED 0111 1010 0001 1100</span>
+    <span class="rain-column far greyblue" style="--left:65%;--speed:18.5s;--delay:-11s;--depth:-480px;--tilt:-27deg;--scale:.54;">BABBLED BROOKE 1000 0011 0011 0101</span>
+    <span class="rain-column mid turquoise" style="--left:69%;--speed:9s;--delay:-3.8s;--depth:-130px;--tilt:14deg;--scale:.86;">1110 1001 BABBLED BROOKE 0110 1010</span>
+    <span class="rain-column near pink" style="--left:73%;--speed:6.5s;--delay:-5s;--depth:250px;--tilt:-25deg;--scale:1.34;">1011 BROOKE BABBLED 0100 1111 0010</span>
+    <span class="rain-column far turquoise" style="--left:77%;--speed:21s;--delay:-16s;--depth:-560px;--tilt:34deg;--scale:.48;">BABBLED BROOKE 0110 1001 1101 0010</span>
+    <span class="rain-column mid yellow" style="--left:81%;--speed:11.5s;--delay:-7s;--depth:-75px;--tilt:-16deg;--scale:.9;">0101 1010 BABBLED BROOKE 1110 0001</span>
+    <span class="rain-column near greyblue" style="--left:85%;--speed:7.7s;--delay:-6.4s;--depth:160px;--tilt:19deg;--scale:1.16;">BROOKE 0101 BABBLED 1010 1100 0011</span>
+    <span class="rain-column far pink" style="--left:89%;--speed:18s;--delay:-13s;--depth:-430px;--tilt:-23deg;--scale:.55;">BABBLED BROOKE 0110 1001 0101 1111</span>
+    <span class="rain-column mid greyblue" style="--left:93%;--speed:10s;--delay:-5.8s;--depth:-105px;--tilt:12deg;--scale:.88;">BROOKE BABBLED 0001 1010 0110 1001</span>
+    <span class="rain-column near turquoise" style="--left:97%;--speed:6.9s;--delay:-4.2s;--depth:205px;--tilt:-20deg;--scale:1.24;">BABBLED BROOKE 1101 0010 0101 1010</span>
   </div>
 
   <main>
