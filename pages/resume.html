@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Brooke C. Howard" />
   <title>Resume | Brooke C. Howard</title>
-  <meta name="description" content="Graphic design resume for Brooke C. Howard with fast layered BaBBled Brooke matrix rain." />
+  <meta name="description" content="Responsive graphic design resume for Brooke C. Howard with fast layered BaBBled Brooke matrix rain." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..900,0..100;1,9..144,500..900,0..100&display=swap" rel="stylesheet">
@@ -20,11 +21,19 @@
       --ink-soft: #393632;
       --rule: rgba(34, 34, 34, .18);
       --rule-dark: rgba(245, 241, 232, .24);
+      --page-gutter: clamp(12px, 3vw, 28px);
+      --sheet-width: min(1120px, calc(100dvw - (var(--page-gutter) * 2)));
+      --panel-pad: clamp(22px, 3.15vw, 48px);
+      --content-pad: clamp(22px, 3.4vw, 52px);
     }
 
     * { box-sizing: border-box; }
 
-    html { min-height: 100%; }
+    html {
+      min-height: 100%;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
 
     body {
       min-height: 100%;
@@ -200,37 +209,52 @@
 
     main {
       position: relative;
-      width: min(960px, calc(100dvw - 44px));
-      margin: 26px auto;
+      width: var(--sheet-width);
+      margin: var(--page-gutter) auto;
       z-index: 1;
     }
 
     .resume-sheet {
       position: relative;
-      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
       background: var(--off-white);
       border: 1px solid rgba(245, 241, 232, .64);
       box-shadow: 0 26px 92px rgba(0, 0, 0, .64), 0 0 0 1px rgba(0, 245, 212, .22), 0 0 82px rgba(255, 45, 170, .15);
+      overflow: clip;
     }
 
     .resume-sheet::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
-      width: 20px;
+      width: clamp(10px, 1.7vw, 20px);
       background: linear-gradient(180deg, var(--hot-pink) 0 28%, var(--electric-yellow) 28% 58%, var(--turquoise) 58% 82%, var(--grey-blue) 82% 100%);
     }
 
     .resume-shell {
       display: grid;
-      grid-template-columns: minmax(250px, .70fr) minmax(0, 1.30fr);
-      min-height: 100vh;
-      padding-left: 20px;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+      min-height: auto;
+      padding-left: clamp(10px, 1.7vw, 20px);
+    }
+
+    .identity-panel,
+    .content-panel,
+    .job,
+    .job-meta,
+    .job-details,
+    .lower-grid > *,
+    .profile,
+    .contact-list,
+    .skill-list,
+    .tool-list {
+      min-width: 0;
     }
 
     .identity-panel {
       position: relative;
-      padding: clamp(28px, 3.6vw, 50px) clamp(22px, 3vw, 38px);
+      padding: var(--panel-pad);
       background: var(--charcoal);
       color: var(--off-white);
       isolation: isolate;
@@ -239,12 +263,12 @@
     .identity-panel::before {
       content: "BABBLED";
       position: absolute;
-      right: -20px;
+      right: -18px;
       bottom: 18px;
       z-index: -1;
       color: rgba(245, 241, 232, .045);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(4.6rem, 10vw, 8.4rem);
+      font-size: clamp(3.6rem, 8.6vw, 8rem);
       font-weight: 900;
       line-height: .75;
       letter-spacing: -.08em;
@@ -252,53 +276,58 @@
       transform: rotate(180deg);
     }
 
-    .content-panel { padding: clamp(28px, 3.6vw, 50px) clamp(26px, 3.8vw, 54px); }
+    .content-panel { padding: var(--content-pad); }
 
     .kicker {
       display: inline-block;
-      margin: 0 0 18px;
+      max-width: 100%;
+      margin: 0 0 clamp(14px, 1.8vw, 18px);
       padding: 7px 10px;
       background: var(--electric-yellow);
       color: var(--charcoal);
-      font-size: .66rem;
+      font-size: clamp(.58rem, .9vw, .66rem);
       font-weight: 900;
-      letter-spacing: .18em;
+      letter-spacing: clamp(.08em, 1.1vw, .18em);
+      line-height: 1.15;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     h1 {
       margin: 0;
       color: var(--off-white);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(3.2rem, 7.4vw, 6.35rem);
+      font-size: clamp(2.45rem, 7.2vw, 6.15rem);
       font-weight: 900;
-      line-height: .80;
-      letter-spacing: -.07em;
+      line-height: .82;
+      letter-spacing: -.065em;
+      overflow-wrap: anywhere;
     }
 
     .name-accent { color: var(--turquoise); }
 
     .role {
-      margin: 22px 0 0;
-      max-width: 18rem;
+      margin: clamp(16px, 2vw, 22px) 0 0;
+      max-width: 100%;
       color: var(--off-white);
-      font-size: .84rem;
+      font-size: clamp(.72rem, 1vw, .84rem);
       font-weight: 900;
-      letter-spacing: .12em;
+      letter-spacing: clamp(.06em, .8vw, .12em);
       line-height: 1.4;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     .role strong { color: var(--electric-yellow); font-weight: 900; }
 
     .palette-strip {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 6px;
-      margin-top: 26px;
+      margin-top: clamp(18px, 2.5vw, 26px);
     }
 
-    .swatch { min-height: 32px; border: 1px solid rgba(245, 241, 232, .2); }
+    .swatch { min-height: clamp(24px, 3vw, 32px); border: 1px solid rgba(245, 241, 232, .2); }
     .swatch.charcoal { background: var(--charcoal); }
     .swatch.mustard { background: var(--electric-yellow); }
     .swatch.sky { background: var(--turquoise); }
@@ -310,18 +339,21 @@
     .tool-list { list-style: none; margin: 0; padding: 0; }
 
     .contact-list {
-      margin-top: 32px;
-      padding-top: 18px;
+      margin-top: clamp(20px, 3vw, 32px);
+      padding-top: clamp(14px, 2vw, 18px);
       border-top: 2px solid var(--rule-dark);
       color: rgba(245, 241, 232, .88);
-      font-size: .9rem;
+      font-size: clamp(.76rem, 1.04vw, .9rem);
       font-weight: 700;
       line-height: 1.55;
+      overflow-wrap: anywhere;
     }
 
     .contact-list a {
       color: var(--turquoise);
       text-decoration-color: rgba(0, 245, 212, .55);
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .contact-list a:hover,
@@ -330,22 +362,38 @@
       text-decoration-color: var(--electric-yellow);
     }
 
-    .side-section { margin-top: 32px; }
+    .side-section { margin-top: clamp(22px, 3vw, 32px); }
 
     h2 {
       margin: 0 0 12px;
       color: var(--hot-pink);
-      font-size: .75rem;
+      font-size: clamp(.68rem, .9vw, .75rem);
       font-weight: 900;
-      letter-spacing: .17em;
+      letter-spacing: clamp(.08em, .9vw, .17em);
       line-height: 1.25;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     .identity-panel h2 { color: var(--turquoise); }
 
-    h3 { margin: 0; color: var(--charcoal); font-size: 1rem; font-weight: 900; line-height: 1.25; }
-    p, li { color: var(--ink-soft); font-size: .91rem; }
+    h3 {
+      margin: 0;
+      color: var(--charcoal);
+      font-size: clamp(.91rem, 1.06vw, 1rem);
+      font-weight: 900;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    p,
+    li {
+      color: var(--ink-soft);
+      font-size: clamp(.82rem, .98vw, .91rem);
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+
     p { margin: 0; }
     .identity-panel li { color: rgba(245, 241, 232, .88); }
 
@@ -358,41 +406,45 @@
       line-height: 1.3;
     }
 
-    .tool-list { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 16px; }
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px 16px;
+    }
 
     .profile {
       position: relative;
-      padding: 20px 21px 22px;
+      padding: clamp(16px, 2vw, 20px) clamp(16px, 2.1vw, 21px) clamp(18px, 2.2vw, 22px);
       border: 2px solid var(--charcoal);
-      border-left: 12px solid var(--turquoise);
-      margin-bottom: 26px;
+      border-left: clamp(8px, 1.2vw, 12px) solid var(--turquoise);
+      margin-bottom: clamp(20px, 2.6vw, 26px);
       background: rgba(96, 125, 155, .14);
     }
 
     .profile::after {
       content: "";
       position: absolute;
-      right: 18px;
+      right: clamp(12px, 1.8vw, 18px);
       top: -10px;
-      width: 76px;
+      width: clamp(42px, 7vw, 76px);
       height: 18px;
       background: var(--electric-yellow);
     }
 
     .profile p {
-      max-width: 60rem;
+      max-width: 68ch;
       color: #2f2f2f;
-      font-size: clamp(1rem, 1.32vw, 1.12rem);
-      line-height: 1.54;
+      font-size: clamp(.9rem, 1.13vw, 1.08rem);
+      line-height: 1.5;
     }
 
-    .experience-grid { display: grid; gap: 16px; }
+    .experience-grid { display: grid; gap: clamp(12px, 1.6vw, 16px); }
 
     .job {
       display: grid;
-      grid-template-columns: minmax(140px, .36fr) minmax(0, .64fr);
-      gap: 18px;
-      padding-top: 16px;
+      grid-template-columns: minmax(0, .34fr) minmax(0, .66fr);
+      gap: clamp(12px, 1.8vw, 18px);
+      padding-top: clamp(12px, 1.6vw, 16px);
       border-top: 1px solid var(--rule);
     }
 
@@ -400,11 +452,12 @@
 
     .job-meta {
       color: var(--charcoal);
-      font-size: .76rem;
+      font-size: clamp(.66rem, .84vw, .76rem);
       font-weight: 900;
-      letter-spacing: .08em;
-      line-height: 1.35;
+      letter-spacing: clamp(.04em, .65vw, .08em);
+      line-height: 1.32;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     .job:nth-child(4n + 1) .job-meta { border-left: 5px solid var(--hot-pink); padding-left: 10px; }
@@ -412,30 +465,36 @@
     .job:nth-child(4n + 3) .job-meta { border-left: 5px solid var(--turquoise); padding-left: 10px; }
     .job:nth-child(4n + 4) .job-meta { border-left: 5px solid var(--grey-blue); padding-left: 10px; }
 
-    .job-description { margin-top: 6px; line-height: 1.46; }
+    .job-description { margin-top: 6px; line-height: 1.44; }
 
     .lower-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 28px;
-      padding-top: 22px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(16px, 2.2vw, 22px);
+      margin-top: clamp(20px, 2.8vw, 28px);
+      padding-top: clamp(18px, 2.4vw, 22px);
       border-top: 3px solid var(--charcoal);
     }
 
     .education-item + .education-item,
     .small-section + .small-section { margin-top: 16px; }
 
-    .small-copy { color: #56514b; font-size: .86rem; font-weight: 700; line-height: 1.45; }
+    .small-copy {
+      color: #56514b;
+      font-size: clamp(.78rem, .92vw, .86rem);
+      font-weight: 700;
+      line-height: 1.44;
+    }
 
     .tag-line {
-      margin-top: 28px;
+      margin-top: clamp(22px, 2.8vw, 28px);
       color: var(--electric-yellow);
       font-family: "Fraunces", Georgia, serif;
-      font-size: 1.42rem;
+      font-size: clamp(1.12rem, 1.7vw, 1.42rem);
       font-weight: 800;
       line-height: 1;
       letter-spacing: -.035em;
+      overflow-wrap: anywhere;
     }
 
     @keyframes matrixFall {
@@ -478,28 +537,53 @@
       body::after,
       .matrix-wallpaper { display: none; }
       main { width: auto; margin: 0; }
-      .resume-sheet { box-shadow: none; border: 0; }
-      .resume-shell { min-height: auto; }
+      .resume-sheet { box-shadow: none; border: 0; overflow: visible; }
+      .resume-shell { min-height: auto; grid-template-columns: .72fr 1.28fr; }
       .contact-list a { color: inherit; }
     }
 
-    @media (max-width: 900px) {
-      main { width: min(900px, calc(100dvw - 32px)); margin: 16px auto; }
-      .resume-shell { grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr); }
-      h1 { font-size: clamp(3rem, 7vw, 5.55rem); }
+    @media (max-width: 980px) {
+      :root {
+        --sheet-width: min(920px, calc(100dvw - 24px));
+        --panel-pad: clamp(20px, 2.8vw, 34px);
+        --content-pad: clamp(20px, 3vw, 36px);
+      }
+
+      .resume-shell { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); }
+      h1 { font-size: clamp(2.4rem, 6.8vw, 5.35rem); }
+      .role { font-size: clamp(.66rem, .95vw, .78rem); }
+      .tool-list { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       .resume-shell,
       .job,
-      .lower-grid { display: block; }
+      .lower-grid {
+        display: block;
+      }
+
       .resume-sheet::before { width: 10px; }
       .resume-shell { padding-left: 10px; }
-      .content-panel { padding-top: 30px; }
-      .tool-list { grid-template-columns: 1fr; }
+      .identity-panel { padding: clamp(22px, 5vw, 34px); }
+      .content-panel { padding: clamp(22px, 5vw, 36px); }
+      h1 { font-size: clamp(3.1rem, 13vw, 5.8rem); }
+      .role { max-width: 28rem; }
       .job + .job { margin-top: 18px; }
       .job-details { margin-top: 6px; }
       .lower-grid > section + section { margin-top: 24px; }
+    }
+
+    @media (max-width: 520px) {
+      :root {
+        --page-gutter: 8px;
+        --sheet-width: calc(100dvw - 16px);
+      }
+
+      .palette-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .profile::after { display: none; }
+      h1 { font-size: clamp(2.55rem, 15vw, 4.7rem); }
+      .kicker { display: block; width: fit-content; }
+      .contact-list { font-size: .78rem; }
     }
   </style>
 </head>
