@@ -397,6 +397,173 @@
       color: var(--sun);
     }
 
+    /* Purpose: Maximize usable desktop space while keeping the graphic resume readable. */
+    @media (min-width: 900px) {
+      body {
+        padding: 1.25rem 1.25rem 2.25rem;
+        font-size: 16px;
+        line-height: 1.48;
+      }
+
+      main {
+        width: min(96rem, calc(100vw - 2.5rem));
+      }
+
+      .hero {
+        padding: 1.4rem 0 1.2rem;
+      }
+
+      h1 {
+        font-size: clamp(3.6rem, 6.8vw, 6.4rem);
+      }
+
+      .role-line {
+        margin-top: .75rem;
+      }
+
+      .resume-block {
+        margin-top: .4rem;
+        padding: 1.25rem 1.5rem;
+      }
+
+      .resume-block h2 {
+        font-size: 2.2rem;
+        margin-bottom: .45rem;
+      }
+
+      .resume-block p {
+        max-width: none;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .cards {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 1.4rem;
+      }
+
+      .card {
+        padding: 1rem 1.1rem 1.15rem;
+      }
+
+      .card h2,
+      .card h3 {
+        font-size: 1.75rem;
+        margin-bottom: .25rem;
+      }
+
+      .card p,
+      .card li {
+        font-size: .92rem;
+        line-height: 1.38;
+      }
+
+      .card ul {
+        gap: .25rem;
+        margin-top: .35rem;
+      }
+
+      .big {
+        font-size: 2.45rem;
+        margin: .2rem 0 .15rem;
+      }
+
+      .cards > .card:nth-child(1),
+      .cards > .card:nth-child(2),
+      .cards > .card:nth-child(3) {
+        grid-column: span 4;
+      }
+
+      .feature-card {
+        grid-column: 1 / -1;
+      }
+
+      .experience-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .75rem 1.25rem;
+      }
+
+      .job {
+        padding-top: .65rem;
+      }
+
+      .job-title {
+        font-size: .9rem;
+      }
+
+      .job-place {
+        margin: .1rem 0 .2rem;
+      }
+
+      .cards > .card:nth-child(5),
+      .cards > .card:nth-child(6),
+      .cards > .card:nth-child(7) {
+        grid-column: span 4;
+      }
+
+      .repo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: .65rem;
+      }
+
+      .repo-item {
+        padding: .65rem .7rem;
+      }
+
+      .repo-item strong {
+        font-size: .72rem;
+      }
+
+      .repo-item span {
+        font-size: .82rem;
+        line-height: 1.25;
+      }
+
+      .signature {
+        margin-top: 1.5rem;
+        padding: .75rem;
+      }
+
+      .signature .name {
+        font-size: 2.5rem;
+      }
+
+      .colophon {
+        margin-top: .9rem;
+        padding: .8rem 1rem;
+      }
+
+      .colophon p {
+        font-size: .76rem;
+        line-height: 1.35;
+      }
+    }
+
+    @media (min-width: 1250px) {
+      main {
+        width: min(104rem, calc(100vw - 3rem));
+      }
+
+      .cards > .card:nth-child(1) {
+        grid-column: span 3;
+      }
+
+      .cards > .card:nth-child(2) {
+        grid-column: span 5;
+      }
+
+      .cards > .card:nth-child(3) {
+        grid-column: span 4;
+      }
+
+      .cards > .card:nth-child(5),
+      .cards > .card:nth-child(6),
+      .cards > .card:nth-child(7) {
+        grid-column: span 4;
+      }
+    }
+
     @media (max-width: 700px) {
       body { padding-top: 1.4rem; }
       .resume-block,
