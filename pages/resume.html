@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Brooke C. Howard" />
   <title>Resume | Brooke C. Howard</title>
-  <meta name="description" content="Responsive graphic design resume for Brooke C. Howard with animated rainbow Matrix rain and teal glow." />
+  <meta name="description" content="Responsive graphic design resume for Brooke C. Howard with animated rainbow Matrix rain, teal glow, and creative repository relevance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..900,0..100;1,9..144,500..900,0..100&display=swap" rel="stylesheet">
@@ -288,6 +288,7 @@
     .job,
     .job-meta,
     .job-details,
+    .repo-card,
     .lower-grid > *,
     .profile,
     .contact-list,
@@ -389,7 +390,8 @@
 
     .contact-list,
     .skill-list,
-    .tool-list { list-style: none; margin: 0; padding: 0; }
+    .tool-list,
+    .repo-list { list-style: none; margin: 0; padding: 0; }
 
     .contact-list {
       margin-top: clamp(20px, 3vw, 32px);
@@ -402,7 +404,8 @@
       overflow-wrap: anywhere;
     }
 
-    .contact-list a {
+    .contact-list a,
+    .repo-card a {
       color: var(--teal);
       text-decoration-color: rgba(0, 214, 201, .55);
       overflow-wrap: anywhere;
@@ -410,7 +413,9 @@
     }
 
     .contact-list a:hover,
-    .contact-list a:focus-visible {
+    .contact-list a:focus-visible,
+    .repo-card a:hover,
+    .repo-card a:focus-visible {
       color: var(--electric-yellow);
       text-decoration-color: var(--electric-yellow);
     }
@@ -520,6 +525,46 @@
 
     .job-description { margin-top: 6px; line-height: 1.44; }
 
+    .repo-section {
+      margin-top: clamp(20px, 2.8vw, 28px);
+      padding-top: clamp(18px, 2.4vw, 22px);
+      border-top: 3px solid var(--charcoal);
+    }
+
+    .repo-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+    }
+
+    .repo-card {
+      padding-left: 10px;
+      border-left: 5px solid var(--teal);
+    }
+
+    .repo-card:nth-child(4n + 1) { border-left-color: var(--hot-pink); }
+    .repo-card:nth-child(4n + 2) { border-left-color: var(--electric-yellow); }
+    .repo-card:nth-child(4n + 3) { border-left-color: var(--teal); }
+    .repo-card:nth-child(4n + 4) { border-left-color: var(--grey-blue); }
+
+    .repo-card strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: clamp(.76rem, .92vw, .86rem);
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .repo-card span {
+      display: block;
+      margin-top: 3px;
+      color: #56514b;
+      font-size: clamp(.74rem, .86vw, .82rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
     .lower-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -592,7 +637,8 @@
       main { width: auto; margin: 0; }
       .resume-sheet { box-shadow: none; border: 0; overflow: visible; }
       .resume-shell { min-height: auto; grid-template-columns: .72fr 1.28fr; }
-      .contact-list a { color: inherit; }
+      .contact-list a,
+      .repo-card a { color: inherit; }
     }
 
     @media (max-width: 980px) {
@@ -623,6 +669,7 @@
       .role { max-width: 28rem; }
       .job + .job { margin-top: 18px; }
       .job-details { margin-top: 6px; }
+      .repo-list { grid-template-columns: 1fr; }
       .lower-grid > section + section { margin-top: 24px; }
     }
 
@@ -771,6 +818,20 @@
                 </div>
               </article>
             </div>
+          </section>
+
+          <section class="repo-section" aria-label="Creative repository relevance">
+            <h2>Creative Repository Relevance</h2>
+            <ul class="repo-list">
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/clean26">clean26</a></strong><span>Responsive school portfolio hub, GitHub Pages structure, navigation, and page-level presentation.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/theory-of-sigh">theory-of-sigh</a></strong><span>Editorial web issue with image sequencing, visual psychology, typography, and publication layout.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/Matisse_Picasso_Cezine">Matisse_Picasso_Cezine</a></strong><span>Art-history magazine concept connecting research, curation, visual hierarchy, and web delivery.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/brooke-chauntel-portfolio">brooke-chauntel-portfolio</a></strong><span>Personal portfolio architecture for creative identity, project presentation, and professional voice.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/graphics-store">graphics-store</a></strong><span>Digital graphics and product-presentation thinking for creative commerce and visual assets.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/vibrations-ceramics">vibrations-ceramics</a></strong><span>Material design concept translating object, texture, and craft into a digital visual system.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/Ticker-tracker-travel">Ticker-tracker-travel</a></strong><span>App concept for deal-watching, interface planning, information flow, and product logic.</span></li>
+              <li class="repo-card"><strong><a href="https://github.com/brookehoward2008-droid/structured-intelligence">structured-intelligence</a> / <a href="https://github.com/brookehoward2008-droid/awesome-css">awesome-css</a></strong><span>AI-assisted workflow systems, CSS research, pattern awareness, and front-end structure.</span></li>
+            </ul>
           </section>
 
           <div class="lower-grid">
