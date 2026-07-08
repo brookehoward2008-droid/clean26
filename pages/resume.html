@@ -18,6 +18,7 @@
       --ink: #14110e;
       --smoke: #0e0d11;
       --coral: #ff6b5a;
+      --hotpink: #ff2daa;
       --sun: #ffd35c;
       --card-bg: rgba(20, 17, 14, 0.72);
       --card-line: rgba(245, 239, 223, 0.35);
@@ -62,6 +63,8 @@
       pointer-events: none;
       background:
         radial-gradient(ellipse at 50% 22%, rgba(38, 123, 114, .26) 0%, transparent 44%),
+        radial-gradient(ellipse at 78% 18%, rgba(255, 45, 170, .24) 0%, transparent 36%),
+        radial-gradient(ellipse at 22% 78%, rgba(255, 45, 170, .14) 0%, transparent 42%),
         radial-gradient(ellipse at 50% 36%, rgba(0, 0, 0, .10) 0%, rgba(0, 0, 0, .76) 100%),
         linear-gradient(180deg, rgba(10, 8, 16, .18) 0%, rgba(10, 8, 16, .78) 82%, #050406 100%);
     }
@@ -96,10 +99,10 @@
       display: inline-block;
       font-family: "Caveat", cursive;
       font-size: clamp(2rem, 5vw, 2.8rem);
-      color: var(--coral);
+      color: var(--hotpink);
       transform: rotate(-3deg);
       margin-bottom: .35rem;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, .55);
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, .55), 0 0 18px rgba(255, 45, 170, .34);
     }
 
     h1 {
@@ -116,7 +119,7 @@
       font-family: "Fraunces", Georgia, serif;
       font-style: italic;
       font-weight: 700;
-      color: var(--coral);
+      color: var(--hotpink);
       text-transform: none;
       letter-spacing: -.04em;
     }
@@ -195,14 +198,14 @@
     }
 
     .card:nth-child(3n+2) {
-      box-shadow: 6px 6px 0 rgba(255, 107, 90, .86);
+      box-shadow: 6px 6px 0 rgba(255, 45, 170, .70);
       transform: rotate(1deg);
     }
 
     .card:nth-child(3n+2):hover,
     .card:nth-child(3n+2):focus-within {
       transform: translate(-2px, -3px) rotate(1.45deg);
-      box-shadow: 10px 10px 0 var(--coral);
+      box-shadow: 10px 10px 0 var(--hotpink);
     }
 
     .card:nth-child(3n) {
@@ -242,7 +245,7 @@
 
     .card li::before {
       content: "✦ ";
-      color: var(--coral);
+      color: var(--hotpink);
       font-weight: 700;
     }
 
@@ -251,9 +254,9 @@
       font-family: "Archivo Black", Impact, sans-serif;
       font-size: clamp(2rem, 6vw, 3.4rem);
       line-height: 1;
-      color: var(--coral);
+      color: var(--hotpink);
       margin: .4rem 0 .3rem;
-      text-shadow: 2px 2px 0 rgba(0,0,0,.5);
+      text-shadow: 2px 2px 0 rgba(0,0,0,.5), 0 0 18px rgba(255,45,170,.24);
     }
 
     .contact-list {
@@ -268,14 +271,14 @@
       grid-column: 1 / -1;
       background: rgba(38, 123, 114, .84);
       border: 1.5px solid var(--teal-light);
-      box-shadow: 10px 10px 0 var(--coral);
+      box-shadow: 10px 10px 0 var(--hotpink);
       transform: rotate(-.35deg);
     }
 
     .feature-card:hover,
     .feature-card:focus-within {
       transform: translate(-2px, -3px) rotate(-.75deg);
-      box-shadow: 14px 14px 0 var(--coral);
+      box-shadow: 14px 14px 0 var(--hotpink);
     }
 
     .experience-list {
@@ -356,7 +359,7 @@
       color: var(--sun);
       font-size: clamp(2.5rem, 7vw, 3.4rem);
       transform: rotate(-3deg);
-      border-bottom: 3px solid var(--coral);
+      border-bottom: 3px solid var(--hotpink);
       padding: 0 .6rem .2rem;
       text-shadow: 2px 2px 0 rgba(0,0,0,.55);
     }
@@ -586,7 +589,7 @@
       const canvas = document.getElementById('matrix-bg');
       const ctx = canvas.getContext('2d');
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const PALETTE = ['#267b72', '#3aa094', '#c5e5e1', '#ffd35c', '#ff6b5a', '#f5efdf'];
+      const PALETTE = ['#267b72', '#ff2daa', '#3aa094', '#c5e5e1', '#ff2daa', '#ffd35c', '#ff6b5a', '#f5efdf', '#ff2daa'];
       const TOKENS = ['0','1','B','R','O','O','K','E','BB','CSS','HTML','TYPE','PRINT','GRID','DESIGN','✦','·','░','▒','▓'];
       let w = 0;
       let h = 0;
@@ -610,7 +613,7 @@
 
       function frame() {
         ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = 'rgba(10, 8, 16, 0.065)';
+        ctx.fillStyle = 'rgba(10, 8, 16, 0.052)';
         ctx.fillRect(0, 0, w, h);
 
         ctx.font = FS + 'px "Courier New", monospace';
@@ -621,7 +624,7 @@
           const y = drops[i] * FS;
           const token = TOKENS[Math.floor(Math.random() * TOKENS.length)];
           const color = PALETTE[(i + Math.floor(drops[i] / 3)) % PALETTE.length];
-          const alpha = 0.18 + depth[i] * 0.62;
+          const alpha = 0.16 + depth[i] * 0.58;
 
           ctx.fillStyle = color;
           ctx.globalAlpha = alpha;
@@ -629,11 +632,11 @@
 
           if (Math.random() < 0.055) {
             ctx.fillStyle = '#ffffff';
-            ctx.globalAlpha = 0.72 * depth[i];
+            ctx.globalAlpha = 0.55 * depth[i];
             ctx.fillText(token, x, y - FS);
           }
 
-          drops[i] += 0.16 + depth[i] * 0.24;
+          drops[i] += 0.055 + depth[i] * 0.105;
           if (drops[i] * FS > h && Math.random() > 0.982) {
             drops[i] = -Math.random() * 24;
             depth[i] = 0.45 + Math.random() * 0.65;
