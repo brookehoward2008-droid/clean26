@@ -337,15 +337,24 @@
       overflow-wrap: anywhere;
     }
 
-    h1 {
+    .resume-name {
+      display: block;
+      max-width: 100%;
       margin: 0;
       color: var(--off-white);
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(2.45rem, 7.2vw, 6.15rem);
+      font-size: clamp(2.3rem, 6.2vw, 5.35rem);
       font-weight: 900;
-      line-height: .82;
-      letter-spacing: -.065em;
-      overflow-wrap: anywhere;
+      line-height: .84;
+      letter-spacing: -.06em;
+      overflow-wrap: normal;
+      word-break: keep-all;
+    }
+
+    .name-line {
+      display: block;
+      white-space: nowrap;
+      max-width: 100%;
     }
 
     .name-accent { color: var(--teal); }
@@ -593,8 +602,8 @@
         --content-pad: clamp(20px, 3vw, 36px);
       }
 
-      .resume-shell { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); }
-      h1 { font-size: clamp(2.4rem, 6.8vw, 5.35rem); }
+      .resume-shell { grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr); }
+      .resume-name { font-size: clamp(2.15rem, 5.8vw, 4.75rem); }
       .role { font-size: clamp(.66rem, .95vw, .78rem); }
       .tool-list { grid-template-columns: 1fr; }
     }
@@ -610,7 +619,7 @@
       .resume-shell { padding-left: 10px; }
       .identity-panel { padding: clamp(22px, 5vw, 34px); }
       .content-panel { padding: clamp(22px, 5vw, 36px); }
-      h1 { font-size: clamp(3.1rem, 13vw, 5.8rem); }
+      .resume-name { font-size: clamp(3rem, 13vw, 5.8rem); }
       .role { max-width: 28rem; }
       .job + .job { margin-top: 18px; }
       .job-details { margin-top: 6px; }
@@ -625,7 +634,7 @@
 
       .palette-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); }
       .profile::after { display: none; }
-      h1 { font-size: clamp(2.55rem, 15vw, 4.7rem); }
+      .resume-name { font-size: clamp(2.55rem, 15vw, 4.7rem); }
       .kicker { display: block; width: fit-content; }
       .contact-list { font-size: .78rem; }
     }
@@ -669,7 +678,11 @@
       <div class="resume-shell">
         <aside class="identity-panel" aria-label="Resume identity and skills">
           <p class="kicker">Graphic Design Resume</p>
-          <h1>Brooke<br><span class="name-accent">C.</span><br>Howard</h1>
+          <h1 class="resume-name" aria-label="Brooke C. Howard">
+            <span class="name-line">Brooke</span>
+            <span class="name-line name-accent">C.</span>
+            <span class="name-line">Howard</span>
+          </h1>
           <p class="role"><strong>Graphic Designer</strong> + Web Designer + Technical Communicator</p>
 
           <div class="palette-strip" aria-label="Brooke Howard color palette">
@@ -723,8 +736,8 @@
             <p>Technical writer, graphic designer, and web design student with experience creating clear documentation, visual communication systems, digital content, and customer-focused solutions. Skilled in transforming complex information into organized, accessible, and engaging content for print and digital environments.</p>
           </section>
 
-          <section aria-label="Relevant experience">
-            <h2>Relevant Experience</h2>
+          <section aria-label="Relevant technical and design experience">
+            <h2>Relevant Technical &amp; Design Experience</h2>
             <div class="experience-grid">
               <article class="job">
                 <div class="job-meta">BaBBled LLC</div>
@@ -735,17 +748,9 @@
               </article>
 
               <article class="job">
-                <div class="job-meta">Independent Care Provider</div>
-                <div class="job-details">
-                  <h3>Independent Care Provider</h3>
-                  <p class="job-description">Manages long-term support work requiring communication, organization, confidentiality, reliability, and problem solving.</p>
-                </div>
-              </article>
-
-              <article class="job">
                 <div class="job-meta">Microsoft / Xbox 360</div>
                 <div class="job-details">
-                  <h3>Game Tester & Quality Assurance Contributor</h3>
+                  <h3>Game Tester &amp; Quality Assurance Contributor</h3>
                   <p class="job-description">Documented software issues, communicated findings with development teams, and maintained detailed testing records.</p>
                 </div>
               </article>
@@ -753,7 +758,7 @@
               <article class="job">
                 <div class="job-meta">Morris Magnets</div>
                 <div class="job-details">
-                  <h3>Production Graphic Designer & Customer Service Representative</h3>
+                  <h3>Production Graphic Designer &amp; Customer Service Representative</h3>
                   <p class="job-description">Created production-ready artwork, customer proofs, and specification samples while supporting manufacturing workflows and customer communication.</p>
                 </div>
               </article>
@@ -761,7 +766,7 @@
               <article class="job">
                 <div class="job-meta">Senior Resource Group</div>
                 <div class="job-details">
-                  <h3>Office Manager & Marketing Support</h3>
+                  <h3>Office Manager &amp; Marketing Support</h3>
                   <p class="job-description">Designed newsletters, promotional materials, and business communications while managing administrative projects.</p>
                 </div>
               </article>
@@ -773,7 +778,7 @@
               <h2>Education</h2>
               <div class="education-item">
                 <h3>Everett Community College</h3>
-                <p class="small-copy">Associate of Technical Arts, Graphic & Web Design / GPA: 4.0</p>
+                <p class="small-copy">Associate of Technical Arts, Graphic &amp; Web Design / GPA: 4.0</p>
               </div>
               <div class="education-item">
                 <h3>Capitan High School</h3>
@@ -787,7 +792,7 @@
                 <p class="small-copy">Coursiv Artificial Intelligence, Prompt Engineering, and Digital Content Creation coursework.</p>
               </div>
               <div class="small-section">
-                <h2>Activities & Honors</h2>
+                <h2>Activities &amp; Honors</h2>
                 <p class="small-copy">President's Club, Everett Community College. Founder of BaBBled LLC. Continuing school portfolio work in typography, publication design, photography, web design, and visual storytelling.</p>
               </div>
               <div class="small-section">
