@@ -1,0 +1,371 @@
+:root {
+  color-scheme: dark;
+  --ink: #202037;
+  --ink-soft: #4f496c;
+  --paper: rgba(255, 255, 255, 0.92);
+  --violet: #6d46a6;
+  --magenta: #c04fbc;
+  --cyan: #8ce8e5;
+  --page-gutter: clamp(1rem, 4vw, 3.5rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #101020;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: #101020 url("colored-beach-poster.webp") center / cover fixed no-repeat;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  background: #101020 url("colored-beach-poster.webp") center / cover no-repeat;
+}
+
+.background__video {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%) scale(1.02);
+  object-fit: cover;
+  filter: saturate(1.18) contrast(1.04) brightness(0.92);
+}
+
+.background__color,
+.background__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.background__color {
+  background:
+    linear-gradient(135deg, rgba(35, 17, 67, 0.24), rgba(19, 72, 81, 0.08) 48%, rgba(107, 23, 93, 0.2)),
+    linear-gradient(180deg, rgba(6, 7, 22, 0.25), rgba(6, 7, 22, 0.04) 38%, rgba(6, 7, 22, 0.46));
+  mix-blend-mode: multiply;
+}
+
+.background__vignette {
+  background:
+    radial-gradient(circle at 50% 35%, transparent 0 38%, rgba(5, 5, 17, 0.24) 72%, rgba(5, 5, 17, 0.64) 100%),
+    linear-gradient(90deg, rgba(8, 8, 24, 0.18), transparent 20% 80%, rgba(8, 8, 24, 0.18));
+}
+
+.page-mark,
+.page-footer {
+  position: absolute;
+  z-index: 5;
+  left: var(--page-gutter);
+  right: var(--page-gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.68);
+  pointer-events: none;
+}
+
+.page-mark {
+  top: clamp(1rem, 3vw, 2rem);
+}
+
+.page-footer {
+  bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.page-footer span:last-child {
+  text-align: right;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(5rem, 10vh, 7.5rem) var(--page-gutter) clamp(6rem, 12vh, 9rem);
+}
+
+.poem-shell {
+  position: relative;
+  width: min(47rem, 94vw);
+  min-height: clamp(137rem, 172vw, 151rem);
+  margin-inline: auto;
+  isolation: isolate;
+  filter: drop-shadow(0 2.6rem 4.2rem rgba(0, 0, 0, 0.42));
+}
+
+.poem-shell::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 6.5% 20% 4.5%;
+  border-radius: 48% 52% 49% 51% / 43% 40% 60% 57%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.24) 22% 78%, rgba(255, 255, 255, 0.08));
+  box-shadow:
+    inset 0 0 4rem rgba(255, 255, 255, 0.2),
+    0 0 5rem rgba(202, 115, 255, 0.11);
+  backdrop-filter: blur(4px);
+}
+
+.poem-shell__bubble {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.poem-copy {
+  position: relative;
+  z-index: 1;
+  width: min(24rem, 61%);
+  margin-inline: auto;
+  padding-top: clamp(10.5rem, 20vw, 14.5rem);
+  padding-bottom: 12rem;
+}
+
+.prompt {
+  max-width: 20rem;
+  margin: 0 0 3.25rem;
+  color: var(--ink-soft);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.68rem, 1.25vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.65;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 clamp(4.25rem, 9vw, 6.5rem) -0.07em;
+  color: var(--ink);
+  font-family: "Arial Narrow", "Aptos Narrow", Arial, Helvetica, sans-serif;
+  font-size: clamp(5rem, 13vw, 8.25rem);
+  font-stretch: condensed;
+  font-weight: 300;
+  letter-spacing: -0.085em;
+  line-height: 0.76;
+  text-transform: uppercase;
+  text-shadow:
+    0.025em 0.025em 0 rgba(140, 232, 229, 0.38),
+    -0.022em -0.015em 0 rgba(192, 79, 188, 0.22);
+}
+
+.poem {
+  font-size: clamp(1.03rem, 1.75vw, 1.19rem);
+  font-weight: 400;
+  letter-spacing: 0.002em;
+  line-height: 1.48;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.poem p {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 2.15rem;
+}
+
+.poem .single {
+  margin-block: 2.85rem;
+  font-style: italic;
+}
+
+.poem .offset-small {
+  margin-left: clamp(0.75rem, 3.2vw, 1.65rem);
+}
+
+.poem .offset-medium {
+  margin-left: clamp(1.4rem, 6vw, 3rem);
+}
+
+.poem .objects {
+  padding-left: 1rem;
+  border-left: 1px solid rgba(109, 70, 166, 0.3);
+}
+
+.poem .turn {
+  color: #4e347b;
+  font-size: 1.12em;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.poem .steps {
+  margin-block: 3.35rem 2.15rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.poem .instructions {
+  padding: 1.2rem 1.25rem 1.3rem;
+  border: 1px solid rgba(70, 53, 111, 0.16);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 2rem rgba(255, 255, 255, 0.2);
+}
+
+.poem .ending {
+  margin-top: 4.25rem;
+  margin-left: clamp(1.7rem, 7vw, 3.4rem);
+  color: var(--ink-soft);
+}
+
+.poem .ending span {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 8vw, 4.8rem);
+  font-weight: 300;
+  letter-spacing: -0.08em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  text-shadow:
+    0.03em 0 0 rgba(140, 232, 229, 0.35),
+    -0.025em 0 0 rgba(192, 79, 188, 0.22);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --page-gutter: 0.85rem;
+  }
+
+  .page-mark span:nth-child(2),
+  .page-footer span:last-child {
+    display: none;
+  }
+
+  .page-mark,
+  .page-footer {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+  }
+
+  .page {
+    padding-top: 4.5rem;
+  }
+
+  .poem-shell {
+    width: min(32rem, 118vw);
+    min-height: 145rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .poem-shell::before {
+    inset-inline: 19%;
+  }
+
+  .poem-copy {
+    width: min(19.2rem, 64%);
+    padding-top: 9.5rem;
+  }
+
+  .prompt {
+    margin-bottom: 2.75rem;
+    font-size: 0.6rem;
+    line-height: 1.55;
+  }
+
+  h1 {
+    margin-bottom: 4.35rem;
+    font-size: clamp(4.6rem, 25vw, 6.2rem);
+  }
+
+  .poem {
+    font-size: clamp(0.98rem, 4.2vw, 1.08rem);
+    line-height: 1.47;
+  }
+
+  .poem p {
+    margin-bottom: 2rem;
+  }
+
+  .poem .offset-medium {
+    margin-left: 1.25rem;
+  }
+
+  .poem .instructions {
+    margin-left: -0.35rem;
+    padding-inline: 0.95rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .poem-shell {
+    width: 125vw;
+    min-height: 147rem;
+  }
+
+  .poem-copy {
+    width: 63%;
+  }
+
+  .poem {
+    font-size: 0.96rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .background__video {
+    display: none;
+  }
+}
+
+@media print {
+  body {
+    color: #111;
+    background: #fff;
+  }
+
+  .background,
+  .page-mark,
+  .page-footer {
+    display: none;
+  }
+
+  .page {
+    padding: 0;
+  }
+
+  .poem-shell {
+    width: 7.5in;
+    min-height: 0;
+    filter: none;
+  }
+}
