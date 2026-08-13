@@ -6,24 +6,166 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Journal Week 4 | Brooke Howard</title>
-		<link rel="stylesheet" href="./style.css" />
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				min-height: 100%;
+				font-family: Georgia, "Times New Roman", serif;
+				background:
+					linear-gradient(180deg, rgba(5, 6, 10, 0.55), rgba(5, 6, 10, 0.72)),
+					url("../../images/poem-bg-benigno-hoyuela.jpg") center / cover no-repeat fixed;
+				color: #f7f4ef;
+			}
+
+			body {
+				overflow-x: hidden;
+			}
+
+			.page-shell {
+				position: relative;
+				min-height: 100vh;
+				width: 100%;
+			}
+
+			.video-overlay {
+				position: fixed;
+				inset: 0;
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 0.28) 0%,
+					rgba(0, 0, 0, 0.42) 52%,
+					rgba(0, 0, 0, 0.58) 100%
+				);
+				z-index: 1;
+			}
+
+			.journal-layout {
+				position: relative;
+				z-index: 2;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 4rem 1.5rem;
+			}
+
+			.poem-panel {
+				position: relative;
+				width: min(900px, 100%);
+				min-height: 70vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 4rem 2rem;
+				border-radius: 28px;
+				background: rgba(18, 18, 24, 0.34);
+				border: 1px solid rgba(255, 255, 255, 0.16);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				overflow: hidden;
+				box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+			}
+
+			.bubble-art {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: min(380px, 60vw);
+				height: min(380px, 60vw);
+				max-width: 420px;
+				max-height: 420px;
+				transform: translate(-50%, -50%);
+				opacity: 0.42;
+				z-index: 1;
+				pointer-events: none;
+				border-radius: 50%;
+				background:
+					radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.52), transparent 24%),
+					radial-gradient(circle at 65% 38%, rgba(255, 203, 239, 0.55), transparent 22%),
+					radial-gradient(circle at 52% 72%, rgba(185, 164, 255, 0.5), transparent 28%),
+					radial-gradient(circle at 50% 50%, rgba(219, 190, 255, 0.22), rgba(94, 67, 141, 0.08) 62%, transparent 70%);
+				filter: blur(1px) drop-shadow(0 0 26px rgba(216, 179, 255, 0.18));
+			}
+
+			.poem-copy {
+				position: relative;
+				z-index: 2;
+				width: min(560px, 100%);
+				text-align: left;
+			}
+
+			.eyebrow {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 0.72rem;
+				letter-spacing: 0.22em;
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 0.74);
+				margin-bottom: 0.9rem;
+			}
+
+			h1 {
+				font-size: clamp(2.4rem, 5vw, 4.25rem);
+				font-weight: 400;
+				line-height: 1;
+				margin-bottom: 1.6rem;
+				color: #ffffff;
+				text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+			}
+
+			.poem {
+				display: flex;
+				flex-direction: column;
+				gap: 1.1rem;
+			}
+
+			.poem p {
+				font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+				line-height: 1.65;
+				max-width: 28ch;
+				color: rgba(255, 248, 243, 0.95);
+				text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+			}
+
+			@media (max-width: 768px) {
+				.journal-layout {
+					padding: 2rem 1rem;
+				}
+
+				.poem-panel {
+					padding: 2.5rem 1.25rem;
+					border-radius: 22px;
+					min-height: auto;
+				}
+
+				.bubble-art {
+					width: min(280px, 70vw);
+					height: min(280px, 70vw);
+					opacity: 0.34;
+				}
+
+				.poem-copy {
+					width: 100%;
+				}
+
+				.poem p {
+					max-width: 100%;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<div class="page-shell">
-			<video class="bg-video" autoplay muted loop playsinline>
-				<source src="./colored-beach.mp4" type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
-
 			<div class="video-overlay"></div>
 
 			<main class="journal-layout">
 				<section class="poem-panel">
-					<img
-						src="./bubble.png"
-						alt=""
-						class="bubble-art"
-						aria-hidden="true" />
+					<div class="bubble-art" aria-hidden="true"></div>
 
 					<div class="poem-copy">
 						<p class="eyebrow">Journal Week 4</p>
@@ -101,33 +243,3 @@
 		</div>
 	</body>
 </html>
-style.css * { box-sizing: border-box; margin: 0; padding: 0; } html, body {
-min-height: 100%; font-family: Georgia, "Times New Roman", serif; background:
-#000; color: #f7f4ef; } body { overflow-x: hidden; } .page-shell { position:
-relative; min-height: 100vh; width: 100%; } .bg-video { position: fixed; inset:
-0; width: 100%; height: 100%; object-fit: cover; z-index: 0; } .video-overlay {
-position: fixed; inset: 0; background: linear-gradient( 180deg, rgba(0, 0, 0,
-0.45) 0%, rgba(0, 0, 0, 0.52) 50%, rgba(0, 0, 0, 0.6) 100% ); z-index: 1; }
-.journal-layout { position: relative; z-index: 2; min-height: 100vh; display:
-flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; }
-.poem-panel { position: relative; width: min(900px, 100%); min-height: 70vh;
-display: flex; align-items: center; justify-content: center; padding: 4rem 2rem;
-border-radius: 28px; background: rgba(18, 18, 24, 0.36); border: 1px solid
-rgba(255, 255, 255, 0.16); backdrop-filter: blur(10px); -webkit-backdrop-filter:
-blur(10px); overflow: hidden; box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35); }
-.bubble-art { position: absolute; top: 50%; left: 50%; width: min(380px, 60vw);
-max-width: 420px; transform: translate(-50%, -50%); opacity: 0.34; z-index: 1;
-pointer-events: none; filter: drop-shadow(0 0 26px rgba(216, 179, 255, 0.18)); }
-.poem-copy { position: relative; z-index: 2; width: min(560px, 100%);
-text-align: left; } .eyebrow { font-family: Arial, Helvetica, sans-serif;
-font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color:
-rgba(255, 255, 255, 0.74); margin-bottom: 0.9rem; } h1 { font-size:
-clamp(2.4rem, 5vw, 4.25rem); font-weight: 400; line-height: 1; margin-bottom:
-1.6rem; color: #ffffff; text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25); } .poem {
-display: flex; flex-direction: column; gap: 1.1rem; } .poem p { font-size:
-clamp(1.02rem, 1.6vw, 1.22rem); line-height: 1.65; max-width: 28ch; color:
-rgba(255, 248, 243, 0.95); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32); } @media
-(max-width: 768px) { .journal-layout { padding: 2rem 1rem; } .poem-panel {
-padding: 2.5rem 1.25rem; border-radius: 22px; min-height: auto; } .bubble-art {
-width: min(280px, 70vw); opacity: 0.28; } .poem-copy { width: 100%; } .poem p {
-max-width: 100%; } }
