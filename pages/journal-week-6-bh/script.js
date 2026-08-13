@@ -29,6 +29,26 @@ if (soundToggle && shoreAudio) {
     }
   };
 
+  const playShore = async () => {
+    try {
+      await shoreAudio.play();
+      setSoundState(true);
+      return true;
+    } catch {
+      setSoundState(false);
+      return false;
+    }
+  };
+
+  const unlockAutoplay = async () => {
+    if (!shoreAudio.paused) return;
+    const started = await playShore();
+    if (started) {
+      window.removeEventListener("pointerdown", unlockAutoplay);
+      window.removeEventListener("keydown", unlockAutoplay);
+    }
+  };
+
   soundToggle.addEventListener("click", async () => {
     if (!shoreAudio.paused) {
       shoreAudio.pause();
@@ -36,14 +56,16 @@ if (soundToggle && shoreAudio) {
       return;
     }
 
-    try {
-      await shoreAudio.play();
-      setSoundState(true);
-    } catch {
-      setSoundState(false);
-    }
+    await playShore();
   });
 
   shoreAudio.addEventListener("ended", () => setSoundState(false));
   shoreAudio.addEventListener("pause", () => setSoundState(false));
+
+  playShore().then((started) => {
+    if (!started) {
+      window.addEventListener("pointerdown", unlockAutoplay, { once: true });
+      window.addEventListener("keydown", unlockAutoplay, { once: true });
+    }
+  });
 }
