@@ -17,9 +17,7 @@
 			body {
 				min-height: 100%;
 				font-family: Georgia, "Times New Roman", serif;
-				background:
-					linear-gradient(180deg, rgba(5, 6, 10, 0.55), rgba(5, 6, 10, 0.72)),
-					url("../../images/poem-bg-benigno-hoyuela.jpg") center / cover no-repeat fixed;
+				background: #0c1210;
 				color: #f7f4ef;
 			}
 
@@ -33,14 +31,25 @@
 				width: 100%;
 			}
 
+			.live-background {
+				position: fixed;
+				inset: 0;
+				z-index: 0;
+				background:
+					linear-gradient(90deg, rgba(8, 11, 9, 0.1), rgba(8, 11, 9, 0.28)),
+					url("assets/surreal-seville-loop.gif") center / cover no-repeat;
+				filter: saturate(0.95) contrast(1.04) brightness(0.84);
+				transform: scale(1.02);
+			}
+
 			.video-overlay {
 				position: fixed;
 				inset: 0;
 				background: linear-gradient(
 					180deg,
-					rgba(0, 0, 0, 0.28) 0%,
-					rgba(0, 0, 0, 0.42) 52%,
-					rgba(0, 0, 0, 0.58) 100%
+					rgba(5, 7, 6, 0.18) 0%,
+					rgba(5, 7, 6, 0.34) 54%,
+					rgba(5, 7, 6, 0.58) 100%
 				);
 				z-index: 1;
 			}
@@ -63,11 +72,11 @@
 				align-items: center;
 				justify-content: center;
 				padding: 4rem 2rem;
-				border-radius: 28px;
-				background: rgba(18, 18, 24, 0.34);
+				border-radius: 6px;
+				background: rgba(12, 13, 13, 0.12);
 				border: 1px solid rgba(255, 255, 255, 0.16);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
+				backdrop-filter: blur(1.5px);
+				-webkit-backdrop-filter: blur(1.5px);
 				overflow: hidden;
 				box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
 			}
@@ -98,6 +107,7 @@
 				z-index: 2;
 				width: min(560px, 100%);
 				text-align: left;
+				margin-left: min(10vw, 6rem);
 			}
 
 			.eyebrow {
@@ -132,6 +142,12 @@
 				text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
 			}
 
+			@media (min-width: 900px) {
+				.live-background {
+					background-position: center 46%;
+				}
+			}
+
 			@media (max-width: 768px) {
 				.journal-layout {
 					padding: 2rem 1rem;
@@ -151,6 +167,7 @@
 
 				.poem-copy {
 					width: 100%;
+					margin-left: 0;
 				}
 
 				.poem p {
@@ -161,6 +178,7 @@
 	</head>
 	<body>
 		<div class="page-shell">
+			<div class="live-background" aria-hidden="true"></div>
 			<div class="video-overlay"></div>
 
 			<main class="journal-layout">
