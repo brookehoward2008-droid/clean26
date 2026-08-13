@@ -12,13 +12,12 @@
     }
 
     :root {
-      --ink: #1c130d;
-      --paper: rgba(255, 249, 235, 0.88);
-      --straw: #f3d27c;
-      --comb: #c9412f;
-      --green: #4f6f45;
-      --sky: #a9c8d7;
-      --shadow: rgba(33, 18, 9, 0.24);
+      --ink: #21120c;
+      --paper: rgba(255, 249, 235, 0.9);
+      --straw: #f2c66f;
+      --comb: #ba3b2b;
+      --green: #53623b;
+      --shadow: rgba(29, 14, 7, 0.34);
     }
 
     html {
@@ -31,12 +30,10 @@
     body {
       min-height: 100%;
       overflow-x: hidden;
-      background:
-        linear-gradient(180deg, rgba(169, 200, 215, 0.72) 0%, rgba(247, 214, 143, 0.72) 52%, rgba(116, 82, 42, 0.34) 100%),
-        repeating-linear-gradient(90deg, transparent 0 44px, rgba(255, 255, 255, 0.18) 44px 46px);
+      background: #1a261d;
     }
 
-    .farm-sky {
+    .video-field {
       position: fixed;
       inset: 0;
       z-index: 0;
@@ -44,71 +41,31 @@
       pointer-events: none;
     }
 
-    .sun {
+    .video-field img,
+    .video-field video {
       position: absolute;
-      top: clamp(1.8rem, 8vw, 5rem);
-      right: clamp(2rem, 10vw, 8rem);
-      width: clamp(5rem, 14vw, 10rem);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: radial-gradient(circle, #fff5b7 0 34%, #f0b94e 70%);
-      box-shadow: 0 0 5rem rgba(240, 185, 78, 0.38);
-    }
-
-    .field {
-      position: absolute;
-      left: -5%;
-      right: -5%;
-      bottom: -12%;
-      height: 42vh;
-      background:
-        repeating-linear-gradient(103deg, rgba(95, 70, 35, 0.16) 0 6px, transparent 6px 26px),
-        linear-gradient(180deg, #7c9d53 0%, #5d7438 54%, #3f4f2a 100%);
-      border-radius: 50% 50% 0 0 / 18% 18% 0 0;
-      transform: rotate(-1deg);
-    }
-
-    .chicken-video {
-      position: fixed;
-      left: clamp(1rem, 8vw, 7rem);
-      bottom: clamp(1.8rem, 7vw, 5rem);
-      z-index: 1;
-      width: clamp(14rem, 34vw, 31rem);
-      aspect-ratio: 16 / 9;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 6px;
-      overflow: hidden;
-      background: #2c75bc;
-      box-shadow: 0 1.4rem 3rem rgba(35, 17, 8, 0.24);
-      transform: rotate(-2deg);
-      animation: bob 3.2s ease-in-out infinite;
-    }
-
-    .chicken-video img,
-    .chicken-video video {
-      display: block;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      filter: saturate(0.94) contrast(1.05) brightness(0.9);
     }
 
-    .video-wash {
-      position: fixed;
+    .video-field::after {
+      content: "";
+      position: absolute;
       inset: 0;
-      z-index: 0;
       background:
-        linear-gradient(90deg, rgba(255, 243, 209, 0.76) 0%, rgba(255, 243, 209, 0.5) 42%, rgba(255, 243, 209, 0.82) 100%),
-        url("assets/chicken-video-thumbnail.jpeg") center / cover no-repeat;
-      opacity: 0.36;
-      pointer-events: none;
+        linear-gradient(90deg, rgba(13, 18, 14, 0.08) 0%, rgba(13, 18, 14, 0.3) 40%, rgba(13, 18, 14, 0.72) 100%),
+        linear-gradient(180deg, rgba(255, 230, 163, 0.12) 0%, rgba(39, 31, 20, 0.42) 100%);
     }
 
     .journal-layout {
       position: relative;
       z-index: 2;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
       min-height: 100vh;
       width: min(100%, 112rem);
@@ -118,17 +75,27 @@
     }
 
     .poem-card {
-      width: min(100%, 46rem);
+      width: min(100%, 42rem);
       min-width: 0;
       padding: clamp(1.6rem, 4vw, 3.2rem);
       background: var(--paper);
       border: 1px solid rgba(73, 44, 21, 0.18);
       border-radius: 6px;
-      box-shadow: 0 1.4rem 4rem var(--shadow);
+      box-shadow: 0 1.6rem 4.6rem var(--shadow);
+      backdrop-filter: blur(7px) saturate(0.96);
+      -webkit-backdrop-filter: blur(7px) saturate(0.96);
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .eyebrow {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.72rem;
       color: var(--green);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.72rem;
@@ -139,12 +106,35 @@
 
     h1 {
       max-width: 8ch;
-      margin-bottom: 1.4rem;
       color: #2a160d;
-      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-size: clamp(2.6rem, 6vw, 5.6rem);
       font-weight: 800;
       letter-spacing: 0;
       line-height: 0.88;
+    }
+
+    .sound-toggle {
+      flex: 0 0 auto;
+      min-height: 2.55rem;
+      margin-top: 0.35rem;
+      padding: 0.58rem 0.82rem;
+      color: #fff8e9;
+      background: rgba(83, 98, 59, 0.82);
+      border: 1px solid rgba(33, 18, 12, 0.18);
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      box-shadow: 0 0.7rem 1.6rem rgba(45, 28, 13, 0.18);
+    }
+
+    .sound-toggle:hover,
+    .sound-toggle:focus-visible,
+    .sound-toggle[aria-pressed="true"] {
+      background: rgba(186, 59, 43, 0.88);
     }
 
     .poem {
@@ -160,17 +150,6 @@
       overflow-wrap: break-word;
     }
 
-    @keyframes bob {
-      0%,
-      100% {
-        transform: translateY(0) rotate(-2deg);
-      }
-
-      50% {
-        transform: translateY(-0.5rem) rotate(2deg);
-      }
-    }
-
     @media (max-width: 820px) {
       .journal-layout {
         align-items: flex-start;
@@ -180,25 +159,30 @@
         justify-content: flex-start;
       }
 
-      .chicken-video {
-        opacity: 0.24;
-        left: auto;
-        right: -4rem;
-        bottom: 2rem;
-        width: 16rem;
+      .video-field img,
+      .video-field video {
+        object-position: 58% center;
       }
 
       .poem-card {
-        width: min(calc(100vw - 2rem), 20.5rem);
-        max-width: min(calc(100vw - 2rem), 20.5rem);
+        width: min(calc(100vw - 2rem), 21.5rem);
+        max-width: min(calc(100vw - 2rem), 21.5rem);
         padding: 1.35rem;
         background: rgba(255, 249, 235, 0.92);
         overflow: hidden;
       }
 
+      .title-row {
+        display: block;
+      }
+
       h1 {
         max-width: 7.4ch;
         font-size: clamp(2.45rem, 14vw, 3.5rem);
+      }
+
+      .sound-toggle {
+        margin: 0.95rem 0 0;
       }
 
       .poem {
@@ -214,27 +198,94 @@
   </style>
 </head>
 <body>
-  <div class="farm-sky" aria-hidden="true">
-    <div class="video-wash"></div>
-    <div class="sun"></div>
-    <div class="field"></div>
-  </div>
+  <audio id="coop-audio" preload="auto" loop autoplay>
+    <source src="assets/chicken-soundscape.mp3?v=chicken-sound-1" type="audio/mpeg">
+  </audio>
 
-  <div class="chicken-video" aria-hidden="true">
-    <img src="assets/chicken-video-thumbnail.jpeg" alt="">
+  <div class="video-field" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="assets/chicken-coop-poster.png">
+      <source src="assets/chicken-coop-background.mp4?v=chicken-video-1" type="video/mp4">
+    </video>
   </div>
 
   <main class="journal-layout">
     <article class="poem-card">
-      <p class="eyebrow">Journal Week 4</p>
-      <h1>The Chicken Has Notes</h1>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Journal Week 4</p>
+          <h1>The Hen in the Coop</h1>
+        </div>
+        <button class="sound-toggle" type="button" aria-pressed="false">start sound</button>
+      </div>
 
       <div class="poem">
-        <p>I would like to do more laughing at small things, because my brain can turn a regular Tuesday into a board meeting with thunder. A chicken does not live like that. She enters the yard like she owns the weather, scratches the dirt with professional confidence, and announces every crumb as if she discovered gold. I respect that level of drama. If I dropped a tortilla chip and screamed about it, people would worry, but the chicken makes it look like purpose. Maybe I need more of that: less panic, more strut. More looking ridiculous without filing a report against myself.</p>
+        <p>In the straw-warm coop, where the dust turns gold, the little hen steps softly through her kingdom of feathers and feed. She is not grand, but she is busy with the sacred work of pecking, turning, listening, living. Her beak taps the earth like a tiny clock. Her wings hold the brown heat of morning. Every seed is a secret. Every shadow is watched.</p>
 
-        <p>The steps are not complicated, which is rude because I prefer my problems with special effects. I can take one walk without bringing every unfinished task with me. I can make something ugly on purpose and let it exist for ten whole minutes. I can stop treating rest like a crime scene. I can put my phone down, drink my coffee while it is still warm, and let the day cluck at me instead of chase me. I do not need to become a chicken. I only need to borrow her courage: chest out, eyes bright, absolutely convinced the world still has snacks hidden somewhere.</p>
+        <p>Beside her stands the master rooster, red-crowned and proud, throwing his bright cry over the boards as if he pulls the sun up by its burning sleeve. He guards her with one black eye on the yard and one brave foot in the straw. He is ridiculous and royal at the same time. She does not bow to him, but she lets him believe the sky is his. Together they rule the coop: she with her quiet hunger, he with his thunderous throat, both alive in the small, loud miracle of morning.</p>
       </div>
     </article>
   </main>
+  <script>
+    const coopAudio = document.getElementById("coop-audio");
+    const soundToggle = document.querySelector(".sound-toggle");
+
+    if (coopAudio && soundToggle) {
+      coopAudio.volume = 0.32;
+
+      const setSoundState = (active) => {
+        soundToggle.setAttribute("aria-pressed", String(active));
+        soundToggle.textContent = active ? "sound playing" : "start sound";
+      };
+
+      const removeUnlockListeners = () => {
+        window.removeEventListener("pointerdown", unlockSound);
+        window.removeEventListener("touchstart", unlockSound);
+        window.removeEventListener("mousedown", unlockSound);
+        window.removeEventListener("keydown", unlockSound);
+        window.removeEventListener("wheel", unlockSound);
+      };
+
+      const playSound = async () => {
+        try {
+          await coopAudio.play();
+          setSoundState(true);
+          removeUnlockListeners();
+          return true;
+        } catch {
+          setSoundState(false);
+          return false;
+        }
+      };
+
+      function unlockSound(event) {
+        if (event.target.closest && event.target.closest(".sound-toggle")) return;
+        if (!coopAudio.paused) return;
+        playSound();
+      }
+
+      soundToggle.addEventListener("click", async () => {
+        if (!coopAudio.paused) {
+          coopAudio.pause();
+          setSoundState(false);
+          return;
+        }
+
+        await playSound();
+      });
+
+      coopAudio.addEventListener("pause", () => setSoundState(false));
+
+      playSound().then((started) => {
+        if (!started) {
+          const unlockOptions = { passive: true };
+          window.addEventListener("pointerdown", unlockSound, unlockOptions);
+          window.addEventListener("touchstart", unlockSound, unlockOptions);
+          window.addEventListener("mousedown", unlockSound, unlockOptions);
+          window.addEventListener("keydown", unlockSound);
+          window.addEventListener("wheel", unlockSound, unlockOptions);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
