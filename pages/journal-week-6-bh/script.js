@@ -25,7 +25,7 @@ if (soundToggle && shoreAudio) {
     soundToggle.setAttribute("aria-pressed", String(active));
     const label = soundToggle.querySelector(".sound-label");
     if (label) {
-      label.textContent = active ? "shore playing" : "pebbled shore";
+      label.textContent = active ? "shore playing" : "real pebble shore";
     }
   };
 
