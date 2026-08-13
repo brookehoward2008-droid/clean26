@@ -29,10 +29,19 @@ if (soundToggle && shoreAudio) {
     }
   };
 
+  const removeUnlockListeners = () => {
+    window.removeEventListener("pointerdown", unlockAutoplay);
+    window.removeEventListener("touchstart", unlockAutoplay);
+    window.removeEventListener("mousedown", unlockAutoplay);
+    window.removeEventListener("keydown", unlockAutoplay);
+    window.removeEventListener("wheel", unlockAutoplay);
+  };
+
   const playShore = async () => {
     try {
       await shoreAudio.play();
       setSoundState(true);
+      removeUnlockListeners();
       return true;
     } catch {
       setSoundState(false);
@@ -40,14 +49,11 @@ if (soundToggle && shoreAudio) {
     }
   };
 
-  const unlockAutoplay = async () => {
+  function unlockAutoplay(event) {
+    if (event.target.closest && event.target.closest(".sound-toggle")) return;
     if (!shoreAudio.paused) return;
-    const started = await playShore();
-    if (started) {
-      window.removeEventListener("pointerdown", unlockAutoplay);
-      window.removeEventListener("keydown", unlockAutoplay);
-    }
-  };
+    playShore();
+  }
 
   soundToggle.addEventListener("click", async () => {
     if (!shoreAudio.paused) {
@@ -64,8 +70,12 @@ if (soundToggle && shoreAudio) {
 
   playShore().then((started) => {
     if (!started) {
-      window.addEventListener("pointerdown", unlockAutoplay, { once: true });
-      window.addEventListener("keydown", unlockAutoplay, { once: true });
+      const unlockOptions = { passive: true };
+      window.addEventListener("pointerdown", unlockAutoplay, unlockOptions);
+      window.addEventListener("touchstart", unlockAutoplay, unlockOptions);
+      window.addEventListener("mousedown", unlockAutoplay, unlockOptions);
+      window.addEventListener("keydown", unlockAutoplay);
+      window.addEventListener("wheel", unlockAutoplay, unlockOptions);
     }
   });
 }
