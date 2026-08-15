@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal Week 4 | Brooke Howard</title>
+  <meta name="author" content="Brooke Chauntel Howard">
+  <meta name="description" content="Week 4 immersive journal poem about catching swamp fog in a pickle jar and growing it into a cloud.">
+  <title>Journal Week 4 | How I Grew My Cloud</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,229 +14,538 @@
     }
 
     :root {
-      --ink: #21120c;
-      --paper: rgba(255, 249, 235, 0.9);
-      --straw: #f2c66f;
-      --comb: #ba3b2b;
-      --green: #53623b;
-      --shadow: rgba(29, 14, 7, 0.34);
+      --ink: #163036;
+      --night: #08242d;
+      --moss: #42684d;
+      --moon: #f5d885;
+      --cream: #fff6dc;
+      --paper: rgba(255, 248, 219, 0.86);
+      --line: rgba(255, 246, 220, 0.24);
+      --shadow: rgba(3, 18, 23, 0.56);
+      --display: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
     }
 
     html {
       min-height: 100%;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fbf0d0;
-      color: var(--ink);
+      background: var(--night);
     }
 
     body {
+      min-width: 320px;
       min-height: 100%;
       overflow-x: hidden;
-      background: #1a261d;
+      color: var(--cream);
+      background: var(--night);
+      font-family: var(--display);
+      text-rendering: optimizeLegibility;
     }
 
-    .video-field {
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 40;
+      padding: 0.65rem 0.8rem;
+      color: var(--night);
+      background: var(--cream);
+      transform: translateY(-180%);
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .swamp-scene {
       position: fixed;
       inset: 0;
       z-index: 0;
       overflow: hidden;
-      pointer-events: none;
+      background: url("assets/pickle-jar-cloud-swamp.png") 34% center / cover no-repeat;
     }
 
-    .video-field img,
-    .video-field video {
+    .swamp-scene video {
       position: absolute;
       inset: 0;
+      z-index: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      filter: saturate(0.94) contrast(1.05) brightness(0.9);
+      object-position: 34% center;
+      filter: saturate(0.96) contrast(1.02) brightness(0.9);
     }
 
-    .video-field::after {
+    .swamp-scene::before,
+    .swamp-scene::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(13, 18, 14, 0.08) 0%, rgba(13, 18, 14, 0.3) 40%, rgba(13, 18, 14, 0.72) 100%),
-        linear-gradient(180deg, rgba(255, 230, 163, 0.12) 0%, rgba(39, 31, 20, 0.42) 100%);
+      pointer-events: none;
     }
 
-    .journal-layout {
+    .swamp-scene::before {
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(2, 18, 24, 0.16) 0%, rgba(2, 18, 24, 0.08) 38%, rgba(2, 18, 24, 0.7) 100%),
+        linear-gradient(180deg, rgba(6, 30, 38, 0.04) 0%, rgba(5, 24, 30, 0.52) 100%),
+        radial-gradient(circle at 20% 36%, rgba(245, 216, 133, 0.18), transparent 18rem);
+    }
+
+    .swamp-scene::after {
+      left: 3%;
+      bottom: 2%;
+      z-index: 2;
+      width: 62vw;
+      height: 32vh;
+      background:
+        radial-gradient(ellipse at 34% 48%, rgba(255, 254, 231, 0.25), transparent 66%),
+        radial-gradient(ellipse at 66% 56%, rgba(190, 238, 223, 0.18), transparent 62%);
+      filter: blur(20px);
+      opacity: 0.78;
+      animation: lowMist 9s ease-in-out infinite alternate;
+    }
+
+    .story-shell {
       position: relative;
       z-index: 2;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      min-height: 100vh;
-      width: min(100%, 112rem);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: min(100%, 118rem);
+      min-height: 100svh;
       margin: 0 auto;
-      padding: clamp(1.5rem, 5vw, 5rem);
-      overflow-x: hidden;
+      padding: clamp(1rem, 3.4vw, 3.5rem);
     }
 
-    .poem-card {
-      width: min(100%, 42rem);
-      min-width: 0;
-      padding: clamp(1.6rem, 4vw, 3.2rem);
-      background: var(--paper);
-      border: 1px solid rgba(73, 44, 21, 0.18);
-      border-radius: 6px;
-      box-shadow: 0 1.6rem 4.6rem var(--shadow);
-      backdrop-filter: blur(7px) saturate(0.96);
-      -webkit-backdrop-filter: blur(7px) saturate(0.96);
-    }
-
-    .title-row {
+    .story-top,
+    .story-controls {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 1.2rem;
+      width: 100%;
+      font-family: var(--sans);
+      font-size: clamp(0.68rem, 1vw, 0.76rem);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0.16rem 1rem rgba(0, 0, 0, 0.58);
     }
 
-    .eyebrow {
-      margin-bottom: 0.72rem;
-      color: var(--green);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.72rem;
+    .story-top {
+      min-height: 3rem;
+      color: rgba(255, 249, 224, 0.82);
+    }
+
+    .sound-toggle,
+    .story-button,
+    .work-link {
+      color: rgba(255, 250, 232, 0.88);
+      background: rgba(3, 19, 25, 0.34);
+      border: 1px solid rgba(255, 246, 220, 0.28);
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      letter-spacing: inherit;
+      text-decoration: none;
+      text-transform: inherit;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .sound-toggle {
+      min-height: 2.5rem;
+      padding: 0.58rem 0.85rem;
+    }
+
+    .sound-toggle:hover,
+    .sound-toggle:focus-visible,
+    .sound-toggle[aria-pressed="true"],
+    .story-button:hover,
+    .story-button:focus-visible,
+    .work-link:hover,
+    .work-link:focus-visible {
+      color: #fff8df;
+      background: rgba(42, 86, 83, 0.52);
+      border-color: rgba(255, 246, 220, 0.56);
+      outline: none;
+    }
+
+    .story-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(17rem, 0.78fr) minmax(19rem, 35rem);
+      align-items: center;
+      gap: clamp(1.5rem, 5vw, 5.5rem);
+      padding: clamp(1rem, 4vw, 4rem) 0;
+    }
+
+    .title-block {
+      max-width: 35rem;
+      text-shadow: 0 0.18rem 1.4rem rgba(0, 0, 0, 0.62);
+    }
+
+    .eyebrow,
+    .scene-count {
+      font-family: var(--sans);
+      font-size: clamp(0.68rem, 1vw, 0.76rem);
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
+    .eyebrow {
+      color: rgba(255, 249, 224, 0.74);
+    }
+
     h1 {
-      max-width: 8ch;
-      color: #2a160d;
-      font-size: clamp(2.6rem, 6vw, 5.6rem);
+      max-width: 8.8ch;
+      margin: clamp(0.65rem, 1.8vw, 1.1rem) 0 1rem;
+      color: #fff2bf;
+      font-size: clamp(4rem, 9vw, 8.5rem);
       font-weight: 800;
       letter-spacing: 0;
-      line-height: 0.88;
+      line-height: 0.86;
     }
 
-    .sound-toggle {
-      flex: 0 0 auto;
-      min-height: 2.55rem;
-      margin-top: 0.35rem;
-      padding: 0.58rem 0.82rem;
-      color: #fff8e9;
-      background: rgba(83, 98, 59, 0.82);
-      border: 1px solid rgba(33, 18, 12, 0.18);
-      border-radius: 999px;
-      cursor: pointer;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.66rem;
+    .deck {
+      max-width: 26rem;
+      color: rgba(255, 251, 228, 0.88);
+      font-size: clamp(1rem, 1.45vw, 1.22rem);
+      line-height: 1.5;
+    }
+
+    .story-panel {
+      position: relative;
+      width: min(100%, 35rem);
+      min-height: clamp(29rem, 64svh, 42rem);
+      margin-left: auto;
+      color: var(--ink);
+    }
+
+    .story-beat {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      align-content: center;
+      gap: clamp(1rem, 2vw, 1.35rem);
+      padding: clamp(1.3rem, 3vw, 2.35rem);
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      border-radius: 8px;
+      box-shadow:
+        0 1.5rem 4.4rem var(--shadow),
+        inset 0 0 0 1px rgba(36, 82, 84, 0.12);
+      opacity: 0;
+      transform: translateY(0.85rem) scale(0.985);
+      visibility: hidden;
+      transition: opacity 620ms ease, transform 620ms ease, visibility 620ms ease;
+      backdrop-filter: blur(8px) saturate(0.94);
+      -webkit-backdrop-filter: blur(8px) saturate(0.94);
+    }
+
+    .story-beat::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(245, 216, 133, 0.3), transparent 8rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08));
+      border-radius: inherit;
+    }
+
+    .story-beat.is-active {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+
+    .scene-count {
+      color: var(--moss);
+    }
+
+    .story-beat h2 {
+      max-width: 11ch;
+      color: #0d2f38;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
       font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      box-shadow: 0 0.7rem 1.6rem rgba(45, 28, 13, 0.18);
+      letter-spacing: 0;
+      line-height: 0.94;
     }
 
-    .sound-toggle:hover,
-    .sound-toggle:focus-visible,
-    .sound-toggle[aria-pressed="true"] {
-      background: rgba(186, 59, 43, 0.88);
-    }
-
-    .poem {
+    .poem-lines {
       display: grid;
       gap: 1rem;
-      font-size: clamp(1.02rem, 1.45vw, 1.24rem);
-      line-height: 1.62;
+      font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+      line-height: 1.58;
+    }
+
+    .poem-lines p {
+      max-width: 30rem;
       overflow-wrap: break-word;
     }
 
-    .poem p {
-      max-width: 37rem;
-      overflow-wrap: break-word;
+    .story-controls {
+      min-height: 3rem;
     }
 
-    @media (max-width: 820px) {
-      .journal-layout {
-        align-items: flex-start;
-        padding: 3rem 1rem;
-        width: 100vw;
-        max-width: 100vw;
-        justify-content: flex-start;
+    .story-button,
+    .work-link {
+      min-height: 2.4rem;
+      padding: 0.54rem 0.78rem;
+    }
+
+    .story-button {
+      min-width: 6.6rem;
+    }
+
+    .work-link {
+      text-align: center;
+    }
+
+    @keyframes lowMist {
+      from {
+        transform: translateX(-1.5vw);
       }
 
-      .video-field img,
-      .video-field video {
-        object-position: 58% center;
+      to {
+        transform: translateX(3vw);
+      }
+    }
+
+    @media (max-width: 880px) {
+      .swamp-scene,
+      .swamp-scene video {
+        background-position: 28% center;
+        object-position: 28% center;
       }
 
-      .poem-card {
-        width: min(calc(100vw - 2rem), 21.5rem);
-        max-width: min(calc(100vw - 2rem), 21.5rem);
-        padding: 1.35rem;
-        background: rgba(255, 249, 235, 0.92);
-        overflow: hidden;
+      .story-shell {
+        min-height: 100svh;
+        padding: 0.85rem;
       }
 
-      .title-row {
+      .story-stage {
         display: block;
+        padding: 1rem 0 1.35rem;
+      }
+
+      .title-block {
+        min-height: 43svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 1rem;
       }
 
       h1 {
-        max-width: 7.4ch;
-        font-size: clamp(2.45rem, 14vw, 3.5rem);
+        max-width: 8.4ch;
+        font-size: clamp(2.85rem, 13vw, 4.15rem);
+      }
+
+      .deck {
+        max-width: 21rem;
+      }
+
+      .story-panel {
+        width: min(100%, 23.5rem);
+        min-height: 30rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .story-beat {
+        padding: clamp(1.1rem, 5vw, 1.45rem);
+      }
+
+      .story-beat h2 {
+        max-width: 9.5ch;
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .poem-lines {
+        font-size: clamp(0.95rem, 4.05vw, 1.02rem);
+        line-height: 1.5;
+      }
+
+      .story-top,
+      .story-controls {
+        gap: 0.45rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+      }
+
+      .story-button,
+      .work-link,
+      .sound-toggle {
+        min-width: auto;
+        padding: 0.52rem 0.62rem;
       }
 
       .sound-toggle {
-        margin: 0.95rem 0 0;
+        position: fixed;
+        top: 3rem;
+        right: auto;
+        left: 0.85rem;
+        z-index: 30;
+        background: rgba(3, 19, 25, 0.56);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .swamp-scene::after {
+        animation: none;
       }
 
-      .poem {
-        width: 100%;
-        font-size: 0.94rem;
-        line-height: 1.52;
-      }
-
-      .poem p {
-        max-width: 100%;
+      .story-beat {
+        transition: none;
       }
     }
   </style>
 </head>
 <body>
-  <audio id="coop-audio" preload="auto" loop autoplay>
-    <source src="assets/chicken-soundscape.mp3?v=chicken-sound-1" type="audio/mpeg">
+  <a class="skip-link" href="#story">Skip to story</a>
+
+  <audio id="story-audio" preload="auto" loop>
+    <source src="assets/chicken-soundscape.mp3?v=cloud-sound-1" type="audio/mpeg">
   </audio>
 
-  <div class="video-field" aria-hidden="true">
-    <video autoplay muted loop playsinline poster="assets/chicken-coop-poster.png">
-      <source src="assets/chicken-coop-background.mp4?v=chicken-video-1" type="video/mp4">
+  <div class="swamp-scene" aria-hidden="true">
+    <video id="story-video" autoplay muted loop playsinline preload="auto" poster="assets/pickle-jar-cloud-swamp.png">
+      <source src="assets/pickle-jar-cloud-live.mp4?v=cloud-live-1" type="video/mp4">
     </video>
   </div>
 
-  <main class="journal-layout">
-    <article class="poem-card">
-      <div class="title-row">
-        <div>
-          <p class="eyebrow">Journal Week 4</p>
-          <h1>The Hen in the Coop</h1>
-        </div>
-        <button class="sound-toggle" type="button" aria-pressed="false">start sound</button>
+  <main class="story-shell" id="story">
+    <header class="story-top">
+      <p>Journal Week 4</p>
+      <button class="sound-toggle" type="button" aria-pressed="false">sound</button>
+    </header>
+
+    <section class="story-stage" aria-labelledby="page-title">
+      <div class="title-block">
+        <p class="eyebrow">Brooke Chauntel Howard</p>
+        <h1 id="page-title">How I Grew My Cloud</h1>
+        <p class="deck">A pickle jar, a little swamp fog, and the kind of weather that listens.</p>
       </div>
 
-      <div class="poem">
-        <p>In the straw-warm coop, where the dust turns gold, the little hen steps softly through her kingdom of feathers and feed. She is not grand, but she is busy with the sacred work of pecking, turning, listening, living. Her beak taps the earth like a tiny clock. Her wings hold the brown heat of morning. Every seed is a secret. Every shadow is watched.</p>
+      <article class="story-panel" aria-live="polite">
+        <section class="story-beat is-active" data-beat="0">
+          <p class="scene-count">01 / The Catch</p>
+          <h2>The Swamp</h2>
+          <div class="poem-lines">
+            <p>I went to the swamp where the green things lean<br>and the mud goes glup and the frogs turn queen,<br>where the moss hangs low like an old man's beard<br>and the fog comes creeping, soft and weird.</p>
+            <p>I brought one pickle jar, shiny and wide,<br>with a speck of old pickle still stuck inside.</p>
+          </div>
+        </section>
 
-        <p>Beside her stands the master rooster, red-crowned and proud, throwing his bright cry over the boards as if he pulls the sun up by its burning sleeve. He guards her with one black eye on the yard and one brave foot in the straw. He is ridiculous and royal at the same time. She does not bow to him, but she lets him believe the sky is his. Together they rule the coop: she with her quiet hunger, he with his thunderous throat, both alive in the small, loud miracle of morning.</p>
-      </div>
-    </article>
+        <section class="story-beat" data-beat="1">
+          <p class="scene-count">02 / The Jar</p>
+          <h2>The Fog</h2>
+          <div class="poem-lines">
+            <p>I tiptoed down by the cypress knees<br>and whispered, "Fog, won't you come with me, please?"</p>
+            <p>The fog said nothing. Fog never does.<br>It just sat there being a silvery fuzz.</p>
+            <p>So I scooped up a puff with a swoop and a spin<br>and snapped the lid shut with the swamp-smell in.</p>
+          </div>
+        </section>
+
+        <section class="story-beat" data-beat="2">
+          <p class="scene-count">03 / The Growing</p>
+          <h2>Good Night</h2>
+          <div class="poem-lines">
+            <p>At home I placed it beside my bed<br>with a sock for a pillow and a thimble for bread.</p>
+            <p>I poked three holes in the lid up top<br>so it could breathe out a tiny plop.</p>
+            <p>I breathed on the glass till the jar turned white.<br>"That's condensation," I told it. "Good night."</p>
+          </div>
+        </section>
+
+        <section class="story-beat" data-beat="3">
+          <p class="scene-count">04 / The Listening</p>
+          <h2>Love Songs</h2>
+          <div class="poem-lines">
+            <p>Each morning I fed it a spoonful of dew,<br>a blink from the window, a hiccup or two,<br>and songs about love in my smallest voice:</p>
+            <p>"You may rain if you want. You may float if you choose."</p>
+            <p>I told it my secrets. The small and the true.</p>
+          </div>
+        </section>
+
+        <section class="story-beat" data-beat="4">
+          <p class="scene-count">05 / The Release</p>
+          <h2>Too Big</h2>
+          <div class="poem-lines">
+            <p>The cloud grew round as a biscuit bun.<br>It fogged up the jar and swallowed the sun.</p>
+            <p>"You're too big now," I said. "You need sky.<br>You need blue room and birds going by."</p>
+            <p>So I opened the jar at the top of the stair<br>and my cloud rolled out in its underwear.</p>
+          </div>
+        </section>
+
+        <section class="story-beat" data-beat="5">
+          <p class="scene-count">06 / The Goodbye</p>
+          <h2>Floats Away</h2>
+          <div class="poem-lines">
+            <p>It wobbled once. It sneezed out rain.<br>It kissed my cheek through the windowpane.</p>
+            <p>Then up it climbed with a fluff and a shroud,<br>my swamp-fog, love-song, pickle-jar cloud.</p>
+            <p>I tell it the things that are hard to say.<br>It rains for a minute.</p>
+            <p>Then floats away.</p>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <nav class="story-controls" aria-label="Journal story controls">
+      <button class="story-button" type="button" data-direction="prev">prev</button>
+      <a class="work-link" href="../../index.html#work">back to work</a>
+      <button class="story-button" type="button" data-direction="next">next</button>
+    </nav>
   </main>
-  <script>
-    const coopAudio = document.getElementById("coop-audio");
-    const soundToggle = document.querySelector(".sound-toggle");
 
-    if (coopAudio && soundToggle) {
-      coopAudio.volume = 0.32;
+  <script>
+    const video = document.getElementById("story-video");
+    const audio = document.getElementById("story-audio");
+    const soundToggle = document.querySelector(".sound-toggle");
+    const beats = Array.from(document.querySelectorAll(".story-beat"));
+    const storyButtons = document.querySelectorAll(".story-button");
+    let activeBeat = 0;
+    let manualUntil = 0;
+
+    const showBeat = (index) => {
+      activeBeat = (index + beats.length) % beats.length;
+      beats.forEach((beat, beatIndex) => {
+        beat.classList.toggle("is-active", beatIndex === activeBeat);
+      });
+    };
+
+    const syncBeatToVideo = () => {
+      if (!video || !video.duration || Date.now() < manualUntil) return;
+      const nextBeat = Math.min(beats.length - 1, Math.floor((video.currentTime / video.duration) * beats.length));
+      if (nextBeat !== activeBeat) showBeat(nextBeat);
+    };
+
+    storyButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        manualUntil = Date.now() + 5000;
+        showBeat(activeBeat + (button.dataset.direction === "next" ? 1 : -1));
+      });
+    });
+
+    if (video) {
+      video.addEventListener("timeupdate", syncBeatToVideo);
+      video.addEventListener("loadedmetadata", syncBeatToVideo);
+      const playAttempt = video.play();
+      if (playAttempt && typeof playAttempt.catch === "function") {
+        playAttempt.catch(() => {});
+      }
+    }
+
+    if (audio && soundToggle) {
+      audio.volume = 0.28;
 
       const setSoundState = (active) => {
         soundToggle.setAttribute("aria-pressed", String(active));
-        soundToggle.textContent = active ? "sound playing" : "start sound";
+        soundToggle.textContent = active ? "sound on" : "sound";
       };
 
       const removeUnlockListeners = () => {
@@ -242,12 +553,11 @@
         window.removeEventListener("touchstart", unlockSound);
         window.removeEventListener("mousedown", unlockSound);
         window.removeEventListener("keydown", unlockSound);
-        window.removeEventListener("wheel", unlockSound);
       };
 
       const playSound = async () => {
         try {
-          await coopAudio.play();
+          await audio.play();
           setSoundState(true);
           removeUnlockListeners();
           return true;
@@ -259,13 +569,13 @@
 
       function unlockSound(event) {
         if (event.target.closest && event.target.closest(".sound-toggle")) return;
-        if (!coopAudio.paused) return;
+        if (!audio.paused) return;
         playSound();
       }
 
       soundToggle.addEventListener("click", async () => {
-        if (!coopAudio.paused) {
-          coopAudio.pause();
+        if (!audio.paused) {
+          audio.pause();
           setSoundState(false);
           return;
         }
@@ -273,18 +583,13 @@
         await playSound();
       });
 
-      coopAudio.addEventListener("pause", () => setSoundState(false));
+      audio.addEventListener("pause", () => setSoundState(false));
 
-      playSound().then((started) => {
-        if (!started) {
-          const unlockOptions = { passive: true };
-          window.addEventListener("pointerdown", unlockSound, unlockOptions);
-          window.addEventListener("touchstart", unlockSound, unlockOptions);
-          window.addEventListener("mousedown", unlockSound, unlockOptions);
-          window.addEventListener("keydown", unlockSound);
-          window.addEventListener("wheel", unlockSound, unlockOptions);
-        }
-      });
+      const unlockOptions = { passive: true };
+      window.addEventListener("pointerdown", unlockSound, unlockOptions);
+      window.addEventListener("touchstart", unlockSound, unlockOptions);
+      window.addEventListener("mousedown", unlockSound, unlockOptions);
+      window.addEventListener("keydown", unlockSound);
     }
   </script>
 </body>

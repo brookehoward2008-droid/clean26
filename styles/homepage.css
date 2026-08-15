@@ -204,7 +204,7 @@ article {
 #spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 36%; }
 #theory-of-sight   { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: 52% 24%; }
 #resume-typography { grid-column: span 2; background-image: radial-gradient(circle at 28% 24%, rgba(0, 184, 156, 0.78), transparent 32%), linear-gradient(135deg, #111821 0%, #2f3b49 45%, #39705f 100%); background-position: center; }
-#journal-week-4    { grid-column: span 2; background-image: linear-gradient(90deg, rgba(10, 18, 24, 0.1), rgba(10, 18, 24, 0.66)), url('../pages/journal-week-4-bh/assets/chicken-coop-poster.png'); background-position: 58% center; }
+#journal-week-4    { grid-column: span 2; background-image: linear-gradient(90deg, rgba(10, 18, 24, 0.12), rgba(10, 18, 24, 0.58)), url('../pages/journal-week-4-bh/assets/pickle-jar-cloud-swamp.png'); background-position: 35% center; }
 #journal-week-5    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-5-bh/assets/surreal-seville-loop.gif'); background-position: center; }
 #journal-week-6    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.58)), url('../pages/journal-week-6-bh/assets/stone-layer.jpeg'); background-position: center; }
 #history           { grid-column: span 2; background-image: url('../images/history-hero-bg.jpg'); background-position: center; }
