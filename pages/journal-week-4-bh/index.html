@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Brooke Chauntel Howard">
-  <meta name="description" content="Week 4 immersive journal poem about catching swamp fog in a pickle jar and growing it into a cloud.">
+  <meta name="description" content="Week 4 immersive WebGL journal poem about catching swamp fog in a pickle jar and growing it into a cloud.">
   <title>Journal Week 4 | How I Grew My Cloud</title>
   <style>
     * {
@@ -14,14 +14,13 @@
     }
 
     :root {
-      --ink: #163036;
-      --night: #08242d;
-      --moss: #42684d;
-      --moon: #f5d885;
-      --cream: #fff6dc;
-      --paper: rgba(255, 248, 219, 0.86);
-      --line: rgba(255, 246, 220, 0.24);
-      --shadow: rgba(3, 18, 23, 0.56);
+      --ink: #11333a;
+      --night: #071f28;
+      --moss: #4f765a;
+      --moon: #f8dd91;
+      --cream: #fff7dc;
+      --paper: rgba(255, 249, 225, 0.72);
+      --shadow: rgba(2, 15, 20, 0.58);
       --display: Georgia, "Times New Roman", serif;
       --sans: Arial, Helvetica, sans-serif;
     }
@@ -36,7 +35,10 @@
       min-height: 100%;
       overflow-x: hidden;
       color: var(--cream);
-      background: var(--night);
+      background:
+        radial-gradient(circle at 18% 35%, rgba(248, 221, 145, 0.18), transparent 18rem),
+        radial-gradient(ellipse at 63% 78%, rgba(196, 241, 231, 0.16), transparent 34rem),
+        linear-gradient(130deg, #071f28 0%, #123b45 46%, #264f4c 100%);
       font-family: var(--display);
       text-rendering: optimizeLegibility;
     }
@@ -49,7 +51,7 @@
       position: fixed;
       top: 1rem;
       left: 1rem;
-      z-index: 40;
+      z-index: 50;
       padding: 0.65rem 0.8rem;
       color: var(--night);
       background: var(--cream);
@@ -60,51 +62,55 @@
       transform: none;
     }
 
-    .swamp-scene {
+    .webgl-scene,
+    .fallback-scene {
       position: fixed;
       inset: 0;
       z-index: 0;
       overflow: hidden;
-      background: url("assets/pickle-jar-cloud-swamp.png") 34% center / cover no-repeat;
     }
 
-    .swamp-scene video {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+    .webgl-scene canvas {
+      display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: 34% center;
-      filter: saturate(0.96) contrast(1.02) brightness(0.9);
     }
 
-    .swamp-scene::before,
-    .swamp-scene::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
+    .fallback-scene {
+      background:
+        radial-gradient(circle at 24% 36%, rgba(248, 221, 145, 0.2), transparent 18rem),
+        radial-gradient(ellipse at 62% 78%, rgba(196, 241, 231, 0.16), transparent 34rem),
+        linear-gradient(90deg, rgba(4, 22, 28, 0.08) 0%, rgba(4, 22, 28, 0.28) 46%, rgba(4, 22, 28, 0.72) 100%),
+        linear-gradient(140deg, #071f28 0%, #16424a 55%, #314d48 100%);
     }
 
-    .swamp-scene::before {
+    body.webgl-ready .fallback-scene {
+      opacity: 0;
+    }
+
+    .atmosphere {
+      position: fixed;
       inset: 0;
       z-index: 1;
+      pointer-events: none;
       background:
-        linear-gradient(90deg, rgba(2, 18, 24, 0.16) 0%, rgba(2, 18, 24, 0.08) 38%, rgba(2, 18, 24, 0.7) 100%),
-        linear-gradient(180deg, rgba(6, 30, 38, 0.04) 0%, rgba(5, 24, 30, 0.52) 100%),
-        radial-gradient(circle at 20% 36%, rgba(245, 216, 133, 0.18), transparent 18rem);
+        radial-gradient(circle at 22% 38%, rgba(248, 221, 145, 0.18), transparent 18rem),
+        linear-gradient(90deg, rgba(4, 20, 26, 0.1) 0%, rgba(4, 20, 26, 0.02) 42%, rgba(4, 20, 26, 0.72) 100%),
+        linear-gradient(180deg, rgba(8, 30, 38, 0.05) 0%, rgba(5, 22, 27, 0.62) 100%);
+      mix-blend-mode: normal;
     }
 
-    .swamp-scene::after {
-      left: 3%;
-      bottom: 2%;
-      z-index: 2;
-      width: 62vw;
-      height: 32vh;
+    .atmosphere::after {
+      content: "";
+      position: absolute;
+      left: 2%;
+      bottom: 0;
+      width: 70vw;
+      height: 34vh;
       background:
-        radial-gradient(ellipse at 34% 48%, rgba(255, 254, 231, 0.25), transparent 66%),
+        radial-gradient(ellipse at 34% 48%, rgba(255, 254, 231, 0.24), transparent 66%),
         radial-gradient(ellipse at 66% 56%, rgba(190, 238, 223, 0.18), transparent 62%);
-      filter: blur(20px);
+      filter: blur(22px);
       opacity: 0.78;
       animation: lowMist 9s ease-in-out infinite alternate;
     }
@@ -127,51 +133,13 @@
       justify-content: space-between;
       gap: 1rem;
       width: 100%;
+      color: rgba(255, 249, 224, 0.82);
       font-family: var(--sans);
       font-size: clamp(0.68rem, 1vw, 0.76rem);
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-shadow: 0 0.16rem 1rem rgba(0, 0, 0, 0.58);
-    }
-
-    .story-top {
-      min-height: 3rem;
-      color: rgba(255, 249, 224, 0.82);
-    }
-
-    .sound-toggle,
-    .story-button,
-    .work-link {
-      color: rgba(255, 250, 232, 0.88);
-      background: rgba(3, 19, 25, 0.34);
-      border: 1px solid rgba(255, 246, 220, 0.28);
-      border-radius: 999px;
-      cursor: pointer;
-      font: inherit;
-      letter-spacing: inherit;
-      text-decoration: none;
-      text-transform: inherit;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-
-    .sound-toggle {
-      min-height: 2.5rem;
-      padding: 0.58rem 0.85rem;
-    }
-
-    .sound-toggle:hover,
-    .sound-toggle:focus-visible,
-    .sound-toggle[aria-pressed="true"],
-    .story-button:hover,
-    .story-button:focus-visible,
-    .work-link:hover,
-    .work-link:focus-visible {
-      color: #fff8df;
-      background: rgba(42, 86, 83, 0.52);
-      border-color: rgba(255, 246, 220, 0.56);
-      outline: none;
     }
 
     .story-stage {
@@ -229,9 +197,10 @@
     .story-beat {
       position: absolute;
       inset: 0;
-      display: grid;
+      display: none;
       align-content: center;
       gap: clamp(1rem, 2vw, 1.35rem);
+      overflow: hidden;
       padding: clamp(1.3rem, 3vw, 2.35rem);
       background: var(--paper);
       border: 1px solid rgba(255, 255, 255, 0.58);
@@ -247,21 +216,45 @@
       -webkit-backdrop-filter: blur(8px) saturate(0.94);
     }
 
-    .story-beat::before {
+    .story-beat::before,
+    .story-beat::after {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      background:
-        radial-gradient(circle at 90% 8%, rgba(245, 216, 133, 0.3), transparent 8rem),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08));
       border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .story-beat::before {
+      background:
+        radial-gradient(circle at 24% 28%, rgba(255, 255, 255, 0.62), transparent 6rem),
+        radial-gradient(circle at 66% 32%, rgba(255, 255, 255, 0.48), transparent 7rem),
+        radial-gradient(circle at 42% 70%, rgba(255, 255, 255, 0.52), transparent 8rem),
+        linear-gradient(180deg, rgba(255, 252, 237, 0.68), rgba(255, 252, 237, 0.38));
+      opacity: 0.7;
+      filter: blur(0.5px);
+    }
+
+    .story-beat::after {
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.42), transparent 8rem),
+        radial-gradient(circle at 22% 74%, rgba(255, 255, 255, 0.28), transparent 9rem),
+        linear-gradient(180deg, rgba(255, 252, 235, 0.58), rgba(248, 237, 202, 0.36));
     }
 
     .story-beat.is-active {
+      display: grid;
       opacity: 1;
       transform: none;
       visibility: visible;
+    }
+
+    .scene-count,
+    .story-beat h2,
+    .poem-lines {
+      position: relative;
+      z-index: 1;
     }
 
     .scene-count {
@@ -297,14 +290,32 @@
     .work-link {
       min-height: 2.4rem;
       padding: 0.54rem 0.78rem;
+      color: rgba(255, 250, 232, 0.88);
+      background: rgba(3, 19, 25, 0.34);
+      border: 1px solid rgba(255, 246, 220, 0.28);
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      letter-spacing: inherit;
+      text-align: center;
+      text-decoration: none;
+      text-transform: inherit;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     .story-button {
       min-width: 6.6rem;
     }
 
-    .work-link {
-      text-align: center;
+    .story-button:hover,
+    .story-button:focus-visible,
+    .work-link:hover,
+    .work-link:focus-visible {
+      color: #fff8df;
+      background: rgba(42, 86, 83, 0.52);
+      border-color: rgba(255, 246, 220, 0.56);
+      outline: none;
     }
 
     @keyframes lowMist {
@@ -318,10 +329,8 @@
     }
 
     @media (max-width: 880px) {
-      .swamp-scene,
-      .swamp-scene video {
+      body {
         background-position: 28% center;
-        object-position: 28% center;
       }
 
       .story-shell {
@@ -353,17 +362,18 @@
 
       .story-panel {
         width: min(100%, 23.5rem);
-        min-height: 30rem;
+        min-height: 32rem;
         margin: 0 0 0.5rem;
       }
 
       .story-beat {
+        align-content: start;
         padding: clamp(1.1rem, 5vw, 1.45rem);
       }
 
       .story-beat h2 {
         max-width: 9.5ch;
-        font-size: clamp(2rem, 11vw, 3rem);
+        font-size: clamp(1.85rem, 10vw, 2.7rem);
       }
 
       .poem-lines {
@@ -378,25 +388,23 @@
         letter-spacing: 0.12em;
       }
 
-      .story-button,
-      .work-link,
-      .sound-toggle {
-        min-width: auto;
-        padding: 0.52rem 0.62rem;
+      .story-top {
+        justify-content: flex-start;
       }
 
-      .sound-toggle {
-        position: fixed;
-        top: 3rem;
-        right: auto;
-        left: 0.85rem;
-        z-index: 30;
-        background: rgba(3, 19, 25, 0.56);
+      .story-top p:last-child {
+        display: none;
+      }
+
+      .story-button,
+      .work-link {
+        min-width: auto;
+        padding: 0.52rem 0.62rem;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .swamp-scene::after {
+      .atmosphere::after {
         animation: none;
       }
 
@@ -408,21 +416,14 @@
 </head>
 <body>
   <a class="skip-link" href="#story">Skip to story</a>
-
-  <audio id="story-audio" preload="auto" loop>
-    <source src="assets/chicken-soundscape.mp3?v=cloud-sound-1" type="audio/mpeg">
-  </audio>
-
-  <div class="swamp-scene" aria-hidden="true">
-    <video id="story-video" autoplay muted loop playsinline preload="auto" poster="assets/pickle-jar-cloud-swamp.png">
-      <source src="assets/pickle-jar-cloud-live.mp4?v=cloud-live-1" type="video/mp4">
-    </video>
-  </div>
+  <div class="fallback-scene" aria-hidden="true"></div>
+  <div id="webgl-scene" class="webgl-scene" aria-hidden="true"></div>
+  <div class="atmosphere" aria-hidden="true"></div>
 
   <main class="story-shell" id="story">
     <header class="story-top">
       <p>Journal Week 4</p>
-      <button class="sound-toggle" type="button" aria-pressed="false">sound</button>
+      <p>WebGL cloud poem</p>
     </header>
 
     <section class="story-stage" aria-labelledby="page-title">
@@ -502,95 +503,364 @@
     </nav>
   </main>
 
-  <script>
-    const video = document.getElementById("story-video");
-    const audio = document.getElementById("story-audio");
-    const soundToggle = document.querySelector(".sound-toggle");
+  <script type="module">
+    import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+
+    const container = document.getElementById("webgl-scene");
     const beats = Array.from(document.querySelectorAll(".story-beat"));
     const storyButtons = document.querySelectorAll(".story-button");
-    let activeBeat = 0;
-    let manualUntil = 0;
-
-    const showBeat = (index) => {
-      activeBeat = (index + beats.length) % beats.length;
-      beats.forEach((beat, beatIndex) => {
-        beat.classList.toggle("is-active", beatIndex === activeBeat);
-      });
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const state = {
+      activeBeat: 0,
+      manualUntil: 0,
+      start: performance.now(),
+      width: window.innerWidth,
+      height: window.innerHeight,
+      pointerX: 0,
+      pointerY: 0
     };
 
-    const syncBeatToVideo = () => {
-      if (!video || !video.duration || Date.now() < manualUntil) return;
-      const nextBeat = Math.min(beats.length - 1, Math.floor((video.currentTime / video.duration) * beats.length));
-      if (nextBeat !== activeBeat) showBeat(nextBeat);
+    const showBeat = (index) => {
+      state.activeBeat = (index + beats.length) % beats.length;
+      beats.forEach((beat, beatIndex) => {
+        beat.classList.toggle("is-active", beatIndex === state.activeBeat);
+      });
     };
 
     storyButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        manualUntil = Date.now() + 5000;
-        showBeat(activeBeat + (button.dataset.direction === "next" ? 1 : -1));
+        state.manualUntil = performance.now() + 5000;
+        showBeat(state.activeBeat + (button.dataset.direction === "next" ? 1 : -1));
       });
     });
 
-    if (video) {
-      video.addEventListener("timeupdate", syncBeatToVideo);
-      video.addEventListener("loadedmetadata", syncBeatToVideo);
-      const playAttempt = video.play();
-      if (playAttempt && typeof playAttempt.catch === "function") {
-        playAttempt.catch(() => {});
-      }
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x071f28);
+    scene.fog = new THREE.FogExp2(0x153d43, 0.055);
+
+    const camera = new THREE.PerspectiveCamera(46, state.width / state.height, 0.1, 120);
+    camera.position.set(0, 2.2, 10.5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance", preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    renderer.setSize(state.width, state.height);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+    document.body.classList.add("webgl-ready");
+
+    const clock = new THREE.Clock();
+    const hemi = new THREE.HemisphereLight(0xb8f3ff, 0x18352e, 1.4);
+    scene.add(hemi);
+
+    const moonLight = new THREE.DirectionalLight(0xffefbb, 2.4);
+    moonLight.position.set(6, 8, 5);
+    moonLight.castShadow = true;
+    scene.add(moonLight);
+
+    const jarGlow = new THREE.PointLight(0xffd876, 2.6, 9, 1.6);
+    jarGlow.position.set(-2.65, 1.55, 1.1);
+    scene.add(jarGlow);
+
+    const root = new THREE.Group();
+    scene.add(root);
+
+    const skyPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(42, 23),
+      new THREE.MeshBasicMaterial({ color: 0x0d3440, transparent: true, opacity: 0.62, depthWrite: false })
+    );
+    skyPlane.position.set(0, 4, -18);
+    root.add(skyPlane);
+
+    const horizonGlow = new THREE.Mesh(
+      new THREE.SphereGeometry(5.2, 48, 24),
+      new THREE.MeshBasicMaterial({ color: 0xf2d080, transparent: true, opacity: 0.13, depthWrite: false })
+    );
+    horizonGlow.scale.set(1.9, 0.38, 0.2);
+    horizonGlow.position.set(2.6, 1.7, -11.5);
+    root.add(horizonGlow);
+
+    const starMaterial = new THREE.PointsMaterial({
+      color: 0xfff4c2,
+      size: 0.035,
+      transparent: true,
+      opacity: 0.62,
+      depthWrite: false
+    });
+    const starPositions = new Float32Array(260 * 3);
+    for (let index = 0; index < 260; index += 1) {
+      starPositions[index * 3] = -13 + Math.random() * 26;
+      starPositions[index * 3 + 1] = 2.2 + Math.random() * 6.6;
+      starPositions[index * 3 + 2] = -10 - Math.random() * 7;
+    }
+    const starGeometry = new THREE.BufferGeometry();
+    starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+    root.add(new THREE.Points(starGeometry, starMaterial));
+
+    const water = new THREE.Mesh(
+      new THREE.PlaneGeometry(40, 30, 80, 80),
+      new THREE.MeshStandardMaterial({
+        color: 0x1e5558,
+        roughness: 0.54,
+        metalness: 0.18,
+        transparent: true,
+        opacity: 0.7
+      })
+    );
+    water.rotation.x = -Math.PI / 2;
+    water.position.set(0, -1.55, -2);
+    water.receiveShadow = true;
+    root.add(water);
+
+    const moon = new THREE.Mesh(
+      new THREE.SphereGeometry(0.7, 48, 48),
+      new THREE.MeshBasicMaterial({ color: 0xffe7a3 })
+    );
+    moon.position.set(5.9, 6.2, -8.5);
+    root.add(moon);
+
+    const moonCut = new THREE.Mesh(
+      new THREE.SphereGeometry(0.72, 48, 48),
+      new THREE.MeshBasicMaterial({ color: 0x071f28 })
+    );
+    moonCut.position.set(6.18, 6.27, -8.34);
+    root.add(moonCut);
+
+    const jarGroup = new THREE.Group();
+    jarGroup.position.set(-2.5, -0.55, 1.2);
+    jarGroup.rotation.set(0.02, -0.18, 0.02);
+    root.add(jarGroup);
+
+    const glassMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xd7f7ff,
+      roughness: 0.05,
+      metalness: 0,
+      transmission: 0.35,
+      thickness: 0.62,
+      transparent: true,
+      opacity: 0.34,
+      clearcoat: 1,
+      clearcoatRoughness: 0.08
+    });
+
+    const jarBody = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.02, 2.35, 80, 1, true), glassMaterial);
+    jarBody.castShadow = true;
+    jarBody.receiveShadow = true;
+    jarGroup.add(jarBody);
+
+    const jarBottom = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.02, 1.02, 0.08, 80),
+      new THREE.MeshStandardMaterial({ color: 0xbfe4e5, roughness: 0.18, metalness: 0.08, transparent: true, opacity: 0.32 })
+    );
+    jarBottom.position.y = -1.2;
+    jarGroup.add(jarBottom);
+
+    const lid = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.18, 1.1, 0.24, 80),
+      new THREE.MeshStandardMaterial({ color: 0x8f6b3d, roughness: 0.55, metalness: 0.42 })
+    );
+    lid.position.y = 1.27;
+    lid.castShadow = true;
+    jarGroup.add(lid);
+
+    const rim = new THREE.Mesh(
+      new THREE.TorusGeometry(1.06, 0.045, 12, 96),
+      new THREE.MeshStandardMaterial({ color: 0xe8fbff, roughness: 0.12, metalness: 0.1, transparent: true, opacity: 0.58 })
+    );
+    rim.position.y = 1.12;
+    rim.rotation.x = Math.PI / 2;
+    jarGroup.add(rim);
+
+    const cloudMaterial = new THREE.MeshStandardMaterial({
+      color: 0xfff0bd,
+      roughness: 0.85,
+      emissive: 0xffc45f,
+      emissiveIntensity: 0.28,
+      transparent: true,
+      opacity: 0.9
+    });
+
+    const cloudGroup = new THREE.Group();
+    cloudGroup.position.set(0, 0.02, 0.02);
+    jarGroup.add(cloudGroup);
+
+    const cloudParts = [
+      [-0.42, 0, 0, 0.32],
+      [-0.12, 0.1, 0.03, 0.42],
+      [0.23, 0.02, 0.02, 0.35],
+      [0.46, -0.02, 0, 0.26],
+      [0.03, -0.13, 0.03, 0.32]
+    ].map(([x, y, z, radius]) => {
+      const sphere = new THREE.Mesh(new THREE.SphereGeometry(radius, 32, 32), cloudMaterial);
+      sphere.position.set(x, y, z);
+      cloudGroup.add(sphere);
+      return sphere;
+    });
+
+    const condensationMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.28 });
+    const condensation = Array.from({ length: 28 }, () => {
+      const drop = new THREE.Mesh(new THREE.SphereGeometry(0.018 + Math.random() * 0.025, 10, 10), condensationMaterial);
+      const angle = Math.random() * Math.PI * 2;
+      const y = -0.82 + Math.random() * 1.58;
+      drop.position.set(Math.cos(angle) * 1.055, y, Math.sin(angle) * 1.055);
+      jarGroup.add(drop);
+      return { drop, angle, y };
+    });
+
+    const handMaterial = new THREE.MeshStandardMaterial({ color: 0xe6ad73, roughness: 0.68, metalness: 0.02 });
+    const palm = new THREE.Mesh(new THREE.SphereGeometry(0.72, 32, 18), handMaterial);
+    palm.scale.set(1.25, 0.35, 0.55);
+    palm.position.set(-2.5, -1.86, 1.16);
+    palm.rotation.z = -0.14;
+    palm.castShadow = true;
+    root.add(palm);
+
+    for (let index = 0; index < 4; index += 1) {
+      const finger = new THREE.Mesh(new THREE.CapsuleGeometry(0.08, 0.82, 8, 18), handMaterial);
+      finger.position.set(-2.95 + index * 0.26, -1.47, 1.04 + index * 0.018);
+      finger.rotation.z = -0.8 + index * 0.08;
+      finger.rotation.x = 0.35;
+      finger.castShadow = true;
+      root.add(finger);
     }
 
-    if (audio && soundToggle) {
-      audio.volume = 0.28;
-
-      const setSoundState = (active) => {
-        soundToggle.setAttribute("aria-pressed", String(active));
-        soundToggle.textContent = active ? "sound on" : "sound";
+    const fogMaterial = new THREE.PointsMaterial({
+      color: 0xe7fff6,
+      size: 0.16,
+      transparent: true,
+      opacity: 0.48,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+    const fogPositions = new Float32Array(420 * 3);
+    const fogSeeds = [];
+    for (let index = 0; index < 420; index += 1) {
+      const seed = {
+        x: -7 + Math.random() * 16,
+        y: -1.2 + Math.random() * 4.3,
+        z: -8 + Math.random() * 8,
+        speed: 0.12 + Math.random() * 0.34,
+        phase: Math.random() * Math.PI * 2
       };
+      fogSeeds.push(seed);
+      fogPositions[index * 3] = seed.x;
+      fogPositions[index * 3 + 1] = seed.y;
+      fogPositions[index * 3 + 2] = seed.z;
+    }
+    const fogGeometry = new THREE.BufferGeometry();
+    fogGeometry.setAttribute("position", new THREE.BufferAttribute(fogPositions, 3));
+    const fogCloud = new THREE.Points(fogGeometry, fogMaterial);
+    root.add(fogCloud);
 
-      const removeUnlockListeners = () => {
-        window.removeEventListener("pointerdown", unlockSound);
-        window.removeEventListener("touchstart", unlockSound);
-        window.removeEventListener("mousedown", unlockSound);
-        window.removeEventListener("keydown", unlockSound);
+    const fireflyMaterial = new THREE.PointsMaterial({
+      color: 0xffdf6d,
+      size: 0.08,
+      transparent: true,
+      opacity: 0.9,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+    const fireflyPositions = new Float32Array(90 * 3);
+    const fireflySeeds = [];
+    for (let index = 0; index < 90; index += 1) {
+      const seed = {
+        x: -5.8 + Math.random() * 11,
+        y: -0.25 + Math.random() * 5.2,
+        z: -5 + Math.random() * 4,
+        phase: Math.random() * Math.PI * 2
       };
+      fireflySeeds.push(seed);
+      fireflyPositions[index * 3] = seed.x;
+      fireflyPositions[index * 3 + 1] = seed.y;
+      fireflyPositions[index * 3 + 2] = seed.z;
+    }
+    const fireflyGeometry = new THREE.BufferGeometry();
+    fireflyGeometry.setAttribute("position", new THREE.BufferAttribute(fireflyPositions, 3));
+    const fireflies = new THREE.Points(fireflyGeometry, fireflyMaterial);
+    root.add(fireflies);
 
-      const playSound = async () => {
-        try {
-          await audio.play();
-          setSoundState(true);
-          removeUnlockListeners();
-          return true;
-        } catch {
-          setSoundState(false);
-          return false;
-        }
-      };
+    const cypressMaterial = new THREE.MeshStandardMaterial({ color: 0x28402d, roughness: 0.92, metalness: 0.02 });
+    for (let index = 0; index < 24; index += 1) {
+      const stump = new THREE.Mesh(
+        new THREE.ConeGeometry(0.16 + Math.random() * 0.18, 1.1 + Math.random() * 1.7, 7),
+        cypressMaterial
+      );
+      stump.position.set(-8 + Math.random() * 16, -1.35, -7.8 + Math.random() * 4.4);
+      stump.rotation.z = -0.18 + Math.random() * 0.36;
+      stump.castShadow = true;
+      root.add(stump);
+    }
 
-      function unlockSound(event) {
-        if (event.target.closest && event.target.closest(".sound-toggle")) return;
-        if (!audio.paused) return;
-        playSound();
+    const resize = () => {
+      state.width = window.innerWidth;
+      state.height = window.innerHeight;
+      camera.aspect = state.width / state.height;
+      camera.updateProjectionMatrix();
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      renderer.setSize(state.width, state.height);
+      const mobile = state.width < 880;
+      camera.position.set(mobile ? -0.85 : 0, mobile ? 2.15 : 2.2, mobile ? 11.8 : 10.5);
+      root.position.x = mobile ? 0.35 : 0;
+      jarGroup.position.x = mobile ? -2.15 : -2.5;
+    };
+
+    window.addEventListener("resize", resize);
+    window.addEventListener("pointermove", (event) => {
+      state.pointerX = (event.clientX / window.innerWidth - 0.5) * 2;
+      state.pointerY = (event.clientY / window.innerHeight - 0.5) * 2;
+    }, { passive: true });
+    resize();
+
+    const animate = () => {
+      const elapsed = clock.getElapsedTime();
+      const beatProgress = (elapsed % 36) / 36;
+      if (!prefersReducedMotion && performance.now() > state.manualUntil) {
+        const nextBeat = Math.min(beats.length - 1, Math.floor(beatProgress * beats.length));
+        if (nextBeat !== state.activeBeat) showBeat(nextBeat);
       }
 
-      soundToggle.addEventListener("click", async () => {
-        if (!audio.paused) {
-          audio.pause();
-          setSoundState(false);
-          return;
-        }
+      const pulse = 1 + Math.sin(elapsed * 1.6) * 0.045;
+      cloudGroup.scale.setScalar(pulse);
+      cloudGroup.rotation.y = Math.sin(elapsed * 0.42) * 0.18;
+      jarGlow.intensity = 2.25 + Math.sin(elapsed * 1.7) * 0.65;
 
-        await playSound();
+      condensation.forEach(({ drop, angle, y }, index) => {
+        drop.position.x = Math.cos(angle + elapsed * 0.03) * 1.055;
+        drop.position.z = Math.sin(angle + elapsed * 0.03) * 1.055;
+        drop.position.y = y - ((elapsed * 0.045 + index * 0.013) % 0.28);
       });
 
-      audio.addEventListener("pause", () => setSoundState(false));
+      const fogArray = fogGeometry.attributes.position.array;
+      fogSeeds.forEach((seed, index) => {
+        const drift = elapsed * seed.speed;
+        fogArray[index * 3] = seed.x + Math.sin(drift + seed.phase) * 0.55;
+        fogArray[index * 3 + 1] = seed.y + Math.sin(drift * 0.7 + seed.phase) * 0.24;
+        fogArray[index * 3 + 2] = seed.z + Math.cos(drift * 0.35 + seed.phase) * 0.38;
+      });
+      fogGeometry.attributes.position.needsUpdate = true;
 
-      const unlockOptions = { passive: true };
-      window.addEventListener("pointerdown", unlockSound, unlockOptions);
-      window.addEventListener("touchstart", unlockSound, unlockOptions);
-      window.addEventListener("mousedown", unlockSound, unlockOptions);
-      window.addEventListener("keydown", unlockSound);
-    }
+      const fireflyArray = fireflyGeometry.attributes.position.array;
+      fireflySeeds.forEach((seed, index) => {
+        fireflyArray[index * 3] = seed.x + Math.sin(elapsed * 0.7 + seed.phase) * 0.18;
+        fireflyArray[index * 3 + 1] = seed.y + Math.sin(elapsed * 1.15 + seed.phase) * 0.12;
+        fireflyArray[index * 3 + 2] = seed.z + Math.cos(elapsed * 0.55 + seed.phase) * 0.16;
+      });
+      fireflyMaterial.opacity = 0.55 + Math.sin(elapsed * 2.4) * 0.18;
+      fireflyGeometry.attributes.position.needsUpdate = true;
+
+      water.material.opacity = 0.62 + Math.sin(elapsed * 0.5) * 0.06;
+      water.rotation.z = Math.sin(elapsed * 0.07) * 0.02;
+
+      camera.position.x += ((state.pointerX * 0.18) - camera.position.x) * 0.02;
+      camera.position.y += ((2.2 - state.pointerY * 0.1) - camera.position.y) * 0.02;
+      camera.lookAt(-0.35, 0.65, -1.5);
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+
+    animate();
   </script>
 </body>
 </html>
