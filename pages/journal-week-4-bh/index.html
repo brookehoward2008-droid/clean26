@@ -186,6 +186,89 @@
       line-height: 1.5;
     }
 
+    .cloud-dialogue {
+      display: grid;
+      gap: 0.72rem;
+      width: min(100%, 28rem);
+      margin-top: clamp(1.2rem, 3vw, 2.2rem);
+      padding: 0.9rem;
+      color: rgba(255, 251, 228, 0.9);
+      background: rgba(5, 24, 30, 0.36);
+      border: 1px solid rgba(255, 246, 220, 0.18);
+      border-radius: 8px;
+      box-shadow: 0 1rem 2.8rem rgba(1, 12, 16, 0.34);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .cloud-dialogue label,
+    .cloud-dialogue button {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .feeling-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.55rem;
+    }
+
+    .cloud-dialogue input {
+      min-width: 0;
+      height: 2.45rem;
+      padding: 0 0.78rem;
+      color: var(--cream);
+      background: rgba(1, 14, 19, 0.52);
+      border: 1px solid rgba(255, 246, 220, 0.28);
+      border-radius: 999px;
+      font: 0.96rem/1.2 var(--display);
+    }
+
+    .cloud-dialogue input::placeholder {
+      color: rgba(255, 251, 228, 0.52);
+    }
+
+    .cloud-dialogue input:focus-visible {
+      border-color: rgba(255, 246, 220, 0.68);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(211, 244, 232, 0.14);
+    }
+
+    .cloud-dialogue button {
+      min-height: 2.45rem;
+      padding: 0.52rem 0.78rem;
+      color: rgba(255, 250, 232, 0.9);
+      background: rgba(60, 107, 94, 0.42);
+      border: 1px solid rgba(255, 246, 220, 0.28);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .cloud-dialogue button:hover,
+    .cloud-dialogue button:focus-visible,
+    .cloud-dialogue button[aria-pressed="true"] {
+      color: #fff8df;
+      background: rgba(132, 105, 63, 0.48);
+      border-color: rgba(255, 246, 220, 0.58);
+      outline: none;
+    }
+
+    .mood-choices {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.42rem;
+    }
+
+    .cloud-answer {
+      min-height: 3rem;
+      color: rgba(255, 251, 228, 0.86);
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
     .story-panel {
       position: relative;
       width: min(100%, 35rem);
@@ -377,6 +460,31 @@
         max-width: 21rem;
       }
 
+      .cloud-dialogue {
+        width: min(100%, 22rem);
+        margin-top: 1rem;
+        padding: 0.78rem;
+      }
+
+      .cloud-dialogue label,
+      .cloud-dialogue button {
+        font-size: 0.58rem;
+        letter-spacing: 0.11em;
+      }
+
+      .feeling-row {
+        grid-template-columns: 1fr;
+      }
+
+      .mood-choices {
+        grid-template-columns: 1fr;
+      }
+
+      .cloud-answer {
+        min-height: 2.4rem;
+        font-size: 0.9rem;
+      }
+
       .story-panel {
         width: min(100%, 23.5rem);
         min-height: 32rem;
@@ -448,6 +556,19 @@
         <p class="eyebrow">Brooke Chauntel Howard</p>
         <h1 id="page-title">How I Grew My Cloud</h1>
         <p class="deck">A pickle jar, a little swamp fog, and the kind of weather that listens.</p>
+        <form class="cloud-dialogue" id="cloud-dialogue">
+          <label for="cloud-feeling">Tell the cloud one feeling</label>
+          <div class="feeling-row">
+            <input id="cloud-feeling" name="feeling" type="text" maxlength="42" autocomplete="off" placeholder="small, brave, worried">
+            <button type="submit">send</button>
+          </div>
+          <div class="mood-choices" aria-label="Cloud mood">
+            <button type="button" data-mood="wonder" aria-pressed="true">wonder</button>
+            <button type="button" data-mood="storm">storm</button>
+            <button type="button" data-mood="soft">soft</button>
+          </div>
+          <p class="cloud-answer" id="cloud-answer" aria-live="polite">The cloud waits with its little wet ear.</p>
+        </form>
       </div>
 
       <article class="story-panel" aria-live="polite">
@@ -526,6 +647,10 @@
     const container = document.getElementById("webgl-scene");
     const beats = Array.from(document.querySelectorAll(".story-beat"));
     const storyButtons = document.querySelectorAll(".story-button");
+    const cloudDialogue = document.getElementById("cloud-dialogue");
+    const cloudFeeling = document.getElementById("cloud-feeling");
+    const cloudAnswer = document.getElementById("cloud-answer");
+    const moodButtons = Array.from(document.querySelectorAll("[data-mood]"));
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const state = {
       activeBeat: 0,
@@ -534,8 +659,68 @@
       width: window.innerWidth,
       height: window.innerHeight,
       pointerX: 0,
-      pointerY: 0
+      pointerY: 0,
+      mood: "wonder",
+      moodPulse: 0
     };
+
+    const moodProfiles = {
+      wonder: {
+        answer: "It puffs up gold and saves a shiny inch of sky for you.",
+        cloud: 0xfff4cc,
+        emissive: 0xffd178,
+        light: 0xdffbf2,
+        firefly: 0xffdf6d,
+        fog: 0xe7fff6,
+        exposure: 1.08
+      },
+      storm: {
+        answer: "It darkens its belly, then stands beside you without a word.",
+        cloud: 0xcbd8e8,
+        emissive: 0x7ea7ca,
+        light: 0x9bc7ff,
+        firefly: 0xbfe9ff,
+        fog: 0xd4e4ff,
+        exposure: 0.96
+      },
+      soft: {
+        answer: "It loosens into velvet and keeps the hard thing quiet.",
+        cloud: 0xffe3df,
+        emissive: 0xffb5a1,
+        light: 0xffd6c8,
+        firefly: 0xffdfaa,
+        fog: 0xfff2e5,
+        exposure: 1.12
+      }
+    };
+
+    const feelingLines = [
+      {
+        terms: ["sad", "lonely", "alone", "hurt", "cry", "grief"],
+        mood: "soft",
+        line: "The cloud folds smaller, then sits by your shoulder like a warm hush."
+      },
+      {
+        terms: ["mad", "angry", "storm", "mean", "rage"],
+        mood: "storm",
+        line: "It rumbles once in its pickle-jar chest and refuses to be polite."
+      },
+      {
+        terms: ["scared", "afraid", "worried", "nervous", "anxious"],
+        mood: "storm",
+        line: "It gathers a gray coat around you and keeps watch at the window."
+      },
+      {
+        terms: ["love", "happy", "proud", "brave", "excited"],
+        mood: "wonder",
+        line: "It grows two inches taller and shines like it heard its real name."
+      },
+      {
+        terms: ["small", "quiet", "tired", "sleepy"],
+        mood: "soft",
+        line: "It lowers itself to your height and breathes slow circles on the glass."
+      }
+    ];
 
     const showBeat = (index) => {
       state.activeBeat = (index + beats.length) % beats.length;
@@ -549,6 +734,35 @@
         state.manualUntil = performance.now() + 5000;
         showBeat(state.activeBeat + (button.dataset.direction === "next" ? 1 : -1));
       });
+    });
+
+    const setMood = (mood, answer) => {
+      state.mood = moodProfiles[mood] ? mood : "wonder";
+      state.moodPulse = 1;
+      moodButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.mood === state.mood));
+      });
+      if (answer) cloudAnswer.textContent = answer;
+    };
+
+    moodButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setMood(button.dataset.mood, moodProfiles[button.dataset.mood].answer);
+      });
+    });
+
+    cloudDialogue.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const feeling = cloudFeeling.value.trim().toLowerCase();
+      const match = feelingLines.find(({ terms }) => terms.some((term) => feeling.includes(term)));
+      if (match) {
+        setMood(match.mood, match.line);
+      } else if (feeling) {
+        setMood("wonder", `The cloud writes "${cloudFeeling.value.trim()}" on its belly, then lets the letters drift.`);
+      } else {
+        setMood("wonder", "The cloud waits with its little wet ear.");
+      }
+      state.manualUntil = performance.now() + 7000;
     });
 
     const createSoftTexture = (center, middle, edge) => {
@@ -1011,24 +1225,38 @@
       cloudGroup.rotation.y = Math.sin(elapsed * 0.42) * 0.18;
       jarGlow.intensity = 2.25 + Math.sin(elapsed * 1.7) * 0.65;
       cloudLight.intensity = 1.18 + Math.sin(elapsed * 1.1) * 0.32;
+      state.moodPulse *= 0.94;
+      const mood = moodProfiles[state.mood];
+      renderer.toneMappingExposure += (mood.exposure - renderer.toneMappingExposure) * 0.035;
+      cloudLight.color.lerp(new THREE.Color(mood.light), 0.035);
+      jarGlow.color.lerp(new THREE.Color(mood.emissive), 0.025);
+      fogMaterial.color.lerp(new THREE.Color(mood.fog), 0.025);
+      fireflyMaterial.color.lerp(new THREE.Color(mood.firefly), 0.035);
+      cloudMaterial.color.lerp(new THREE.Color(mood.cloud), 0.035);
+      cloudMaterial.emissive.lerp(new THREE.Color(mood.emissive), 0.035);
 
       grownCloudGroup.rotation.y = Math.sin(elapsed * 0.22) * 0.1;
       grownCloudGroup.rotation.z = Math.sin(elapsed * 0.18) * 0.025;
       grownCloudParts.forEach((puff, index) => {
-        const swell = 1 + Math.sin(elapsed * 0.8 + index * 0.9) * 0.045;
+        const swell = 1 + Math.sin(elapsed * 0.8 + index * 0.9) * 0.045 + state.moodPulse * 0.08;
         puff.scale.set(
           puff.userData.baseScale.x * swell,
           puff.userData.baseScale.y * (1 + Math.cos(elapsed * 0.65 + index) * 0.032),
           puff.userData.baseScale.z * swell
         );
+        puff.material.color.lerp(new THREE.Color(mood.cloud), 0.035);
+        puff.material.emissive.lerp(new THREE.Color(mood.emissive), 0.035);
         puff.material.opacity = 0.68 + Math.sin(elapsed * 0.7 + index) * 0.08;
       });
-      grownCloudHalo.material.opacity = 0.28 + Math.sin(elapsed * 0.8) * 0.06;
+      grownCloudHalo.material.color.lerp(new THREE.Color(mood.cloud), 0.035);
+      insideCloudHalo.material.color.lerp(new THREE.Color(mood.cloud), 0.035);
+      grownCloudHalo.material.opacity = 0.28 + Math.sin(elapsed * 0.8) * 0.06 + state.moodPulse * 0.08;
       vaporTrail.forEach((puff, index) => {
         const drift = (elapsed * 0.16 + index * 0.12) % 1;
         const vaporScale = 1 + drift * 0.24;
         puff.position.y = puff.userData.baseY + drift * 0.26;
         puff.position.x = -0.15 + Math.sin(elapsed * 0.7 + index) * 0.22;
+        puff.material.color.lerp(new THREE.Color(mood.cloud), 0.035);
         puff.material.opacity = 0.12 + (1 - drift) * 0.18;
         puff.scale.set(puff.userData.baseScale.x * vaporScale, puff.userData.baseScale.y * vaporScale, 1);
       });
