@@ -19,7 +19,7 @@
       --moss: #4f765a;
       --moon: #f8dd91;
       --cream: #fff7dc;
-      --paper: rgba(255, 249, 225, 0.72);
+      --paper: rgba(255, 249, 225, 0.64);
       --shadow: rgba(2, 15, 20, 0.58);
       --display: Georgia, "Times New Roman", serif;
       --sans: Arial, Helvetica, sans-serif;
@@ -194,6 +194,20 @@
       color: var(--ink);
     }
 
+    .story-panel::before {
+      content: "";
+      position: absolute;
+      inset: -2.8rem -2.4rem;
+      z-index: -1;
+      border-radius: 999px;
+      background:
+        radial-gradient(ellipse at 32% 38%, rgba(255, 255, 247, 0.24), transparent 58%),
+        radial-gradient(ellipse at 68% 62%, rgba(198, 237, 226, 0.18), transparent 62%);
+      filter: blur(28px);
+      opacity: 0.9;
+      transform: rotate(-4deg);
+    }
+
     .story-beat {
       position: absolute;
       inset: 0;
@@ -202,18 +216,21 @@
       gap: clamp(1rem, 2vw, 1.35rem);
       overflow: hidden;
       padding: clamp(1.3rem, 3vw, 2.35rem);
-      background: var(--paper);
-      border: 1px solid rgba(255, 255, 255, 0.58);
+      background:
+        radial-gradient(ellipse at 26% 28%, rgba(255, 255, 255, 0.42), transparent 38%),
+        radial-gradient(ellipse at 70% 68%, rgba(214, 239, 229, 0.26), transparent 44%),
+        var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 8px;
       box-shadow:
-        0 1.5rem 4.4rem var(--shadow),
+        0 1.7rem 5.2rem rgba(2, 15, 20, 0.68),
         inset 0 0 0 1px rgba(36, 82, 84, 0.12);
       opacity: 0;
       transform: translateY(0.85rem) scale(0.985);
       visibility: hidden;
       transition: opacity 620ms ease, transform 620ms ease, visibility 620ms ease;
-      backdrop-filter: blur(8px) saturate(0.94);
-      -webkit-backdrop-filter: blur(8px) saturate(0.94);
+      backdrop-filter: blur(12px) saturate(0.96);
+      -webkit-backdrop-filter: blur(12px) saturate(0.96);
     }
 
     .story-beat::before,
@@ -534,6 +551,27 @@
       });
     });
 
+    const createSoftTexture = (center, middle, edge) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = 128;
+      canvas.height = 128;
+      const context = canvas.getContext("2d");
+      const gradient = context.createRadialGradient(64, 64, 0, 64, 64, 64);
+      gradient.addColorStop(0, center);
+      gradient.addColorStop(0.45, middle);
+      gradient.addColorStop(1, edge);
+      context.fillStyle = gradient;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.needsUpdate = true;
+      return texture;
+    };
+
+    const mistTexture = createSoftTexture("rgba(255,255,246,0.92)", "rgba(201,244,232,0.34)", "rgba(201,244,232,0)");
+    const cloudTexture = createSoftTexture("rgba(255,251,224,0.95)", "rgba(255,226,150,0.36)", "rgba(255,226,150,0)");
+    const fireflyTexture = createSoftTexture("rgba(255,245,169,1)", "rgba(255,210,87,0.45)", "rgba(255,210,87,0)");
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x071f28);
     scene.fog = new THREE.FogExp2(0x153d43, 0.055);
@@ -545,6 +583,8 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
     renderer.setSize(state.width, state.height);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.08;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
@@ -562,6 +602,14 @@
     const jarGlow = new THREE.PointLight(0xffd876, 2.6, 9, 1.6);
     jarGlow.position.set(-2.65, 1.55, 1.1);
     scene.add(jarGlow);
+
+    const cloudLight = new THREE.PointLight(0xdffbf2, 1.45, 12, 1.9);
+    cloudLight.position.set(-0.85, 2.25, 0.6);
+    scene.add(cloudLight);
+
+    const rimLight = new THREE.DirectionalLight(0xb9fff0, 1.15);
+    rimLight.position.set(-5, 2.8, 3);
+    scene.add(rimLight);
 
     const root = new THREE.Group();
     scene.add(root);
@@ -613,6 +661,24 @@
     water.receiveShadow = true;
     root.add(water);
 
+    const rippleMaterial = new THREE.MeshBasicMaterial({
+      color: 0xc9fff0,
+      transparent: true,
+      opacity: 0.16,
+      depthWrite: false,
+      side: THREE.DoubleSide
+    });
+    const ripples = Array.from({ length: 5 }, (_, index) => {
+      const ring = new THREE.Mesh(
+        new THREE.RingGeometry(0.58 + index * 0.42, 0.6 + index * 0.42, 96),
+        rippleMaterial.clone()
+      );
+      ring.rotation.x = -Math.PI / 2;
+      ring.position.set(-2.45 + index * 0.18, -1.49, 0.55 - index * 0.2);
+      root.add(ring);
+      return ring;
+    });
+
     const moon = new THREE.Mesh(
       new THREE.SphereGeometry(0.7, 48, 48),
       new THREE.MeshBasicMaterial({ color: 0xffe7a3 })
@@ -626,6 +692,18 @@
     );
     moonCut.position.set(6.18, 6.27, -8.34);
     root.add(moonCut);
+
+    const moonHalo = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: cloudTexture,
+      color: 0xffedb0,
+      transparent: true,
+      opacity: 0.32,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    }));
+    moonHalo.position.set(5.92, 6.18, -8.7);
+    moonHalo.scale.set(3.3, 3.3, 1);
+    root.add(moonHalo);
 
     const jarGroup = new THREE.Group();
     jarGroup.position.set(-2.5, -0.55, 1.2);
@@ -672,6 +750,34 @@
     rim.rotation.x = Math.PI / 2;
     jarGroup.add(rim);
 
+    const highlightMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.28,
+      depthWrite: false,
+      side: THREE.DoubleSide
+    });
+    [
+      [-0.58, 0.08, 1.02, 0.09, 1.72, -0.06],
+      [0.42, -0.12, 1.03, 0.055, 1.25, 0.04]
+    ].forEach(([x, y, z, width, height, tilt]) => {
+      const shine = new THREE.Mesh(new THREE.PlaneGeometry(width, height), highlightMaterial.clone());
+      shine.position.set(x, y, z);
+      shine.rotation.set(0.04, tilt, 0.03);
+      jarGroup.add(shine);
+    });
+
+    const jarRings = [-0.85, -0.35, 0.28, 0.78].map((y) => {
+      const band = new THREE.Mesh(
+        new THREE.TorusGeometry(1.055, 0.012, 8, 96),
+        new THREE.MeshBasicMaterial({ color: 0xe9ffff, transparent: true, opacity: 0.18, depthWrite: false })
+      );
+      band.position.y = y;
+      band.rotation.x = Math.PI / 2;
+      jarGroup.add(band);
+      return band;
+    });
+
     const cloudMaterial = new THREE.MeshStandardMaterial({
       color: 0xfff0bd,
       roughness: 0.85,
@@ -679,6 +785,25 @@
       emissiveIntensity: 0.28,
       transparent: true,
       opacity: 0.9
+    });
+
+    const grownCloudMaterial = new THREE.MeshStandardMaterial({
+      color: 0xfff4cc,
+      roughness: 0.92,
+      emissive: 0xffd178,
+      emissiveIntensity: 0.36,
+      transparent: true,
+      opacity: 0.76,
+      depthWrite: false
+    });
+
+    const cloudHaloMaterial = new THREE.SpriteMaterial({
+      map: cloudTexture,
+      color: 0xfff0bd,
+      transparent: true,
+      opacity: 0.42,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
     });
 
     const cloudGroup = new THREE.Group();
@@ -698,8 +823,50 @@
       return sphere;
     });
 
+    const insideCloudHalo = new THREE.Sprite(cloudHaloMaterial.clone());
+    insideCloudHalo.position.set(0.04, 0.02, 0.08);
+    insideCloudHalo.scale.set(1.85, 1.15, 1);
+    cloudGroup.add(insideCloudHalo);
+
+    const grownCloudGroup = new THREE.Group();
+    grownCloudGroup.position.set(-1.22, 1.9, 0.2);
+    root.add(grownCloudGroup);
+
+    const grownCloudParts = [
+      [-0.95, -0.08, 0.02, 0.56, 1.35, 0.72],
+      [-0.46, 0.12, 0.06, 0.72, 1.48, 0.88],
+      [0.15, 0.04, 0, 0.64, 1.34, 0.8],
+      [0.72, -0.02, -0.02, 0.48, 1.16, 0.64],
+      [-0.18, -0.32, 0.03, 0.54, 1.26, 0.58],
+      [0.42, 0.32, 0.04, 0.42, 0.98, 0.52]
+    ].map(([x, y, z, radius, sx, sy]) => {
+      const puff = new THREE.Mesh(new THREE.SphereGeometry(radius, 36, 28), grownCloudMaterial.clone());
+      puff.position.set(x, y, z);
+      puff.scale.set(sx, sy, 0.62);
+      puff.userData.baseScale = new THREE.Vector3(sx, sy, 0.62);
+      grownCloudGroup.add(puff);
+      return puff;
+    });
+
+    const grownCloudHalo = new THREE.Sprite(cloudHaloMaterial.clone());
+    grownCloudHalo.position.set(-0.1, 0.02, -0.1);
+    grownCloudHalo.scale.set(4.4, 2.55, 1);
+    grownCloudHalo.material.opacity = 0.36;
+    grownCloudGroup.add(grownCloudHalo);
+
+    const vaporTrail = Array.from({ length: 7 }, (_, index) => {
+      const puff = new THREE.Sprite(cloudHaloMaterial.clone());
+      puff.position.set(-0.15 + Math.sin(index) * 0.18, -1.05 + index * 0.28, -0.03);
+      puff.scale.set(0.42 + index * 0.1, 0.34 + index * 0.06, 1);
+      puff.material.opacity = 0.16 + index * 0.025;
+      puff.userData.baseY = puff.position.y;
+      puff.userData.baseScale = puff.scale.clone();
+      grownCloudGroup.add(puff);
+      return puff;
+    });
+
     const condensationMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.28 });
-    const condensation = Array.from({ length: 28 }, () => {
+    const condensation = Array.from({ length: 46 }, () => {
       const drop = new THREE.Mesh(new THREE.SphereGeometry(0.018 + Math.random() * 0.025, 10, 10), condensationMaterial);
       const angle = Math.random() * Math.PI * 2;
       const y = -0.82 + Math.random() * 1.58;
@@ -727,15 +894,16 @@
 
     const fogMaterial = new THREE.PointsMaterial({
       color: 0xe7fff6,
-      size: 0.16,
+      map: mistTexture,
+      size: 0.28,
       transparent: true,
-      opacity: 0.48,
+      opacity: 0.5,
       depthWrite: false,
       blending: THREE.AdditiveBlending
     });
-    const fogPositions = new Float32Array(420 * 3);
+    const fogPositions = new Float32Array(520 * 3);
     const fogSeeds = [];
-    for (let index = 0; index < 420; index += 1) {
+    for (let index = 0; index < 520; index += 1) {
       const seed = {
         x: -7 + Math.random() * 16,
         y: -1.2 + Math.random() * 4.3,
@@ -755,7 +923,8 @@
 
     const fireflyMaterial = new THREE.PointsMaterial({
       color: 0xffdf6d,
-      size: 0.08,
+      map: fireflyTexture,
+      size: 0.12,
       transparent: true,
       opacity: 0.9,
       depthWrite: false,
@@ -792,6 +961,21 @@
       root.add(stump);
     }
 
+    const farTreeMaterial = new THREE.MeshStandardMaterial({ color: 0x132d27, roughness: 0.96, metalness: 0 });
+    for (let index = 0; index < 13; index += 1) {
+      const x = -9 + index * 1.5 + Math.random() * 0.4;
+      const trunkHeight = 3.2 + Math.random() * 2.6;
+      const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.08, trunkHeight, 8), farTreeMaterial);
+      trunk.position.set(x, -0.1 + trunkHeight * 0.08, -9.2 - Math.random() * 2.3);
+      trunk.rotation.z = -0.08 + Math.random() * 0.16;
+      root.add(trunk);
+
+      const crown = new THREE.Mesh(new THREE.ConeGeometry(0.38 + Math.random() * 0.28, 2.6 + Math.random() * 1.4, 9), farTreeMaterial);
+      crown.position.set(x + 0.02, trunk.position.y + trunkHeight * 0.38, trunk.position.z);
+      crown.rotation.z = trunk.rotation.z * 0.5;
+      root.add(crown);
+    }
+
     const resize = () => {
       state.width = window.innerWidth;
       state.height = window.innerHeight;
@@ -803,6 +987,8 @@
       camera.position.set(mobile ? -0.85 : 0, mobile ? 2.15 : 2.2, mobile ? 11.8 : 10.5);
       root.position.x = mobile ? 0.35 : 0;
       jarGroup.position.x = mobile ? -2.15 : -2.5;
+      grownCloudGroup.position.set(mobile ? -1.48 : -1.22, mobile ? 1.72 : 1.9, 0.2);
+      grownCloudGroup.scale.setScalar(mobile ? 0.78 : 1);
     };
 
     window.addEventListener("resize", resize);
@@ -824,6 +1010,28 @@
       cloudGroup.scale.setScalar(pulse);
       cloudGroup.rotation.y = Math.sin(elapsed * 0.42) * 0.18;
       jarGlow.intensity = 2.25 + Math.sin(elapsed * 1.7) * 0.65;
+      cloudLight.intensity = 1.18 + Math.sin(elapsed * 1.1) * 0.32;
+
+      grownCloudGroup.rotation.y = Math.sin(elapsed * 0.22) * 0.1;
+      grownCloudGroup.rotation.z = Math.sin(elapsed * 0.18) * 0.025;
+      grownCloudParts.forEach((puff, index) => {
+        const swell = 1 + Math.sin(elapsed * 0.8 + index * 0.9) * 0.045;
+        puff.scale.set(
+          puff.userData.baseScale.x * swell,
+          puff.userData.baseScale.y * (1 + Math.cos(elapsed * 0.65 + index) * 0.032),
+          puff.userData.baseScale.z * swell
+        );
+        puff.material.opacity = 0.68 + Math.sin(elapsed * 0.7 + index) * 0.08;
+      });
+      grownCloudHalo.material.opacity = 0.28 + Math.sin(elapsed * 0.8) * 0.06;
+      vaporTrail.forEach((puff, index) => {
+        const drift = (elapsed * 0.16 + index * 0.12) % 1;
+        const vaporScale = 1 + drift * 0.24;
+        puff.position.y = puff.userData.baseY + drift * 0.26;
+        puff.position.x = -0.15 + Math.sin(elapsed * 0.7 + index) * 0.22;
+        puff.material.opacity = 0.12 + (1 - drift) * 0.18;
+        puff.scale.set(puff.userData.baseScale.x * vaporScale, puff.userData.baseScale.y * vaporScale, 1);
+      });
 
       condensation.forEach(({ drop, angle, y }, index) => {
         drop.position.x = Math.cos(angle + elapsed * 0.03) * 1.055;
@@ -851,6 +1059,15 @@
 
       water.material.opacity = 0.62 + Math.sin(elapsed * 0.5) * 0.06;
       water.rotation.z = Math.sin(elapsed * 0.07) * 0.02;
+      ripples.forEach((ring, index) => {
+        const spread = (elapsed * 0.13 + index * 0.18) % 1;
+        ring.scale.setScalar(0.82 + spread * 0.52);
+        ring.material.opacity = 0.18 * (1 - spread);
+      });
+      jarRings.forEach((band, index) => {
+        band.material.opacity = 0.14 + Math.sin(elapsed * 0.55 + index) * 0.035;
+      });
+      moonHalo.material.opacity = 0.24 + Math.sin(elapsed * 0.32) * 0.04;
 
       camera.position.x += ((state.pointerX * 0.18) - camera.position.x) * 0.02;
       camera.position.y += ((2.2 - state.pointerY * 0.1) - camera.position.y) * 0.02;
