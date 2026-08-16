@@ -72,7 +72,7 @@
       object-fit: cover;
       object-position: center;
       transform: scale(1.045);
-      filter: saturate(1.12) contrast(1.04) brightness(0.88);
+      filter: saturate(1.04) contrast(1.04) brightness(0.74) blur(0.7px);
     }
 
     .live-background::after {
@@ -81,8 +81,8 @@
       inset: 0;
       background:
         radial-gradient(circle at 34% 46%, rgba(255, 224, 160, 0.14), transparent 27rem),
-        linear-gradient(90deg, rgba(5, 17, 22, 0.2), rgba(5, 17, 22, 0.05) 46%, rgba(5, 17, 22, 0.58)),
-        linear-gradient(180deg, rgba(5, 17, 22, 0.02), rgba(5, 17, 22, 0.68));
+        linear-gradient(90deg, rgba(5, 17, 22, 0.34), rgba(5, 17, 22, 0.12) 46%, rgba(5, 17, 22, 0.68)),
+        linear-gradient(180deg, rgba(5, 17, 22, 0.08), rgba(5, 17, 22, 0.72));
       pointer-events: none;
     }
 
@@ -114,15 +114,15 @@
 
     .stage {
       display: grid;
-      grid-template-columns: minmax(17rem, 0.64fr) minmax(22rem, 44rem);
+      grid-template-columns: minmax(14rem, 0.44fr) minmax(24rem, 48rem);
       align-items: center;
-      gap: clamp(1.5rem, 5vw, 5rem);
+      gap: clamp(1.35rem, 4vw, 4.2rem);
       min-height: calc(100svh - clamp(6rem, 12vw, 10rem));
       padding: clamp(1.4rem, 4vw, 4rem) 0;
     }
 
     .title-block {
-      max-width: 33rem;
+      max-width: 26rem;
       text-shadow: 0 0.18rem 1.4rem rgba(0, 0, 0, 0.72);
     }
 
@@ -139,7 +139,7 @@
       max-width: 8.7ch;
       margin: clamp(0.65rem, 1.8vw, 1.1rem) 0 1rem;
       color: #fff1bd;
-      font-size: clamp(4rem, 8.6vw, 8.1rem);
+      font-size: clamp(3.2rem, 6.2vw, 6.2rem);
       font-weight: 800;
       letter-spacing: 0;
       line-height: 0.86;
@@ -154,7 +154,7 @@
 
     .cloud-poem {
       position: relative;
-      width: min(100%, 44rem);
+      width: min(100%, 48rem);
       margin-left: auto;
       padding: clamp(2rem, 4vw, 3.8rem) clamp(1.5rem, 4vw, 3.4rem);
       color: var(--ink);
@@ -243,7 +243,8 @@
 
     @media (max-width: 880px) {
       .live-background video {
-        object-position: 48% center;
+        object-position: center;
+        filter: saturate(1.02) contrast(1.04) brightness(0.7) blur(0.5px);
       }
 
       .page {
@@ -320,7 +321,7 @@
 
   <div class="live-background" aria-hidden="true">
     <video autoplay muted loop playsinline preload="auto">
-      <source src="assets/child-field-cloud-story.mp4" type="video/mp4">
+      <source src="assets/girl-and-clouds-live.mp4" type="video/mp4">
     </video>
   </div>
 
