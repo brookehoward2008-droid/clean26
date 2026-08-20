@@ -7,8 +7,8 @@
   --hot: #ff6c9d;
   --blue: #91d8ff;
   --shadow: rgba(0, 0, 0, 0.58);
-  --display: Georgia, "Times New Roman", serif;
-  --body: Georgia, "Times New Roman", serif;
+  --display: "Jost", Arial, sans-serif;
+  --body: "Jost", Arial, sans-serif;
   color-scheme: dark;
 }
 
