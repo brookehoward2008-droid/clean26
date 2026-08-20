@@ -50,10 +50,7 @@ body {
 
 .video-wallpaper {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 33.333vw;
+  inset: 0;
   z-index: 0;
   overflow: hidden;
   background:
@@ -74,6 +71,8 @@ body {
   object-fit: cover;
   object-position: center;
   filter: saturate(1.24) contrast(1.12) brightness(0.78);
+  transform: scale(1.38);
+  transform-origin: center;
 }
 
 .video-fallback {
@@ -149,13 +148,6 @@ body.video-not-ready .video-fallback {
 }
 
 @media (max-width: 880px) {
-  .video-wallpaper {
-    top: 33.333svh;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
   .page-shell {
     display: block;
     width: 100%;
@@ -178,6 +170,10 @@ body.video-not-ready .video-fallback {
 
   .poem-text p {
     max-width: 100%;
+  }
+
+  .video-wallpaper video {
+    transform: translateY(6%) scale(1.8);
   }
 }
 
