@@ -100,9 +100,9 @@ body.video-not-ready .video-fallback {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(18rem, 30rem) minmax(18rem, 44rem);
-  justify-content: space-between;
-  gap: clamp(1.25rem, 4vw, 5rem);
+  grid-template-columns: minmax(18rem, 34rem) minmax(16rem, 28rem);
+  justify-content: start;
+  gap: clamp(1.25rem, 4vw, 4.5rem);
   width: min(100%, 118rem);
   min-height: 100svh;
   margin: 0 auto;
@@ -112,6 +112,8 @@ body.video-not-ready .video-fallback {
 .title-block {
   position: sticky;
   top: clamp(1.25rem, 4vw, 4rem);
+  grid-column: 2;
+  grid-row: 1;
   align-self: start;
   min-width: 0;
   padding-top: clamp(4rem, 10vh, 7rem);
@@ -136,7 +138,7 @@ h1 {
   max-width: 8ch;
   margin: clamp(0.8rem, 2vw, 1.4rem) 0 1.1rem;
   color: #fff8ee;
-  font-size: clamp(3.2rem, 5.8vw, 5.35rem);
+  font-size: clamp(2.75rem, 4.4vw, 4.35rem);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.86;
@@ -153,10 +155,13 @@ h1 {
 }
 
 .poem {
+  grid-column: 1;
+  grid-row: 1;
   align-self: start;
   min-width: 0;
-  margin: clamp(5rem, 12vh, 8rem) 0 clamp(5rem, 12vh, 8rem);
-  padding: clamp(1.35rem, 3.8vw, 3.2rem);
+  width: min(100%, 34rem);
+  margin: clamp(3.5rem, 8vh, 5.5rem) 0 clamp(5rem, 12vh, 8rem);
+  padding: clamp(1.15rem, 2.8vw, 2.35rem);
   color: var(--ink);
   background:
     linear-gradient(180deg, rgba(16, 10, 22, 0.74), rgba(10, 8, 15, 0.58)),
@@ -179,7 +184,7 @@ h2 {
   max-width: 14ch;
   margin: 0.75rem 0 0;
   color: #ffeaf1;
-  font-size: clamp(2rem, 4.5vw, 4.25rem);
+  font-size: clamp(1.55rem, 3.2vw, 3rem);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.94;
@@ -188,8 +193,8 @@ h2 {
 
 .poem-text {
   padding-top: clamp(1.1rem, 2.7vw, 2rem);
-  font-size: clamp(1.02rem, 1.55vw, 1.24rem);
-  line-height: 1.58;
+  font-size: clamp(0.88rem, 1.18vw, 1.02rem);
+  line-height: 1.52;
 }
 
 .poem-text p {
