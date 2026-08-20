@@ -141,7 +141,7 @@ body.video-not-ready .video-fallback {
 }
 
 .poem-text p:nth-child(8),
-.poem-text p:nth-child(20) {
+.poem-text p:nth-child(18) {
   color: var(--blue);
   font-size: 1.2em;
   letter-spacing: 0.02em;
