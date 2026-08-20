@@ -50,7 +50,10 @@ body {
 
 .video-wallpaper {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 33.333vw;
   z-index: 0;
   overflow: hidden;
   background:
@@ -91,7 +94,7 @@ body.video-not-ready .video-fallback {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.42), transparent 34%, rgba(0, 0, 0, 0.62)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.72), transparent 26%, rgba(0, 0, 0, 0.58)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.18) 38%, rgba(0, 0, 0, 0.72));
   pointer-events: none;
 }
@@ -100,23 +103,23 @@ body.video-not-ready .video-fallback {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(18rem, 34rem) minmax(16rem, 28rem);
-  justify-content: start;
-  gap: clamp(1.25rem, 4vw, 4.5rem);
-  width: min(100%, 118rem);
+  grid-template-columns: minmax(19rem, 33.333vw) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  width: 100%;
   min-height: 100svh;
-  margin: 0 auto;
-  padding: clamp(1.25rem, 4.8vw, 5.5rem);
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 3rem);
 }
 
 .title-block {
-  position: sticky;
-  top: clamp(1.25rem, 4vw, 4rem);
-  grid-column: 2;
+  position: relative;
+  top: auto;
+  grid-column: 1;
   grid-row: 1;
   align-self: start;
   min-width: 0;
-  padding-top: clamp(4rem, 10vh, 7rem);
+  padding-top: clamp(1.25rem, 4vh, 3rem);
   text-shadow: 0 0.22rem 1.35rem var(--shadow);
 }
 
@@ -135,10 +138,10 @@ body.video-not-ready .video-fallback {
 }
 
 h1 {
-  max-width: 8ch;
-  margin: clamp(0.8rem, 2vw, 1.4rem) 0 1.1rem;
+  max-width: 8.5ch;
+  margin: clamp(0.7rem, 1.6vw, 1rem) 0 0;
   color: #fff8ee;
-  font-size: clamp(2.75rem, 4.4vw, 4.35rem);
+  font-size: clamp(2.35rem, 3.7vw, 3.7rem);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.86;
@@ -224,11 +227,11 @@ h1 {
 
 .poem {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
   align-self: start;
   min-width: 0;
-  width: min(100%, 31rem);
-  margin: clamp(3.5rem, 8vh, 5.5rem) 0 clamp(5rem, 12vh, 8rem);
+  width: min(100%, 27.5rem);
+  margin: clamp(1.8rem, 4vh, 3rem) 0 clamp(5rem, 12vh, 8rem);
   padding: 0;
   color: var(--ink);
   text-shadow: 0 0.16rem 0.9rem rgba(0, 0, 0, 0.82);
@@ -244,9 +247,9 @@ h1 {
 
 h2 {
   max-width: 14ch;
-  margin: 0.75rem 0 0;
+  margin: 0.55rem 0 0;
   color: #ffeaf1;
-  font-size: clamp(1.55rem, 3.2vw, 3rem);
+  font-size: clamp(1.35rem, 2.4vw, 2.35rem);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.94;
@@ -255,9 +258,9 @@ h2 {
 }
 
 .poem-text {
-  padding-top: clamp(1.1rem, 2.7vw, 2rem);
-  font-size: clamp(0.88rem, 1.18vw, 1.02rem);
-  line-height: 1.52;
+  padding-top: clamp(0.85rem, 2vw, 1.35rem);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  line-height: 1.48;
 }
 
 .poem-text p {
@@ -280,6 +283,13 @@ h2 {
 }
 
 @media (max-width: 880px) {
+  .video-wallpaper {
+    top: 33.333svh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .page-shell {
     display: block;
     width: 100%;
