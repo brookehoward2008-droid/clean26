@@ -140,8 +140,8 @@ body.video-not-ready .video-fallback {
   font-size: 1.12em;
 }
 
-.poem-text p:nth-child(4),
-.poem-text p:nth-child(17) {
+.poem-text p:nth-child(10),
+.poem-text p:nth-child(20) {
   color: var(--blue);
   font-size: 1.2em;
   letter-spacing: 0.02em;
