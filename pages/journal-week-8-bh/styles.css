@@ -5,6 +5,79 @@
   --line: rgba(243, 239, 231, .2);
 }
 
+.image-link-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+  width: min(92vw, 78rem);
+  margin: 3rem auto 2rem;
+}
+
+.image-link-directory a {
+  display: grid;
+  grid-template-rows: 112px auto;
+  overflow: hidden;
+  min-width: 0;
+  color: #14272e;
+  background: #f5f2eb;
+  border: 1px solid rgba(242, 238, 228, 0.3);
+  border-radius: 3px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.image-link-directory img {
+  width: 100%;
+  height: 112px;
+  display: block;
+  object-fit: cover;
+  background: #fff;
+  filter: saturate(0.88) contrast(1.03);
+}
+
+.image-link-directory span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.65rem;
+  text-align: center;
+}
+
+.image-link-directory a:hover,
+.image-link-directory a:focus-visible {
+  transform: translateY(-4px);
+  border-color: #f2eee4;
+  outline: 2px solid #f2eee4;
+  outline-offset: 2px;
+}
+
+.image-link-directory a[aria-current="page"] {
+  box-shadow: 0 0 0 2px #f2eee4, 0 14px 34px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 520px) {
+  .image-link-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .image-link-directory a {
+    grid-template-rows: 92px auto;
+    font-size: 0.6rem;
+  }
+
+  .image-link-directory img {
+    height: 92px;
+  }
+}
+
 * { box-sizing: border-box; }
 
 html {
