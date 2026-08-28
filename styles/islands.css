@@ -486,6 +486,18 @@ footer {
 }
 
 @media (max-width: 640px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-orcas,
+  .hero-sanjuan,
+  .hero-lopez {
+    width: 100%;
+  }
+
   .header-bar {
     flex-wrap: wrap;
     justify-content: center;
