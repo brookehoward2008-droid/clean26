@@ -118,7 +118,7 @@ main {
 
 .title-card {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   gap: 1rem 2rem;
   margin-bottom: clamp(2rem, 5vw, 4.5rem);
@@ -147,7 +147,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.75rem, 13vw, 10rem);
+  font-size: clamp(2.75rem, 13vw, 8.75rem);
   font-weight: 600;
   letter-spacing: -.055em;
   line-height: 1;
