@@ -88,15 +88,6 @@ h1 {
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, .5);
 }
 
-.film-note {
-  margin: 1rem 0 0;
-  color: var(--mist);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: .7rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
 .about-poem {
   display: grid;
   grid-template-columns: minmax(9rem, .4fr) minmax(0, 1fr);
@@ -145,7 +136,6 @@ h1 {
   }
 
   .title-card,
-  .film-note,
   .about-poem {
     margin-right: 6vw;
     margin-left: 6vw;
