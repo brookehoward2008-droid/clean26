@@ -1,20 +1,24 @@
 :root {
-  --paper: #f2eee6;
-  --ink: #1d1b1a;
-  --muted: #6e665f;
-  --margin: #a74d48;
-  --rule: rgba(29, 27, 26, 0.12);
+  --night: #050707;
+  --paper: #f3efe7;
+  --mist: #aaa7a0;
+  --line: rgba(243, 239, 231, .2);
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(90deg, transparent 0 11.5%, rgba(167,77,72,.18) 11.5% 11.62%, transparent 11.62%),
-    repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px),
-    var(--paper);
-  color: var(--ink);
+    radial-gradient(circle at 50% 15%, rgba(37, 73, 66, .28), transparent 42rem),
+    var(--night);
+  color: var(--paper);
   font-family: "Source Serif 4", Georgia, serif;
 }
 
@@ -22,125 +26,103 @@ body {
   position: absolute;
   left: -9999px;
 }
+
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
   z-index: 20;
-  background: var(--ink);
-  color: var(--paper);
-  padding: .6rem .8rem;
+  padding: .65rem .85rem;
+  background: var(--paper);
+  color: var(--night);
 }
 
-.page-shell {
-  width: min(760px, 88vw);
+main {
+  width: min(1240px, 92vw);
   margin: 0 auto;
-  padding: 10vh 0 14vh;
+  padding: clamp(4rem, 9vw, 8rem) 0 9rem;
 }
 
-.journal-header {
-  margin-bottom: 5rem;
-  padding-left: clamp(1rem, 4vw, 3.5rem);
+.title-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 1rem 2rem;
+  margin-bottom: clamp(2rem, 5vw, 4.5rem);
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .eyebrow {
-  margin: 0 0 1.2rem;
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--mist);
   font-family: "IBM Plex Mono", monospace;
-  font-size: .74rem;
-  letter-spacing: .18em;
-  color: var(--margin);
+  font-size: .72rem;
+  letter-spacing: .2em;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.4rem);
+  font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 400;
-  line-height: .95;
-  letter-spacing: -.045em;
+  letter-spacing: -.055em;
+  line-height: .86;
 }
 
-.subtitle {
-  max-width: 34rem;
-  margin: 1.4rem 0 0;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.6;
+.credit {
+  margin: 0 0 .35rem;
+  color: var(--mist);
+  font-size: clamp(.95rem, 1.4vw, 1.08rem);
 }
 
-.player {
-  width: min(620px, 100%);
-  margin: 0 0 5rem auto;
-  padding-left: clamp(1rem, 4vw, 3.5rem);
+.film {
+  margin: 0;
 }
 
-.player-label {
-  margin: 0 0 .8rem;
-  color: var(--margin);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: .72rem;
-  letter-spacing: .18em;
-}
-
-.player audio {
+.film video {
   display: block;
   width: 100%;
-  accent-color: var(--margin);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, .5);
 }
 
-.poem {
-  width: min(620px, 100%);
-  margin-left: auto;
-  padding: 0 0 2rem clamp(1rem, 4vw, 3.5rem);
-  font-size: clamp(1.12rem, 1.6vw, 1.28rem);
-  line-height: 1.75;
-}
-
-.poem p {
-  margin: 0 0 2.25rem;
-}
-
-.poem .turn {
-  margin: 4.5rem 0;
-  font-size: 1.12em;
-}
-
-.poem .quiet {
-  margin: 4rem 0;
-  color: var(--muted);
-  font-style: italic;
-}
-
-.poem .climax {
-  margin: 5rem 0;
-  font-size: 1.18em;
-}
-
-.poem .final {
-  margin-top: 5rem;
-  padding: 2.2rem 0 2.2rem 1.4rem;
-  border-left: 2px solid var(--margin);
-  font-size: 1.14em;
-}
-
-.byline {
-  margin-top: 4.5rem;
-  color: var(--muted);
+.film-note {
+  margin: 1rem 0 0;
+  color: var(--mist);
   font-family: "IBM Plex Mono", monospace;
-  font-size: .78rem;
+  font-size: .7rem;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 .clean26-site-links {
-  background: rgba(242, 238, 230, .94);
+  background: rgba(5, 7, 7, .94);
+  border-color: var(--line);
 }
 
-@media (max-width: 640px) {
-  body {
-    background:
-      linear-gradient(90deg, transparent 0 7%, rgba(167,77,72,.16) 7% 7.3%, transparent 7.3%),
-      repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px),
-      var(--paper);
+@media (max-width: 680px) {
+  main {
+    width: 100%;
+    padding-top: 4rem;
   }
-  .page-shell { width: 86vw; }
-  .journal-header, .player, .poem { padding-left: 1.15rem; }
+
+  .title-card,
+  .film-note {
+    margin-right: 6vw;
+    margin-left: 6vw;
+  }
+
+  .title-card {
+    display: block;
+  }
+
+  .eyebrow { margin-bottom: 1.25rem; }
+  .credit { margin-top: 1rem; }
+
+  .film video {
+    border-right: 0;
+    border-left: 0;
+  }
 }
