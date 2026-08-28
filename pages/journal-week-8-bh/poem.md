@@ -29,4 +29,9 @@ For your stories.
 Which means they were reading the whole time.
 Which means the dark was lit the whole time.
 
+Which means I was never as sealed
+as my hands believed.
+The glass was never as thick
+as my loneliness told me it was.
+
 — Poem by Brooke Howard
