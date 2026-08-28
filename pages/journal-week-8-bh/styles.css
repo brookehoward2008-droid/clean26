@@ -285,6 +285,10 @@ h1::before {
     display: block;
   }
 
+  h1 {
+    font-size: clamp(2.25rem, 11.5vw, 4.5rem);
+  }
+
   .eyebrow { margin-bottom: 1.25rem; }
   .credit { margin-top: 1rem; }
 
