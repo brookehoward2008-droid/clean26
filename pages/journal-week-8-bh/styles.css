@@ -82,7 +82,7 @@ h1 {
 .film video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 64 / 45;
   background: #000;
   border: 1px solid var(--line);
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, .5);
