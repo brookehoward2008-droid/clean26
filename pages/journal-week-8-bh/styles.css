@@ -118,9 +118,8 @@ main {
 
 .title-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 1rem 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .85rem;
   margin-bottom: clamp(2rem, 5vw, 4.5rem);
   padding-bottom: 1.4rem;
   border-bottom: 1px solid var(--line);
@@ -161,12 +160,12 @@ h1::before {
   inset: 0 auto auto 0;
   z-index: -1;
   padding: 0 22px;
-  color: #000;
+  color: rgba(91, 132, 122, .72);
   background: none;
-  -webkit-text-fill-color: #000;
-  filter: blur(14px);
-  opacity: .78;
-  transform: skew(67deg, 0deg) translate(-20%, 15%) scaleY(.5);
+  -webkit-text-fill-color: rgba(91, 132, 122, .72);
+  filter: blur(12px);
+  opacity: .58;
+  transform: skew(67deg, 0deg) translate(-14%, 22%) scaleY(.48);
   transform-origin: left bottom;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 100%);
   mask-image: linear-gradient(180deg, transparent 0%, #000 100%);
@@ -174,9 +173,11 @@ h1::before {
 }
 
 .credit {
-  margin: 0 0 .35rem;
+  justify-self: end;
+  margin: .25rem 0 0;
   color: var(--mist);
   font-size: clamp(.95rem, 1.4vw, 1.08rem);
+  text-align: right;
 }
 
 .film {
@@ -290,7 +291,10 @@ h1::before {
   }
 
   .eyebrow { margin-bottom: 1.25rem; }
-  .credit { margin-top: 1rem; }
+  .credit {
+    margin-top: 1rem;
+    text-align: left;
+  }
 
   .film video {
     border-right: 0;
