@@ -124,6 +124,42 @@ h1 {
   text-decoration-color: var(--paper);
 }
 
+.written-poem {
+  display: grid;
+  grid-template-columns: minmax(9rem, .4fr) minmax(0, 1fr);
+  gap: 2rem clamp(2rem, 6vw, 7rem);
+  margin-top: clamp(5rem, 10vw, 9rem);
+}
+
+.poem-heading h2 {
+  margin: 1.2rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1;
+}
+
+.poem-text {
+  max-width: 42rem;
+  padding-left: clamp(1.25rem, 4vw, 3.5rem);
+  border-left: 1px solid var(--line);
+  font-size: clamp(1.12rem, 1.8vw, 1.36rem);
+  line-height: 1.72;
+}
+
+.poem-text p {
+  margin: 0 0 2.6rem;
+}
+
+.poem-text .poem-credit {
+  margin: 4.5rem 0 0;
+  color: var(--mist);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 .clean26-site-links {
   background: rgba(5, 7, 7, .94);
   border-color: var(--line);
@@ -157,7 +193,17 @@ h1 {
     display: block;
   }
 
+  .written-poem {
+    display: block;
+    margin-right: 6vw;
+    margin-left: 6vw;
+  }
+
   .section-label {
     margin-bottom: 1.5rem;
+  }
+
+  .poem-heading {
+    margin-bottom: 2.5rem;
   }
 }
