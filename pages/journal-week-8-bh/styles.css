@@ -6,9 +6,10 @@
 }
 
 .image-link-directory {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem 0.8rem;
   width: min(92vw, 78rem);
   margin: 3rem auto 2rem;
 }
@@ -16,7 +17,10 @@
 .image-link-directory a,
 .image-link-directory .directory-current {
   display: grid;
-  grid-template-rows: 112px auto;
+  grid-template-rows: 112px 1fr;
+  flex: 0 1 166px;
+  width: 166px;
+  min-height: 166px;
   overflow: hidden;
   min-width: 0;
   color: var(--paper);
@@ -30,7 +34,7 @@
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .image-link-directory img {
@@ -41,6 +45,7 @@
   padding: 0.35rem;
   background: transparent;
   filter: saturate(0.88) contrast(1.03);
+  transition: filter 220ms ease;
 }
 
 .image-link-directory > a > span,
@@ -55,10 +60,24 @@
 
 .image-link-directory a:hover,
 .image-link-directory a:focus-visible {
-  transform: translateY(-4px);
-  border-color: #f2eee4;
+  border-color: rgba(183, 230, 218, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(183, 230, 218, 0.38),
+    0 0 18px rgba(112, 201, 180, 0.48),
+    0 0 42px rgba(112, 201, 180, 0.22);
+}
+
+.image-link-directory a:hover img,
+.image-link-directory a:focus-visible img {
+  filter:
+    saturate(1.06)
+    contrast(1.05)
+    drop-shadow(0 0 8px rgba(210, 255, 244, 0.52));
+}
+
+.image-link-directory a:focus-visible {
   outline: 2px solid #f2eee4;
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .image-link-directory .directory-current {
@@ -68,13 +87,15 @@
 
 @media (max-width: 520px) {
   .image-link-directory {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.55rem;
   }
 
   .image-link-directory a,
   .image-link-directory .directory-current {
     grid-template-rows: 92px auto;
+    flex-basis: calc(50% - 0.55rem);
+    width: calc(50% - 0.55rem);
+    min-height: 150px;
     font-size: 0.6rem;
   }
 
