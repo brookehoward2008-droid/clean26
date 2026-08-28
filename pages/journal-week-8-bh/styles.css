@@ -66,6 +66,26 @@ h1 {
   line-height: 1.6;
 }
 
+.player {
+  width: min(620px, 100%);
+  margin: 0 0 5rem auto;
+  padding-left: clamp(1rem, 4vw, 3.5rem);
+}
+
+.player-label {
+  margin: 0 0 .8rem;
+  color: var(--margin);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .72rem;
+  letter-spacing: .18em;
+}
+
+.player audio {
+  display: block;
+  width: 100%;
+  accent-color: var(--margin);
+}
+
 .poem {
   width: min(620px, 100%);
   margin-left: auto;
@@ -101,6 +121,15 @@ h1 {
   font-size: 1.14em;
 }
 
+.byline {
+  margin-top: 4.5rem;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
 .clean26-site-links {
   background: rgba(242, 238, 230, .94);
 }
@@ -113,5 +142,5 @@ h1 {
       var(--paper);
   }
   .page-shell { width: 86vw; }
-  .journal-header, .poem { padding-left: 1.15rem; }
+  .journal-header, .player, .poem { padding-left: 1.15rem; }
 }
