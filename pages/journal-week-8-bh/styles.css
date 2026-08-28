@@ -97,6 +97,42 @@ h1 {
   text-transform: uppercase;
 }
 
+.about-poem {
+  display: grid;
+  grid-template-columns: minmax(9rem, .4fr) minmax(0, 1fr);
+  gap: 2rem clamp(2rem, 6vw, 7rem);
+  margin-top: clamp(5rem, 10vw, 9rem);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+  margin: .4rem 0 0;
+  color: var(--mist);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .7rem;
+  letter-spacing: .16em;
+}
+
+.about-poem > p:last-child {
+  max-width: 48rem;
+  margin: 0;
+  font-size: clamp(1.18rem, 2vw, 1.52rem);
+  line-height: 1.72;
+}
+
+.about-poem a {
+  color: var(--paper);
+  text-decoration-color: rgba(243, 239, 231, .45);
+  text-underline-offset: .18em;
+}
+
+.about-poem a:hover,
+.about-poem a:focus-visible {
+  text-decoration-color: var(--paper);
+}
+
 .clean26-site-links {
   background: rgba(5, 7, 7, .94);
   border-color: var(--line);
@@ -109,7 +145,8 @@ h1 {
   }
 
   .title-card,
-  .film-note {
+  .film-note,
+  .about-poem {
     margin-right: 6vw;
     margin-left: 6vw;
   }
@@ -124,5 +161,13 @@ h1 {
   .film video {
     border-right: 0;
     border-left: 0;
+  }
+
+  .about-poem {
+    display: block;
+  }
+
+  .section-label {
+    margin-bottom: 1.5rem;
   }
 }
