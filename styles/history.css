@@ -5,6 +5,13 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   color: rgb(1, 40, 40);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 main {
@@ -24,4 +31,10 @@ section {
 
 .tim {
   background-color: rgb(207, 178, 240);
+}
+
+@media (max-width: 768px) {
+  section {
+    width: calc(100% - 20px);
+  }
 }

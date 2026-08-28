@@ -486,6 +486,43 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .header-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    padding: 12px 16px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .search input {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .island-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .island-nav ul li {
+    flex: 1 1 50%;
+  }
+
+  .island-nav ul li a {
+    width: 100%;
+    padding: 14px 10px;
+  }
+
   main {
     grid-template-columns: auto;
   }

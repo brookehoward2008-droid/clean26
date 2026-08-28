@@ -17,6 +17,12 @@ body {
   background-color: rgba(59, 58, 66, 0.973);
   color: rgb(233, 229, 225);
   padding: 20px;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -126,4 +132,24 @@ footer {
   font-size: 0.7em;
   color: rgba(233, 229, 225, 0.5);
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pure-g > [class*="pure-u"] {
+    width: 100%;
+  }
+
+  .hero,
+  .hero-image {
+    min-height: 360px;
+  }
+
+  .hero p,
+  .percent p {
+    width: 100%;
+  }
+
+  .vw {
+    font-size: 0.85rem;
+  }
 }

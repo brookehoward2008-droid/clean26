@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -77,4 +78,19 @@ main section img {
 a {
   color: #fff;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(2.2rem, 12vw, 3.75rem);
+  }
+
+  main section {
+    width: calc(100% - 20px);
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

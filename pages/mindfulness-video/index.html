@@ -29,10 +29,35 @@
       object-fit: contain;
       background: #000;
     }
+
+    .back-link {
+      position: fixed;
+      z-index: 2;
+      top: max(14px, env(safe-area-inset-top));
+      left: max(14px, env(safe-area-inset-left));
+      padding: 9px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font: 600 0.72rem/1 system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      background: #fff;
+      color: #000;
+    }
   </style>
 </head>
 <body>
+  <a class="back-link" href="../../index.html#work">Back to work</a>
   <video
+    aria-label="Designing Resilience, a mindfulness film by Brooke Howard"
     controls
     playsinline
     preload="metadata"

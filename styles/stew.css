@@ -8,9 +8,15 @@ body {
 .stew-content {
   background-color: #d4ceb0;
   font-size: 18px;
-  width: 700px;
+  width: min(700px, calc(100% - 2rem));
   padding: 10px;
   margin: auto;
+  box-sizing: border-box;
+}
+
+.stew-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
