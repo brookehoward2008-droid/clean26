@@ -31,6 +31,7 @@ h1 {
 main {
   display: flex;
   flex-wrap: wrap;
+  overflow-x: clip;
 }
 
 main section {

@@ -218,7 +218,7 @@ article {
 #journal-week-3    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-3-bh/assets/week3-card.jpg'); background-position: center; }
 #journal-week-4    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-4-bh/assets/week4-card.jpg'); background-position: center 42%; }
 #journal-week-5    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-5-bh/assets/surreal-seville-loop.gif'); background-position: center; }
-#journal-week-6    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.58)), url('../pages/journal-week-6-bh/assets/stone-layer.jpeg'); background-position: center; }
+#journal-week-6    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.58)), url('../assets/previews/stone-layer.webp'); background-position: center; }
 #journal-week-7    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.66)), url('../pages/journal-week-7-bh/assets/slow-down-chaos-poster.jpg'); background-position: center; }
 #journal-week-8    { grid-column: span 2; background-image: url('../images/link-art/week-8-eight-ball.png'); background-position: center; background-size: contain; }
 #history           { grid-column: span 2; background-image: url('../images/history-hero-bg.jpg'); background-position: center; }
@@ -260,4 +260,12 @@ article {
     .project.featured {
         grid-column: span 1;
     }
+}
+
+/* Fraunces supplies the display voice; DM Sans keeps small labels readable. */
+aside h3 { font-family: "DM Sans", Helvetica, Arial, sans-serif; line-height: 1.45; letter-spacing: .075em; }
+.project p { text-wrap: balance; line-height: 1.3; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+  .project:hover, .project:focus-within { transform: none; }
 }

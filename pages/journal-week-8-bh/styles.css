@@ -149,6 +149,8 @@ main {
   padding-bottom: 1.4rem;
   border-bottom: 1px solid var(--line);
   isolation: isolate;
+  overflow: clip;
+  overflow-clip-margin: 1rem;
 }
 
 .eyebrow {

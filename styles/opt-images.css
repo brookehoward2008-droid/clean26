@@ -107,3 +107,19 @@ footer {
   font-size: 0.9rem;
   letter-spacing: 0.05em;
 }
+
+/* Keep labels below each sample at a readable measure, including desktop. */
+.image-comparisons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; width: min(90%, 76rem); }
+.image-comparisons .comparison { display: block; width: auto; min-width: 0; margin: 0; padding: 1rem; }
+.comparison img { display: block; width: 100%; height: auto; }
+.comparison ul { width: auto; margin: 1rem 0 0; padding: 0; list-style: none; font-family: "DM Sans", sans-serif; }
+.comparison li { line-height: 1.55; margin: .35rem 0; }
+.image-comparisons aside { grid-column: 1 / -1; width: auto; margin: 1rem 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1000px) {
+  .image-comparisons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .image-comparisons aside { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .image-comparisons { grid-template-columns: minmax(0, 1fr); }
+  .image-comparisons aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

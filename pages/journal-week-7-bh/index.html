@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=compassion-poem-20260820">
-  <script src="script.js?v=no-visible-audio-20260819" defer></script>
-  <link href="../../styles/site-links.css" rel="stylesheet">
+  <script src="script.js?v=sound-control-20260903" defer></script>
+  <link href="../../styles/typography.css" rel="stylesheet">
+    <link href="../../styles/site-links.css" rel="stylesheet">
 </head>
 <body>
   <a class="skip-link" href="#poem">Skip to poem</a>
@@ -23,11 +24,12 @@
     <div class="video-fallback"></div>
   </div>
 
-  <audio id="ambient-audio" preload="auto" loop autoplay>
+  <audio id="ambient-audio" preload="none" loop>
     <source src="assets/in-slow-motion-ambient-lounge.mp3?v=ambient-20260819" type="audio/mpeg">
   </audio>
 
   <main class="page-shell">
+    <button class="sound-toggle" type="button" aria-pressed="false" aria-controls="ambient-audio">Play ambient sound</button>
     <article id="poem" class="poem" aria-label="Slow Down Before You Disappear">
       <div class="poem-text">
         <p>Dear one,<br>

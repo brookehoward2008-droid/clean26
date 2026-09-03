@@ -44,7 +44,7 @@ htmlFiles.sort();
 
 const problems = [];
 let referencesChecked = 0;
-const attributePattern = /\b(href|src|poster)\s*=\s*(["'])(.*?)\2/gi;
+const attributePattern = /\b(href|data-src|src|poster)\s*=\s*(["'])(.*?)\2/gi;
 
 for (const file of htmlFiles) {
   const source = fs.readFileSync(file, "utf8");

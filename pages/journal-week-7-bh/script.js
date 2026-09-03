@@ -17,38 +17,18 @@ if (video) {
   }
 }
 
-if (ambientAudio) {
+const soundToggle = document.querySelector('.sound-toggle');
+if (ambientAudio && soundToggle) {
   ambientAudio.volume = 0.36;
-
-  const removeUnlockListeners = () => {
-    window.removeEventListener("pointerdown", unlockAudio);
-    window.removeEventListener("touchstart", unlockAudio);
-    window.removeEventListener("mousedown", unlockAudio);
-    window.removeEventListener("keydown", unlockAudio);
+  const syncSound = () => {
+    soundToggle.setAttribute('aria-pressed', String(!ambientAudio.paused));
+    soundToggle.textContent = ambientAudio.paused ? 'Play ambient sound' : 'Pause ambient sound';
   };
-
-  const playAmbient = async () => {
-    try {
-      await ambientAudio.play();
-      removeUnlockListeners();
-      return true;
-    } catch {
-      return false;
-    }
-  };
-
-  function unlockAudio() {
-    if (!ambientAudio.paused) return;
-    playAmbient();
-  }
-
-  playAmbient().then((started) => {
-    if (!started) {
-      const unlockOptions = { passive: true };
-      window.addEventListener("pointerdown", unlockAudio, unlockOptions);
-      window.addEventListener("touchstart", unlockAudio, unlockOptions);
-      window.addEventListener("mousedown", unlockAudio, unlockOptions);
-      window.addEventListener("keydown", unlockAudio);
-    }
+  ambientAudio.addEventListener('play', syncSound);
+  ambientAudio.addEventListener('pause', syncSound);
+  soundToggle.addEventListener('click', async () => {
+    if (!ambientAudio.paused) { ambientAudio.pause(); return; }
+    try { await ambientAudio.play(); }
+    catch { soundToggle.textContent = 'Retry ambient sound'; }
   });
 }
