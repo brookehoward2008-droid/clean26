@@ -330,6 +330,11 @@
       margin-top: 1rem;
     }
 
+    @keyframes resumeProjectFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(-.35deg); }
+    }
+
     .resume-project {
       display: block;
       min-width: 0;
@@ -338,15 +343,26 @@
       background: rgba(14, 13, 17, .58);
       border: 1.5px solid rgba(245, 239, 223, .35);
       overflow: hidden;
-      transition: transform .25s ease, border-color .25s ease;
+      animation: resumeProjectFloat 7s ease-in-out infinite;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      will-change: transform;
     }
+
+    .resume-project:nth-child(2n) { animation-delay: -2.1s; }
+    .resume-project:nth-child(3n) { animation-delay: -4.2s; }
 
     .resume-project:hover,
     .resume-project:focus-visible {
       color: inherit;
       background: rgba(14, 13, 17, .78);
       border-color: var(--sun);
-      transform: translateY(-3px);
+      transform: translateY(-10px) rotate(-.7deg) scale(1.015);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .34);
+      animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .resume-project { animation: none; transition: border-color .2s ease, box-shadow .2s ease; }
     }
 
     .resume-project img {
