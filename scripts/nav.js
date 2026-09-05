@@ -35,6 +35,15 @@
 
       navPlaceholder.innerHTML = data;
 
+      // Resolve the shared fragment from both the root page and /pages/.
+      if (!inPages) {
+        navPlaceholder.querySelectorAll('a[href]').forEach(anchor => {
+          const href = anchor.getAttribute('href');
+          if (!href || href.startsWith('#') || /^https?:\/\//i.test(href)) return;
+          anchor.setAttribute('href', href === '../index.html' ? 'index.html' : `pages/${href}`);
+        });
+      }
+
       const toggleButton = document.getElementsByClassName('toggle-button')[0];
       const navbarLinks = document.getElementsByClassName('i-am-not-amish')[0];
 
@@ -50,3 +59,4 @@
       }
     });
 })();
+
