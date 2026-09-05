@@ -232,26 +232,11 @@ body {
     opacity: 1;
   }
 
-  .i-am-not-amish {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0.25rem 0.8rem;
-}
+  .i-am-not-amish .nav-group {
+    width: 100%;
+  }
 
-.nav-group {
-  min-width: 0;
-}
-
-.nav-group-label {
-  margin: 0.15rem 0.25rem 0.05rem;
-  color: rgba(199, 211, 223, 0.68);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.i-am-not-amish ul {
+  .i-am-not-amish ul {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -287,5 +272,6 @@ body {
     border: 0;
   }
 }
+
 
 
