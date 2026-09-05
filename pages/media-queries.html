@@ -6,24 +6,40 @@
     <title>Media Queries</title>
 
     <style>
+      * { box-sizing: border-box; }
+
       body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
         font-family: Helvetica, Arial, sans-serif;
-        padding: 40px;
-        max-width: 1600px;
-        margin: auto;
         background-color: #a5a1a1;
         color: #03f367;
       }
 
+      header,
+      main,
+      footer {
+        width: min(800px, calc(100% - 2rem));
+        margin-inline: auto;
+      }
+
+      header { padding-top: clamp(1.25rem, 4vw, 2.5rem); }
+      main { padding-bottom: 1rem; }
+      footer { padding-bottom: 2rem; }
+
       h1 {
-        font-size: 2rem;
+        font-size: clamp(1.75rem, 5vw, 2rem);
+        line-height: 1.1;
         margin-bottom: 10px;
       }
 
       p {
-        line-height: 1.7;
-        margin-bottom: 20px;
         max-width: 800px;
+        margin: 0 0 20px;
+        font-size: clamp(1rem, 1.2vw, 1.08rem);
+        line-height: 1.7;
       }
 
       footer {
@@ -69,7 +85,7 @@
 
     <link rel="stylesheet" href="../styles/nav.css" />
     <link href="../styles/typography.css" rel="stylesheet">
-    <link href="../styles/site-links.css" rel="stylesheet" />
+
 </head>
   <body>
     <div id="nav-placeholder"></div>
@@ -109,3 +125,5 @@
     </footer>
 </body>
 </html>
+
+
