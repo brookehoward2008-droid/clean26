@@ -58,14 +58,14 @@ header {
     padding-bottom: 20px;
 }
 
-nav {
+header > nav {
     display: flex;
     justify-content: flex-end;
     gap: 24px;
     width: 50%;
 }
 
-nav a {
+header > nav a {
     text-decoration: none;
     color: #cdd2d4;
     font-size: 0.85rem;
@@ -76,12 +76,12 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a p {
+header > nav a p {
     margin: 0;
 }
 
-nav a:hover,
-nav a:focus-visible {
+header > nav a:hover,
+header > nav a:focus-visible {
     background-color: var(--portfolio-magenta);
     border-color: var(--portfolio-magenta);
     color: var(--portfolio-paper);
