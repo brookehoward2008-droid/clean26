@@ -222,7 +222,7 @@ body {
     transition: max-height 0.45s ease, opacity 0.3s ease;
     width: 100%;
     background-color: #1e242b;
-    background-image: linear-gradient(rgba(20, 25, 30, 0.58), rgba(20, 25, 30, 0.72)), url("../images/120643-hamburger-picture-hd.jpg");
+    background-image: linear-gradient(rgba(20, 25, 30, 0.34), rgba(20, 25, 30, 0.46)), url("../images/120643-hamburger-picture-hd.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -242,7 +242,7 @@ body {
     width: 100%;
     flex-direction: column;
     padding: 12px;
-    background: rgba(26, 31, 38, 0.45);
+    background: rgba(26, 31, 38, 0.26);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
