@@ -24,6 +24,8 @@ body {
   -webkit-backdrop-filter: blur(12px);
   color: #cdd2d4;
   border-bottom: 1px solid rgba(199, 211, 223, 0.3);
+  flex-wrap: wrap;
+  min-height: 60px;
 }
 
 .page-title p {
@@ -37,16 +39,28 @@ body {
 
 .i-am-not-amish {
   background-color: #323b49;
-  padding: 0.4em 0.5em;
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
 }
 
+/* Links stay behind the hamburger at every width; the button opens them as a panel. */
 .i-am-not-amish {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0.25rem 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  align-items: start;
+  gap: 0.6rem 1.2rem;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1em;
+  transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.i-am-not-amish.active {
+  max-height: 1400px;
+  opacity: 1;
+  padding: 0.8em 1em 1.2em;
 }
 
 .nav-group {
@@ -100,7 +114,7 @@ body {
   position: absolute;
   top: 8px;
   right: 14px;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
