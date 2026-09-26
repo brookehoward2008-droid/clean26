@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -211,16 +211,16 @@ article {
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
-#typography-layouts { grid-column: span 2; background-image: url('../pages/typography-layouts/assets/card.webp'); background-position: center 30%; }
-#spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 36%; }
-#theory-of-sight   { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: 52% 24%; }
+#typography-layouts { grid-column: span 2; background-image: url('../pages/typography-layouts/assets/card.webp'); background-position: center 62%; }
+#spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 6%; }
+#theory-of-sight   { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: 52% 40%; }
 #mindfulness-video { grid-column: span 2; background-image: url('../images/link-art/mindfulness-clouds.png'); background-position: center; background-size: contain; }
 #resume-typography { grid-column: span 2; background-image: url('../images/resume-card.jpg'); background-position: center; }
 #journal-week-3    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-3-bh/assets/week3-card.jpg'); background-position: center; }
-#journal-week-4    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-4-bh/assets/week4-card.jpg'); background-position: center 42%; }
+#journal-week-4    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-4-bh/assets/week4-card.jpg'); background-position: center 32%; }
 #journal-week-5    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.62)), url('../pages/journal-week-5-bh/assets/surreal-seville-loop.gif'); background-position: center; }
 #journal-week-6    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.58)), url('../assets/previews/stone-layer.webp'); background-position: center; }
-#journal-week-7    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.66)), url('../pages/journal-week-7-bh/assets/slow-down-chaos-poster.jpg'); background-position: center; }
+#journal-week-7    { grid-column: span 2; background-image: linear-gradient(180deg, rgba(31, 39, 50, 0.08), rgba(31, 39, 50, 0.66)), url('../pages/journal-week-7-bh/assets/slow-down-chaos-poster.jpg'); background-position: center; background-size: cover, 135%; }
 #journal-week-8    { grid-column: span 2; background-image: url('../images/link-art/week-8-eight-ball.png'); background-position: center; background-size: contain; }
 #history           { grid-column: span 2; background-image: url('../images/history-hero-bg.jpg'); background-position: center; }
 #history-plain     { grid-column: span 2; background-image: url('../images/1-ike.jpg'); background-position: center 22%; }
@@ -232,9 +232,9 @@ article {
 #images            { grid-column: span 2; background-image: url('../images/colors01.jpg'); background-position: center; }
 #fluid             { grid-column: span 2; background-image: url('../images/fluid01.jpg'); background-position: center; }
 #media-queries     { grid-column: span 2; background-image: url('../images/page1.jpg'); background-position: center; }
-#orcas             { grid-column: span 2; background-image: url('../images/sj-001.jpg'); background-position: center 38%; }
-#sanjuan           { grid-column: span 2; background-image: url('../images/SJIVB-1.png'); background-position: center; }
-#lopez             { grid-column: span 2; background-image: url('../images/sj-010.jpg'); background-position: center; }
+#orcas             { grid-column: span 2; background-image: url('../images/sj-001.jpg'); background-position: center 12%; }
+#sanjuan           { grid-column: span 2; background-image: url('../images/SJIVB-1.png'); background-position: center; background-size: 88% auto; background-color: #ffffff; }
+#lopez             { grid-column: span 2; background-image: url('../images/sj-010.jpg'); background-position: center 28%; }
 #grid-layout       { grid-column: span 2; background-image: url('../images/nataliya-melnychuk-unsplash.jpg'); background-position: center; }
 #grid-layout-960   { grid-column: span 2; background-image: url('../images/jayson-hinrichsen-unsplash.jpg'); background-position: center; }
 
