@@ -212,7 +212,7 @@ article {
 }
 
 #typography-layouts { grid-column: span 2; background-image: url('../pages/typography-layouts/assets/card.webp'); background-position: center 62%; }
-#grid-layouts { grid-column: span 2; background-image: url('../pages/grid-layouts/assets/card.webp?v=5'); background-position: center 40%; }
+#grid-layouts { grid-column: span 2; background-image: url('../pages/grid-layouts/assets/card.webp?v=6'); background-position: center 40%; }
 #spaceman-magazine { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/images/optimized/21.jpg'); background-position: 50% 6%; }
 #theory-of-sight   { grid-column: span 2; background-image: url('https://brookehoward2008-droid.github.io/theory-of-sigh/images/labeled/a58-social-constraint-see-plus-np3s9byoqac-unsplash.jpg'); background-position: 52% 40%; }
 #mindfulness-video { grid-column: span 2; background-image: url('../images/link-art/mindfulness-clouds.png'); background-position: center; background-size: contain; }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Grid Layouts by Brooke Howard, Graph 201 Advertising Design." />
   <title>Grid Layouts | Brooke Howard</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rjw1snf.css">
   <style>
     :root {
       --teal: #0f4f52;
@@ -18,6 +19,7 @@
       --paper: #ffffff;
       --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
       --sans: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      --display: "sirenia", "Iowan Old Style", Georgia, serif;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--teal-deep); color: var(--paper); font-family: var(--serif); -webkit-font-smoothing: antialiased; }
@@ -34,7 +36,7 @@
     /* ---------- opener: centred, airy ---------- */
     .opener { text-align: center; padding: 72px 0 56px; }
     .kicker { margin: 0 0 22px; color: var(--signal); font: 600 0.78rem/1 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; }
-    h1 { margin: 0; font: 400 clamp(3rem, 9vw, 7.2rem)/0.95 var(--serif); letter-spacing: -0.02em; }
+    h1 { margin: 0; font: 400 clamp(3rem, 9vw, 7.2rem)/0.95 var(--display); letter-spacing: 0; }
     h1 em { color: var(--apricot); }
     .dek { max-width: 34em; margin: 26px auto 0; font: italic 400 clamp(1.05rem, 1.6vw, 1.3rem)/1.55 var(--serif); color: var(--mist); }
     .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
@@ -67,7 +69,7 @@
     .spread-link:hover img, .spread-link:focus-visible img { transform: translateY(-5px) rotate(-0.4deg); }
     .spread-link:focus-visible { outline: 3px solid var(--signal); outline-offset: 6px; }
 
-    .num { display: block; font: 400 4.5rem/0.9 var(--serif); font-style: italic; }
+    .num { display: block; font: 400 4.5rem/0.9 var(--display); font-style: italic; }
     .mood { display: block; margin: 12px 0 10px; font: 600 0.76rem/1.2 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; }
     .note p { margin: 0; font-size: 1.08rem; line-height: 1.65; color: #e6f3f2; }
     .apricot .num, .apricot .mood { color: var(--cloud); }
@@ -78,7 +80,7 @@
     /* ---------- system ---------- */
     .system { background: var(--cloud); color: var(--ink); padding: 64px 0; }
     .system .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
-    .system h2 { margin: 0 0 16px; font: 400 2rem/1 var(--serif); }
+    .system h2 { margin: 0 0 16px; font: 400 2rem/1 var(--display); }
     .system:nth-child(n) div:nth-child(2) { text-align: center; }
     .system div:nth-child(3) { text-align: right; }
     .system dt { margin-top: 16px; color: #b8401a; font: 600 0.72rem/1.2 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; }
@@ -115,8 +117,8 @@
       <h1>Grid <em>Layouts</em></h1>
       <p class="dek">I kept my original four layouts and redid the type, color and photos. The main edges on each page line up with golden ratio divisions of the page, each page has one main photo, the smaller photos are tinted in the page colors, and yellow shows up on every page.</p>
       <div class="actions">
-        <a class="button" href="howard-brooke-grid-layouts.pdf?v=5">View the PDF</a>
-        <a class="button ghost" href="howard-brooke-grid-layouts.pdf?v=5" download>Download</a>
+        <a class="button" href="howard-brooke-grid-layouts.pdf?v=6">View the PDF</a>
+        <a class="button ghost" href="howard-brooke-grid-layouts.pdf?v=6" download>Download</a>
       </div>
     </header>
 
@@ -125,8 +127,8 @@
     <section aria-label="The four layouts">
       <div class="page-row apricot">
         <figure>
-          <a class="spread-link" href="assets/page-1.webp?v=5">
-            <img src="assets/page-1.webp?v=5" width="1530" height="1980" alt="Page 1 on a Cloud Dancer background: a large photo of the Arc de Triomphe at the top right, the headline beside it, three columns of text, a teal-tinted koala photo and an orange quote bar." />
+          <a class="spread-link" href="assets/page-1.webp?v=6">
+            <img src="assets/page-1.webp?v=6" width="1530" height="1980" alt="Page 1 on a Cloud Dancer background: a large photo of the Arc de Triomphe at the top right, the headline beside it, three columns of text, a teal-tinted koala photo and an orange quote bar." />
           </a>
         </figure>
         <div class="note">
@@ -138,8 +140,8 @@
 
       <div class="page-row flip teal">
         <figure>
-          <a class="spread-link" href="assets/page-2.webp?v=5">
-            <img src="assets/page-2.webp?v=5" width="1530" height="1980" alt="Page 2: a full-width koala photograph with a large centered white headline, a dark teal band with a yellow quote, and three columns of text on a Cloud Dancer background." loading="lazy" />
+          <a class="spread-link" href="assets/page-2.webp?v=6">
+            <img src="assets/page-2.webp?v=6" width="1530" height="1980" alt="Page 2: a full-width koala photograph with a large centered white headline, a dark teal band with a yellow quote, and three columns of text on a Cloud Dancer background." loading="lazy" />
           </a>
         </figure>
         <div class="note">
@@ -151,8 +153,8 @@
 
       <div class="page-row signal">
         <figure>
-          <a class="spread-link" href="assets/page-3.webp?v=5">
-            <img src="assets/page-3.webp?v=5" width="1530" height="1980" alt="Page 3 on dark teal: a tall cropped photo of a cyclist down the left side, a right-aligned white title, a yellow-tinted koala photo and white text." loading="lazy" />
+          <a class="spread-link" href="assets/page-3.webp?v=6">
+            <img src="assets/page-3.webp?v=6" width="1530" height="1980" alt="Page 3 on dark teal: a tall cropped photo of a cyclist down the left side, a right-aligned white title, a yellow-tinted koala photo and white text." loading="lazy" />
           </a>
         </figure>
         <div class="note">
@@ -164,8 +166,8 @@
 
       <div class="page-row flip mist">
         <figure>
-          <a class="spread-link" href="assets/page-4.webp?v=5">
-            <img src="assets/page-4.webp?v=5" width="1530" height="1980" alt="Page 4: three teal-tinted photos on a yellow bar at the top, a Cloud Dancer background with centered and right-aligned text, and a large Seattle skyline photo running off the right edge." loading="lazy" />
+          <a class="spread-link" href="assets/page-4.webp?v=6">
+            <img src="assets/page-4.webp?v=6" width="1530" height="1980" alt="Page 4: three teal-tinted photos on a yellow bar at the top, a Cloud Dancer background with centered and right-aligned text, and a large Seattle skyline photo running off the right edge." loading="lazy" />
           </a>
         </figure>
         <div class="note">
@@ -182,10 +184,10 @@
       <div>
         <h2>Type</h2>
         <dl>
-          <dt>Headlines and quotes</dt><dd>Mrs Eaves OT</dd>
-          <dt>Body text</dt><dd>Chaparral Pro, 8 pt on 12.8 pt leading</dd>
+          <dt>Headlines and quotes</dt><dd>Sirenia by Felix Braden (Floodfonts), Light and Light Italic</dd>
+          <dt>Body text</dt><dd>Tuna, also by Felix Braden, 8 pt on 12.8 pt leading</dd>
           <dt>Type sizes</dt><dd>8, 13, 21, 34 and 55 pt, each about 1.618 times the one before</dd>
-          <dt>Subheads and labels</dt><dd>Franklin Gothic URW</dd>
+          <dt>Subheads and labels</dt><dd>Tuna Bold and Medium</dd>
         </dl>
       </div>
       <div>
