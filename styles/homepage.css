@@ -140,6 +140,145 @@ aside p[style*="color"] {
     filter: none;
 }
 
+/* Purpose: Turn the About column into an editorial sequence while keeping the project grid structurally independent. */
+.about-fragment {
+    align-self: flex-start;
+}
+
+.about-portrait {
+    margin: 0 0 2rem;
+}
+
+.about-portrait figcaption {
+    margin-top: .55rem;
+    color: var(--portfolio-muted);
+    font-size: var(--type-xs);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.about-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.about-copy p {
+    margin: 0;
+}
+
+.about-kicker,
+.about-turn,
+.about-emphasis,
+.about-rule,
+.about-signoff {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--portfolio-paper);
+    text-wrap: balance;
+}
+
+.about-kicker {
+    font-size: clamp(2rem, 3.25vw, 3.7rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.025em;
+}
+
+.about-small {
+    max-width: 31ch;
+    color: var(--portfolio-muted);
+    font-size: .92rem;
+    line-height: var(--leading-reading);
+}
+
+.about-turn {
+    margin-left: clamp(.5rem, 3vw, 3rem) !important;
+    font-size: clamp(1.5rem, 2.25vw, 2.35rem);
+    font-weight: 500;
+    line-height: var(--leading-title);
+}
+
+.about-turn em {
+    color: var(--portfolio-teal);
+    font-weight: 700;
+}
+
+.about-pair {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: .45rem;
+    align-items: baseline;
+    color: var(--portfolio-muted);
+    font-size: var(--type-xs);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.about-pair span {
+    color: var(--portfolio-magenta);
+}
+
+.about-emphasis {
+    margin-left: clamp(1rem, 5vw, 4.5rem) !important;
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.18;
+}
+
+.about-rule {
+    padding-left: 1rem;
+    border-left: 2px solid var(--portfolio-teal);
+    font-size: clamp(1.15rem, 1.65vw, 1.55rem);
+    font-weight: 650;
+    line-height: 1.25;
+}
+
+.about-signoff {
+    margin-top: .5rem !important;
+    font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.about-signoff strong {
+    color: var(--portfolio-teal);
+    font-size: 1.25em;
+    font-weight: 850;
+}
+
+.about-facts {
+    display: grid;
+    gap: .8rem;
+    margin: .6rem 0 0;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.about-facts div {
+    display: grid;
+    gap: .12rem;
+}
+
+.about-facts dt {
+    color: var(--portfolio-teal);
+    font-size: var(--type-xs);
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.about-facts dd {
+    margin: 0;
+    color: var(--portfolio-muted);
+    font-size: .9rem;
+    line-height: var(--leading-body);
+}
+
 article {
     width: 75%;
     display: grid;
