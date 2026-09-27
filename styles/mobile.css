@@ -60,3 +60,45 @@
         grid-auto-rows: minmax(210px, 62vw);
     }
 }
+
+
+/* Purpose: Preserve the About composition on small screens without turning fragments into an oversized wall of type. */
+@media screen and (max-width: 768px) {
+    .portfolio-home .about-fragment {
+        max-width: 42rem;
+    }
+
+    .portfolio-home .about-portrait {
+        width: min(72vw, 24rem);
+    }
+
+    .portfolio-home .about-copy {
+        gap: 1.35rem;
+    }
+
+    .portfolio-home .about-small {
+        max-width: 38ch;
+    }
+
+    .portfolio-home .about-turn,
+    .portfolio-home .about-emphasis {
+        margin-left: clamp(1rem, 9vw, 4rem) !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .portfolio-home .about-portrait {
+        width: 86%;
+        margin-left: 0;
+    }
+
+    .portfolio-home .about-pair {
+        grid-template-columns: auto auto 1fr;
+        font-size: .68rem;
+    }
+
+    .portfolio-home .about-turn,
+    .portfolio-home .about-emphasis {
+        margin-left: 1.25rem !important;
+    }
+}
