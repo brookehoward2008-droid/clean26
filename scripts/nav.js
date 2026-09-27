@@ -20,7 +20,7 @@
   document.head.appendChild(preconnect2);
   const fonts = document.createElement('link');
   fonts.rel = 'stylesheet';
-  fonts.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100;display=swap';
+  fonts.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&display=swap';
   document.head.appendChild(fonts);
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -42,11 +42,14 @@
       const navbarLinks = document.getElementsByClassName('i-am-not-amish')[0];
       if (toggleButton && navbarLinks) {
         toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('aria-label', 'Open menu');
         toggleButton.addEventListener('click', event => {
           event.preventDefault();
           navbarLinks.classList.toggle('active');
           toggleButton.classList.toggle('active');
-          toggleButton.setAttribute('aria-expanded', navbarLinks.classList.contains('active'));
+          const isOpen = navbarLinks.classList.contains('active');
+          toggleButton.setAttribute('aria-expanded', String(isOpen));
+          toggleButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         });
       }
     })
