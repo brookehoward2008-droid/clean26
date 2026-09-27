@@ -18,9 +18,7 @@
     --type-xs: 0.72rem;
     --type-sm: 0.875rem;
     --type-body: 1rem;
-    --type-lead: 1.2rem;
     --type-project: clamp(1.35rem, 2vw, 1.8rem);
-    --type-section: clamp(1.8rem, 3vw, 2.7rem);
     --type-display: clamp(3rem, 6vw, 5.5rem);
 
     /* Purpose: Establish optical leading by reading role rather than one global rhythm. */
@@ -198,7 +196,7 @@ article {
     opacity: 0.35;
 }
 
-.project a {
+ .project a {
     text-decoration: none;
     padding: 40px 28px;
     width: 100%;
@@ -208,6 +206,11 @@ article {
     align-items: center;
     position: relative;
     z-index: 2;
+    outline: none;
+}
+
+.project a:focus-visible {
+    outline: none;
 }
 
 .project p {
@@ -316,7 +319,8 @@ aside h3 {
     }
 
     .project:hover p,
-    .project:focus-within p {
+    .project:focus-within p,
+    .project a:focus-visible p {
         opacity: 1;
         transform: translateY(0);
     }
