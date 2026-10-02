@@ -8,7 +8,7 @@
   width: min(92vw, 78rem);
   margin: 2rem auto;
   padding: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
 .clean26-site-links a,
@@ -24,8 +24,8 @@
   border: 1px solid rgba(20, 39, 46, 0.18);
   border-radius: 999px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-size: 0.72rem;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.08em;
   text-decoration: none;
