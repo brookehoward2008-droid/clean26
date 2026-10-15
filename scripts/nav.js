@@ -20,7 +20,7 @@
   document.head.appendChild(preconnect2);
   const fonts = document.createElement('link');
   fonts.rel = 'stylesheet';
-  fonts.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100;display=swap';
+  fonts.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&display=swap';
   document.head.appendChild(fonts);
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -38,15 +38,37 @@
         if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:')) return;
         anchor.setAttribute('href', href === '../index.html' ? `${sitePrefix}index.html` : `${sitePrefix}pages/${href}`);
       });
-      const toggleButton = document.getElementsByClassName('toggle-button')[0];
-      const navbarLinks = document.getElementsByClassName('i-am-not-amish')[0];
+      const toggleButton = navPlaceholder.querySelector('.toggle-button');
+      const navbarLinks = navPlaceholder.querySelector('.i-am-not-amish');
       if (toggleButton && navbarLinks) {
-        toggleButton.setAttribute('aria-expanded', 'false');
-        toggleButton.addEventListener('click', event => {
-          event.preventDefault();
-          navbarLinks.classList.toggle('active');
-          toggleButton.classList.toggle('active');
-          toggleButton.setAttribute('aria-expanded', navbarLinks.classList.contains('active'));
+        const setOpen = open => {
+          if (!open && navbarLinks.contains(document.activeElement)) toggleButton.focus();
+          navbarLinks.classList.toggle('active', open);
+          toggleButton.classList.toggle('active', open);
+          toggleButton.setAttribute('aria-expanded', String(open));
+          navbarLinks.inert = !open;
+          navbarLinks.setAttribute('aria-hidden', String(!open));
+          if (open) navbarLinks.scrollTop = 0;
+        };
+        setOpen(false);
+        toggleButton.addEventListener('click', () => {
+          setOpen(toggleButton.getAttribute('aria-expanded') !== 'true');
+        });
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape' && toggleButton.getAttribute('aria-expanded') === 'true') {
+            event.preventDefault();
+            setOpen(false);
+            toggleButton.focus();
+          }
+        });
+        document.addEventListener('click', event => {
+          if (!navPlaceholder.contains(event.target)) setOpen(false);
+        });
+        navbarLinks.addEventListener('click', event => {
+          if (event.target.closest('a[href]')) setOpen(false);
+        });
+        navPlaceholder.addEventListener('focusout', event => {
+          if (event.relatedTarget && !navPlaceholder.contains(event.relatedTarget)) setOpen(false);
         });
       }
     })
