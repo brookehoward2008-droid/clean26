@@ -1,0 +1,306 @@
+<!-- pages/scotty/index.html — An evidence-led account of the Scotty design project. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scotty · UX Case Study | Brooke Howard</title>
+<meta name="description" content="Designing clarity into fictional space travel: Brooke Howard’s Scotty UX case study, from audience hypotheses to browser-local booking.">
+<link rel="canonical" href="https://brookehoward2008-droid.github.io/clean26/pages/scotty/">
+<meta property="og:title" content="Scotty · A little closer to anywhere">
+<meta property="og:description" content="A UX case study by Brooke Howard. Familiar travel decisions in an unfamiliar universe.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://brookehoward2008-droid.github.io/clean26/images/link-art/scotty-brand.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/typography.css">
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<div id="nav-placeholder">
+</div>
+<header class="masthead">
+<a href="../../index.html#work">Brooke Howard <span>/ Design portfolio</span>
+</a>
+<a href="https://brookehoward2008-droid.github.io/scotty-app/phone.html">Open interactive app ↗</a>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="title">
+<div>
+<p class="eyebrow">UX / Interface design / Fictional travel</p>
+<img class="wordmark" src="../../images/link-art/scotty-brand.webp" alt="Scotty original brand artwork" width="460" height="260">
+<h1 id="title">An unfamiliar universe.<br>
+<em>A familiar way to go.</em>
+</h1>
+<p class="lead">Making space travel feel understandable, one route, fare, and confirmation at a time.</p>
+<div class="actions">
+<a class="button" href="#problem">Explore the case study ↓</a>
+<a href="https://brookehoward2008-droid.github.io/scotty-app/phone.html">Try Scotty ↗</a>
+</div>
+</div>
+<figure class="hero-image">
+<a href="assets/overview-scene.webp">
+<img src="assets/overview-scene.webp" alt="Actual Scotty phone presentation with navy space backdrop, gold accents, and the headline A little closer to anywhere." width="1363" height="936" fetchpriority="high">
+</a>
+<figcaption>01 / The working web demo, captured October 25, 2026. Open image for detail.</figcaption>
+</figure>
+</section>
+<div class="project-meta wrap">
+<p>
+<span>Project</span>Scotty · Concept edition</p>
+<p>
+<span>Designer</span>Brooke Howard</p>
+<p>
+<span>Scope</span>Journeys, brand, mobile UI</p>
+<p>
+<span>Platform</span>Expo / React Native web demo</p>
+</div>
+<nav class="contents wrap" aria-label="Case study sections">
+<a href="#problem">01 Problem</a>
+<a href="#audience">02 Audience</a>
+<a href="#journeys">03 Journey</a>
+<a href="#booking">04 Booking</a>
+<a href="#identity">05 Identity</a>
+<a href="#learning">06 Reflection</a>
+</nav>
+<section id="problem" class="section wrap split">
+<p class="eyebrow">01 / The design problem</p>
+<div>
+<h2>Wonder gets attention.<br>Clarity earns the next tap.</h2>
+<p class="lead">How might a fictional interplanetary travel app make an unfamiliar journey easy to plan and understand?</p>
+<p>Space offers room for imagination, but the traveler still needs ordinary answers: Where do I board? When do I leave? Does my group fit? What does it cost? Has the booking actually been saved?</p>
+<p>The design brings those facts forward before asking for commitment. Named terminals, ship time (UTC), seat counts and a fare review turn the setting into a usable travel experience.</p>
+<aside class="note">
+<strong>What this project demonstrates</strong>
+<p>Scotty is a fictional travel demonstration. Bookings and demo credits live in each browser. It does not sell transport, process real payments, or issue valid boarding credentials.</p>
+</aside>
+</div>
+</section>
+<section id="audience" class="section wrap">
+<p class="eyebrow">02 / Audience hypotheses</p>
+<h2>Two reasons to travel.<br>One need for certainty.</h2>
+<p class="intro">The personas and journey maps are synthesized design hypotheses, not interview findings or validated market segments. They are lenses for identifying questions the interface should answer.</p>
+<div class="two-up">
+<article class="panel">
+<p class="eyebrow">Rhea Solis · Repeat commuter</p>
+<h3>Routine, with less friction.</h3>
+<blockquote>“Is my usual ride running tomorrow?”</blockquote>
+<p>The commuter hypothesis prioritizes familiar routes, current departure information and recovery from disruption. Re-entering the same journey creates friction; ambiguous revised times create uncertainty.</p>
+<p>
+<strong>Design response:</strong> recent-route shortcuts, editable dates and a clear path from departure information to a saved trip.</p>
+<p class="quiet">To validate: whether shortcuts, favorites or repeated calendar trips best support real travel routines.</p>
+</article>
+<article class="panel">
+<p class="eyebrow">Samira Okafor · Occasional visitor</p>
+<h3>Orientation before commitment.</h3>
+<blockquote>“Where do I board, and is this truly booked?”</blockquote>
+<p>The first-time visitor hypothesis emphasizes unfamiliar station names, language needs and coordinating a companion. A planet name alone is not enough pickup guidance.</p>
+<p>
+<strong>Design response:</strong> named terminals, explicit group totals, labeled UTC times and an unambiguous booking reference.</p>
+<p class="quiet">To validate: language comprehension, station terminology, group coordination and accessibility needs.</p>
+</article>
+</div>
+</section>
+<section id="journeys" class="section wrap">
+<p class="eyebrow">03 / Journey and information architecture</p>
+<h2>Keep the trip in view.</h2>
+<p class="intro">The shared journey moves from orientation to a decision, then a durable trip record. Recovery belongs in that journey, too.</p>
+<ol class="journey">
+<li>
+<span>01</span>
+<h3>Orient</h3>
+<p>Understand the demo and choose a route, date and party.</p>
+</li>
+<li>
+<span>02</span>
+<h3>Compare</h3>
+<p>Read service, seats, duration, gate and ship time.</p>
+</li>
+<li>
+<span>03</span>
+<h3>Review</h3>
+<p>Inspect the fare breakdown and demo-wallet impact.</p>
+</li>
+<li>
+<span>04</span>
+<h3>Confirm</h3>
+<p>Wait for a saved booking before showing success.</p>
+</li>
+<li>
+<span>05</span>
+<h3>Return</h3>
+<p>Find trip details, or cancel and see the demo refund.</p>
+</li>
+</ol>
+<div class="two-up">
+<div>
+<h3>Two paths through uncertainty</h3>
+<p>Rhea’s proposed journey follows a regular route through a delay and a possible replan. Samira’s begins with language and station orientation, then group-fare review and sharing the itinerary. Both need preserved choices and an explicit saved state.</p>
+</div>
+<div>
+<h3>A map for discovery. A list for decisions.</h3>
+<p>The galaxy schematic supplies atmosphere and route selection, while station controls provide a text-based alternative. The map explicitly says its positions are illustrative, not live tracking.</p>
+</div>
+<div>
+<h3>Five destinations in the interface.</h3>
+<p>Overview orients; Find a ride compares; My trips holds bookings; Explore introduces destinations; Wallet explains the demo balance. The wireframe’s navigation concept becomes these five tabs in the current web app.</p>
+</div>
+</div>
+</section>
+<section id="booking" class="section wrap">
+<p class="eyebrow">04 / Booking architecture</p>
+<h2>Success follows the save.</h2>
+<p class="intro">A convincing receipt needs a consistent booking state underneath it. In this demo, that authority is a browser-local ledger, rather than a shared reservation service.</p>
+<div class="two-up">
+<article class="panel">
+<h3>What the web demo implements</h3>
+<ol>
+<li>Validate the session, selected ride, calendar date and party size.</li>
+<li>Check departure eligibility, remaining seats and available demo credits.</li>
+<li>Reuse the request ID to avoid a duplicate booking on repeat submission.</li>
+<li>Save the booking, reference, balance and debit together in the local ledger.</li>
+<li>For eligible cancellation, change status and return demo credits; repeated cancellation does not refund twice.</li>
+</ol>
+<p class="quiet">Web Locks coordinate supported browser tabs; an in-page queue is the fallback. Clearing browser storage resets this demonstration. A separate MySQL-backed API exists in the source and is not silently used as a fallback.</p>
+</article>
+<article class="panel">
+<h3>What the confirmation specification proposes</h3>
+<p>“Ride confirmed” appears with route, named gates, date, UTC departure, reference, charged credits and updated balance. Those facts should be readable immediately.</p>
+<p>A single 420–520 ms waypoint arc and an optional short chime follow successful persistence. Reduced motion replaces the travel effect with a static signal. Neither sound nor animation is proof of a booking.</p>
+<p class="quiet">These timings, audio and haptic rules are documented interaction intentions, not claims of completed native behavior.</p>
+</article>
+</div>
+<div class="screen-pair">
+<figure>
+<a href="assets/details.webp">
+<img src="assets/details.webp" alt="Actual ride-details screen showing Earth to Luna, UTC times, boarding guidance, a 24-credit fare, 3-credit fee and 27-credit total." width="410" height="830" loading="lazy">
+</a>
+<figcaption>02 / Ride details before review: boarding guidance and the itemized fare appear together.</figcaption>
+</figure>
+<figure>
+<a href="assets/receipt.webp">
+<img src="assets/receipt.webp" alt="Actual saved demo receipt with booking reference SCT-B212F7EA, Earth to Luna, 08:30 UTC and 27 demo credits." width="410" height="830" loading="lazy">
+</a>
+<figcaption>03 / Saved browser-local receipt. This is a demonstration, not a valid travel ticket.</figcaption>
+</figure>
+</div>
+<aside class="note">
+<strong>Where the current receipt can go further</strong>
+<p>The working receipt says “You’re cleared for takeoff.” and shows a saved reference, route, times and demo-credit total. The specification calls for more explicit “Ride confirmed” wording, named gates and the updated balance. That gap is a concrete next refinement, not a completed feature.</p>
+</aside>
+<div class="table-scroll" role="region" aria-label="Booking interaction states" tabindex="0">
+<table>
+<caption>Design contract / confirmation and recovery</caption>
+<thead>
+<tr>
+<th>State</th>
+<th>Traveler should see</th>
+<th>Guardrail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Pending</th>
+<td>Stable “Booking…” action and retained itinerary.</td>
+<td>No success mark, chime or repeat submission.</td>
+</tr>
+<tr>
+<th>Confirmed</th>
+<td>Saved reference, route, gate, UTC time and credit impact.</td>
+<td>Show success only after a valid saved result.</td>
+</tr>
+<tr>
+<th>Timeout</th>
+<td>An honest unresolved state and a status/retry path.</td>
+<td>Reconcile the request before creating another booking.</td>
+</tr>
+<tr>
+<th>Seat or wallet conflict</th>
+<td>A specific explanation and an editable selection.</td>
+<td>No success cue or misleading payment prompt.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="quiet">The table summarizes the specification. It does not assert that every proposed recovery state is implemented in the browser demo.</p>
+</section>
+<section id="identity" class="section wrap split">
+<p class="eyebrow">05 / Visual identity and access</p>
+<div>
+<h2>Retro optimism.<br>Useful first.</h2>
+<p>The original Scotty wordmark and orbiting-star wayfinder give the app a recognizable voice. The current phone presentation uses deep navy, warm gold and pale blue text, with a space scene built from CSS stars, atmosphere and orbital geometry.</p>
+<div class="swatches" aria-label="Current interface colors">
+<p style="--swatch:#040b12">Canvas <code>#040B12</code>
+</p>
+<p style="--swatch:#f0c57d">Action <code>#F0C57D</code>
+</p>
+<p style="--swatch:#edf7ff">Text <code>#EDF7FF</code>
+</p>
+</div>
+<p>Outfit carries the app’s headings; DM Sans supports readable labels and body copy. Monospaced values distinguish times and references. This case study uses the portfolio’s Fraunces and DM Sans to connect the project back to the wider body of work.</p>
+<p class="quiet">The earlier brand guide and wireframe use green-black and mint. The current source and screenshots show the later navy-and-gold treatment. The existing artwork is preserved; no new imagery or research artifacts were generated for this page.</p>
+<h3>Access is part of the hierarchy.</h3>
+<ul>
+<li>
+<strong>More than color:</strong> service labels and icons accompany status colors.</li>
+<li>
+<strong>More than the map:</strong> labeled station controls offer an alternative to spatial selection.</li>
+<li>
+<strong>Readable travel facts:</strong> terminal names, date, group totals and UTC labels reduce interpretation.</li>
+<li>
+<strong>Motion and sound are optional:</strong> the specification keeps essential facts static and calls for reduced-motion and silent completion.</li>
+<li>
+<strong>Space for interaction:</strong> the wireframe calls for roughly 44 pt targets, safe areas and scrolling on smaller screens.</li>
+</ul>
+<p>These are design decisions and test requirements, not an accessibility certification. Screen-reader, zoom, contrast, translation and native assistive-technology testing remain part of the next evaluation.</p>
+</div>
+</section>
+<section id="learning" class="section wrap">
+<p class="eyebrow">06 / Reflection and next steps</p>
+<h2>A working concept.<br>An open set of questions.</h2>
+<p class="intro">The result is an interactive browser demonstration with route selection, booking, trips, cancellation and demo refunds. Its value as a design project is the connection between the imagined travel experience and the information needed to make each decision.</p>
+<div class="two-up">
+<article>
+<h3>Evidence available today</h3>
+<p>The project README reports Chromium testing of the booking flow, cancellation/refund, route selection and mobile layout, including the phone frame. Native-device testing remains outstanding. There are no measured usability improvements, real customer findings or commercial payment results to report.</p>
+</article>
+<article>
+<h3>The next evaluation</h3>
+<p>Use realistic travel-planning analogues with frequent and occasional travelers. Ask participants to explain the terminal, date, time zone, party total and booking state in their own words. Include delayed, stale, timeout and wallet-shortfall scenarios, then test zoom, screen readers, reduced motion and one-handed use on real devices.</p>
+</article>
+</div>
+<aside class="note">
+<strong>The central lesson</strong>
+<p>The atmosphere can make a journey inviting. The interface must still earn confidence through clear facts, explicit limits and honest feedback.</p>
+</aside>
+</section>
+<section class="section wrap sources" aria-labelledby="sources-title">
+<p class="eyebrow">Project trail / Sources</p>
+<h2 id="sources-title">Behind the interface.</h2>
+<ul>
+<li>
+<a href="https://drive.google.com/file/d/1Jr8t5WRJBJBE2WN2vxkTF2UYT1HzAFYX/view">Interplanetary Commuter Personas &amp; Journey Maps ↗</a> <span>October 22 version · Synthesized hypotheses</span>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/15_cj5QOQRpUK2uhjIZnFnT3iv_ZENKKQ/view">Warp-Drive Booking Confirmation specification ↗</a> <span>Interaction design intentions</span>
+</li>
+<li>
+<a href="https://github.com/brookehoward2008-droid/scotty-app/blob/81d9fed/SCOTTY-MOBILE-WIREFRAME.md">Mobile wireframe ↗</a> <span>Screen hierarchy and access requirements</span>
+</li>
+<li>
+<a href="https://github.com/brookehoward2008-droid/scotty-app/tree/81d9fed">Application source and project documentation ↗</a> <span>Source snapshot reviewed October 25, 2026</span>
+</li>
+</ul>
+<div class="actions">
+<a class="button" href="https://brookehoward2008-droid.github.io/scotty-app/phone.html">Explore the interactive app ↗</a>
+<a href="../../index.html#work">Back to selected work</a>
+</div>
+</section>
+</main>
+<footer class="wrap">Brooke Howard · Scotty UX case study · October 2026</footer>
+<script src="../../scripts/nav.js">
+</script>
+</body>
+</html>
